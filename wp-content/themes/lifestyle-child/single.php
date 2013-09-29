@@ -26,7 +26,11 @@ $get_cat_id = get_the_category();
                 <div class="post-meta">
                     <p class="icon_cat" style="color:<?php echo tfuse_options('cat_color',null, tfuse_blog_category()); ?>">
 						<span class="categ_color_p">
-							<span class="align_catg"><?php echo get_cat_name( tfuse_blog_category());?></span>
+                            <?php
+                                // Get the URL of this category
+                                $category_link = get_category_link( $get_cat_id );
+                            ?>
+							<a href="<?php echo esc_url( $category_link ); ?>"><span class="align_catg"><?php echo get_cat_name( tfuse_blog_category());?></span></a>
 							   <?php if(tfuse_options('cat_icon',null, tfuse_blog_category())){echo '<img src="'. tfuse_options('cat_icon',null, tfuse_blog_category()).'" alt="'. tfuse_blog_category().'" />';}?>
 							</span>
                     </p>
