@@ -1,0 +1,157 @@
+#contactForm input[type="text"]
+{margin-right: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 7px 9px;
+}
+#TB_ajaxContent input[type="text"], input[type="password"], textarea {
+    color: #666;
+}
+input[type="text"], input[type="password"], textarea {
+}
+#TB_ajaxContent .ui-selectmenu{
+    margin-top:4px !important;
+}
+.v .contact-form h2 {
+    line-height: 1.5em;
+    font-size: 14px;
+    font-family: "Times New Roman", Times, serif;
+    color: #404040;
+}
+.tfuse_captcha_reload{
+    background-image:url('../images/reload.png');
+    background-repeat: no-repeat;
+    height: 18px !important;
+    margin-top: 15px !important;
+    max-width: 16px !important;
+    vertical-align: top;
+    background-color: transparent;
+}
+ul.sortable_options li{
+    display: inline;
+    height: 30px;
+}
+.contact-form input[type="text"], input[type="password"], textarea {
+    color: #666;
+    padding: 5px;
+    border: 1px solid gainsboro;
+    resize: none;
+}
+.success_submited_form{
+    background:url(../images/form_ok.png) 15px 30px #F4F4F4;
+    background-repeat: no-repeat;
+    border: 1px solid #E1E1E1;
+    border-radius: 4px;
+    font-size: 12px;
+    margin: 0;
+    padding: 20px 15px 15px 65px;
+    color:#474747;
+}
+.success_submited_form h2{
+    margin:7px 0 11px 0 !important ;
+}
+.error_submiting_form h2{
+    margin:7px 0 11px 0 !important ;
+}
+.error_submiting_form{
+    margin:0;
+    background:url(../images/icon_warning.png) 15px 30px no-repeat #f4f4f4;
+    padding:20px 15px 15px 65px;
+    border:1px solid #e1e1e1;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size:12px;
+    color:#474747;
+}
+.field_text input, .field_text select{
+    width:8%;
+}
+.field_text select{
+    padding: 0 !important;
+}
+.contact-form {
+    padding:0px;}
+
+.text .contact-form h2 {
+    font-size:18px;
+    color:#1a1a1a;
+    font-family:'edelsansRegular', Arial, Helvetica, sans-serif;
+    text-transform:uppercase}
+
+.contact-form {
+    font-size:13px}
+
+.contact-form .row {
+    padding:10px 2px}
+
+.contact-form .inputtext, .contact-form select, .contact-form textarea {
+    color:#070707;
+    font-weight:normal;
+    margin:5px 0;
+    font-size:13px}
+
+.contact-form .field_text .inputtext {
+    width:260px;
+    margin-right:25px}
+
+.contact-form .omega .inputtext {
+    margin-right:0}
+
+.contact-form .ui-selectmenu {
+    margin-right:10px}
+
+#TB_ajaxContent .contact-form .ui-selectmenu{ margin-right:10px}
+
+
+
+.contact-form .field_select .select_styled {
+    width:276px !important;
+    padding:0}
+
+.contact-form .field_textarea textarea {
+    width:562px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:13px;
+    margin-bottom:0;
+    resize:none}
+.grid_10 .contact-form .field_textarea textarea {width:362px;}
+.contact-form label {
+    color:#a6a6a6;
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-style:italic;}
+
+.reset-link {
+    display:block;
+    float:right;
+    padding:25px 25px 0 0;
+    font-size:12px}
+
+.reset-link a {
+    color:#404040;
+    font-weight:normal;}
+
+.reset-link a:hover {
+    color:#000;}
+.btn-submit,
+.contact-form .btn-submit,
+.comment-form .btn-submit {
+    background:url(../../../../../images/btn_submit.png) no-repeat!important;
+    width:151px;
+    height:42px;
+    text-align:left;
+    padding:0 20px 0 17px;
+    font-family:'edelsansRegular', Arial, Helvetica, sans-serif;
+    color:#fff;
+    font-size:15px;
+    text-transform:uppercase;
+    line-height:42px;
+    border:none;}
+
+.comment-form .btn-submit:hover,
+.contact-form .btn-submit:hover {
+    color:#fff}
+
+#sending, #reservation_send_ok, #reservation_send_failure { display:none; }
+#sending img { position: absolute; border:none; padding: 7px; }
+#sending span { padding-left: 30px }

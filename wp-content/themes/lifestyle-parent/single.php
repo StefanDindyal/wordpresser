@@ -17,34 +17,46 @@ $get_cat_id = get_the_category();
         <div class="<?php echo $page_class; ?> content">
             <?php echo   tfuse_shortcode_content('before');   ?>
         <div class="text">
-            <?php tfuse_media();?>
+            <?php 
+                // tfuse_media();
+            ?>
             <br>
             <div class="post-item">
                 <h2><?php the_title(); ?></h2>
                 <div class="post-meta">
                     <p class="icon_cat" style="color:<?php echo tfuse_options('cat_color',null, tfuse_blog_category()); ?>">
 						<span class="categ_color_p">
-							<span class="align_catg"><?php echo get_cat_name( tfuse_blog_category());?></span>
+                            <?php
+                                // Get the URL of this category
+                                $category_link = get_category_link( $get_cat_id );
+                            ?>
+							<span class="align_catg">In: <a href="<?php echo esc_url( $category_link ); ?>"><?php echo get_cat_name( tfuse_blog_category());?></a></span>
 							   <?php if(tfuse_options('cat_icon',null, tfuse_blog_category())){echo '<img src="'. tfuse_options('cat_icon',null, tfuse_blog_category()).'" alt="'. tfuse_blog_category().'" />';}?>
 							</span>
                     </p>
                     <em>
                         <?php if ( !tfuse_page_options('disable_post_meta') ) : ?>
-                        <?php  _e('by ', 'tfuse') ?><span class="author"><?php the_author_posts_link(); ?></span> &nbsp;|
+                        <?php  _e('Written by ', 'tfuse') ?><span class="author"><?php the_author_posts_link(); ?></span> &nbsp;|
                         <?php endif; ?>
                         <?php if ( !tfuse_page_options('disable_published_date') ) : ?>
                         &nbsp; <?php _e('on', 'tfuse') ?>&nbsp;<?php the_time('F jS, Y') ?> &nbsp;|&nbsp;
                         <?php endif; ?>
-                        <?php if ( !tfuse_page_options('disable_comments') ) : ?>
+                        <?php /*<?php if ( !tfuse_page_options('disable_comments') ) : ?>
                         <a href="<?php comments_link(); ?>" class="link-comments"><?php comments_number("0 ".__('comments','tfuse'), "1 ".__('comment','tfuse'), "% ".__('comments','tfuse')); ?></a>
-                        <?php endif; ?>
+                        <?php endif; ?>*/ ?>
                     </em>
                 </div>
                 <?php echo   tfuse_shortcode_content('after');   ?>
-            <?php the_content();
+            <?php 
+                tfuse_media(); ?>
+                <div class="clear"></div>
+                <?php
+                the_content();
                 get_template_part("content-author");
-                tfuse_comments();
-               ?>
+                // tfuse_comments();?>
+                <div id="fb_comments">
+                    <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="590"></div>                
+               </div>               
         </div>
         </div>
         <?php endif;?>

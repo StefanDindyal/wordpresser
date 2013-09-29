@@ -1,0 +1,61 @@
+*** Theme Config Changelog ***
+
+ 2013.08.02 - version 2.0.9
+ * wp 3.6 bugs solved
+    lifestyle-parent/theme_config/extensions/shortcodes/shortcodes/map.php
+    lifestyle-parent/theme_config/extensions/shortcodes/shortcodes/toggle.php
+    lifestyle-parent/theme_config/widgets/TFuse_Widget_Selected_Categories.php
+
+ 2013.06.19 - version 2.0.8
+ * wpml pe homepage
+    lifestyle-parent/theme_config/theme_includes/THEME_FUNCTIONS.php
+    lifestyle-parent/theme_config/theme_includes/THEME_HEADER_CONTENT.php
+ * featured images
+    lifestyle-parent/theme_config/theme_includes/THEME_FUNCTIONS.php
+ * tabs widget changes
+    lifestyle-parent/theme_config/widgets/TFuse_Widget_Tabs.php
+ * twitter api v 1.1
+    lifestyle-parent/theme_config/options/admin_options.php
+
+ 2013.04.09 - version 2.0.7
+ * contact form  inside page with sidebar
+    lifestyle-parent/theme_config/extensions/shortcodes/shortcodes/reservationform.php
+ * wiget categories problems
+    lifestyle-parent/theme_config/theme_includes/THEME_FUNCTIONS.php
+ * minor changes
+    lifestyle-parent/theme_config/extensions/slider/designs/featurelist-vertical/template.php
+    lifestyle-parent/theme_config/theme_includes/THEME_FUNCTIONS.php
+
+ 2013.03.26 - version 2.0.6
+ * PrettyFoto changes in theme_script_style
+    lifestyle-parent/theme_config/extensions/slider/designs/featurelist-vertical/template.php
+    lifestyle-parent/theme_config/options/admin_options.php
+    lifestyle-parent/theme_config/theme_includes/THEME_SCRIPTS_STYLES.php
+ * display only 3 categories on slider
+    lifestyle-parent/theme_config/extensions/slider/designs/featurelist-vertical/template.php
+ * costum icon for subtitle in vertical slider
+    lifestyle-parent/theme_config/extensions/slider/designs/featurelist-vertical/template.php
+ * new  options in dashboard for slider subtitle
+    lifestyle-parent/theme_config/extensions/slider/designs/featurelist-vertical/options/featurelist-vertical_options.php
+
+ 2013.02.26 - version 2.0.5
+ * slider size change
+ * newsletter shortcode
+
+ 2013.02.21 - version 2.0.4
+ * single.php file translation
+ * new .po file
+
+ 2013.02.12 - version 2.0.3
+ * menu items problems
+ * bottom box on page
+
+ 2013.02.04 - version 2.0.2
+ * added image on rss feed
+
+ 2013.02.04 - version 2.0.1
+ * solved problem with slider path
+ * new demo install
+
+ 2013.01.29 - version 2.0
+ * First release!

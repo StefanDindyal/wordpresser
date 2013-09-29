@@ -10,7 +10,7 @@
 <!--Footer-->
 <div class="footer">
     <div class="container_24">
-            <?php  tfuse_menu('footer');?>
+            <?php  /*tfuse_menu('footer');*/ ?>
             <div class="clear"></div>
         <br>
         <div class="footer_logo">
@@ -22,7 +22,17 @@
     </div>
 
 </div>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo(template_directory); ?>/sscript.js"></script>
 <!--/ Footer-->
 <?php wp_footer(); ?>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=267619683263571";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>
