@@ -10,7 +10,6 @@ Template: lifestyle-parent
 @import url("../lifestyle-parent/style.css");
 
 /*Custom Mobile Opt Styles*/
-
 .head_bar, .footer {
 	min-width: 100%;
 	max-width: 1250px;
@@ -31,6 +30,10 @@ Template: lifestyle-parent
 }
 .content .link-more, .link-more {
 	background: url(images/read-more.png) top left no-repeat;
+}
+/*Header*/
+.search_box {
+	display: none;
 }
 /*Single Page*/
 .post-meta .icon_cat {
