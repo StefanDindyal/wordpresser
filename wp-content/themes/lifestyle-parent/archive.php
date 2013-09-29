@@ -9,10 +9,11 @@ global $page_class;
         tfuse_header_content();
         ?>
         <!--/ featured list -->
-        <div class="divider_thin"></div>
+        <div class="divider_thin"></div>        
         <?php tfuse_sidebar_left_type() ?>
         <!--content -->
                <div class="<?php echo $page_class; ?> content">
+                <div id="tweet-container"></div>
             <?php echo   tfuse_shortcode_content('before');   ?>
                 <?php get_template_part('listing', 'blog');?>
             <?php echo   tfuse_shortcode_content('after');   ?>

@@ -30,13 +30,13 @@ $get_cat_id = get_the_category();
                                 // Get the URL of this category
                                 $category_link = get_category_link( $get_cat_id );
                             ?>
-							<a href="<?php echo esc_url( $category_link ); ?>"><span class="align_catg"><?php echo get_cat_name( tfuse_blog_category());?></span></a>
+							<span class="align_catg">In: <a href="<?php echo esc_url( $category_link ); ?>"><?php echo get_cat_name( tfuse_blog_category());?></a></span>
 							   <?php if(tfuse_options('cat_icon',null, tfuse_blog_category())){echo '<img src="'. tfuse_options('cat_icon',null, tfuse_blog_category()).'" alt="'. tfuse_blog_category().'" />';}?>
 							</span>
                     </p>
                     <em>
                         <?php if ( !tfuse_page_options('disable_post_meta') ) : ?>
-                        <?php  _e('by ', 'tfuse') ?><span class="author"><?php the_author_posts_link(); ?></span> &nbsp;|
+                        <?php  _e('Written by ', 'tfuse') ?><span class="author"><?php the_author_posts_link(); ?></span> &nbsp;|
                         <?php endif; ?>
                         <?php if ( !tfuse_page_options('disable_published_date') ) : ?>
                         &nbsp; <?php _e('on', 'tfuse') ?>&nbsp;<?php the_time('F jS, Y') ?> &nbsp;|&nbsp;
@@ -56,7 +56,7 @@ $get_cat_id = get_the_category();
                 // tfuse_comments();?>
                 <div id="fb_comments">
                     <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="590"></div>                
-               </div>
+               </div>               
         </div>
         </div>
         <?php endif;?>

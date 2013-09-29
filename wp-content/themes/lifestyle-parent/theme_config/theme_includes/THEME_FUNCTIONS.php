@@ -785,7 +785,7 @@ endif;
 
 if (!function_exists('tfuse_action_social')) :
     function tfuse_action_social() {
-        if((tfuse_options('feedburner_url')==true)||(tfuse_options('twitter_id')==true)||(tfuse_options('facebook_id')==true))
+        if((tfuse_options('feedburner_url')==true)||(tfuse_options('twitter_id')==true)||(tfuse_options('facebook_id')==true)||(tfuse_options('instagram_id')==true))
         {?>
         <?php
             if(tfuse_options('feedburner_url'))
@@ -793,33 +793,43 @@ if (!function_exists('tfuse_action_social')) :
                 echo'<a href="';
                 echo tfuse_options('feedburner_url') ;
                 echo'" class="social-rss"  target="_blank"><strong>';
-                _e('RSS',"tfuse");
+                // _e('RSS',"tfuse");
                 echo'</strong>';
-                _e('subscribe',"tfuse");
+                // _e('subscribe',"tfuse");
                 echo '</a>';
             }
             ?>
         <?php
             if(tfuse_options('twitter_id'))
             {
-                echo'&nbsp; <a href="';
+                echo'<a href="';
                 echo tfuse_options('twitter_id') ;
                 echo'" class="social-twitter" target="_blank"><strong>';
-                _e('Follow us',"tfuse");
+                // _e('Follow us',"tfuse");
                 echo'</strong>';
-                _e('on Twitter',"tfuse");
+                // _e('on Twitter',"tfuse");
                 echo'</a>';
             }
             ?>
         <?php
             if(tfuse_options('facebook_id'))
-            {echo'&nbsp;
-                <a href="';
+            {echo'<a href="';
                 echo tfuse_options('facebook_id') ;
                 echo'" class="social-facebook"  target="_blank"><strong>';
-                _e('Join us',"tfuse");
+                // _e('Join us',"tfuse");
                 echo'</strong>';
-                _e('on Facebook',"tfuse");
+                // _e('on Facebook',"tfuse");
+                echo '</a>';
+            }
+            ?>
+        <?php
+            if(tfuse_options('instagram_id'))
+            {echo'<a href="';
+                echo tfuse_options('instagram_id') ;
+                echo'" class="social-instagram"  target="_blank"><strong>';
+                // _e('Join us',"tfuse");
+                echo'</strong>';
+                // _e('on Instagram',"tfuse");
                 echo '</a>';
             }
             ?>

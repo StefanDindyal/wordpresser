@@ -92,6 +92,13 @@ $options = array(
                             'type' => 'text',
                             'divider' => true
                         ),
+                        array('name' => 'Instagram URL',
+                            'desc' => 'Enter your Instagram URL.',
+                            'id' => TF_THEME_PREFIX . '_instagram_id',
+                            'value' => '',
+                            'type' => 'text',
+                            'divider' => true
+                        ),
                         // E-Mail URL Option
                         array('name' => 'E-Mail URL',
                             'desc' => 'Enter your preferred E-mail subscription URL. (Feedburner or other)',

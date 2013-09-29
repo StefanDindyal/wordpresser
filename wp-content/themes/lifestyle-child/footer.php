@@ -22,6 +22,8 @@
     </div>
 
 </div>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo(template_directory); ?>/sscript.js"></script>
 <!--/ Footer-->
 <?php wp_footer(); ?>
 <div id="fb-root"></div>

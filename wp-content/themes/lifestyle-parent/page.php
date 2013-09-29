@@ -18,7 +18,9 @@ $sidebar_position = tfuse_sidebar_position();
         <?php
         the_content();
         ?>
-        <?php tfuse_comments(); ?>
+        <?php 
+        // tfuse_comments(); 
+        ?>
 		</div>
             <?php echo   tfuse_shortcode_content('after');   ?>
 	</div>

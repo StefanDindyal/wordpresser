@@ -19,10 +19,15 @@
                                 echo get_cat_name( $category_get);?></span>
                             <?php if(tfuse_options('cat_icon',null, $category_get)){echo '<img src="'. tfuse_options('cat_icon',null, $category_get).'" alt="'.get_cat_name( $category_get).'" />';}?>
 							</span>
+                            <?php
+                                // Get the URL of this category
+                                $category_link = get_category_link( $get_cat_id );
+                            ?>
+                            <span class="align_catg">In: <a href="<?php echo esc_url( $category_link ); ?>"><?php echo get_cat_name( tfuse_blog_category());?></a></span>
         </p>
-        <em><?php _e("by ","tfuse");?><span class="author"><?php the_author_posts_link(); ?></span> &nbsp;|&nbsp;<?php _e('on ','tfuse'); the_time('F, jS , Y') ?> &nbsp;|&nbsp; <a href="<?php comments_link(); ?>" class="link-comments">
+        <em><?php _e("Written by ","tfuse");?><span class="author"><?php the_author_posts_link(); ?></span> &nbsp;|&nbsp;<?php _e('on ','tfuse'); the_time('F, jS , Y') ?> <?php /*&nbsp;|&nbsp; <a href="<?php comments_link(); ?>" class="link-comments">
             <?php comments_number("0 ".__('comments','tfuse'), "1 ".__('comment','tfuse'), "% ".__('comments','tfuse')); ?>
-        </a></em>
+        </a>*/ ?></em>
     </div>
     <div class="entry">
         <?php

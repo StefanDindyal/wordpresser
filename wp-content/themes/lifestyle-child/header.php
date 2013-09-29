@@ -28,26 +28,28 @@
                 <div class="clear"></div>
             </div>
         </div> */ ?>
-        <?php echo  tfuse_top_adds(); ?>
         <!--/ head menu -->
         <div class="header">
             <div class="container_24">
                 <div class="header_left">
-                    <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('description'); ?>">
-                        <img src="<?php echo tfuse_logo(); ?>" alt="<?php bloginfo('name'); ?>"  border="0" /></a>
-                    <div class="logo_text"><h1><?php bloginfo('name'); ?></h1></div>
+                    <?php echo  tfuse_top_adds(); ?>                                        
                 </div>
                 <div class="header_right">
                     <div class="social_icons">
                         <?php tfuse_action_social();?>
+                        @girlthatsmysong
                         <div class="clearboth"></div>
                     </div>
                     <?php  echo  tfuse_search(); ?>
                 </div>
                 <div class="clear"></div>
+                <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('description'); ?>">
+                        <img src="<?php echo tfuse_logo(); ?>" alt="<?php bloginfo('name'); ?>"  border="0" /></a>
+                    <div class="logo_text"><h1><?php bloginfo('name'); ?></h1></div>
                 <!-- topmenu -->
                 <?php  tfuse_menu('secondary');  ?>
                 <!--/ topmenu -->
+                <?php echo do_shortcode('[Twitter]'); ?>                
                 <div class="clear"></div>
             </div>
 
