@@ -34,17 +34,17 @@ $get_cat_id = get_the_category();
 							   <?php if(tfuse_options('cat_icon',null, tfuse_blog_category())){echo '<img src="'. tfuse_options('cat_icon',null, tfuse_blog_category()).'" alt="'. tfuse_blog_category().'" />';}?>
 							</span>
                     </p>
-                    <em>
+                    
                         <?php if ( !tfuse_page_options('disable_post_meta') ) : ?>
                         <?php  _e('Written by ', 'tfuse') ?><span class="author"><?php the_author_posts_link(); ?></span> &nbsp;|
                         <?php endif; ?>
                         <?php if ( !tfuse_page_options('disable_published_date') ) : ?>
-                        &nbsp; <?php _e('on', 'tfuse') ?>&nbsp;<?php the_time('F jS, Y') ?> &nbsp;|&nbsp;
+                        &nbsp; <?php _e('on', 'tfuse') ?>&nbsp;<?php the_time('F jS, Y') ?>
                         <?php endif; ?>
                         <?php /*<?php if ( !tfuse_page_options('disable_comments') ) : ?>
                         <a href="<?php comments_link(); ?>" class="link-comments"><?php comments_number("0 ".__('comments','tfuse'), "1 ".__('comment','tfuse'), "% ".__('comments','tfuse')); ?></a>
                         <?php endif; ?>*/ ?>
-                    </em>
+                    
                 </div>
                 <?php echo   tfuse_shortcode_content('after');   ?>
             <?php 

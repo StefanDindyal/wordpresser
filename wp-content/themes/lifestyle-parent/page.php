@@ -5,7 +5,7 @@ $sidebar_position = tfuse_sidebar_position();
 ?>
 <!-- middle -->
 <div <?php tfuse_class('middle');?>>
-    <div class="container_24">
+    <div class="container_24 fronter">
         <!-- featured list -->
         <?php tfuse_header_content(); ?>
         <div class="divider_thin"></div>

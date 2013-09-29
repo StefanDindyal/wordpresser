@@ -9,21 +9,16 @@
 <!--/ bottom content/widgets -->
 <!--Footer-->
 <div class="footer">
-    <div class="container_24">
-            <?php  /*tfuse_menu('footer');*/ ?>
-            <div class="clear"></div>
-        <br>
-        <div class="footer_logo">
-            <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('description'); ?>">
-            <img src="<?php echo tfuse_logo_footer(); ?>" alt="<?php bloginfo('name'); ?>"  border="0" /></a>
-        </div>
-        <p class="copyright"><?php  echo tfuse_options('custom_copyright') ?></p>
-        <div class="clear"></div>
+    <div class="container_24">  
+      <div class="twtr-foot">     
+        <div id="tweet-container-b" class="twtr-feed"></div>
+      </div>        
+      <div class="clear"></div>
+      <p class="copyright"><?php  echo tfuse_options('custom_copyright') ?></p>
+      <div class="clear"></div>
     </div>
 
 </div>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo(template_directory); ?>/sscript.js"></script>
 <!--/ Footer-->
 <?php wp_footer(); ?>
 <div id="fb-root"></div>

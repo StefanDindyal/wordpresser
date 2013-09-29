@@ -20,6 +20,8 @@
             tfuse_head();
             wp_head();
             ?>
+            <script type="text/javascript" src="<?php bloginfo(template_directory); ?>/jquery.bxslider.min.js"></script>
+            <script type="text/javascript" src="<?php bloginfo(template_directory); ?>/sscript.js"></script>
         </head>
         <body>
         <?php /*<div class="head_bar">
@@ -38,19 +40,17 @@
                 <div class="header_right">
                     <div class="social_icons">
                         <?php tfuse_action_social();?>
-                        @girlthatsmysong
+                        <div class="at">@girlthatsmysong</div>
                         <div class="clearboth"></div>
                     </div>
                     <?php  echo  tfuse_search(); ?>
                 </div>
                 <div class="clear"></div>
-                <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('description'); ?>">
-                        <img src="<?php echo tfuse_logo(); ?>" alt="<?php bloginfo('name'); ?>"  border="0" /></a>
-                    <div class="logo_text"><h1><?php bloginfo('name'); ?></h1></div>
+                <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('description'); ?>" class="logo">
+                        <img src="<?php echo tfuse_logo(); ?>" alt="<?php bloginfo('name'); ?>"  border="0" /></a>                    
                 <!-- topmenu -->
                 <?php  tfuse_menu('secondary');  ?>
-                <!--/ topmenu -->
-                <?php echo do_shortcode('[Twitter]'); ?>                
+                <!--/ topmenu -->                
                 <div class="clear"></div>
             </div>
 

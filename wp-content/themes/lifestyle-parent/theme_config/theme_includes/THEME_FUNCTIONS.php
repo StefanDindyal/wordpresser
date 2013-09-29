@@ -469,8 +469,8 @@ if (!function_exists('tfuse_pagination')) :
 
         if ( $wp_query->max_num_pages > 1 ) : ?>
         <div class="other_posts">
-            <?php next_posts_link( '<span class="nextp">'. __('Older posts', 'tfuse').'</span>'); ?>
-            <?php previous_posts_link('<span class="prevp">'.  __('Newer posts', 'tfuse').'</span>'); ?>
+            <?php next_posts_link( '<span class="nextp">'. __('more posts', 'tfuse').'</span>'); ?>
+            <?php previous_posts_link('<span class="prevp">'.  __('older posts', 'tfuse').'</span>'); ?>
         </div>
         <?php endif;
     }
@@ -1157,3 +1157,13 @@ function tfuse_set_blog_page(){
     if(tfuse_options('blog_page') != 0 && $id_post == tfuse_options('blog_page')) $is_tf_blog_page = true;
 }
 add_action('wp_head','tfuse_set_blog_page');
+
+function custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function new_excerpt_more( $more ) {
+    return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
