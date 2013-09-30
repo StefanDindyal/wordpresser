@@ -96,7 +96,7 @@ body {
 	width: 100%;
 	padding: 0;
 }
-.fronter {
+.fronter, .single {
 	border-bottom: 2px solid #818181;
 }
 .container_24 .grid_15 {
@@ -120,13 +120,41 @@ body {
 	letter-spacing: -0.040em;
 	color: #a1a1a1;
 	font-style: normal;
+	font-family: 'ralewayregular', sans-serif;
+}
+.copyright a {
+	color: #b589cf;
+	font-family: 'ralewaysemibold', sans-serif;
+	border: 0;
+}
+.copyright a:hover {
+	color: #b589cf;
+	border-bottom: 1px dotted #b589cf;
 }
 .mailer {
-
+	padding: 10px 0;
+	float: left;
+	font-size: 16px;
+	line-height: 36px;
+	letter-spacing: -0.040em;
+	color: #404040;
+	font-family: 'ralewayregular', sans-serif;
+}
+.mailer a {
+	color: #662d91;
+	font-family: 'ralewaybold', sans-serif;
+}
+.mailer a:hover {
+	color: #662d91;
+	text-decoration: none;
+	border-bottom: 1px dotted #662d91;
 }
 .footer .aff {
 	float: right;
 	width: 300px;
+}
+.footer .aff .split {
+	height: 0;
 }
 .footer .aff h3 {
 	font-family: 'ralewaybold', sans-serif;
@@ -139,29 +167,45 @@ body {
 	border-bottom: 1px solid #c7c7c7;
 	padding: 22px 0;
 }
-.aff ul {
+.footer .foot-bot {
+	padding: 10px 0 16px;
+}
+.aff ul, .aff .blogroll, .container_24 .grid_8 .widget_links ul, .container_24 .grid_8 .widget_recent_entries ul, .aff .widget_recent_entries ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 	line-height: 22px;
 }
-.aff ul li {
+.aff ul li, .aff .blogroll ul li, .container_24 .grid_8 .widget_links ul li, .container_24 .grid_8 .widget_recent_entries ul li, .aff .widget_recent_entries ul li {
 	margin: 0;
 	padding: 0;
 }
-.aff a {
+.aff a, .aff .box .blogroll a, .container_24 .grid_8 .widget_links a, .container_24 .grid_8 .widget_recent_entries a, .aff .widget_recent_entries a {
 	font-family: 'ralewaysemibold', sans-serif;
 	font-size: 16px;
 	line-height: 23px;
 	letter-spacing: -0.040em;
 	color: #9266b3;
+	padding: 0;
+	margin: 0;
+	background: none;
+	display: inline;
 }
-.aff a:hover {
+.container_24 .grid_8 .widget_recent_entries a, .aff .widget_recent_entries a {
+	font-family: 'ralewaymedium', sans-serif;
+}
+.footer .aff .blogroll li a, .container_24 .grid_8 .widget_links a, .container_24 .grid_8 .widget_recent_entries a, .aff .widget_recent_entries a {
+	background: none !important;
+}
+.aff a:hover, .aff .box .blogroll a:hover, .container_24 .grid_8 .widget_links a:hover, .container_24 .grid_8 .widget_recent_entries a:hover, .aff .widget_recent_entries a:hover {
 	border-bottom: 1px dotted #9266b3;
 	color: #9266b3;
+	background: none !important;
+	font-size: ;
 }
 #feature_list {
 	width: 100%;
+	margin-top: -53px;
 }
 /*Twitter*/
 .twtr-hold {
@@ -500,7 +544,7 @@ body {
 }
 .video_embed iframe, .video_embed object, .video_embed embed {
 	width: 100%;
-	height: 350px;
+	height: 400px;
 }
 img.frame_box {
 	margin: 0 0 40px !important;
@@ -513,6 +557,9 @@ img.frame_box {
 #fb_comments {
 	padding-top: 45px;
  	border-top: 2px solid #efe3f9;
+ }
+ .single .alignleft {
+ 	float: none;
  }
 /*Sidebar*/
 .container_24 .grid_8 {
@@ -564,13 +611,61 @@ img.frame_box {
 .container_24 .grid_8 .aff {
 	margin-bottom: 30px;
 }
-.container_24 .grid_8 .aff h3 {
+.container_24 .grid_8 .aff h3, .container_24 .grid_8 .widget_links h3, .container_24 .grid_8 .widget_recent_entries h3 {
 	font-family: 'ralewaybold', sans-serif;
 	font-size: 34px;
 	line-height: 36px;
+	margin: 0;
 }
-.container_24 .grid_8 .aff .split {
-	margin: 15px 0;
+.container_24 .grid_8 .aff .split, .container_24 .grid_8 .widget_links .split, .container_24 .grid_8 .widget_recent_entries .split {
+	margin: 15px 0 25px;
+}
+.container_24 .grid_8 .widget_recent_entries li .split {
+	margin: 13px 0;
+}
+.aff .widget_recent_entries li .split {
+	height: 0;
+}
+.container_24 .grid_8 .widget_links {
+	display: none;
+}
+.container_24 .grid_8 .kill .widget_links {
+	display: block;
+}
+.container_24 .grid_8 .kill .widget_recent_entries {
+	display: none;
+}
+.footer .widget_recent_entries {
+	display: none;
+}
+.footer.kill .widget_recent_entries {
+	display: block;
+}
+.footer.kill .widget_links {
+	display: none;
+}
+.footer.kill .aff {
+	float: left;
+	width: auto;
+	padding-right: 75px;
+}
+.footer.kill .aff .box {
+	width: auto;
+}
+.footer.kill .twtr-foot {
+	float: right;
+	border: 0;
+	padding: 0;
+	border-left: 1px solid #cacaca;
+	padding-left: 30px;
+}
+.footer.kill .twtr-foot .twtr-feed {
+	width: 300px;
+	font-size: 20px;
+	line-height: 36px;
+}
+.footer.kill .twtr-foot .twtr-feed .tweet-info {
+	font-size: 16px;
 }
 /**
  * BxSlider v4.0 - Fully loaded, responsive content slider

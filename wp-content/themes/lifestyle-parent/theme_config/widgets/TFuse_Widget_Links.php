@@ -14,10 +14,11 @@ class TFuse_Widget_Links extends WP_Widget {
         $show_rating = isset($instance['rating']) ? $instance['rating'] : false;
         $show_images = isset($instance['images']) ? $instance['images'] : true;
         $category = isset($instance['category']) ? $instance['category'] : false;
+        $limit = $instance['limit'];
         $before_widget = '<div   class="box box_menu widget_links">';
         $after_widget = '</div>';
         $before_title = '<h3>';
-        $after_title = '</h3>';
+        $after_title = '</h3><div class="split"></div>';
 
         if ( is_admin() && !$category ) {
             // Display All Links widget as such in the widgets screen
@@ -27,22 +28,24 @@ class TFuse_Widget_Links extends WP_Widget {
 
         $before_widget = preg_replace('/id="[^"]*"/','id="%id"', $before_widget);
         wp_list_bookmarks(apply_filters('widget_links_args', array(
-            'title_before' => $before_title, 'title_after' => $after_title,
+            'title_li' => __('Affiliates'), 'title_before' => $before_title, 'title_after' => $after_title,
             'category_before' => $before_widget, 'category_after' => $after_widget,
             'show_images' => $show_images, 'show_description' => $show_description,
             'show_name' => $show_name, 'show_rating' => $show_rating,
-            'category' => $category, 'class' => 'linkcat widget'
+            'category' => $category, 'class' => 'linkcat widget', 'limit' => $limit
         )));
     }
 
     function update( $new_instance, $old_instance ) {
-        $new_instance = (array) $new_instance;
+        $instance = $old_instance;
         $instance = array( 'images' => 0, 'name' => 0, 'description' => 0, 'rating' => 0);
         foreach ( $instance as $field => $val ) {
             if ( isset($new_instance[$field]) )
                 $instance[$field] = 1;
         }
-        $instance['category'] = intval($new_instance['category']);
+
+        $instance['limit'] = strip_tags( $new_instance['limit'] );
+        $instance['category'] = intval($new_instance['category']);       
 
         if ( in_array( $new_instance['template'], array( 'box_white', 'box_white' ) ) ) {
             $instance['template'] = $new_instance['template'];
@@ -56,8 +59,9 @@ class TFuse_Widget_Links extends WP_Widget {
     function form( $instance ) {
 
         //Defaults
-        $instance = wp_parse_args( (array) $instance, array(  'images' => true, 'name' => true, 'description' => false, 'rating' => false, 'category' => false ) );
+        $instance = wp_parse_args( (array) $instance, array(  'images' => true, 'name' => true, 'description' => false, 'rating' => false, 'category' => false, 'limit' => '-1' ) );
         $link_cats = get_terms( 'link_category');
+        $limit = isset( $instance['limit'] ) ? esc_attr( $instance['limit'] ) : '';
              ?>
 
     <p>
@@ -81,6 +85,8 @@ class TFuse_Widget_Links extends WP_Widget {
         <label for="<?php echo $this->get_field_id('description'); ?>"><?php _e('Show Link Description','tfuse'); ?></label><br />
         <input class="checkbox" type="checkbox" <?php checked($instance['rating'], true) ?> id="<?php echo $this->get_field_id('rating'); ?>" name="<?php echo $this->get_field_name('rating'); ?>" />
         <label for="<?php echo $this->get_field_id('rating'); ?>"><?php _e('Show Link Rating','tfuse'); ?></label>
+        <p><label for="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>"><?php _e( 'Limit:', 'tfuse' ); ?></label>
+        <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'limit' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'limit' ) ); ?>" type="text" value="<?php echo esc_attr( $limit ); ?>" /></p>
     </p>
 
     <?php

@@ -20,7 +20,7 @@ jQuery( document ).ready(function( $ ) {
 	
 	/*TWITTER2*/
 	targetB = $('#tweet-container-b');
-	var user_nameB = 'CASSIOPE'; //Update Twitter User Handle
+	var user_nameB = 'gtms'; //Update Twitter User Handle
 	var tweet_countB = '1'; //Update Number of listed Tweets
 	$.ajax({
 	  type: "GET",
@@ -32,7 +32,8 @@ jQuery( document ).ready(function( $ ) {
 	  	for (var i = 0; i < tweet_countB; i++) {		  		
 	  		var feed_output = '<div class="tweet"><div class="txt">'+formatTwitString(twit.data[i].text)+'</div><div class="tweet-info"><div class="avatar"><a href="http://twitter.com/'+twit.data[i].user.screen_name+'" target="_blank"><img src="'+twit.data[i].user.profile_image_url+'" border="0" alt="'+twit.data[i].user.name+'"/></a></div><div class="user">Posted <span class="time">'+relativeTime(twit.data[i].created_at)+'</span> by <a href="http://twitter.com/'+twit.data[i].user.screen_name+'" target="_blank">@'+twit.data[i].user.screen_name+'</a></div></div>';
 	    	targetB.append(feed_output);
-		  }			  
+		  }
+		  		  
 		}
 	});
 	
@@ -40,11 +41,7 @@ jQuery( document ).ready(function( $ ) {
 	$('.topmenu ul#menu-main_nav li').last().addClass('last-nav');
 
 	$(window).load(function(){
-		$('#tweet-container').bxSlider({
-	    	slideWidth: 480,
-	    	minSlides: 1,
-	    	maxSlides: 1
-		});
+		
 	});
 
 });

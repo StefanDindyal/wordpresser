@@ -6,7 +6,7 @@ $get_cat_id = get_the_category();
 ?>
 <!-- middle -->
 <div <?php tfuse_class('middle');?>>
-    <div class="container_24">
+    <div class="container_24 single">
         <!-- featured list -->
         <?php tfuse_header_content(); ?>
         <!--/ featured list -->
@@ -55,7 +55,7 @@ $get_cat_id = get_the_category();
                 get_template_part("content-author");
                 // tfuse_comments();?>
                 <div id="fb_comments">
-                    <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="590"></div>                
+                    <div class="fb-comments" data-href="<?php the_permalink(); ?>" data-width="630"></div>                
                </div>               
         </div>
         </div>

@@ -8,14 +8,13 @@
 
 <!--/ bottom content/widgets -->
 <!--Footer-->
-<div class="footer">
+<div class="footer <?php if(is_single()){echo 'kill';}?>">
     <div class="container_24">
       <div class="foot-top">
       <div class="twtr-foot">     
         <div id="tweet-container-b" class="twtr-feed"></div>
       </div>
-      <div class="aff"><h3>Affiliates</h3><ul>
-        <?php wp_list_bookmarks('title_li=&categorize=0&limit=5'); ?>
+      <div class="aff"><?php dynamic_sidebar('custom-footer'); ?>
       </ul></div>
       <div class="clear"></div>
     </div>

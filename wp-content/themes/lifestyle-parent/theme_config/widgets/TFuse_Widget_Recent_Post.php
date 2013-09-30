@@ -39,7 +39,7 @@ class TFuse_Widget_Recent_Posts extends WP_Widget {
         $before_widget = '<div  class="box box_menu widget_recent_entries posts">';
         $after_widget = '</div>';
         $before_title = '<h3>';
-        $after_title = '</h3>';
+        $after_title = '</h3><div class="split"></div>';
 
         $r = new WP_Query(array('showposts' => $number, 'nopaging' => 0, 'post_status' => 'publish', 'ignore_sticky_posts' => 1));
         if ($r->have_posts()) :
@@ -50,7 +50,7 @@ class TFuse_Widget_Recent_Posts extends WP_Widget {
             if ( $title ) echo $before_title . $title . $after_title; ?>
         <ul>
             <?php  while ($r->have_posts()) : $r->the_post(); ?>
-            <li><a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a></li>
+            <li><a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a><div class="split"></div></li>
             <?php endwhile; ?>
         </ul>
         <?php echo $after_widget; ?>

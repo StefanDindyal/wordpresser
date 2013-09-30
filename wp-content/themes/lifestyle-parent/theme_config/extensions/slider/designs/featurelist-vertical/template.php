@@ -59,7 +59,7 @@ $cats = explode(",",$category_ID);
     <ul id="feature_output">
         <?php foreach ($slider['slides'] as $slide) echo '
         <li>
-            <img src="'.$slide['slide_src'].'" width="960" height="325" alt="'.$slide['slide_title'].'" />
+            <img src="'.$slide['slide_src'].'" width="960" alt="'.$slide['slide_title'].'" />
             <a href="'.$slide['slide_url'].'"></a>
         </li>
         ';?>
@@ -104,8 +104,9 @@ elseif(sizeof($cats)=='1'||sizeof($cats)==''){
     <ul id="feature_output">
         <?php foreach ($slider['slides'] as $slide) echo '
         <li>
-            <img src="'.$slide['slide_src'].'" width="960" height="325" alt="'.$slide['slide_title'].'" />
-            <a href="'.$slide['slide_url'].'"></a>
+            <div class="titles">'.$slide['slide_title'].'<p>'.$slide['slide_subtitle'].'</p></div>
+            <img src="'.$slide['slide_src'].'" width="960" alt="'.$slide['slide_title'].'" />
+            <a href="'.$slide['slide_url'].'"></a>            
         </li>
         ';?>
     </ul>
