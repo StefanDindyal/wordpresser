@@ -16,6 +16,9 @@ global $page_class;
                 <div class="twtr-hold">
                     <div id="tweet-container" class="twtr-feed"></div>
                 </div>
+                <div class="new">
+                    
+                </div>
                 <div class="latest">The Latest <a href="<?php echo tfuse_options('feedburner_url'); ?>" class="latest-rss">gtms rss</a>
                     <div class="split"></div></div>
             <?php echo   tfuse_shortcode_content('before');   ?>

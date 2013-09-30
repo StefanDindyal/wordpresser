@@ -47,7 +47,6 @@ if (!function_exists('tfuse_browser_body_class')):
     } // End function tfuse_browser_body_class()
 endif;
 
-
 if (!function_exists('tfuse_class')) :
     /* This Function Add the classes for middle container
      * To override tfuse_class() in a child theme, add your own tfuse_count_post_visits()

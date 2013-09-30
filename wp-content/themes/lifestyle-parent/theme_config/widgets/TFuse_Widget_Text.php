@@ -69,4 +69,5 @@ function TFuse_Unregister_WP_Widget_Text() {
 add_action('widgets_init','TFuse_Unregister_WP_Widget_Text');
 
 register_widget('TFuse_Widget_Text');
+
 ?>

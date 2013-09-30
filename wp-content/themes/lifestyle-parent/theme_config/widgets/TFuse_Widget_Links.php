@@ -93,4 +93,5 @@ function TFuse_Unregister_WP_Widget_Links() {
 add_action('widgets_init','TFuse_Unregister_WP_Widget_Links');
 
 register_widget('TFuse_Widget_Links');
+
 ?>

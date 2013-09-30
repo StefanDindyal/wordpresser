@@ -113,6 +113,53 @@ body {
 .footer {
 	background: none;
 }
+.copyright {
+	float: right;
+	font-size: 16px;
+	line-height: 36px;
+	letter-spacing: -0.040em;
+	color: #a1a1a1;
+	font-style: normal;
+}
+.mailer {
+
+}
+.footer .aff {
+	float: right;
+	width: 300px;
+}
+.footer .aff h3 {
+	font-family: 'ralewaybold', sans-serif;
+	color: #404040;
+	font-size: 18px;
+	line-height: 18px;
+	margin-bottom: 15px;
+}
+.footer .foot-top {
+	border-bottom: 1px solid #c7c7c7;
+	padding: 22px 0;
+}
+.aff ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	line-height: 22px;
+}
+.aff ul li {
+	margin: 0;
+	padding: 0;
+}
+.aff a {
+	font-family: 'ralewaysemibold', sans-serif;
+	font-size: 16px;
+	line-height: 23px;
+	letter-spacing: -0.040em;
+	color: #9266b3;
+}
+.aff a:hover {
+	border-bottom: 1px dotted #9266b3;
+	color: #9266b3;
+}
 #feature_list {
 	width: 100%;
 }
@@ -162,10 +209,21 @@ body {
 }
 .twtr-foot {
 	float: left;
-	margin: 30px 0;	
+	padding: 30px 0;
+	border-right: 1px solid #cacaca;
+	padding-right: 75px;
+}
+.twtr-foot .twtr-feed {
+	font-size: 25px;
+	line-height: 36px;
+	letter-spacing: -0.040em;
+}
+.twtr-foot .txt a {
+	font-family: 'ralewaymedium', sans-serif;
 }
 .twtr-foot .twtr-feed {
 	text-align: left;
+	max-width: 555px;
 }
 /*Header*/
 .header_right, .header_left {
@@ -276,7 +334,7 @@ body {
 .fronter img.frame_box {
 	margin-bottom: 0 !important;
 }
-.latest {
+.latest, .widget_fvid h3 {
 	font-family: 'ralewaybold', sans-serif;
 	font-size: 34px;
 	line-height: 34px;
@@ -485,6 +543,34 @@ img.frame_box {
 .adv_sidebar_160x600 {
 	margin-bottom: 40px;
 	padding: 0;
+}
+.widget_fvid h3 {
+	padding: 0 0 12px;
+	margin-bottom: 0;
+}
+.fv_widget {
+	width: 300px;
+	height: 250px;
+	background: #ececec;
+	position: relative;
+	margin-bottom: 35px;
+	margin-top: 23px;
+}
+.fv_widget iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.container_24 .grid_8 .aff {
+	margin-bottom: 30px;
+}
+.container_24 .grid_8 .aff h3 {
+	font-family: 'ralewaybold', sans-serif;
+	font-size: 34px;
+	line-height: 36px;
+}
+.container_24 .grid_8 .aff .split {
+	margin: 15px 0;
 }
 /**
  * BxSlider v4.0 - Fully loaded, responsive content slider

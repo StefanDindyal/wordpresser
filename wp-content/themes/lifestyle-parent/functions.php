@@ -8,3 +8,4 @@
  */
 require_once(TEMPLATEPATH . '/framework/BootsTrap.php');
 require_once(TEMPLATEPATH . '/theme_config/theme_includes/AJAX_CALLBACKS.php');
+include( get_template_directory() . '/tfuse-fvid.php' );
