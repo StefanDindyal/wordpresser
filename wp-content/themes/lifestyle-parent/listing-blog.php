@@ -32,7 +32,7 @@
         if ( tfuse_options('post_content') == 'content' ) the_content(''); else the_excerpt();
         ?>
         <ul class="lower-meta">
-            <li class="fb"><div class="fb-like" data-href="<?php /*the_permalink();*/ ?>http://www.google.com" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-font="trebuchet ms"></div></li>
+            <li class="fb"><div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-font="trebuchet ms"></div></li>
             <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-count="none" data-text="<?php the_title(); ?>">Tweet</a></li>
             <li class="last"><a href="<?php the_permalink(); ?>" class="link-more"><?php _e("Read more","tfuse");?></a></li>
         </ul>
