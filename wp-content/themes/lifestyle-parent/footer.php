@@ -27,6 +27,9 @@
     </div>
 
 </div>
+<script type="text/javascript" src="<?php bloginfo(template_directory); ?>/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo(template_directory); ?>/twitterFetcher_v10_min.js"></script>
+<script type="text/javascript" src="<?php bloginfo(template_directory); ?>/sscript.js"></script>
 <!--/ Footer-->
 <?php wp_footer(); ?>
 <div id="fb-root"></div>

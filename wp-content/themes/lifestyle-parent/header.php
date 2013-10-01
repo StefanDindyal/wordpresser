@@ -20,8 +20,6 @@
             tfuse_head();
             wp_head();
             ?>
-            <script type="text/javascript" src="<?php bloginfo(template_directory); ?>/jquery.bxslider.min.js"></script>
-            <script type="text/javascript" src="<?php bloginfo(template_directory); ?>/sscript.js"></script>
         </head>
         <body>
         <?php /*<div class="head_bar">

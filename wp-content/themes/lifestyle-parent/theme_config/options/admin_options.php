@@ -106,6 +106,13 @@ $options = array(
                             'type' => 'text',
                             'divider' => true
                         ),
+                        array('name' => 'Twitter Hashtag',
+                            'desc' => 'Enter your Twitter Hashtag.',
+                            'id' => TF_THEME_PREFIX . '_thash_id',
+                            'value' => '',
+                            'type' => 'text',
+                            'divider' => true
+                        ),
                         // E-Mail URL Option
                         array('name' => 'E-Mail URL',
                             'desc' => 'Enter your preferred E-mail subscription URL. (Feedburner or other)',

@@ -342,8 +342,9 @@ body {
 }
 /*Twitter*/
 .twtr-hold {
-	padding-bottom: 30px;
+	padding-bottom: 32px;
 	margin-bottom: 30px;
+	padding-top: 42px;
 	border-bottom: 2px solid #efe3f9;
 }
 .twtr-feed {
@@ -813,6 +814,22 @@ img.frame_box {
 .footer.kill .twtr-foot .twtr-feed .tweet-info {
 	font-size: 16px;
 }
+#tweet-container ul {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	list-style: none;
+}
+#tweet-container ul li {
+	width: 490px;
+}
+#tweet-container ul li .user img {
+	display: inline-block;
+	margin-right: 10px;
+}
+#tweet-container ul li .interact {
+	display: none;
+}
 /**
  * BxSlider v4.0 - Fully loaded, responsive content slider
  * http://bxslider.com
@@ -831,26 +848,26 @@ img.frame_box {
 
 .bx-wrapper {
 	position: relative;
-	margin: 0 auto 60px;
+	margin: 0 auto 0;
 	padding: 0;
 	*zoom: 1;
 }
 
 .bx-wrapper img {
-	max-width: 100%;
-	display: block;
+	/*max-width: 100%;
+	display: block;*/
 }
 
 /** THEME
 ===================================*/
 
 .bx-wrapper .bx-viewport {
-	-moz-box-shadow: 0 0 5px #ccc;
+	/*-moz-box-shadow: 0 0 5px #ccc;
 	-webkit-box-shadow: 0 0 5px #ccc;
 	box-shadow: 0 0 5px #ccc;
 	border: solid #fff 5px;
 	left: -5px;
-	background: #fff;
+	background: #fff;*/
 }
 
 .bx-wrapper .bx-pager,
@@ -858,6 +875,9 @@ img.frame_box {
 	position: absolute;
 	bottom: -30px;
 	width: 100%;
+}
+.bx-wrapper .bx-pager {
+	display: none;
 }
 
 /* LOADER */

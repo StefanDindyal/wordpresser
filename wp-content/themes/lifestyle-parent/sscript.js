@@ -1,23 +1,5 @@
 jQuery( document ).ready(function( $ ) {
 	
-	/*TWITTER*/
-	target = $('#tweet-container');
-	var user_name = 'Hadrok'; //Update Twitter User Handle
-	var tweet_count = '3'; //Update Number of listed Tweets
-	$.ajax({
-	  type: "GET",
-	  dataType: "jsonp",
-	  cache: false,
-	  url: "https://feed.rgnrtr.com/twitter/"+user_name+"/json",		  
-	  success: function(twit) {
-	  	target.empty();		  	
-	  	for (var i = 0; i < tweet_count; i++) {		  		
-	  		var feed_output = '<div class="tweet"><div class="txt">'+formatTwitString(twit.data[i].text)+'</div><div class="tweet-info"><div class="avatar"><a href="http://twitter.com/'+twit.data[i].user.screen_name+'" target="_blank"><img src="'+twit.data[i].user.profile_image_url+'" border="0" alt="'+twit.data[i].user.name+'"/></a></div><div class="user">Posted <span class="time">'+relativeTime(twit.data[i].created_at)+'</span> by <a href="http://twitter.com/'+twit.data[i].user.screen_name+'" target="_blank">@'+twit.data[i].user.screen_name+'</a></div></div>';
-	    	target.append(feed_output);
-		  }		  			  			  
-		}
-	});
-	
 	/*TWITTER2*/
 	targetB = $('#tweet-container-b');
 	var user_nameB = targetB.attr('data-tuser'); //Update Twitter User Handle
@@ -28,7 +10,7 @@ jQuery( document ).ready(function( $ ) {
 	  cache: false,
 	  url: "https://feed.rgnrtr.com/twitter/"+user_nameB+"/json",		  
 	  success: function(twit) {
-	  	target.empty();		  	
+	  	targetB.empty();		  	
 	  	for (var i = 0; i < tweet_countB; i++) {		  		
 	  		var feed_output = '<div class="tweet"><div class="txt">'+formatTwitString(twit.data[i].text)+'</div><div class="tweet-info"><div class="avatar"><a href="http://twitter.com/'+twit.data[i].user.screen_name+'" target="_blank"><img src="'+twit.data[i].user.profile_image_url+'" border="0" alt="'+twit.data[i].user.name+'"/></a></div><div class="user">Posted <span class="time">'+relativeTime(twit.data[i].created_at)+'</span> by <a href="http://twitter.com/'+twit.data[i].user.screen_name+'" target="_blank">@'+twit.data[i].user.screen_name+'</a></div></div>';
 	    	targetB.append(feed_output);
@@ -49,10 +31,33 @@ jQuery( document ).ready(function( $ ) {
 	}
 
 	$(window).load(function(){
-		
+		 $('#tweet-container ul').bxSlider({
+		    slideWidth: 490,
+		    minSlides: 1,
+		    maxSlides: 1,
+		    infiniteLoop: false
+		  });
 	});
 
+	var getwidID = $('#tweet-container').attr('data-tuser');
+	twitterFetcher.fetch(getwidID, '', 3, true, true, true, '', false, handleTweets);
+
 });
+ function handleTweets(tweets){
+          var x = tweets.length;
+          var n = 0;
+          var element = document.getElementById('tweet-container');
+          var html = '<ul>';
+          while(n < x) {
+            html += '<li>' + tweets[n] + '</li>';
+            n++;
+          }
+          html += '</ul>';
+          element.innerHTML = html;
+      }
+function dateFormatter(date) {
+        return date.toTimeString();
+      }
 function formatTwitString(str) {
 	str = ''+str;
 	str = str.replace(/((ftp|https?):\/\/([-\w\.]+)+(:\d+)?(\/([\w/_\.]*(\?\S+)?)?)?)/gm,'<a href="$1" target="_blank">$1</a>');
