@@ -69,6 +69,16 @@ $cats = explode(",",$category_ID);
 elseif(sizeof($cats)=='1'||sizeof($cats)==''){
 
     ?>
+    <ul id="feature_output">
+        <?php foreach ($slider['slides'] as $slide) echo '
+        <li>
+            <div class="low-right"></div>
+            <div class="titles">'.$slide['slide_title'].'<p>'.$slide['slide_subtitle'].'</p></div>
+            <img src="'.$slide['slide_src'].'" width="960" height="325" alt="'.$slide['slide_title'].'" />
+            <a href="'.$slide['slide_url'].'"></a>            
+        </li>
+        ';?>
+    </ul>
     <ul id="feature_tabs">
         <?php foreach ($slider['slides'] as $slide)
             if($icon_name_cat!=''){
@@ -88,27 +98,14 @@ elseif(sizeof($cats)=='1'||sizeof($cats)==''){
                     $icon_slider ='';
                 }
                 echo '
-                <li>
-                    <span class="link-title">'.$slide['slide_title'].'</span>
-                    <div class="feature_cat">
-                    <span class="icon_cat" style="color:'.$slide['slide_subtitle_text_color'].'"">'.$icon_slider.'
-                         '.$slide['slide_subtitle'].'
-                    </span>
-                   <a href="'.$slide['slide_url'].'" class="link-more">'. _("Read more").'</a></div>
-                </li>
-                ';
+        <li>
+        <div class="slip-cover"></div>
+        <div class="purp"></div>
+        <img src="'.$slide['slide_src'].'" width="100%" alt="'.$slide['slide_title'].'" />
+            <div class="slip-titles"><a href="'.get_permalink($post_id_0).'">'.$slide['slide_title'].'<br>'.$slide['slide_subtitle'].'</a></div>
+        </li>';
             }
        ?>
-    </ul>
-
-    <ul id="feature_output">
-        <?php foreach ($slider['slides'] as $slide) echo '
-        <li>
-            <div class="titles">'.$slide['slide_title'].'<p>'.$slide['slide_subtitle'].'</p></div>
-            <img src="'.$slide['slide_src'].'" width="960" alt="'.$slide['slide_title'].'" />
-            <a href="'.$slide['slide_url'].'"></a>            
-        </li>
-        ';?>
     </ul>
     <?php  }elseif(sizeof($cats)=='2'){ ?>
     <ul id="feature_tabs">
@@ -119,13 +116,11 @@ elseif(sizeof($cats)=='1'||sizeof($cats)==''){
         $post_id_0 = get_post($my_id);
         echo '
         <li>
-            <span class="link-title">'.$post_id_0->post_title.'</span>
-            <div class="feature_cat">
-                        <span class="icon_cat"><img src="'.tfuse_options('cat_icon',null,$slider['general']['categories_select']['0'] ).'" alt="" />
-                        '. get_cat_name($slider['general']['categories_select']['0']).'
-                        </span>
-                <a href="'.get_permalink($post_id_0).'" class="link-more">'. _("Read more","tfuse").'</a>
+        <img src="'.$slide['slide_src'].'" width="960" alt="'.$slide['slide_title'].'" />
+            <div class="slip-titles">'.$post_id_0->post_title.'
+            <p>'. get_cat_name($slider['general']['categories_select']['0']).'</p>
             </div>
+            <a href="'.get_permalink($post_id_0).'" class="link-more"></a>
         </li>';
 
         $args1 = array( 'numberposts' => '1','category' => $slider['general']['categories_select']['2'] );
@@ -134,13 +129,11 @@ elseif(sizeof($cats)=='1'||sizeof($cats)==''){
         $post_id_1 = get_post($my_id1);
         echo '
         <li>
-            <span class="link-title">'.$post_id_1->post_title.'</span>
-            <div class="feature_cat">
-                        <span class="icon_cat"><img src="'.tfuse_options('cat_icon',null,$slider['general']['categories_select']['2'] ).'" alt="" />
-                        '. get_cat_name($slider['general']['categories_select']['2']).'
-                        </span>
-                <a href="'.get_permalink($post_id_1).'" class="link-more">'. _("Read more","tfuse").'</a>
+        <img src="'.$slide['slide_src'].'" width="960" alt="'.$slide['slide_title'].'" />
+            <div class="slip-titles">'.$post_id_0->post_title.'
+            <p>'. get_cat_name($slider['general']['categories_select']['0']).'</p>
             </div>
+            <a href="'.get_permalink($post_id_0).'" class="link-more"></a>
         </li>';
         ?>
     </ul>

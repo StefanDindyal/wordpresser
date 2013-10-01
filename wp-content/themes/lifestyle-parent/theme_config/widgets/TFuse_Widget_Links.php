@@ -59,7 +59,7 @@ class TFuse_Widget_Links extends WP_Widget {
     function form( $instance ) {
 
         //Defaults
-        $instance = wp_parse_args( (array) $instance, array(  'images' => true, 'name' => true, 'description' => false, 'rating' => false, 'category' => false, 'limit' => '-1' ) );
+        $instance = wp_parse_args( (array) $instance, array(  'images' => true, 'name' => true, 'description' => false, 'rating' => false, 'category' => false ) );
         $link_cats = get_terms( 'link_category');
         $limit = isset( $instance['limit'] ) ? esc_attr( $instance['limit'] ) : '';
              ?>

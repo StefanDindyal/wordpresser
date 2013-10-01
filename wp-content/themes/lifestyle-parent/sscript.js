@@ -40,6 +40,14 @@ jQuery( document ).ready(function( $ ) {
 	$('.post-item').last().addClass('last-post');
 	$('.topmenu ul#menu-main_nav li').last().addClass('last-nav');
 
+	if(!$('#menu-main_nav li').hasClass('current-menu-item')){
+		$('#menu-main_nav li').first().addClass('current-menu-item');
+	}	
+
+	if($('.widget_links h3').text() !== 'Affiliates') {
+		$('.widget_links h3').text('Affiliates');
+	}
+
 	$(window).load(function(){
 		
 	});

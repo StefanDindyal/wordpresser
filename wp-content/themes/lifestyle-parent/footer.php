@@ -11,7 +11,8 @@
 <div class="footer <?php if(is_single()){echo 'kill';}?>">
     <div class="container_24">
       <div class="foot-top">
-      <div class="twtr-foot">     
+      <div class="twtr-foot">  
+        <?php tfuse_get_tweets('Hadrok'); ?>   
         <div id="tweet-container-b" class="twtr-feed"></div>
       </div>
       <div class="aff"><?php dynamic_sidebar('custom-footer'); ?>
