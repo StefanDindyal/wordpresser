@@ -13,7 +13,7 @@
       <div class="foot-top">
       <div class="twtr-foot">  
         <?php tfuse_get_tweets('Hadrok'); ?>   
-        <div id="tweet-container-b" class="twtr-feed"></div>
+        <div id="tweet-container-b" class="twtr-feed" data-tuser="<?php echo tfuse_options('tuser_id'); ?>"></div>
       </div>
       <div class="aff"><?php dynamic_sidebar('custom-footer'); ?>
       </ul></div>

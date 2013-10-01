@@ -20,7 +20,7 @@ jQuery( document ).ready(function( $ ) {
 	
 	/*TWITTER2*/
 	targetB = $('#tweet-container-b');
-	var user_nameB = 'gtms'; //Update Twitter User Handle
+	var user_nameB = targetB.attr('data-tuser'); //Update Twitter User Handle
 	var tweet_countB = '1'; //Update Number of listed Tweets
 	$.ajax({
 	  type: "GET",

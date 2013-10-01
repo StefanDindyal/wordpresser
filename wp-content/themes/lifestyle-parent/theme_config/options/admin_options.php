@@ -99,6 +99,13 @@ $options = array(
                             'type' => 'text',
                             'divider' => true
                         ),
+                        array('name' => 'Twitter Username',
+                            'desc' => 'Enter your Twitter Username.',
+                            'id' => TF_THEME_PREFIX . '_tuser_id',
+                            'value' => '',
+                            'type' => 'text',
+                            'divider' => true
+                        ),
                         // E-Mail URL Option
                         array('name' => 'E-Mail URL',
                             'desc' => 'Enter your preferred E-mail subscription URL. (Feedburner or other)',
