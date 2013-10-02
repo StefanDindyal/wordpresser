@@ -34,6 +34,7 @@ class TFuse_Widget_Recent_Posts extends WP_Widget {
             $number = 15;
 
         $template = empty( $instance['template'] ) ? 'box_white' : $instance['template'];
+        $cat = $instance['cat'];
         //if (is_home()) $template = '';
 
         $before_widget = '<div  class="box box_menu widget_recent_entries posts">';
@@ -41,7 +42,7 @@ class TFuse_Widget_Recent_Posts extends WP_Widget {
         $before_title = '<h3>';
         $after_title = '</h3><div class="split"></div>';
 
-        $r = new WP_Query(array('showposts' => $number, 'nopaging' => 0, 'post_status' => 'publish', 'ignore_sticky_posts' => 1));
+        $r = new WP_Query(array('showposts' => $number, 'nopaging' => 0, 'category_name' => $cat, 'post_status' => 'publish', 'ignore_sticky_posts' => 1));
         if ($r->have_posts()) :
             ?>
         <?php echo $before_widget;
@@ -67,6 +68,7 @@ class TFuse_Widget_Recent_Posts extends WP_Widget {
     function update( $new_instance, $old_instance ) {
         $instance = $old_instance;
         $instance['title'] = $new_instance['title'];
+        $instance['cat'] = $new_instance['cat'];
         $instance['number'] = (int) $new_instance['number'];
         $this->flush_widget_cache();
 
@@ -90,6 +92,7 @@ class TFuse_Widget_Recent_Posts extends WP_Widget {
     function form( $instance ) {
         $instance = wp_parse_args( (array) $instance, array(  'template' => 'box_white',) );
         $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
+        $cat = isset($instance['cat']) ? esc_attr($instance['cat']) : '';
         if ( !isset($instance['number']) || !$number = (int) $instance['number'] )
             $number = 5;
         $template = esc_attr( $instance['template'] );
@@ -98,6 +101,9 @@ class TFuse_Widget_Recent_Posts extends WP_Widget {
 
     <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','tfuse'); ?></label>
         <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
+
+    <p><label for="<?php echo $this->get_field_id('cat'); ?>"><?php _e('Category:','tfuse'); ?></label>
+        <input class="widefat" id="<?php echo $this->get_field_id('cat'); ?>" name="<?php echo $this->get_field_name('cat'); ?>" type="text" value="<?php echo $cat; ?>" /></p>
 
     <p><label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts to show:','tfuse'); ?></label>
         <input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>

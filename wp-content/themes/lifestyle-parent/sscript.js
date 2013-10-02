@@ -22,9 +22,21 @@ jQuery( document ).ready(function( $ ) {
 	$('.post-item').last().addClass('last-post');
 	$('.topmenu ul#menu-main_nav li').last().addClass('last-nav');
 
-	if(!$('#menu-main_nav li').hasClass('current-menu-item')){
-		$('#menu-main_nav li').first().addClass('current-menu-item');
-	}	
+	$('.mobile-nav').click(function(e){
+		if($('.topmenu').hasClass('open')){
+			$('.topmenu').hide();
+			$('.topmenu').removeClass('open');
+			$(this).removeClass('open');
+		} else {
+			$('.topmenu').show();
+			$('.topmenu').addClass('open');
+			$(this).addClass('open');
+		}
+	});
+
+	// if(!$('#menu-main_nav li').hasClass('current-menu-item')){
+	// 	$('#menu-main_nav li').first().addClass('current-menu-item');
+	// }	
 
 	if($('.widget_links h3').text() !== 'Affiliates') {
 		$('.widget_links h3').text('Affiliates');
@@ -32,15 +44,17 @@ jQuery( document ).ready(function( $ ) {
 
 	$(window).load(function(){
 		 $('#tweet-container ul').bxSlider({
-		    slideWidth: 490,
+		    slideWidth: 630,
 		    minSlides: 1,
 		    maxSlides: 1,
-		    infiniteLoop: false
+		    adaptiveHeight: true
 		  });
 	});
 
-	var getwidID = $('#tweet-container').attr('data-tuser');
-	twitterFetcher.fetch(getwidID, '', 3, true, true, true, '', false, handleTweets);
+	if($('#tweet-container').length){
+		var getwidID = $('#tweet-container').attr('data-tuser');
+		twitterFetcher.fetch(getwidID, '', 3, true, true, true, '', false, handleTweets);
+	}
 
 });
  function handleTweets(tweets){

@@ -20,6 +20,7 @@
             tfuse_head();
             wp_head();
             ?>
+            <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         </head>
         <body>
         <?php /*<div class="head_bar">
@@ -46,7 +47,15 @@
                 <div class="clear"></div>
                 <div class="nav-over">
                 <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('description'); ?>" class="logo">
-                        <img src="<?php echo tfuse_logo(); ?>" alt="<?php bloginfo('name'); ?>"  border="0" /></a>                    
+                        <img src="<?php echo tfuse_logo(); ?>" alt="<?php bloginfo('name'); ?>"  border="0" /></a>
+                <div class="mobile-nav">
+                    Nav
+                    <div class="icos">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>                
                 <!-- topmenu -->
                 <?php  tfuse_menu('secondary');  ?>
                 <!--/ topmenu -->  

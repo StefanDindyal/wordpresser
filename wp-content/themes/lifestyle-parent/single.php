@@ -5,6 +5,7 @@ $sidebar_position = $TFUSE->ext->sidebars->current_position;
 $get_cat_id = get_the_category();
 ?>
 <!-- middle -->
+<div class="<?php if(is_home()){ echo 'cone'; } elseif(is_category()) { echo 'dome'; } elseif(is_page()){ echo 'dec'; } elseif(is_single()){ echo 'sil'; } ?>">
 <div <?php tfuse_class('middle');?>>
     <div class="container_24 single">
         <!-- featured list -->
@@ -67,6 +68,7 @@ $get_cat_id = get_the_category();
         <div class="clear"></div>
     </div>
 
+</div>
 </div>
 <!--/ middle -->
 <?php get_footer(); ?>

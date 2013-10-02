@@ -4,6 +4,7 @@ if ($is_tf_blog_page)die;
 $sidebar_position = tfuse_sidebar_position();
 ?>
 <!-- middle -->
+<div class="<?php if(is_home()){ echo 'cone'; } elseif(is_category()) { echo 'dome'; } elseif(is_page()){ echo 'dec'; } ?>">
 <div <?php tfuse_class('middle');?>>
     <div class="container_24 fronter">
         <!-- featured list -->
@@ -31,6 +32,7 @@ $sidebar_position = tfuse_sidebar_position();
     </div>
     <!--/content -->
 
+</div>
 </div>
 <!--/ middle -->
 <?php get_footer();?>

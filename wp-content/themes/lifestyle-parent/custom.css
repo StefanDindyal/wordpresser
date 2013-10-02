@@ -122,6 +122,12 @@ body {
 .fronter .suffix_1 {
 	padding-top: 110px;
 }
+.dome .suffix_1, .dec .suffix_1, .sil .suffix_1 {
+	padding-top: 35px;
+}
+.dome .twtr-hold {
+	display: none;
+}
 .middle {
 	padding-bottom: 0px;
 }
@@ -730,6 +736,8 @@ img.frame_box {
 	width: 100%;
 	max-width: 290px;
 	height: 388px;
+	display: block;
+	margin: 0 auto;
 }
 .adv_sidebar_300x250 {
 	margin-bottom: 40px;
@@ -821,14 +829,138 @@ img.frame_box {
 	list-style: none;
 }
 #tweet-container ul li {
-	width: 490px;
+	width: auto;
+	padding: 0 20px 20px;
+	margin: 0 auto;
+	position: relative;
+	box-sizing: border-box;
+}
+#tweet-container ul li .user {
+	position: relative;
+	width: 100%;
+	max-width: 210px;
+	padding: 0;
+	margin: 0 auto 10px;
+	display: block;
+	height: auto;
+	overflow: hidden;
+	text-align: center;
+	padding-right: 40px;
+}
+#tweet-container ul li .user a>span {
+	display: inline;
+	line-height: 48px;
+}
+#tweet-container ul li .user a span:first-child {
+	display: none;
 }
 #tweet-container ul li .user img {
-	display: inline-block;
 	margin-right: 10px;
+	border-radius: 24px;
+	overflow: hidden;
+	float: left;
+}
+#tweet-container ul li p.tweet {
+	margin: 0 0 26px;
+}
+#tweet-container ul li p.timePosted {
+	font-size: 16px;
+	line-height: 23px;
 }
 #tweet-container ul li .interact {
 	display: none;
+}
+.mobile-nav {
+	position: relative;
+	display: none;
+	background: #000;
+	height: 62px;
+	border-top: 3px solid #b079da;
+	margin-top: 15px;
+	font-family: 'ralewaybold', sans-serif;
+	text-transform: uppercase;
+	font-size: 19px;
+	letter-spacing: -0.040em;
+	color: #fff;
+	line-height: 62px;
+	height: 62px;
+	padding: 0 18px; 
+	border-top: 3px solid #b079da;
+	background: url(images/nav-hover.png) bottom center repeat-x #000;
+	-moz-transition: 0.2s ease-in-out;
+	-webkit-transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
+}
+.mobile-nav:hover, .mobile-nav.open {
+	border-color: #c89beb;
+	color: #fff;
+	background-color: #6d438d;
+	background-position: top center;
+}
+.mobile-nav .icos {
+	width: 30px;
+	float: right;
+	margin-top: 20px;
+}
+.mobile-nav .icos .bar {
+	width: 100%;
+	height: 3px;
+	background-color: #fff;
+	margin-bottom: 5px;
+}
+.topmenu {
+	background: #000;
+	height: 62px;
+	border-top: 3px solid #b079da;
+	float: right;
+	width: 85%;
+	margin-top: 30px;
+}
+.topmenu ul#menu-main_nav {
+	float: right;
+	width: auto;
+	margin-top: -3px;
+}
+.topmenu ul#menu-main_nav li {
+	background: none;
+	height: 65px;	
+	border-right: 2px solid #5e5e5e;
+}
+.topmenu ul#menu-main_nav li.last-nav {
+	border: 0;
+}
+.topmenu ul#menu-main_nav li a {
+	font-family: 'ralewaybold', sans-serif;
+	text-transform: uppercase;
+	font-size: 19px;
+	letter-spacing: -0.040em;
+	margin: 0;
+	padding: 0;
+	display: block;
+	line-height: 62px;
+	height: 62px;
+	padding: 0 34px; 
+	border-top: 3px solid #b079da;
+	background: url(images/nav-hover.png) bottom center repeat-x #000;
+	-moz-transition: 0.2s ease-in-out;
+	-webkit-transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
+}
+.topmenu ul#menu-main_nav li a:hover, .topmenu ul#menu-main_nav li.current-menu-item a {
+	border-color: #c89beb;
+	color: #fff;
+	background-color: #6d438d;
+	background-position: top center;
+}
+.suffix_1.content .text img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.suffix_1.content iframe, .suffix_1.content object, .suffix_1.content embed, .player embed {
+	width: 100%;
+	display: block;
+	height: 400px;
 }
 /**
  * BxSlider v4.0 - Fully loaded, responsive content slider
@@ -1030,6 +1162,30 @@ img.frame_box {
 	font-size: .85em;
 	padding: 10px;
 }
+.bx-wrapper .bx-controls-direction a {
+	width: 44px;
+	height: 48px;
+	margin-top: -14px;
+}
+.bx-wrapper .bx-prev {
+	left: -68px;
+	background: url(images/twitter-arrows.png) top left no-repeat;
+}
+.bx-wrapper .bx-prev:hover {
+	background: url(images/twitter-arrows.png) bottom left no-repeat;
+	border: 0;
+}
+.bx-wrapper .bx-next {
+	right: -68px;
+	background: url(images/twitter-arrows.png) top right no-repeat;
+}
+.bx-wrapper .bx-next:hover {
+	background: url(images/twitter-arrows.png) bottom right no-repeat;
+	border: 0;
+}
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+	bottom: -10px;
+}
 
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
 .clearfix:after { clear: both; }
@@ -1063,13 +1219,8 @@ img.frame_box {
 	.topmenu {
 		width: 100%;
 		margin-top: 15px;
-		display: none;
 	}
 	.topmenu ul#menu-main_nav {
-		width: 100%;
-		float: none;
-	}
-	.topmenu .dropdown li {
 		float: none;
 	}
 	#feature_output {
@@ -1156,10 +1307,20 @@ img.frame_box {
 	.footer .aff .box_menu {
 		margin-bottom: 0;
 	}
+	.bx-controls-direction {
+		display: none;
+	} 
+	.bx-wrapper .bx-pager {
+		display: block;
+	}
 }
 @media only screen and (max-width : 768px) { 
 	.latest {
 		padding: 0 10px;
+	}
+	.topmenu ul#menu-main_nav li a {
+		font-size: 14px;
+		padding: 0 18px;
 	}
 	.post-item, .text {
 		padding: 0 10px;
@@ -1172,9 +1333,38 @@ img.frame_box {
 		float: none;
 	}
 }
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width : 680px) {
+	.video_embed iframe, .video_embed object, .video_embed embed, .suffix_1.content iframe, .suffix_1.content object, .suffix_1.content embed, .player embed {
+		height: 315px;
+	}
 	.adv_head_728x90 img {
 		display: none;
+	}
+	.mobile-nav {
+		display: block;
+	}
+	.topmenu {
+		display: none;
+		margin-top: 0;
+	}
+	.topmenu {
+		width: 100%;
+		margin-top: 0px;
+		position: absolute;
+	}
+	.topmenu ul#menu-main_nav {
+		width: 100%;
+		float: none;
+	}
+	.topmenu .dropdown li {
+		float: none;
+	}
+	.topmenu ul#menu-main_nav li {
+		height: 45px;
+	}
+	.topmenu ul#menu-main_nav li a {
+		line-height: 45px;
+		height: 45px;
 	}
 	.entry .alignleft {
 		float: none;

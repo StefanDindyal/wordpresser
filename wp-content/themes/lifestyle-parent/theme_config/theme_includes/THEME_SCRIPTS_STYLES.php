@@ -46,7 +46,7 @@ if ( ! function_exists( 'tfuse_add_js' ) ) :
     {
         $template_directory = get_template_directory_uri();
 
-        wp_enqueue_script( 'jquery' );
+        // wp_enqueue_script( 'jquery' );
 
         wp_register_script( 'jquery.tools.min',tfuse_get_file_uri('/js/jquery.tools.min.js'),array('jquery'), '', false );
         wp_enqueue_script( 'jquery.tools.min' );
