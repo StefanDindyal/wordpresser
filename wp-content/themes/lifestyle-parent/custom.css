@@ -1186,6 +1186,15 @@ img.frame_box {
 .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
 	bottom: -10px;
 }
+.hashtitle {
+	font-size: 31px;
+	line-height: 36px;
+	letter-spacing: -0.040em;
+	color: #662d91;
+	text-align: center;
+	font-family: 'ralewaybold', sans-serif;
+	margin-bottom: 16px;
+}
 
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
 .clearfix:after { clear: both; }
@@ -1396,6 +1405,9 @@ img.frame_box {
 	}
 	.other_posts .nextp {
 		right: 2%;
+	}
+	.twtr-hold {
+		padding-top: 0;
 	}
 }
 @media only screen and (max-width : 320px) {	

@@ -16,6 +16,9 @@ global $page_class;
                <div class="<?php echo $page_class; ?> content">
                 <?php if(tfuse_options('thash_id')){ ?>
                 <div class="twtr-hold">
+                    <div class="hashtitle">
+                        <?php echo tfuse_options('thashtitle_id'); ?>
+                    </div>
                     <div id="tweet-container" class="twtr-feed" data-tuser="<?php echo tfuse_options('thash_id'); ?>"></div>
                 </div>
                 <?php } ?>
