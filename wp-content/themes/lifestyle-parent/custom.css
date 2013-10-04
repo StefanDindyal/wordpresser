@@ -1206,24 +1206,38 @@ img.frame_box {
 	body {
 		-webkit-text-size-adjust: none;
 	}
+	.container_24 .grid_15 {
+		max-width: 100%;
+	}
 	.header_right, .header_left {
 		width: 100%;
 	}
 	.header_right {
-		margin-top: 0;
+		margin-top: 35px;
 		margin-bottom: 15px;
+		float: right;
+		width: auto;
+		margin-right: 10px;
+	}
+	.post-item, .text {
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 	.social_icons, .adv_head_728x90 {
 		margin: 0 auto;
+	}
+	.social_icons {
+		float: right;
+		margin: 0;
 	}
 	.logo {
 		position: relative;
 		width: 230px;
 		display: block;
-		margin: 0 auto;
 		float: none;
 		top: auto;
 		left: auto;
+		margin-left: 10px;
 	}
 	.topmenu {
 		width: 100%;
@@ -1332,7 +1346,7 @@ img.frame_box {
 		padding: 0 18px;
 	}
 	.post-item, .text {
-		padding: 0 10px;
+	
 	}
 	.footer .foot-bot {
 		padding: 10px 10px 16px;
@@ -1408,6 +1422,21 @@ img.frame_box {
 	}
 	.twtr-hold {
 		padding-top: 0;
+	}
+}
+@media only screen and (max-width : 459px) {
+	.header_right {
+		float: none;
+		margin: 35px auto 15px;
+		width: 100%;
+		overflow: hidden;
+	}
+	.social_icons {
+		float: none;
+		margin: 0 auto;
+	}
+	.logo {
+		margin: 0 auto;
 	}
 }
 @media only screen and (max-width : 320px) {	
