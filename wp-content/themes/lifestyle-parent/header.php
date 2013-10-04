@@ -33,6 +33,7 @@
         <!--/ head menu -->
         <div class="header">
             <div class="container_24 clearfix">
+                <div class="clearfix">
                 <div class="header_left">
                     <?php echo  tfuse_top_adds(); ?>                                        
                 </div>
@@ -43,6 +44,7 @@
                         <div class="clearboth"></div>
                     </div>
                     <?php  echo  tfuse_search(); ?>
+                </div>
                 </div>
                 <div class="nav-over">
                 <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('description'); ?>" class="logo">
