@@ -84,7 +84,7 @@ if ( ! function_exists( 'tfuse_get_header_content' ) ):
                     $slider_image_resize = ( isset($slider['general']['slider_image_resize']) && $slider['general']['slider_image_resize'] == 'true' ) ? true : false;
                     foreach ($slider['slides'] as $k => $slide) :
                         $image = new TF_GET_IMAGE();
-                        $slider['slides'][$k]['slide_src'] = $image->width(960)->height(444)->src($slide['slide_src'])->resize($slider_image_resize)->get_src();   
+                        $slider['slides'][$k]['slide_src'] = $image->width(960)->height(325)->src($slide['slide_src'])->resize($slider_image_resize)->get_src();   
                     endforeach;
                 endif;
 

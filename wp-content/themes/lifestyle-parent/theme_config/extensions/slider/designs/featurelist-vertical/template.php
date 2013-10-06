@@ -74,7 +74,7 @@ elseif(sizeof($cats)=='1'||sizeof($cats)==''){
         <li>
             <div class="low-right"></div>
             <div class="titles">'.$slide['slide_title'].'<p>'.$slide['slide_subtitle'].'</p></div>
-            <img src="'.$slide['slide_src'].'" width="960" height="325" alt="'.$slide['slide_title'].'" />
+            <img src="'.$slide['slide_src'].'" width="960" alt="'.$slide['slide_title'].'" />
             <a href="'.$slide['slide_url'].'"></a>            
         </li>
         ';?>

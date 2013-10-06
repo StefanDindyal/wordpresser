@@ -261,13 +261,14 @@ body {
 }
 #feature_tabs li {
 	width: 300px;
-	height: 110px;
+	height: 102px !important;
 	margin: 0;
 	padding: 0;
 	float: left;
 	background: none;
 	margin-right: 30px;
 	position: relative;
+	overflow: hidden;
 }
 #feature_tabs li img {
 	position: absolute;
@@ -350,7 +351,7 @@ body {
 .twtr-hold {
 	padding-bottom: 32px;
 	margin-bottom: 30px;
-	padding-top: 42px;
+	padding-top: 38px;
 	border-bottom: 2px solid #efe3f9;
 }
 .twtr-feed {
@@ -1350,7 +1351,7 @@ img.frame_box {
 		line-height: 26px;
 	}
 	#feature_tabs li:last-child {
-		height: 110px;
+		height: 102px;
 	}
 	.container_24 .suffix_1 {
 		padding-top: 0;
