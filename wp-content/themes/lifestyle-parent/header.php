@@ -2,6 +2,7 @@
         <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
             <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <title><?php  if(tfuse_options('disable_tfuse_seo_tab'))
             {wp_title( '|', true, 'right' );bloginfo( 'name' );
                 $site_description = get_bloginfo( 'description', 'display' );
