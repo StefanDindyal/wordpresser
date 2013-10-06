@@ -50,7 +50,7 @@
                 <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('description'); ?>" class="logo">
                         <img src="<?php echo tfuse_logo(); ?>" alt="<?php bloginfo('name'); ?>"  border="0" /></a>
                 <div class="mobile-nav">
-                    Nav
+                    <div class="inner"></div>
                     <div class="icos">
                         <div class="bar"></div>
                         <div class="bar"></div>
