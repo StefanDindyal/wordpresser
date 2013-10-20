@@ -88,7 +88,7 @@ if (!function_exists('tfuse_media')) :
             $output .="</span>";
         }
         else
-            $output .= '<a href="'.get_permalink($post->ID).'">'.$tfuse_image.'</a>';
+            $output .= '<span class="'.$tfuse_media['img_position'].'"><a href="'.get_permalink($post->ID).'">'.$tfuse_image.'</a></span>';
 
         if( $return )
             return $output;

@@ -955,7 +955,11 @@ img.frame_box {
 	-webkit-transition: 0.2s ease-in-out;
 	transition: 0.2s ease-in-out;
 }
-.topmenu ul#menu-main_nav li a:hover, .topmenu ul#menu-main_nav li.current-menu-item a {
+.topmenu ul#menu-main_nav li a:hover, 
+.topmenu ul#menu-main_nav li.current-menu-item a,
+.topmenu ul#menu-main_nav li.current-post-ancestor a,
+.topmenu ul#menu-main_nav li.current-menu-parent a,
+.topmenu ul#menu-main_nav li.current-post-parent a {
 	border-color: #c89beb;
 	color: #fff;
 	background-color: #6d438d;
