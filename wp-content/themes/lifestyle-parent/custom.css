@@ -605,8 +605,8 @@ body {
 }
 .entry, .text p {
 	font-family: 'ralewayregular', sans-serif;
-	font-size: 20px;
-	line-height: 29px;
+	font-size: 17px;
+	line-height: 25px;
 	color: #6e6e6e;
 	padding: 0;
 }
