@@ -839,7 +839,7 @@ img.frame_box {
 #tweet-container ul li .user {
 	position: relative;
 	width: 100%;
-	max-width: 210px;
+	max-width: 300px;
 	padding: 0;
 	margin: 0 auto 10px;
 	display: block;
@@ -956,14 +956,14 @@ img.frame_box {
 	transition: 0.2s ease-in-out;
 }
 .topmenu ul#menu-main_nav li a:hover, 
-.topmenu ul#menu-main_nav li.current-menu-item a,
-.topmenu ul#menu-main_nav li.current-post-ancestor a,
-.topmenu ul#menu-main_nav li.current-menu-parent a,
-.topmenu ul#menu-main_nav li.current-post-parent a {
+.topmenu ul#menu-main_nav li.current-menu-item a {
 	border-color: #c89beb;
 	color: #fff;
 	background-color: #6d438d;
 	background-position: top center;
+}
+.topmenu .dropdown li a:hover, .topmenu .dropdown .current-post-parent a, .topmenu .dropdown .current-post-parent li a:hover, .topmenu .dropdown .current-post-parent .current_page_item a, .topmenu .dropdown .current-menu-ancestor a, .topmenu .dropdown .current-menu-ancestor a:hover, .topmenu .dropdown li li.current-menu-ancestor a, .topmenu .dropdown li .current-menu-ancestor .current-post-parent a {
+	color: #fff;
 }
 .suffix_1.content .text img {
 	width: 100%;
@@ -1370,7 +1370,7 @@ img.frame_box {
 		width: 96%;
 		padding: 0 2%;
 	}
-	.container_24 .grid_8 > div {
+	.container_24 .grid_8 > div, .container_24 .grid_8 .kill > div {
 		float: left;
 	}
 	.widget_ads, #fvid {
@@ -1384,6 +1384,9 @@ img.frame_box {
 		width: 50%;
 		background: none;
 	}
+	.adv_sidebar_300x250 {
+		margin-top: 100px;
+}
 	.adv_sidebar_160x600 {
 		display: none;
 	}
