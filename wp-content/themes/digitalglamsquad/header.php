@@ -47,7 +47,7 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 			</div><!-- #navbar -->
 		</header><!-- #masthead -->
-		<?php if(is_home){ ?>
+		<?php if(is_home()){ ?>
 			<div id="slider" class="edge">
 				<div class="target">
 					<?php
