@@ -822,6 +822,16 @@ body a:hover {
  Mobile
 ////////////////////////////////////////////////*/
 @media only screen and (max-width: 768px) {
+	#slider .contents .entry-title {
+		font-size: 40px;
+		line-height: 60px;
+		padding-top: 40px;
+	}
+	#slider .contents .copy {
+		padding: 20px 10px;
+		font-size: 17px;
+		line-height: 28px;
+	}
 	.featured .gut {
 		max-width: 505px;
 		margin-left: auto;
@@ -899,5 +909,43 @@ body a:hover {
 	}
 	.page-contents p {
 		padding: 0 10px;
+	}
+	.clients .gallery-block .gallery-item {
+		margin-bottom: 20px;
+		display: block;
+	}
+	.clients .gallery-block .gallery-item .inner {
+		width: 100%;
+	}
+	#slider .contents .entry-title {
+		padding-left: 10px;
+		padding-right: 10px;
+		font-size: 35px;
+		line-height: 42px;
+	}
+	#slider img {
+		display: none;
+	}
+	#slider .entry-thumbnail {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+	#slider .contents {
+		position: relative;
+		left: auto;
+		top: auto;
+		margin: 0 auto;
+	}
+	#slider .contents .btn {
+		margin-bottom: 0;
+	}
+	#slider .trap {
+		z-index: 1;
+	}
+	#slider .hentry {
+		min-height: 660px !important;
 	}
 }

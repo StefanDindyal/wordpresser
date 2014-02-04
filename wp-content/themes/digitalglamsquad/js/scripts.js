@@ -1,9 +1,16 @@
 jQuery( document ).ready(function( $ ) {
 	$("#cont").fitVids();
-	$('#slider .target').bxSlider({
-		auto : true,
-		pause : 5000
-	});
+	if($(window).width() <= 580) {
+		$('#slider .target').bxSlider({
+			auto : true,
+			pause : 5000
+		});
+	} else {
+		$('#slider .target').bxSlider({
+			auto : true,
+			pause : 5000
+		});
+	}	
 	$('.clients .target').bxSlider({
 	  	minSlides: 1,
 	  	maxSlides: 4,
