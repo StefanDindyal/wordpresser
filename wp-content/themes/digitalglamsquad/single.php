@@ -1,28 +1,21 @@
-<?php
-/**
- * The template for displaying all single posts
- *
- * @package WordPress
- * @subpackage Twenty_Thirteen
- * @since Twenty Thirteen 1.0
- */
-
-get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
-			<?php /* The loop */ ?>
+<?php get_header(); ?>
+	<div id="singles" class="singles">
 			<?php while ( have_posts() ) : the_post(); ?>
-
+				<div class="rim">
+					<div class="inner">
+						<?php if (in_category('featured')){ ?>
+							<h2>Featured Projects</h2>
+							<a href="<?php bloginfo('url'); ?>/press">view all</a>
+						<?php } else if (in_category('news')){ ?>
+							<h2>The Latest</h2>
+							<a href="<?php bloginfo('url'); ?>/news">view all</a>
+						<?php } else { ?>
+							<h2>News</h2>
+							<a href="<?php bloginfo('url'); ?>/news">view all</a>
+						<?php } ?>						
+					</div>
+				</div>
 				<?php get_template_part( 'content', get_post_format() ); ?>
-				<?php twentythirteen_post_nav(); ?>
-				<?php comments_template(); ?>
-
 			<?php endwhile; ?>
-
-		</div><!-- #content -->
 	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

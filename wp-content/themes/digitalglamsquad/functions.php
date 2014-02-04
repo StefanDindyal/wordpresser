@@ -239,6 +239,7 @@ add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
 include( get_template_directory() . '/inc/metaboxes/meta_box.php' );
 require_once( get_template_directory() . '/inc/post-slider.php' );
 require_once( get_template_directory() . '/inc/post-clients.php' );
+require_once( get_template_directory() . '/inc/post-services.php' );
 // Excerpt
 function new_excerpt_more( $more ) {
 	return '<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">read more</a>';
@@ -274,4 +275,54 @@ function limit_title($title, $n){
 	} else { 
 		get_the_title(); 
 	}
+}
+function rg_gallery($limit, $last_class = 3){
+	global $post;
+	$regex_pattern = get_shortcode_regex();
+	if(preg_match_all('/'.$regex_pattern.'/s', $post->post_content, $matches) && array_key_exists( 2, $matches ) && in_array( 'gallery', $matches[2] ) ):
+	 	$keys = array_keys( $matches[2], 'gallery' );
+	 	
+	 	foreach( $keys as $key ):
+	 	    $atts = shortcode_parse_atts( $matches[3][$key] );
+	 	        if( array_key_exists( 'ids', $atts ) ):
+	 			  
+	            $attachments = get_children( array('post_parent' => $post->post_content, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'post__in' => explode( ',', $atts['ids'] ), 'order' => 'ASC', 'orderby' => 'post__in', 'numberposts' => $limit) );
+	 	           
+	 	           $post_title = get_the_title();
+	 				  $title = preg_replace('/\s*/', '', $post_title);
+	 				  $post_id = strtolower($title);
+	 				  							  							  		  		           
+	 	           if ($attachments):
+							$last = 0;
+	   		         echo '<div data-id="'.$post_id.'" class="gallery-block">';
+	 					  	foreach( $attachments as $attachment ):
+	 					  		$img_title = $attachment->post_title;
+	 					  		$permalink = get_permalink($post->ID);
+	 					  		$full_img = wp_get_attachment_image_src($attachment->ID, 'full-size');
+	 					  		$main_img = wp_get_attachment_image($attachment->ID, 'medium');
+	 					  		$featured_img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+	 					  		
+	 					  		if($limit == 1){
+	 					  		   echo '<div class="single-gallery-item">';
+	 					  		   	if($featured_img){ 
+	 					  		   		echo '<a href="'.$permalink.'" title="'.$img_title.'" class="gallery-cover"><img src="'.$featured_img[0].'" /></a>'; 
+	 					  		   	} elseif(!$featured_img){
+	 					  		      	echo '<a href="'.$permalink.'" title="'.$img_title.'" class="gallery-cover">'.$main_img.'</a>';
+	 					  		   	}
+	 					  		   echo '</div>';
+	 					  		} elseif($limit === -1){
+	 					  		  echo '<div class="gallery-item '.(++$i % $last_class ? "" : "last").'"><div class="inner">';
+	 					  		   	echo $main_img;
+	 					  		   echo '</div></div>';
+	 					  		} else {
+	 					  			echo '<div class="gallery-item '.(++$i % $last_class ? "" : "last").'"><div class="inner">';
+	 					  		   	echo $main_img;
+	 					  		   echo '</div></div>';
+	 					  		}			        						   
+	 					  	endforeach;
+	 					  	echo '</div>';
+	 	           endif;
+	 	        endif;
+	 	endforeach;
+	endif;
 }

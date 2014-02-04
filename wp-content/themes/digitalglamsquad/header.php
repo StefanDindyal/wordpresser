@@ -18,11 +18,11 @@
 	<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/jquery.bxslider.css" media="screen" type="text/css" />
 	<?php if(is_single()) : global $post; setup_postdata($post); ?>
-		<meta name="description" content="<?php if(excerpt(20)){echo excerpt(20);}else{echo the_title();} ?>" />
+		<meta name="description" content="<?php echo excerpt(20); ?>" />
 		<meta property="og:title" content="<?php the_title(); ?>" />
 		<meta property="og:url" content="<?php the_permalink(); ?>" />
-		<meta property="og:image" content="<?php echo postThumb('share'); ?>" />
-		<meta property="og:description" content="<?php if(excerpt(20)){echo excerpt(20);}else{echo the_title();} ?> " />
+		<meta property="og:image" content="<?php echo postThumb('share-thumb'); ?>" />
+		<meta property="og:description" content="<?php echo excerpt(20); ?> " />
 	<?php  else : ?>
 		<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
 		<meta property="og:title" content="<?php bloginfo( 'name' ); ?>" />
@@ -31,7 +31,7 @@
 		<meta property="og:description" content="<?php bloginfo( 'description' ); ?>" />
 	<?php endif; ?>
 	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="EPIC Deutschland" />
+	<meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>" />
 	<meta property="fb:app_id" content="170704866428416" />
 	<link rel="shortcut icon" href="<?php bloginfo( 'template_directory' ); ?>/img/epic_favicon.jpg" type="image/x-icon" />	
 	<!--[if lt IE 9]>

@@ -38,6 +38,13 @@ function register_clients() {
 	$prefix = 'dgs_';
 	$clients_options = array(
 		array(
+			'label' => 'Clients Official Site Name',
+			'desc' => "Official Site Name. ie: myofficial.com or myofficial site",
+			'id' => $prefix . 'clients_name',
+			'std' => '',
+			'type' => 'text' // text area
+		),
+		array(
 			'label' => 'Clients Official Site',
 			'desc' => "Official Site URL.",
 			'id' => $prefix . 'clients_url',
