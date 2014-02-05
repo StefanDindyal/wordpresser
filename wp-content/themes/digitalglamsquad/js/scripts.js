@@ -28,4 +28,14 @@ jQuery( document ).ready(function( $ ) {
 	  	hideControlOnEnd: true,
 	  	infiniteLoop: false
 	});
+	$('.burger').on('click', function(e){
+		e.preventDefault();
+		if($(this).hasClass('down')){
+			$(this).removeClass('down');
+			$('#cont #header .navbar.mobile .menu-main-left-container').slideUp();
+		} else {
+			$(this).addClass('down');
+			$('#cont #header .navbar.mobile .menu-main-left-container').slideDown();
+		}
+	});
 });

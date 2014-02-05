@@ -46,6 +46,11 @@
 			<div id="navbar" class="navbar">				
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 			</div><!-- #navbar -->
+			<div id="navbar" class="navbar mobile">					
+					<div class="logo"></div>				
+					<div class="burger">Menu</div>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+			</div><!-- #navbar -->
 		</header><!-- #masthead -->
 		<?php if(is_home()){ ?>
 			<div id="slider" class="edge">
