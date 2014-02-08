@@ -7,7 +7,7 @@
 		</div>
 		<div class="featured edge">
 			<?php
-				$args_featured = array( 'category_name' => 'featured', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 2 );
+				$args_featured = array( 'category_name' => 'featured', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => -1 );
 				$q_featured = new WP_Query( $args_featured );
 				if ( $q_featured->have_posts() ) :
 					while ( $q_featured->have_posts() ) : $q_featured->the_post();?>

@@ -315,9 +315,9 @@ function rg_gallery($limit, $last_class = 3){
 	 					  		   	echo $main_img;
 	 					  		   echo '</div></div>';
 	 					  		} else {
-	 					  			echo '<div class="gallery-item '.(++$i % $last_class ? "" : "last").'"><div class="inner">';
+	 					  			echo '<div class="gallery-item '.(++$i % $last_class ? "" : "last").'"><div class="inner"><div class="pes">';
 	 					  		   	echo $main_img;
-	 					  		   echo '</div></div>';
+	 					  		   echo '</div></div></div>';
 	 					  		}			        						   
 	 					  	endforeach;
 	 					  	echo '</div>';
@@ -326,3 +326,28 @@ function rg_gallery($limit, $last_class = 3){
 	 	endforeach;
 	endif;
 }
+// GET FEATURED IMAGE
+function ST4_get_featured_image($post_ID) {
+    $post_thumbnail_id = get_post_thumbnail_id($post_ID);
+    if ($post_thumbnail_id) {
+        $post_thumbnail_img = wp_get_attachment_image_src($post_thumbnail_id, 'share-thumb');
+        return $post_thumbnail_img[0];
+    }
+}
+// ADD NEW COLUMN
+function ST4_columns_head($defaults) {
+    $defaults['featured_image'] = 'Featured Image';
+    return $defaults;
+}
+ 
+// SHOW THE FEATURED IMAGE
+function ST4_columns_content($column_name, $post_ID) {
+    if ($column_name == 'featured_image') {
+        $post_featured_image = ST4_get_featured_image($post_ID);
+        if ($post_featured_image) {
+            echo '<img src="' . $post_featured_image . '" />';
+        }
+    }
+}
+add_filter('manage_slider_posts_columns', 'ST4_columns_head');
+add_action('manage_slider_posts_custom_column', 'ST4_columns_content', 10, 2);

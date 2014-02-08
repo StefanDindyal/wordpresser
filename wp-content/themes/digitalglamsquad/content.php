@@ -5,7 +5,7 @@
 				<h1 class="entry-title">
 					<?php the_title(); ?>
 				</h1>
-				<div class="share-single">
+				<div class="share-single clearfix">
 					<div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
 					<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>">Tweet</a>
 				</div>
@@ -47,7 +47,7 @@
 				<h1 class="entry-title">
 					<?php the_title(); ?>
 				</h1>
-				<div class="share-single">
+				<div class="share-single clearfix">
 					<div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
 					<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>">Tweet</a>
 				</div>

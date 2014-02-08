@@ -5,7 +5,7 @@
 					<div class="inner">
 						<?php if (in_category('featured')){ ?>
 							<h2>Featured Projects</h2>
-							<a href="<?php bloginfo('url'); ?>/press">view all</a>
+							<a href="<?php bloginfo('url'); ?>/projects">view all</a>
 						<?php } else if (in_category('news')){ ?>
 							<h2>The Latest</h2>
 							<a href="<?php bloginfo('url'); ?>/news">view all</a>

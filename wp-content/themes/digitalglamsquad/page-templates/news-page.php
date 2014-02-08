@@ -7,7 +7,7 @@
 		</div>
 		<div class="new clearfix">
 			<?php
-				$args_news = array( 'category_name' => 'news', 'orderby' => 'order', 'order' => 'DESC', 'posts_per_page' => 2 );
+				$args_news = array( 'category_name' => 'news', 'orderby' => 'order', 'order' => 'DESC', 'posts_per_page' => -1 );
 				$q_news = new WP_Query( $args_news );
 				if ( $q_news->have_posts() ) :
 					while ( $q_news->have_posts() ) : $q_news->the_post();

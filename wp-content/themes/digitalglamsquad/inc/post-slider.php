@@ -32,25 +32,7 @@ function register_slider() {
 		  'rewrite' => array( 'slug' => 'slider' ), // changes name in permalink structure
 		  'menu_icon' => get_template_directory_uri().'/inc/images/menu_icon.png',
 		  'menu_position' => 4, // search WordPress Codex for menu_position parameters
-		  'supports' => array( 'title', 'editor', 'thumbnail' ),
+		  'supports' => array( 'title', 'thumbnail' ),
     );
-    register_post_type( 'slider', $args ); // adds your $args array from above    
-	$prefix = 'dgs_';
-	$slider_options = array(
-		array(
-			'label' => 'Slider URL',
-			'desc' => "Slider links to this URL.",
-			'id' => $prefix . 'slider_url',
-			'std' => '',
-			'type' => 'text' // text area
-		),
-		array(
-			'label' => 'Slider Open',
-			'desc' => "Check to have the slider link to a new tab.",
-			'id' => $prefix . 'slider_target',
-			'std' => '',
-			'type' => 'checkbox'
-		)
-	);
-	$slider_options_box = new custom_add_meta_box( 'home-slider', 'Home Slider Options', $slider_options, 'slider', true );	
+    register_post_type( 'slider', $args ); // adds your $args array from above
 }

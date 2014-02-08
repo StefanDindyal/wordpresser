@@ -3,7 +3,7 @@
 	<div class="rim feat">
 		<div class="inner">
 			<h2>Featured Projects</h2>
-			<a href="<?php bloginfo('url'); ?>/press">view all</a>
+			<a href="<?php bloginfo('url'); ?>/projects">view all</a>
 		</div>
 	</div>
 	<div class="featured edge">
@@ -44,6 +44,7 @@
 		</div>
 	</div>
 	<div class="clients">
+		<div class="push">
 		<?php
 			$args_cgal = array( 'pagename' => 'clients' );
 			$q_cgal = new WP_Query( $args_cgal );
@@ -53,6 +54,7 @@
 				endwhile;
 			endif; wp_reset_postdata();
 		?>
+		</div>
 		<div class="target">
 			<?php
 				$args_clients = array( 'post_type' => 'clients', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => -1 );

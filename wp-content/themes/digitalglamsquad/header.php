@@ -47,13 +47,14 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 			</div><!-- #navbar -->
 			<div id="navbar" class="navbar mobile">					
-					<div class="logo"></div>				
-					<div class="burger">Menu</div>
+					<a href="<?php bloginfo('url'); ?>" class="logo hidetext">Home</a>				
+					<div class="burger"><div></div><div></div><div></div></div>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 			</div><!-- #navbar -->
 		</header><!-- #masthead -->
 		<?php if(is_home()){ ?>
 			<div id="slider" class="edge">
+				<div class="out">
 				<div class="target">
 					<?php
 						$args_slider = array( 'post_type' => 'slider', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 3 );
@@ -63,7 +64,24 @@
 								get_template_part( 'content', 'slider' );
 							endwhile;
 						endif; wp_reset_postdata();
-					?>
+					?>					
+				</div>
+				</div>
+				<div class="trap"></div>
+				<div class="out-up">
+				<div class="contents">
+					<?php
+						$args_slide_txt = array( 'pagename' => 'slider-copy' );
+						$q_slide_txt = new WP_Query( $args_slide_txt );
+						if ( $q_slide_txt->have_posts() ) :
+							while ( $q_slide_txt->have_posts() ) : $q_slide_txt->the_post(); ?>
+								<div class="copy">
+									<?php the_content(); ?>
+								</div>		
+							<?php endwhile;
+						endif; wp_reset_postdata();
+					?>						
+				</div>
 				</div>
 				<div class="bot-edge"></div>
 			</div>

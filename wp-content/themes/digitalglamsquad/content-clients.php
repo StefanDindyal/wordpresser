@@ -28,23 +28,26 @@
 			<div class="site"><a href="<?php echo $client_site; ?>" target="_blank"><?php echo $client_site_name; ?></a></div>
 		<?php } ?>
 		<?php if($client_facebook || $client_twitter || $artist_instagram || $client_youtube || $client_vevo){ ?>
-			<ul class="csocial">
-				<?php if($client_facebook){ ?>
-					<li><a href="<?php echo $client_facebook; ?>" target="_blank" class="facebook hidetext">Facebook</a></li>
-				<?php } ?>
-				<?php if($client_twitter){ ?>
-					<li><a href="<?php echo $client_twitter; ?>" target="_blank" class="twitter hidetext">Twitter</a></li>
-				<?php } ?>
-				<?php if($client_facebook){ ?>
-					<li><a href="<?php echo $client_instagram; ?>" target="_blank" class="instagram hidetext">Instagram</a></li>
-				<?php } ?>
-				<?php if($client_youtube){ ?>
-					<li><a href="<?php echo $client_youtube; ?>" target="_blank" class="youtube hidetext">YouTube</a></li>
-				<?php } ?>
-				<?php if($client_vevo){ ?>
-					<li><a href="<?php echo $client_vevo; ?>" target="_blank" class="vevo hidetext">Vevo</a></li>
-				<?php } ?>
-			</ul>
+			<div class="soc-hold">
+				<div class="soc-title">Social Networks</div>
+				<ul class="csocial">
+					<?php if($client_facebook){ ?>
+						<li><a href="<?php echo $client_facebook; ?>" target="_blank" class="facebook hidetext">Facebook</a></li>
+					<?php } ?>
+					<?php if($client_twitter){ ?>
+						<li><a href="<?php echo $client_twitter; ?>" target="_blank" class="twitter hidetext">Twitter</a></li>
+					<?php } ?>
+					<?php if($client_facebook){ ?>
+						<li><a href="<?php echo $client_instagram; ?>" target="_blank" class="instagram hidetext">Instagram</a></li>
+					<?php } ?>
+					<?php if($client_youtube){ ?>
+						<li><a href="<?php echo $client_youtube; ?>" target="_blank" class="youtube hidetext">YouTube</a></li>
+					<?php } ?>
+					<?php if($client_vevo){ ?>
+						<li><a href="<?php echo $client_vevo; ?>" target="_blank" class="vevo hidetext">Vevo</a></li>
+					<?php } ?>
+				</ul>
+			</div>
 		<?php } ?>
 	<?php } ?>
 </article><!-- #post -->
