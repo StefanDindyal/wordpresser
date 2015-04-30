@@ -1,0 +1,288 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, 
+time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+a:hover, a:active { outline: none; }
+ol { list-style-type: decimal; }
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+td { vertical-align: top; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 15px; }
+textarea { overflow: auto; } 
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+button, input, select, textarea { margin: 0; }
+button {  width: auto; overflow: visible; }
+* { margin: 0; padding: 0; }
+@font-face {
+    font-family: 'caviar_dreamsbold';
+    src: url('caviardreams_bold-webfont.eot');
+    src: url('caviardreams_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('caviardreams_bold-webfont.woff') format('woff'),
+         url('caviardreams_bold-webfont.ttf') format('truetype'),
+         url('caviardreams_bold-webfont.svg#caviar_dreamsbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'caviar_dreamsregular';
+    src: url('caviardreams-webfont.eot');
+    src: url('caviardreams-webfont.eot?#iefix') format('embedded-opentype'),
+         url('caviardreams-webfont.woff') format('woff'),
+         url('caviardreams-webfont.ttf') format('truetype'),
+         url('caviardreams-webfont.svg#caviar_dreamsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: 'Trebuchet MS', Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #040505;
+}
+
+#main-container { margin: 0 auto; width: 100%; }
+
+
+/*/////////////////////////////////////////////
+ SECTIONS
+/////////////////////////////////////////////*/
+.section { height: 1145px; position: relative; }
+.content { position: relative; height: 1144px; overflow: hidden; }
+#home { background: url(../images/top-bg.jpg) no-repeat center top; }
+#home .logo { background: url(../images/logo.png) no-repeat center center #000; width: 100%; height: 54px; display: block; position: relative; top: 20px; padding: 10px 0; }
+.site_menu { position: relative; margin: 35px auto 0; width: 925px; }
+.site_menu li { display: inline-block; padding: 0 5px 0 0; }
+.site_menu li a { text-align: center; text-decoration: none; }
+.site_menu li a p { font: 30px 'caviar_dreamsregular', sans-serif; color: #848484; }
+
+/*/////////////////////////////////////////////
+ CULT LEADER
+/////////////////////////////////////////////*/
+#cult {}
+.cult-bg { background: url(../images/cult_bg.png) no-repeat center top; width: 100%; height: 1145px; position: absolute; z-index: 1; }
+#cult .content { position: absolute; top: 0; width: 100%; z-index: 2; }
+.clouds { background: url(../images/clouds.png) no-repeat center top; display: block; width: 100%; height: 489px; }
+
+.flower { margin: 0 auto; width: 318px; position: relative; top: 110px; min-height: 287px; z-index: 1; }
+.main-flower { background: url(../images/flower.png) no-repeat; display: block; width: 318px; height: 287px; position: absolute; z-index: 1; }
+.top-flower { background: url(../images/shape_top.png) no-repeat; display: block; width: 329px; height: 224px; position: absolute; left: -4px; }
+.bot-flower { background: url(../images/shape_bot.png) no-repeat; display: block; width: 329px; height: 224px; position: absolute; left: -4px; }
+
+.leader { background: url(../images/cult-leader.png) no-repeat; display: block; width: 757px; height: 721px; position: absolute; top: 250px; z-index: 1; }
+
+.throne { background: url(../images/throne_bg.png) no-repeat; display: block; width: 874px; height: 594px; margin: 165px auto 0; }
+.throne .chair { background: url(../images/throne.png) no-repeat; display: block; width: 318px; height: 491px; margin: 0 auto; }
+
+.explore { width: 308px; position: absolute; left: 350px; top: 250px; }
+.ex-bot { background: url(../images/explore_bot.png) center bottom no-repeat; display: block; height: 64px; }
+.ex-top { background: url(../images/explore_top.png) center top no-repeat; display: block; height: 116px; }
+.ex-mid { background: url(../images/explore_mid.png) center bottom repeat-y; display: block; text-align: center; height: 45px; }
+.ex-mid span { font: 25px 'caviar_dreamsregular', sans-serif; color: #444a44; text-transform: uppercase; }
+.ex-btn { background: url(../images/explore_arrow.png) no-repeat; display: block !important; width: 89px; height: 77px; margin: 0 auto; cursor: pointer; }
+
+.sky {
+   height:500px;
+/*    background:#d70000; */
+   position:relative;
+   overflow:hidden;
+   -webkit-animation:sky_background 50s ease-out infinite;
+   -moz-animation:sky_background 50s ease-out infinite;
+   -o-animation:sky_background 50s ease-out infinite;
+   -webkit-transform:translate3d(0,0,0);
+   -moz-transform:translate3d(0,0,0);
+   -o-transform:translate3d(0,0,0);
+   max-width: 1800px;
+   margin: 0 auto;
+}
+.moon {
+   background:url("http://montanaflynn.me/lab/css-clouds/images/moon.png");
+   position:absolute;
+   left:0;
+   height:100%;
+   width:300%;
+   -webkit-animation:moon 50s linear infinite;
+   -moz-animation:moon 50s linear infinite;
+   -o-animation:moon 50s linear infinite;
+   -webkit-transform:translate3d(0,0,0);
+   -moz-transform:translate3d(0,0,0);
+   -o-transform:translate3d(0,0,0)
+}
+.clouds_one {
+   background:url(../images/cloud_one.png);
+   position:absolute;
+   left:0;
+   top:0;
+   height:100%;
+   width:300%;
+   -webkit-animation:cloud_one 50s linear infinite;
+   -moz-animation:cloud_one 50s linear infinite;
+   -o-animation:cloud_one 50s linear infinite;
+   -webkit-transform:translate3d(0,0,0);
+   -moz-transform:translate3d(0,0,0);
+   -o-transform:translate3d(0,0,0)
+}
+.clouds_two {
+   background:url(../images/cloud_two.png);
+   position:absolute;
+   left:0;
+   top:0;
+   height:100%;
+   width:300%;
+   -webkit-animation:cloud_two 75s linear infinite;
+   -moz-animation:cloud_two 75s linear infinite;
+   -o-animation:cloud_two 75s linear infinite;
+   -webkit-transform:translate3d(0,0,0);
+   -moz-transform:translate3d(0,0,0);
+   -o-transform:translate3d(0,0,0)
+}
+.clouds_three {
+   background:url(../images/cloud_three.png);
+   position:absolute;
+   left:0;
+   top:0;
+   height:100%;
+   width:300%;
+   -webkit-animation:cloud_three 100s linear infinite;
+   -moz-animation:cloud_three 100s linear infinite;
+   -o-animation:cloud_three 100s linear infinite;
+   -webkit-transform:translate3d(0,0,0);
+   -moz-transform:translate3d(0,0,0);
+   -o-transform:translate3d(0,0,0)
+}
+/*
+@-webkit-keyframes sky_background {
+   0% { background:#d70000; color:#d70000; }   
+   50% { background:#000; color:#ffa3a3; }
+   100% { background:#d70000; color:#d70000 }
+}
+*/
+
+/*
+@-webkit-keyframes moon {
+   0% { opacity: 0; left:-200% -moz-transform: scale(0.5); -webkit-transform: scale(0.5); } 
+   50% { opacity: 1; -moz-transform: scale(1); left:0% bottom:250px; -webkit-transform: scale(1); }
+   100% { opacity: 0; bottom:500px; -moz-transform: scale(0.5); -webkit-transform: scale(0.5); }
+}
+*/
+
+@-webkit-keyframes cloud_one {
+   0% { left:0; }
+   100% { left:-200%; }
+}
+
+@-webkit-keyframes cloud_two {
+   0% { left:0; }
+   100% { left:-200%; }
+}
+
+@-webkit-keyframes cloud_three {
+   0% { left:0; }
+   100% { left:-200%; }
+}
+
+/*
+@-moz-keyframes sky_background {
+   0% { background:#d70000; color:#d70000; }   
+   50% { background:#000; color:#ffa3a3; }
+   100% { background:#d70000; color:#d70000 }
+}
+*/
+
+/*
+@-moz-keyframes moon {
+   0% { opacity: 0; left:-200% -moz-transform: scale(0.5); -webkit-transform: scale(0.5); }  
+   50% { opacity: 1; -moz-transform: scale(1); left:0% bottom:250px; -webkit-transform: scale(1); }
+   100% { opacity: 0; bottom:500px; -moz-transform: scale(0.5); -webkit-transform: scale(0.5); }
+}
+*/
+
+@-moz-keyframes cloud_one {
+   0% { left:0; }
+   100% { left:-200%; }
+}
+
+@-moz-keyframes cloud_two {
+   0% { left:0; }
+   100% { left:-200%; }
+}
+
+@-moz-keyframes cloud_three {
+   0% { left:0; }
+   100% { left:-200%; }
+}
+
+/*/////////////////////////////////////////////
+ THE LOVER
+/////////////////////////////////////////////*/
+#lover { background: url(../images/lovers_bg.jpg) no-repeat center top; margin: -75px 0 0 0; }
+.drip { background: url(../images/drip.png) no-repeat center top; display: block; width: 100%; height: 288px; position: absolute; }
+
+.mirror { width: 395px; margin: 0 auto; position: absolute; top: 80px; right: 465px; overflow: hidden; }
+.mirror-block { max-width: 294px; position: relative; margin: 0 auto; }
+.mirror-frame { background: url(../images/mirror_frame.png) no-repeat; display: block; width: 294px; height: 294px; position: absolute; z-index: 2; }
+.mirror-glass { background: url(../images/mirror.png) no-repeat; display: block; width: 248px; height: 248px; position: absolute; z-index: 1; top: 22px; left: 24px; }
+.slider {width:294px; height:294px; position:relative;}
+.sp, .sp img { width: 294px; height: 294px; position: absolute; border-radius: 150px; overflow: hidden; }
+
+.mirror-nav { width:100%; position: relative; top: 165px; }
+.mirror-nav div { background: url(../images/mirror_arrows.png) no-repeat; display: block; width: 85px; height: 43px; cursor: pointer; }
+.mirror-nav span { position: absolute; top: -18px; }
+.mirror-nav .prev { float:left; background-position: left top; }
+.mirror-nav .next { float:right; background-position: right top; }
+.mirror-nav .prev:hover { background-position: left bottom; }
+.mirror-nav .next:hover { background-position: right bottom; }
+
+.prev-leaf { background: url(../images/leaf_left.png) no-repeat; display: block; width: 126px; height: 83px; left: 0; }
+.next-leaf { background: url(../images/leaf_right.png) no-repeat; display: block; width: 127px; height: 87px; right: 0; }
+
+.fireplace { background: url(../images/fireplace.png) no-repeat; display: block; width: 1056px; height: 643px; position: absolute; right: 100px; bottom: -18px; }
+.fireplace .fire { display: block; width: 145px; height: 143px; position: absolute; right: 386px; top: 191px; }
+.fireplace .fire img { width: 145px; height: 143px; }
+
+/*/////////////////////////////////////////////////
+ UTIL
+////////////////////////////////////////////////*/
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+.hidetext { font-size: 5%; text-indent: -9999em; text-align: left; color: transparent; white-space: nowrap; outline: none; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

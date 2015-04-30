@@ -1,0 +1,385 @@
+body {
+	
+}
+#book {
+	padding-bottom: 0;	
+}
+.mob-screen {
+	display: none;
+}
+/*Animations*/
+.overlay {
+	position: absolute;
+	height: 800px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: url(images/lovers/leader/leader_bg.png) top center no-repeat;
+}
+.sky {
+   height:500px;
+/*    background:#d70000; */
+   position:absolute;
+   top: 0;
+   left: 0;
+   overflow:hidden;
+   -webkit-animation:sky_background 50s ease-out infinite;
+   -moz-animation:sky_background 50s ease-out infinite;
+   -o-animation:sky_background 50s ease-out infinite;
+   -webkit-transform:translate3d(0,0,0);
+   -moz-transform:translate3d(0,0,0);
+   -o-transform:translate3d(0,0,0);
+   width: 100%;
+   margin: 0 auto;
+}
+.clouds_one {
+   background:url(images/lovers/leader/cloud_one.png);
+   position:absolute;
+   left:0;
+   top:0;
+   height:100%;
+   width:300%;
+   -webkit-animation:cloud_one 50s linear infinite;
+   -moz-animation:cloud_one 50s linear infinite;
+   -o-animation:cloud_one 50s linear infinite;
+   -webkit-transform:translate3d(0,0,0);
+   -moz-transform:translate3d(0,0,0);
+   -o-transform:translate3d(0,0,0)
+}
+.clouds_two {
+   background:url(images/lovers/leader/cloud_two.png);
+   position:absolute;
+   left:0;
+   top:0;
+   height:100%;
+   width:300%;
+   -webkit-animation:cloud_two 75s linear infinite;
+   -moz-animation:cloud_two 75s linear infinite;
+   -o-animation:cloud_two 75s linear infinite;
+   -webkit-transform:translate3d(0,0,0);
+   -moz-transform:translate3d(0,0,0);
+   -o-transform:translate3d(0,0,0)
+}
+.clouds_three {
+   background:url(images/lovers/leader/cloud_three.png);
+   position:absolute;
+   left:0;
+   top:0;
+   height:100%;
+   width:300%;
+   -webkit-animation:cloud_three 100s linear infinite;
+   -moz-animation:cloud_three 100s linear infinite;
+   -o-animation:cloud_three 100s linear infinite;
+   -webkit-transform:translate3d(0,0,0);
+   -moz-transform:translate3d(0,0,0);
+   -o-transform:translate3d(0,0,0)
+}
+@-webkit-keyframes cloud_one {
+   0% { left:0; }
+   100% { left:-200%; }
+}
+
+@-webkit-keyframes cloud_two {
+   0% { left:0; }
+   100% { left:-200%; }
+}
+
+@-webkit-keyframes cloud_three {
+   0% { left:0; }
+   100% { left:-200%; }
+}
+@-moz-keyframes cloud_one {
+   0% { left:0; }
+   100% { left:-200%; }
+}
+
+@-moz-keyframes cloud_two {
+   0% { left:0; }
+   100% { left:-200%; }
+}
+
+@-moz-keyframes cloud_three {
+   0% { left:0; }
+   100% { left:-200%; }
+}
+@media only screen and (max-width: 1024px) {
+	#book {
+		zoom: 0.50;
+	}				
+	#book #news .more-link {	
+		font-size: 16px;
+	}
+	#choice .vert {
+		opacity: 0.9;
+	}
+}
+@media only screen and (max-width: 1366px) and (min-width: 1025px) { 
+	.love {
+		min-width: 980px;
+	}
+	.love .page .inner {
+		width: 100%;
+	}
+	.love .page .inner .sect {
+		width: 100%;
+	}
+	#leader .banner {
+		left: 10px;
+	}
+	#lover .mirror {
+		right: 120px;
+	}
+	#surgeon .head {
+		top: 80px;
+	}
+	#surgeon .arrow.one,
+	#surgeon .arrow.two {
+		top: 215px;
+	}
+	#surgeon .arrow.three,
+	#surgeon .arrow.four {
+		top: 580px;
+	}
+	#choice ul li {
+		width: 245px;
+		margin: 0 11px;
+	}
+	#choice .vert {
+		width: 247px;
+	}
+	#choice {
+		height: 1025px;
+		background-size: 124% auto;
+	}
+	#choice .vert.boy {
+		background-position: -9px 85px;
+	}
+}
+@media only screen and (max-width: 1280px){
+	#choice ul li {
+		width: 245px;
+		margin: 0 4px;
+	}
+}
+@media only screen and (max-width: 1024px) { 
+	#choice ul li {
+		width: 280px;
+	}
+	.sky, .overlay {
+		display: none;
+	}
+}
+@media only screen and (max-width: 640px) {
+	#book {
+		zoom: 1;
+		-webkit-text-size-adjust: auto;
+	}
+	.legal {
+		-webkit-text-size-adjust: none;	
+	}
+	#choice .hover,
+	.page .vector,
+	.bx-wrapper .bx-pager,
+	.lovers-menu li:after,
+	#choice .vert .head,
+	#choice .vert .break,
+	#choice .vert .icon {
+		display: none;
+	}
+	#boy .video .hold {
+		top: 175px;
+		height: 85%;
+	}
+	.love {
+		min-width: 640px;
+	}
+	.love .page .inner,
+	.love .page .inner .sect {
+		width: 640px;
+	}
+	#book .love .explore .txt {
+		font-size: 33px !important;
+		letter-spacing: 0.060em;
+	}
+	#book #choice {
+		overflow: visible;
+	}
+	#choice ul {
+		margin: 0;
+	}
+	#choice ul li {
+		margin: 0;
+	}
+	#choice ul li {
+		display: block;
+	}
+	.love #choice.page .inner {
+		padding-top: 125px;
+	}
+	#choice .vert {
+		width: 451px;
+		height: 1014px;
+	}
+	#choice .vert h1 {
+		margin-top: 310px;
+	}
+	#choice .vert.leader {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/tower-leader.png) center 20px no-repeat;
+	}
+	#choice .vert.lover {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/tower-lover.png) center 25px no-repeat;
+	}
+	#choice .vert.surgeon {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/tower-surgeon.png) center 20px no-repeat;
+	}
+	#choice .vert.boy {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/tower-boy.png) 60px 15px no-repeat;
+	}
+	#choice .vert.chauffeur {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/tower-chauffeur.png) center 10px no-repeat;
+	}
+	.bx-wrapper .bx-controls-direction a {
+		width: 150px;
+		height: 864px;
+		margin-top: -432px;
+	}
+	.bx-wrapper .bx-prev {
+		left: -95px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/left-panel.png) top left no-repeat;
+	}
+	.bx-wrapper .bx-prev:hover {		
+		background-position: top left;		
+	}
+	.bx-wrapper .bx-next {
+		right: -95px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/right-panel.png) top left no-repeat;
+	}
+	.bx-wrapper .bx-next:hover { 
+		background-position: top left;
+	}
+	#choice {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/mob-top.jpg) top center no-repeat;
+		height: 1079px;
+	}
+	#leader {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/mob-leader.jpg) top center no-repeat;
+		height: 1200px;
+	}
+	#leader .banner {
+		top: 385px;
+		left: 0;
+	}
+	#lover {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/mob-lover.jpg) top center no-repeat;
+		height: 1161px;
+	}
+	#lover .mirror {
+		right: 130px;
+		top: 55px;
+	}
+	#lover .explore .txt {
+		text-align: center;
+		margin: 120px 0 0;
+	}
+	#surgeon {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/mob-surgeon.jpg) top center no-repeat;
+		height: 1043px;
+	}
+	#surgeon .explore {
+		width: 170px;
+		top: 370px;
+		left: 60px;
+	}
+	#surgeon .note {
+		left: 25px;
+	}
+	#surgeon .look .note {
+		top: 430px;
+	}
+	#boy {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/mob-boy.jpg) top center no-repeat;
+		height: 1186px;
+	}
+	#boy .explore {
+		left: 435px;
+	}
+	#chauffeur {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/mob-chauffeur.jpg) top center no-repeat;
+		height: 1664px;
+	}
+	#chauffeur .meter {
+		top: 30px;
+		right: 25px;
+		zoom: 0.80;
+	}
+	#chauffeur .explore {
+		width: 170px;
+		top: 302px;
+		right: 88px;
+	}
+	#chauffeur .mirror {
+		top: 365px;
+		right: -270px;
+	}
+	#chauffeur .mirror .pre,
+	#chauffeur .mirror .gif {
+		top: 80px;
+		right: 50px;
+	}
+	#chauffeur .mirror .over {
+		background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/mob-mirror.png);
+	}
+	#chauffeur .mob-screen {
+		width: 640px;
+		height: 970px;
+		display: block;
+		position: absolute;
+		top: 198px;
+		left: 0;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/mob-screen.png) top left no-repeat;
+		z-index: 3;
+	}
+	#share {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/mob-share.jpg) top center no-repeat;
+		height: 496px;
+		top: 1168px;
+	}
+	#share .share-block {
+		margin-top: 68px;                            
+	}
+	.bx-wrapper .bx-controls-direction {
+		display: block;
+	}
+	#book #logo .lovers-menu {
+		text-align: left;
+	}
+	#book .explore,
+	#book .banner,
+	#book .mirror,
+	#book .meter {
+		opacity: 1 !important;
+	}
+}
+@media only screen and (max-width: 568px) {
+	#book {
+		zoom: 0.887;
+	}	
+	#book .page {
+		margin-top: -1px;
+	}
+}
+@media only screen and (max-width: 480px) {
+	#book {
+		zoom: 0.75;
+	}	
+}
+@media only screen and (max-width: 360px) {
+	#book {
+		zoom: 0.563;
+	}	
+}
+@media only screen and (max-width: 320px) {
+	#book {
+		zoom: 0.5;
+	}	
+}

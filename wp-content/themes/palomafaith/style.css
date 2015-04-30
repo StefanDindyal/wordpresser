@@ -1,0 +1,5274 @@
+/*
+Theme Name: Paloma Faith
+Theme URI: http://www.rgenerator.com/
+Author: relentelessGENERATOR
+Author URI: http://www.rgenerator.com/
+Description: The Official Paloma Faith Wordpress Theme.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: paloma, faith, theme, official, site, wordpress
+Text Domain: pf
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+/*
+*  html5 doctor css reset | http://html5doctor.com/html-5-reset-stylesheet
+*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+/*Normallize*/
+*{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+em,i{font-style:italic}
+strong,b{font-weight:bold}
+body a{text-decoration:none}
+body a:hover{text-decoration:underline}
+ul{list-style:none;}
+/*fonts*/
+@font-face {
+    font-family: 'wordpress_surface_rgeneratoRg';
+    src: url('fonts/wordpress_surface_rgenerator-webfont.eot');
+    src: url('fonts/wordpress_surface_rgenerator-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/wordpress_surface_rgenerator-webfont.woff') format('woff'),
+         url('fonts/wordpress_surface_rgenerator-webfont.ttf') format('truetype'),
+         url('fonts/wordpress_surface_rgenerator-webfont.svg#wordpress_surface_rgeneratoRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'caviar_dreamsregular';
+    src: url('fonts/CaviarDreams-webfont.eot');
+    src: url('fonts/CaviarDreams-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/CaviarDreams-webfont.woff') format('woff'),
+         url('fonts/CaviarDreams-webfont.ttf') format('truetype'),
+         url('fonts/CaviarDreams-webfont.svg#caviar_dreamsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'caviar_dreamsbold';
+    src: url('fonts/Caviar_Dreams_Bold-webfont.eot');
+    src: url('fonts/Caviar_Dreams_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Caviar_Dreams_Bold-webfont.woff') format('woff'),
+         url('fonts/Caviar_Dreams_Bold-webfont.ttf') format('truetype'),
+         url('fonts/Caviar_Dreams_Bold-webfont.svg#caviar_dreamsbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'herr_von_muellerhoffregular';
+    src: url('fonts/herrvonmuellerhoff-regular-webfont.eot');
+    src: url('fonts/herrvonmuellerhoff-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/herrvonmuellerhoff-regular-webfont.woff') format('woff'),
+         url('fonts/herrvonmuellerhoff-regular-webfont.ttf') format('truetype'),
+         url('fonts/herrvonmuellerhoff-regular-webfont.svg#herr_von_muellerhoffregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'josefin_slabregular';
+    src: url('fonts/josefinslab-regular-webfont.eot');
+    src: url('fonts/josefinslab-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/josefinslab-regular-webfont.woff') format('woff'),
+         url('fonts/josefinslab-regular-webfont.ttf') format('truetype'),
+         url('fonts/josefinslab-regular-webfont.svg#josefin_slabregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/**************************************************/
+/************************************** Structure */
+/**************************************************/
+body {
+	font-family: Georgia, Times, serif;
+	font-style: italic;
+	font-size: 16px;
+	line-height: 22px;
+	color: #23080d;
+	background-color: #000;
+}
+body a {
+	color: #833e18;
+}
+#book {
+	width: 100%;
+	min-width: 980px;
+	padding-bottom: 80px;
+}
+#book .page {
+	position: relative;
+	overflow: hidden;
+}
+#book .page .title {
+	position: absolute;
+	height: 49px;
+	top: 124px;
+	opacity: 0;
+	margin-left: -10px;
+	-webkit-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+}
+#book .page.active .passage > .title {
+	opacity: 1;
+	margin-left: 0;
+}
+#book .passage,
+#book .leaf {
+	position: relative;
+	width: 100%;
+	width: 972px;
+	margin: 0 auto;
+}
+.lights {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lights.png) top center no-repeat;
+}
+.lights.one {
+	left: -327px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lights-one.png) top center no-repeat;
+}
+.lights.two {
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lights-two.png) top center no-repeat;	
+}
+.lights.three {
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lights-three.png) top center no-repeat;
+}
+.lights.four {
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lights-four.png) top center no-repeat;	
+}
+.active .lights.two {
+	-webkit-animation: fade 8s infinite linear;
+	-moz-animation: fade 8s infinite linear;g") no-repea
+	-o-animation: fade 8s infinite linear;
+}
+.active .lights.one,
+.active .lights.full {
+	-webkit-animation: fade 6s infinite linear;
+	-moz-animation: fade 6s infinite linear;g") no-repea
+	-o-animation: fade 6s infinite linear;
+}
+.active .lights.three,
+.active .lights.four {
+	-webkit-animation: fade 5s infinite linear;
+	-moz-animation: fade 5s infinite linear;
+	-o-animation: fade 5s infinite linear;
+}
+#book #social .lights.one {
+	background-position: 90% 120px;
+}
+/**************************************************/
+/********************************** Logo/Language */
+/**************************************************/
+#book #lang,
+#book #logo {
+	position: fixed;
+	width: 100%;
+	z-index: 10000;
+}
+#book #lang {
+	height: 45px;
+	top: 0;
+	z-index: 10001;
+	text-align: right;
+}
+#book #lang_sel {
+	font-family: 'caviar_dreamsbold', sans-serif;
+	font-size: 14px;
+	line-height: 45px;
+	text-transform: uppercase;
+	letter-spacing: 0.020em;
+	font-style: normal;
+	height: auto;
+}
+#book #lang_sel a {
+	color: #673b50;
+}
+#book #lang_sel ul ul {
+	visibility: visible !important;
+	display: none;
+	width: auto;
+	left: auto;
+	right: 0;
+	top: 35px;
+	text-align: center;
+	border: 0;
+	padding: 10px 0 !important;
+	height: auto;
+	background: rgba(0,0,0,0.75);
+}
+#book #lang_sel ul ul a, 
+#book #lang_sel ul ul a:visited {
+	background: none;
+	border: 0;
+}
+#book #lang_sel ul ul a:hover {
+	color: #fff;
+}
+#book #lang_sel li {
+	width: auto;
+}
+#book #lang_sel a.lang_sel_sel {
+	padding-right: 16px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lang-arrow.png) right center no-repeat;
+	font-size: 14px;
+	line-height: 45px;
+	text-transform: uppercase;
+	letter-spacing: 0.020em;
+	font-style: normal;
+	border: 0;
+	padding-left: 0;
+}
+#book #lang_sel a.lang_sel_sel.down {
+	color: #CFA612;
+}
+#book #logo {	
+	height: 80px;
+	top: 45px;
+	overflow: hidden;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/logo-shade.png) top center no-repeat;
+	-webkit-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+}
+#book #logo.active {
+	background: rgba(0,0,0,0.7);
+}
+#book #logo h1 {
+	position: absolute;
+	width: 420px;
+	height: 55px;
+	top: 12px;
+	right: 50%;
+	margin-right: -490px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/logo.png) top center no-repeat;
+	-webkit-transition: 0.3s ease-in-out;
+	-ms-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+}
+#book #logo.active h1 {
+	width: 522px;
+	margin-right: -261px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/prime-logo.png) top left no-repeat;
+}
+/**************************************************/
+/*************************************** Main Nav */
+/**************************************************/
+#book #spine {
+	position: fixed;
+	width: 100%;
+	height: 80px;
+	bottom: 0;
+	z-index: 8800;	
+}
+#book #spine .top {
+	background-color: rgba(0,0,0,0.9);
+	margin-bottom: 1px;
+}
+.nav-menu,
+.lovers-menu {
+	text-align: center;
+	padding: 10px 0;
+}
+.nav-menu,
+.lovers-menu  {	
+	line-height: 0;
+}
+.nav-menu li,
+.lovers-menu li {
+	position: relative;
+	font-size: 17px;
+	line-height: 23px;
+	padding-right: 20px;
+	display: inline-block;
+}
+body.home .nav-menu li:first-child {
+	display: none;
+}
+.nav-menu li.current-menu-item a,
+.nav-menu li a.current-nav-item,
+.nav-menu li a:hover,
+.lovers-menu li.current-menu-item a,
+.lovers-menu li a.current-nav-item,
+.lovers-menu li a:hover {
+	color: #10a6a0;
+}
+.nav-menu li:after,
+.lovers-menu li:after {
+	content: '';
+	position: absolute;
+	width: 11px;
+	height: 26px;
+	right: 2px;
+	top: 0;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/nav-sep.png) top left no-repeat;
+}
+.nav-menu li:last-child,
+.lovers-menu li:last-child {
+	padding-right: 0;
+}
+.nav-menu li:last-child:after,
+.lovers-menu li:last-child:after {
+	display: none;	
+}
+.social-nav li.kill {
+	display: none;
+}
+/**************************************************/
+/************************************** Nav Lower */
+/**************************************************/
+#book #spine .lower {
+	border-top: 1px solid transparent;
+	padding: 7px 0;
+	background-color: #000;
+}
+#book #spine .lower,
+#book #spine .lower a {
+	color: #08363c;
+}
+#book #spine .lower a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+.social-nav {
+	font-family: 'wordpress_surface_rgeneratoRg';
+	font-style: normal;	
+	float: left;
+	padding-left: 90px;	
+}
+.social-nav {
+	font-size: 10px;
+	line-height: 0px;
+}
+.social-nav li {
+	font-size: 20px;
+	line-height: 22px;
+	display: inline-block;
+}
+#book #spine .lower .legal {
+	font-family: 'Arial', sans-serif;
+	font-size: 11px;
+	line-height: 22px;
+	font-style: normal;
+	float: right;
+	padding-right: 15px;
+}
+/**************************************************/
+/****************************************** Share */
+/**************************************************/
+#book .share {
+	font-family: 'wordpress_surface_rgeneratoRg';
+	list-style: none;
+	font-style: normal;
+	line-height: 0;	
+	text-align: center;
+	margin-bottom: 16px;
+}
+#book .share li {
+	display: inline-block;
+	margin: 0 4px;
+}
+#book .share li a {
+	font-size: 20px;
+	line-height: 30px;
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	display: block;
+	color: #116c68;
+	background-color: #10a6a0;
+	padding-left: 1px;
+	padding-top: 1px;
+}
+#book .share li.comment a {
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/comments-icon.png) center center no-repeat #10a6a0;
+}
+#book .share li a:hover {
+	text-decoration: none;
+	background-color: #50aa93;
+}
+/**************************************************/
+/******************************************* Date */
+/**************************************************/
+#book .date {
+	position: relative;
+	text-align: right;
+	line-height: 16px;
+	color: #b56521;
+}
+#book .date:before {
+	content: '';
+	width: 83%;
+	height: 3px;
+	border-top: 1px solid #b86621;
+	border-bottom: 1px solid #b86621;
+	position: absolute;	
+	left: 0;
+	top: 7px;
+}
+/**************************************************/
+/********************************** Epilogue Page */
+/**************************************************/
+#book #epilogue {
+	height: 930px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/epilogue-bg.jpg) top center no-repeat;
+}
+#book #epilogue .scroll {
+	position: absolute;
+	width: 36px;
+	height: 67px;
+	left: 50%;
+	margin-left: -18px;
+	bottom: 60px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/explore-icon.png) top left no-repeat;
+}
+#book #epilogue .scroll {
+	-webkit-animation: bounce 4s infinite linear;
+	-moz-animation: bounce 4s infinite linear;g") no-repea
+	-o-animation: bounce 4s infinite linear;
+}
+#epilogue .spot {
+	float: right;
+	margin: 270px 16px 0 0;
+	width: 587px;
+	min-height: 535px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/slider-bg.png) bottom left no-repeat;
+	-webkit-transition: 1s ease-in-out;
+	-ms-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+	opacity: 0;
+	margin-right: 0;
+}
+#epilogue.active .spot {
+	margin-right: 16px;
+	opacity: 1;
+}
+#epilogue .spot .shift {
+	width: 390px;	
+	margin-right: 72px;
+	float: right;
+}
+#epilogue .spot .slider {
+	padding: 10px;		
+}
+#epilogue .spot .entry-thumbnail {
+	width: 215px;
+	height: 215px;
+	float: right;	
+}
+#epilogue .spot .entry-thumbnail img {	
+	box-shadow: -8px 8px 1px rgba(0,0,0,0.5);
+}
+#epilogue .spot .entry-title {
+	font-size: 35px;
+	line-height: 36px;
+	color: #d2aa13;
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-style: normal;
+	text-transform: uppercase;
+	padding: 20px 0 5px;
+	margin-left: 0px;
+	opacity: 1;
+	min-height: 97px;
+	background-color: transparent;
+}
+
+#epilogue .spot .sub-text {
+	/*color: #d2aa13;*/
+	font-family: 'Georgia', serif;	
+	color: #10a6a0 !important;
+	font-size: 16px;
+	font-style: italic;
+	padding: 0px 0 10px;
+	min-height: 40px;
+	background-color: transparent;
+}
+
+#epilogue .spot .sub-text a { color: #10a6a0  !important;}
+
+#epilogue .spot .btn {
+	padding: 0 20px;
+	height: 38px;
+	font-size: 20px;
+	line-height: 38px;
+	color: #c8ebea;	
+	border-radius: 3px;
+	box-shadow: 0px 1px 2px rgba(255,255,255,0.1);
+	display: inline-block;
+	opacity: 1;
+	margin-left: 0px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/spot-btn.png) top left repeat-x;
+}
+#epilogue .spot .bx-wrapper .bx-pager {
+	z-index: 1;
+}
+#epilogue .spot .bx-wrapper .bx-pager {
+	right: 0;
+	text-align: left;
+/*	width: 240px;*/
+	width: 190px;
+}
+/**************************************************/
+/************************************ Social Page */
+/**************************************************/
+#book #social {
+	height: 700px;
+}
+#book #social .lights.one {
+	background-position: 70% 90px;
+}
+#book #social .fab {
+	position: absolute;
+	width: 100%;
+	height: 104px;
+	left: 0;	
+	-webkit-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+}
+#book #social .fab-star {
+	position: absolute;
+	width: 100%;
+	height: 104px;
+	left: 0;	
+	-webkit-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+	-webkit-transition-delay: 0s;
+	-ms-transition-delay: 0s;
+	transition-delay: 0s;
+}
+#book #social .more-link {
+	position: absolute;
+	top: 465px;
+	left: 410px;
+	padding: 0 14px;
+	height: 36px;
+	line-height: 36px;
+	display: inline-block;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/social-btn-bg.png) top left repeat-x;
+	color: #e2dfb2;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.75);
+	border-radius: 2px;
+}
+.fab.top {
+	opacity: 0;
+	top: -104px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/fab-top.png) top center no-repeat;
+}
+.fab.bot {
+	opacity: 0;
+	bottom: -104px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/fab-bot.png) bottom center no-repeat;
+}
+.active .fab.top,
+.active .fab.bot {
+	opacity: 1;
+}
+.active .fab.top {
+	top: 0;
+}
+.active .fab.bot {
+	bottom: 0;
+}
+.fab-star.top {
+	opacity: 0;
+	top: -104px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/fab-star-top.png) top center no-repeat;	
+}
+.fab-star.bot {
+	opacity: 0;
+	bottom: -104px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/fab-star-bot.png) bottom center no-repeat;	
+}
+.active .fab-star.top,
+.active .fab-star.bot {
+	-webkit-transition-delay: 0.5s;
+	-ms-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+	opacity: 1;
+}
+.active .fab-star.top {
+	top: 0;	
+}
+.active .fab-star.bot {
+	bottom: 0;
+}
+#book #social .title {
+	width: 208px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/social-title.png) top left no-repeat;
+	left: 92px;
+}
+#book #social.active .title {
+	opacity: 1;
+	margin-left: 0;
+}
+#book #social .social-target {
+	width: 565px;
+	float: right;
+	margin-top: 225px;
+	margin-right: 50px;
+	opacity: 0;
+	-webkit-transition: 1s ease-in-out;
+	-ms-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+}
+#book #social.active .social-target {
+	margin-right: 0;
+	opacity: 1;
+}
+#book #social.active .social-target .tweet-info {
+	width: 520px;
+}
+#book #social .more-link {
+	position: absolute;
+	top: 465px;
+	left: 410px;
+	padding: 0 14px;
+	height: 36px;
+	line-height: 36px;
+	display: inline-block;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/social-btn-bg.png) top left repeat-x;
+	color: #e2dfb2;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.75);
+	border-radius: 2px;
+	-webkit-transition: 1s ease-in-out;
+	-ms-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+	opacity: 0;
+	left: 390px;
+}
+#book #social.active .more-link {
+	opacity: 1;
+	left: 410px;
+}
+#book #social .social-block .txt {
+	font-size: 23px;
+	line-height: 40px;
+	letter-spacing: -0.020em;
+	color: #10a6a0;
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-style: normal;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+#book #social .social-block a {
+	color: #10a6a0;
+}
+#book #social .social-block ul {
+	list-style: none;
+}
+#book #social .social-block .user {
+	font-size: 24px;
+	line-height: 60px;
+	font-weight: bold;
+	color: #e94a50;	
+	overflow: hidden;
+}
+#book #social .social-block .user a {
+	display: inline-block;
+	color: #e94a50;	
+}
+#book #social .social-block .user li:before {
+	content: 't';
+	font-family: 'wordpress_surface_rgeneratoRg';
+	display: inline-block;
+	font-style: normal;
+	vertical-align: middle;
+}
+#book #social .social-block .time {
+	display: none;
+}
+#book #social .bx-pager {
+	display: none;
+}
+#book #social .bx-controls-direction {
+	display: block;
+	position: absolute;
+	top: 160px;
+	right: 40px;
+}
+#book #social .bx-controls-direction:before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	background-color: #60384d;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -5px 0 0 -5px;
+	-webkit-transform: rotate(45deg); 
+	-moz-transform: rotate(45deg); 
+	-ms-transform: rotate(45deg); 
+	-o-transform: rotate(45deg); 
+	transform: rotate(45deg);
+}
+#book #social .bx-wrapper .bx-controls-direction a {
+	position: relative;
+	display: block;
+	margin: 0;
+	width: 45px;
+	height: 45px;
+	top: auto;
+	left: auto;
+	right: auto;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/arrows-up-down.png) top left no-repeat;
+	-webkit-transition: 0.3s ease-in-out;
+	-ms-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+}
+#book #social .bx-wrapper .bx-controls-direction a.bx-next {
+	background-position: bottom left;
+	margin-top: 25px;
+}
+#book #social .bx-wrapper .bx-controls-direction a:hover {
+	opacity: 0.75;
+}
+#book #social:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.1;
+	z-index: -1; 	
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/social-bg.jpg) top center no-repeat;
+	-webkit-transition: 0.9s ease-in-out;
+	-ms-transition: 0.9s ease-in-out;
+	transition: 0.9s ease-in-out;
+}
+#book #social.active:after {
+	opacity: 1;
+}
+#book #social .date,
+#book #social .link span {
+	display: none;
+}
+/*Social Sec*/
+.social.sec {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/social-sec-bg.jpg);
+}
+.social.sec .title {
+	color: #96671e;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/social-icon.png);
+}
+.social.sec .para {
+	padding-top: 172px;
+	padding-bottom: 172px;
+}
+.social.sec .tweet-info .txt,
+.social.sec .instagram-info .caption {
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-size: 26px;
+	line-height: 40px;
+	font-style: normal;
+	text-transform: uppercase;
+	position: relative;
+	z-index: 1;
+}
+.social.sec .tweet-info a {
+	color: #10a6a0;
+}
+.social.sec .user {
+	padding-bottom: 27px;
+}
+.social.sec .user .link {
+	line-height: 55px;
+	height: 65px;
+}
+.social.sec .user .link span {
+	font-family: 'wordpress_surface_rgeneratoRg';
+	font-size: 48px;
+	color: #e94a50;
+	font-style: normal;
+	display: inline-block;	
+}
+.social.sec .user .link a {
+	font-family: 'Georgia', serif;	
+	color: #e94a50;
+	font-size: 33px;
+	font-style: italic;
+	font-weight: bold;
+	display: inline-block;
+	vertical-align: text-bottom;
+}
+.social.sec .instagram-info {
+	padding-bottom: 27px;
+}
+.social.sec .instagram-info > a {
+	position: relative;
+	z-index: 1;
+}
+.social.sec img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto 22px;
+}
+.social.sec .instagram-info .user {
+	padding: 0;
+}
+.social.sec .date:after {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/texture2.png);
+}
+/**************************************************/
+/************************************** News Page */
+/**************************************************/
+#book #news {
+	height: 1722px;
+	z-index: 1;
+}
+#book #news .title {
+	width: 144px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/news-title.png) top left no-repeat;
+	right: 92px;
+	margin-left: 0;
+	margin-right: -20px;
+}
+#book #news.active .title {
+	margin-right: 0;
+}
+#book #news .more-link {
+	position: absolute;
+	top: 705px;
+	right: -183px;
+	width: 119px;
+	height: 40px;	
+	font-size: 17px;
+	line-height: 40px;
+	color: #084c49;	
+	display: inline-block;
+	padding-left: 17px;	
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/news-btn.png) top left no-repeat;
+}
+.flag {
+	position: absolute;
+	top: 20px;
+	opacity: 0.1;
+	left: 0;
+	width: 1121px;
+	height: 1055px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/flag.png) top left no-repeat;
+	-webkit-transition: 1s ease-in-out;
+	-ms-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+}
+.active .flag {
+	left: 50%;
+	opacity: 1;
+	margin-left: -680px;
+}
+.flag .felt {
+	width: 52px;
+	height: 107px;
+	top: 435px;
+	right: 90px;
+	position: absolute;
+	opacity: 0;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/felt.png) top left no-repeat;
+	-webkit-transition: 0.3s ease-in-out;
+	-ms-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+	-webkit-transition-delay: 0s;
+	-ms-transition-delay: 0s;
+	transition-delay: 0s;
+}
+.active .flag .felt {
+	opacity: 1;
+	right: 110px;
+	-webkit-transition-delay: 1.3s;
+	-ms-transition-delay: 1.3s;
+	transition-delay: 1.3s;
+}
+#book #news .news-target {
+	position: relative;
+	padding-top: 288px;	
+	max-width: 425px;
+	opacity: 0;
+	margin-left: 235px;
+	-webkit-transition: 0.5s ease-in;
+	-ms-transition: 0.5s ease-in;
+	transition: 0.5s ease-in;
+	-webkit-transition-delay: 0s;
+	-ms-transition-delay: 0s;
+	transition-delay: 0s;
+}
+#book #news.active .news-target {
+	opacity: 1;
+	margin-left: 245px;
+	-webkit-transition-delay: 1.5s;
+	-ms-transition-delay: 1.5s;
+	transition-delay: 1.5s;
+}
+.entry-thumbnail img {
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+}
+.entry-title {
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-size: 30px;
+	line-height: 36px;
+	color: #fff;
+	margin-bottom: 12px;
+	font-style: normal;
+	text-transform: uppercase;
+	background: #cf6c35;
+	padding: 8px;
+}
+.entry-title a {
+	color: #fff;
+}
+.entry-title .back {
+	background-color: #cf6c35;
+	display: inline-block;
+	padding: 0 16px;
+	margin-bottom: 4px;
+}
+.entry-title.blog .back {
+	background-color: #413647;
+}
+.entry-content {
+	padding: 16px;
+	padding-bottom: 0 !important;
+}
+.entry-content a {
+	color: #10a6a0;
+}
+.entry-content p,
+.single .entry-content p {
+	margin-bottom: 16px;
+}
+.entry-content img {
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
+}
+#book #news:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.25;
+	width: 100%;
+	height: 100%;	
+	z-index: -1; 	
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/news-bg.jpg) top center no-repeat;
+	-webkit-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+}
+#book #news.active:after {
+	opacity: 1;
+}
+/*News Sec*/
+.sec {
+	position: relative;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;	
+}
+.sec .para {
+	position: relative;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	color: #fff;
+	text-align: center;
+}
+.sec .title {
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-size: 60px;
+	line-height: 75px;
+	text-transform: uppercase;
+	margin-bottom: 55px;
+	font-style: normal;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: right center;
+	padding-right: 87px;
+}
+.news.sec .para {
+	padding-top: 165px;
+}
+.news.sec {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/news-sec-bg.jpg);
+}
+.news.sec .title {
+	color: #cf6c35;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/news-icon.png);
+}
+.news.sec .para {
+	position: relative;
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	padding-top: 165px;
+	color: #fff;
+}
+.news.sec .entry-content {
+	padding: 28px 28px 16px;
+	text-align: left;
+}
+.news.sec.active .flag {
+	top: 50px;
+	margin-left: -760px;
+}
+.news.sec .entry-header {
+	position: relative;
+	z-index: 1;
+}
+.news.sec .entry-title {
+	text-align: left;
+}
+.entry-title p {
+	display: inline;
+/*    background: #cf6c35;
+    padding: 8px;*/
+    margin: 0;
+    white-space: pre-line;
+}
+.news.sec .entry-meta {
+	padding-bottom: 22px;
+}
+#book .sec .date:before {
+	width: 89%;
+}
+.news.sec .date:after {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/texture.png);
+}
+.sec .date:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 66px;
+	left: 0;
+	bottom: -62px;
+	background-position: top center;
+	background-repeat: no-repeat;	
+}
+/**************************************************/
+/************************************** Tour Page */
+/**************************************************/
+#book #tour {
+	position: absolute;
+	top: 855px;
+	width: 100%;
+	height: 867px;
+}
+#book #tour .title {
+	width: 148px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/tour-title.png) top left no-repeat;
+	left: 92px;
+	opacity: 0;
+	margin-left: -10px;
+}
+#book #tour.active .title {
+	opacity: 1;
+	margin-left: 0;
+}
+#book #tour .tour-block,
+.tour.sec .tour-block {
+	width: 710px;
+	padding-top: 210px;
+	margin: 0 auto;
+	margin-top: -20px;
+	opacity: 0.1;
+	-webkit-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+}
+#book #tour.active .tour-block,
+.tour.sec.active .tour-block {
+	opacity: 1;
+	margin-top: 0;
+}
+#book #tour .tour-block .event,
+.tour.sec .tour-block .event {
+	height: 100px;
+	margin-bottom: 20px;
+	padding-right: 10px;
+	background-color: rgba(255,255,255,0.1);
+}
+#book #tour .tour-block .event .when,
+.tour.sec .tour-block .event .when {
+	font-family: 'caviar_dreamsbold', sans-serif;
+	font-size: 40px;
+	line-height: 118px;
+	font-style: normal;
+	text-transform: uppercase;
+	color: #10a6a0;
+	float: left;
+	width: 215px;
+	height: 118px;
+	overflow: hidden;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/tour-date-bg.png) top left no-repeat;
+	margin-top: -9px;
+	-webkit-transition: 0.4s ease-in-out;
+	-ms-transition: 0.4s ease-in-out;
+	transition: 0.4s ease-in-out;
+}
+#book #tour .tour-block .event .when .shift,
+.tour.sec .tour-block .event .when .shift {
+	padding-left: 20px;
+}
+#book #tour .tour-block .event .when .shift span,
+.tour.sec .tour-block .event .when .shift span {
+	color: #9c9c9c;
+}
+#book #tour .tour-block .event .where,
+.tour.sec .tour-block .event .where {
+	float: left;
+	margin-left: 5px;
+	margin-top: 27px;
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-size: 24px;
+	line-height: 24px;
+	color: #d60027;
+	font-style: normal;
+	text-transform: uppercase;		
+}
+#book #tour .tour-block .event .where .venue,
+.tour.sec .tour-block .event .where .venue {
+	font-family: 'Georgia', serif;
+	font-size: 18px;
+	line-height: 23px;
+	color: #858282;
+	font-style: italic;
+	text-transform: none;
+	padding: 5px 0;
+}
+#book #tour .tour-block .event .social,
+.tour.sec .tour-block .event .social {
+	float: right;
+	font-family: 'wordpress_surface_rgeneratoRg';
+	font-size: 18px;
+	line-height: 28px;
+	text-align: center;
+	font-style: normal;
+	margin-top: 38px;
+}
+#book #tour .tour-block .event .social a,
+.tour.sec .tour-block .event .social a {
+	width: 28px;
+	height: 28px;
+	display: inline-block;
+	background-color: #10a6a0;
+	color: #116c68;
+	border-radius: 14px;
+	margin-left: 8px;
+	padding-left: 2px;
+}
+#book #tour .tour-block .event .social a.fb,
+.tour.sec .tour-block .event .social a.fb {
+	margin-left: 0;
+}
+#book .event .social a:hover {
+	text-decoration: none;
+	background-color: #50aa93;
+}
+#book #tour .tour-block .event .social span,
+#book #tour .tour-block .event .social a.mail,
+.tour.sec .tour-block .event .social span,
+.tour.sec .tour-block .event .social a.mail {
+	display: none;
+}
+#book #tour .tour-block .event .ticket,
+.tour.sec .tour-block .event .ticket {
+	float: right;
+	margin: 32px 0 0 8px;
+}
+#book #tour .tour-block .event .ticket a,
+.tour.sec .tour-block .event .ticket a {
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/ticket-btn.png) top left repeat-x;
+	font-size: 22px;
+	line-height: 38px;
+	height: 38px;
+	text-align: center;
+	padding: 0 16px;
+	color: #e7e7e7;
+	display: inline-block;
+	border-radius: 2px;
+}
+#book #tour .chalice,
+#book #tour .pins {
+	position: absolute;	
+	width: 101px;
+	height: 136px;
+	top: 392px;
+	opacity: 0.5;	
+	-webkit-transition: 1.25s ease-in-out;
+	-ms-transition: 1.25s ease-in-out;
+	transition: 1.25s ease-in-out;
+}
+#book #tour.active .chalice,
+#book #tour.active .pins {
+	top: 312px;
+	opacity: 1;
+}
+#book #tour .chalice {
+	left: 0;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/cup-icon.png) bottom center no-repeat;
+}
+#book #tour .pins {
+	right: 0;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/pin-icon.png) bottom center no-repeat;
+}
+#book #tour .tub {
+	position: absolute;
+	top: 560px;
+	left: 0;
+	width: 100%;
+	height: 200px;
+	opacity: 0;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/tub.png) bottom center no-repeat;
+	background-size: auto 100%;
+	-webkit-transition: 2s ease-in-out;
+	-ms-transition: 2s ease-in-out;
+	transition: 2s ease-in-out;
+}
+#book #tour .tub2 {
+	position: absolute;
+	top: 507px;
+	left: 0;
+	width: 100%;
+	height: 367px;
+	opacity: 0;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/tub2.png) 51.4% 0 no-repeat;
+	background-size: auto 100%;
+	-webkit-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+	-webkit-transition-delay: 0s;
+	-ms-transition-delay: 0s;
+	transition-delay: 0s;
+}
+#book #tour .drops {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/waterdrops.png) center center no-repeat;
+}
+#book #tour .more {
+	text-align: center;
+	overflow: hidden;	
+	position: absolute;
+	width: 100%;
+	top: 570px;
+}
+#book #tour .more-link {
+	position: relative;
+	display: inline-block;
+	width: auto;
+	top: auto;
+	right: auto;
+	bottom: -38px;
+	opacity: 0;
+	color: #718b9e;
+	padding: 0 20px;
+	text-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+	border-radius: 2px;
+	height: 38px;
+	line-height: 38px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/tour-btn.png) top left repeat-x;
+	-webkit-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+	-webkit-transition-delay: 0s;	
+	-ms-transition-delay: 0s;	
+	transition-delay: 0s;	
+}
+#book #tour.active .more-link {
+	bottom: -1px;
+	opacity: 1;	
+	-webkit-transition-delay: 2.5s;
+	-ms-transition-delay: 2.5s;
+	transition-delay: 2.5s;
+}
+/*#book #tour .more-link:hover {
+	bottom: 0px;
+	transition-delay: 0s;
+}*/
+/*Tour Sec*/
+.tour.sec {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/tour-sec.jpg);
+	background-attachment: scroll;
+	min-height: 1024px;
+}
+.tour.sec .para {
+	max-width: 730px;
+	padding-top: 174px;
+	padding-bottom: 267px;
+}
+.tour.sec .title {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/tour-icon.png);
+	color: #a82f37;
+}
+#book .tour.sec .tour-block .event {
+	margin-bottom: 16px;
+}
+#book .tour.sec .when {
+	text-align: left;
+}
+#book .tour.sec .where {
+	text-align: left;
+	margin-left: 5px;
+}
+#book #tour.active .tub {
+	height: 278px;
+	opacity: 1;
+}
+#book #tour.active .tub2 {
+	opacity: 1;
+	-webkit-transition-delay: 2s;
+	-ms-transition-delay: 2s;
+	transition-delay: 2s;
+}
+#book .tour.sec.active .tour-block {
+	width: 730px;
+	padding-top: 0;
+}
+#book #tour:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;	
+	z-index: -1; 	
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/tour-bg.png) top center no-repeat;	
+}
+/**************************************************/
+/************************************ Photos Page */
+/**************************************************/
+#book #photos {
+	height: 843px;
+	margin-top: -45px;
+}
+#book #photos .title {
+	width: 225px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/phottos-title.png) top left no-repeat;
+	right: 92px;
+	margin-left: 0;
+	margin-right: -20px;
+}
+#book #photos.active .title {
+	margin-right: 0;
+}
+#book #photos .passage {
+	padding-top: 115px;
+	padding-left: 10px;
+}
+#book #photos .frame {
+	position: relative;
+	width: 909px;
+	height: 613px;
+	margin: 0 auto 12px;
+	opacity: 0;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/frame.png) top left no-repeat; 
+	-webkit-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+}
+#book #photos.active .frame {
+	opacity: 1;
+}
+#book #photos .frame .flower {
+	position: absolute;
+	top: 115px;
+	width: 88px;
+	height: 89px;
+	z-index: 99;
+	-webkit-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;	
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);	
+}
+#book #photos.active .frame .flower {
+	-webkit-transition-delay: 0.75s;
+	-ms-transition-delay: 0.75s;
+	transition-delay: 0.75s;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);		
+}
+#book #photos .frame .flower.one {
+	left: 85px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/flower-a.png) top left no-repeat;
+}
+#book #photos .frame .flower.two {
+	right: 85px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/flower-a.png) top left no-repeat;
+}
+#book #photos .frame .picture {
+	position: absolute;
+	width: 631px;
+	height: 391px;
+	top: 158px;
+	left: 50%;
+	margin-left: -322px;
+	background-color: #000;
+}
+#book #photos .frame .picture .gallery-block {
+	height: 390px;
+	overflow: hidden;
+}
+#book #photos .frame .picture .gallery-block,
+.photos.sec .gallery-block {
+	position: relative;
+}
+#book #photos .frame .picture .gallery-cover,
+.photos.sec .gallery-cover {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.75) inset;
+	z-index: 2;
+}
+.photos.sec .gallery-cover {
+	box-shadow: none;
+}
+.single .photos.sec .gallery-cover {
+	display: none;
+}
+#book #photos .frame .picture .entry-title {
+	text-align: center;
+	font-size: 24px;
+	line-height: 37px;
+	height: 67px;
+	letter-spacing: -0.010em;
+	margin-bottom: 15px;
+	background: none;
+}
+#book #photos .share {
+	width: 470px;
+}
+#book #photos .frame .picture .entry-meta .date,
+#book #photos .bx-wrapper .bx-pager {
+	display: none;
+}
+#book #photos .bx-wrapper .bx-controls-direction {
+	display: block;
+}
+#book #photos .bx-wrapper .bx-controls-direction a {	
+	height: 148px;
+	margin-top: -95px;
+	opacity: 0;
+	-webkit-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+}
+#book #photos .bx-wrapper .bx-prev {
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/photo-arrows.png) top left no-repeat;
+	width: 54px;
+	left: -97px;
+	box-shadow: -4px 1px 4px -4px rgba(0,0,0,0.75) inset;
+}
+#book #photos .bx-wrapper .bx-next {
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/photo-arrows.png) top right no-repeat;
+	width: 61px;
+	right: -108px;
+	box-shadow: 4px 1px 4px -4px rgba(0,0,0,0.75) inset;
+}
+#book #photos.active .bx-wrapper .bx-controls-direction a {
+	margin-top: -116px;
+}
+#book #photos.active .bx-wrapper .bx-prev {	
+	opacity: 0.5;
+	-webkit-transition-delay: 0.75s;
+	-ms-transition-delay: 0.75s;
+	transition-delay: 0.75s;
+}
+#book #photos.active .bx-wrapper .bx-next {	
+	opacity: 0.5;
+	-webkit-transition-delay: 0.75s;
+	-ms-transition-delay: 0.75s;
+	transition-delay: 0.75s;
+}
+#book #photos .bx-wrapper .bx-controls-direction a:hover {
+	opacity: 1;
+	-webkit-transition-delay: 0s;
+	-ms-transition-delay: 0s;
+	transition-delay: 0s;
+}
+#book #photos .more {
+	position: relative;
+	text-align: left;
+	width: 490px;
+	float: right;
+	z-index: 99;
+	opacity: 0;
+	-webkit-transition: 0.3s ease-in-out;
+	-ms-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+}
+#book #photos.active .more {
+	width: 505px;
+	opacity: 1;
+	-webkit-transition-delay: 0.75s
+	-ms-transition-delay: 0.75s
+	transition-delay: 0.75s
+}
+#book #photos .more a {
+	font-size: 17px;
+	line-height: 37px;
+	color: #5b1512;
+	padding: 0 14px;
+	height: 37px;
+	display: inline-block;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/photos-btn.png) top left repeat-x;
+	border-radius: 2px;
+	box-shadow: 0 2px 2px rgba(0,0,0,0.75);
+}
+#book #photos:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1; 	
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/photos-bg-base.jpg) top center no-repeat;
+}
+#book #photos:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.1;	
+	z-index: 0; 	
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/photos-bg.jpg) bottom center no-repeat;	
+	-webkit-transition: 0.9s ease-in-out;
+	-ms-transition: 0.9s ease-in-out;
+	transition: 0.9s ease-in-out;
+}
+#book #photos.active:before {
+	opacity: 1;
+}
+/*Photos Sec*/
+.photos.sec {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/photos-sec-bg.jpg);
+}
+.photos.sec .para {
+	padding-top: 174px;
+	padding-bottom: 174px;
+} 
+#book .photos.sec .date:before {
+	width: 100%;
+}
+#book .photos.sec .date:after {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/texture3.png);
+}
+.photos.sec .title {
+	color: #f4e5c1;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/photos-icon.png);
+}
+.photos.sec img {
+	position: relative;
+	z-index: 1;
+	margin-bottom: 12px;
+}
+.photos.sec .entry-title {
+	font-size: 24px;
+	line-height: 38px;
+	margin-bottom: 8px;
+	background: none;
+}
+.photos.sec article.post {
+	padding-bottom: 22px;
+}
+/**************************************************/
+/************************************ Videos Page */
+/**************************************************/
+#book #videos {
+	height: 854px;	
+}
+#book #videos .tab {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 43px;
+	opacity: 1;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/floor-bg.png) top center no-repeat;
+}
+#book #videos .passage {
+	z-index: 1;
+	padding-top: 200px;
+}
+#book #videos .passage .title {
+	position: absolute;
+	top: 125px;
+	left: 65px;
+	width: 200px;
+	height: 49px;
+	opacity: 0;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/videos-title.png) top left no-repeat;
+	-webkit-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+}
+#book #videos.active .passage .title {
+	opacity: 1;
+	left: 85px;
+}
+#book #videos .panel {
+	position: relative;
+	width: 854px;
+	height: 510px;
+	margin: 0 auto 32px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/video.png) top left no-repeat;
+	opacity: 0;
+	padding: 4px;
+	-webkit-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+}
+#book #videos.active .panel {
+	opacity: 1;
+}
+#book #videos .panel .entry-header {
+	margin-bottom: 40px;
+}
+#book #videos .panel .entry-thumbnail {
+	position: relative;
+	width: 846px;
+	height: 501px;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	opacity: 0.5;
+}
+#book #videos .panel .entry-header .play-btn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 846px;
+	height: 501px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/front-play-icon.png) center center no-repeat;	
+}
+#book #videos .panel .hold {
+	position: absolute;
+	width: 846px;
+	height: 501px;
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 10;
+}
+#book #videos .panel .hold iframe  {
+	width: 846px;
+	height: 501px;
+}
+#book #videos .panel .entry-title {
+	margin-top: -75px;
+	padding: 0 10px;
+	font-size: 26px;
+	line-height: 46px;
+	background-color: #413647;
+	display: block;
+	float: left;
+	position: relative;
+}
+#book #videos .panel .entry-meta .date,
+#book #videos .bx-wrapper .bx-pager {
+	display: none;
+}
+#book #videos .bx-wrapper .bx-controls-direction {
+	display: none;
+}
+#book #videos .vid-controls {
+	margin: 0 auto;
+	width: 980px;
+	position: relative;
+}
+#book #videos .vid-controls .prev,
+#book #videos .vid-controls .next {
+	position: absolute;
+	top: 50%;
+	margin-top: 0px;
+	width: 510px;
+	height: 859px;
+	display: block;
+	z-index: 99;
+	opacity: 0;
+	-webkit-transition: 1s ease-in-out;
+	-ms-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+}
+#book #videos .vid-controls .prev {
+	left: -380px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/left-pane.png) top left no-repeat;
+}
+#book #videos .vid-controls .next {
+	right: -380px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/right-pane.png) top right no-repeat;
+}
+#book #videos.active .vid-controls .prev {
+	left: -360px;
+	opacity: 0.5;
+	-webkit-transition-delay: 0.75s;
+	-ms-transition-delay: 0.75s;
+	transition-delay: 0.75s;
+}
+#book #videos.active .vid-controls .next {
+	right: -360px;
+	opacity: 0.5;
+	-webkit-transition-delay: 0.75s;
+	-ms-transition-delay: 0.75s;
+	transition-delay: 0.75s;
+}
+#book #videos.active .vid-controls.move-please .prev {
+	left: -440px
+}
+#book #videos.active .vid-controls.move-please .next {
+	right: -440px
+}
+#book #videos.active .vid-controls .prev:hover,
+#book #videos.active .vid-controls .next:hover {
+	opacity: 1;
+	-webkit-transition-delay: 0s;
+	-ms-transition-delay: 0s;
+	transition-delay: 0s;
+}
+#book #videos .vid-controls a:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+	width: 99px;
+	height: 24px;
+	-webkit-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+	display: none;
+}
+#book #videos .vid-controls a.prev:after {
+	right: 20px;
+	/*background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/arrow-left.png) top left no-repeat;*/
+}
+#book #videos .vid-controls a.next:after {
+	left: 20px;
+	/*background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/arrow-right.png) top left no-repeat;	*/
+}
+#book #videos.active .vid-controls a:after {
+	-webkit-transition-delay: 1.25s;
+	-ms-transition-delay: 1.25s;
+	transition-delay: 1.25s;
+	opacity: 1;
+}
+#book #videos.active .vid-controls a.prev:after {
+	right: 25px;	
+}
+#book #videos.active .vid-controls a.next:after {
+	left: 25px;
+}
+#book #videos .panel .share {
+	float: left;
+	text-align: right;
+	width: 713px;
+}
+#book #videos .panel .share a {
+	text-align: center;
+}
+#book #videos .more {
+	position: relative;	
+	margin: 0 auto;
+	opacity: 0;
+	-webkit-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+	z-index: 99;
+	width: 960px;
+	height: 0;
+	text-align: right;
+}
+#book #videos.active .more {	
+	-webkit-transition-delay: 0.75s;
+	-ms-transition-delay: 0.75s;
+	transition-delay: 0.75s;
+	opacity: 1;	
+	width: 855px;
+}
+#book #videos .more a {
+	color: #d44368;
+	line-height: 37px;
+	padding: 0 16px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/videos-btn.png) top left repeat-x;
+	display: inline-block;
+	border-radius: 2px;
+}
+#book #videos:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;	
+	z-index: 0; 	
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/videos-bg.jpg) top center no-repeat;
+	-webkit-transition: 0.9s ease-in-out;
+	-ms-transition: 0.9s ease-in-out;
+	transition: 0.9s ease-in-out;
+}
+#book #videos.active:after {
+	opacity: 1;
+}
+/*Videos Sec*/
+.videos.sec {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/videos-sec-bg.jpg);
+}
+.videos.sec .title {
+	color: #86c1ce;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/videos-icon.png);
+}
+.videos.sec .para {
+	max-width: 920px;
+	padding-top: 162px;
+	padding-bottom: 162px;
+}
+.videos.sec .para .lines {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+#book .videos.sec .date:before {
+	width: 100%;
+}
+#book .videos.sec .date:after {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/texture4.png);
+}
+.videos.sec .entry-title {
+	font-size: 24px;
+	line-height: 38px;
+	margin-bottom: 8px;
+	background: none;
+}
+.videos.sec .entry-header {
+	position: relative;
+	z-index: 2;
+}
+.videos.sec article.videos {
+	padding-bottom: 22px;
+}
+.videos.sec .entry-thumbnail {
+	width: 600px;
+	height: 335px;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin-bottom: 15px;
+}
+.videos.sec .play-btn,
+.single .videos.sec .play-btn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 335px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/video-screen.png) center center no-repeat;
+	background-size: cover;
+}
+.videos.sec .play-btn:after,
+.single .videos.sec .play-btn:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 600px;
+	height: 335px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/front-play-icon.png) center center no-repeat;	
+}
+.videos.sec .hold {
+	position: absolute;
+	width: 600px;
+	height: 335px;
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 10;
+}
+.videos.sec .hold iframe {
+	width: 600px;
+	height: 335px;
+}
+.videos.sec .featured .entry-title {
+	background-color: #413647;
+    display: block;
+    float: left;
+    font-size: 26px;
+    line-height: 46px;
+    margin-top: -85px;
+    padding: 0 10px;
+    position: relative;
+}
+.videos.sec .featured .entry-thumbnail {
+	width: 920px;
+	height: 550px;
+	opacity: 0.75;
+}
+.videos.sec .featured .play-btn {
+	width: 920px;
+	height: 550px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/front-play-icon.png) center center no-repeat;
+}
+.videos.sec .featured .play-btn:after {
+	display: none;
+}
+.videos.sec .featured .hold,
+.videos.sec .featured .hold iframe {
+	width: 920px;
+	height: 550px;
+}
+.single .videos.sec .play-btn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 920px;
+	height: 550px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/video-screen.png) center center no-repeat;
+	background-size: cover;
+}
+.single .videos.sec .play-btn:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 920px;
+	height: 550px;
+	display: block;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/front-play-icon.png) center center no-repeat;	
+}
+/*Music Sec*/
+.music.sec {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/music-sec-bg.jpg);
+	background-repeat: repeat-y;
+}
+.music.sec .para {
+	padding-top: 175px;
+	padding-bottom: 175px;
+}
+.music.sec img {
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 24px;
+}
+.music.sec .title {
+	color: #aa557e;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/music-icon.png);
+}
+.music.sec .player {
+	margin-bottom: 14px;
+}
+.music.sec .entry-title {
+	font-size: 35px;
+	line-height: 42px;
+	margin-bottom: 16px;
+	background: none;
+}
+#book .music.sec .date:before {
+	width: 100%;
+}
+.music.sec article.music {
+	padding-bottom: 22px;
+}
+.music.sec .buy {
+	display: inline-block;
+	font-size: 20px;
+	line-height: 38px;
+	height: 38px;
+	padding: 0 6px;
+	margin-bottom: 16px;
+	border-radius: 2px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/spot-btn.png) top left repeat-x; 
+}
+.music.sec .buy > a:after {
+	content: '';
+	position: absolute;
+	width: 11px;
+	height: 38px;
+	right: -18px;
+	top: 0;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/nav-sep.png) center left no-repeat;
+}
+.music.sec .buy > a:last-child:after {
+	display: none;
+}
+.music.sec .buy a {
+	position: relative;
+	display: inline-block;
+	margin: 0 10px;
+	color: #c8ebea;
+}
+.music.sec .buy a.main {
+	color: #97eeea;
+}
+/*Nav Options*/
+#book .nav-options .leaf {
+	width: 980px;
+}
+.nav-options {
+	position: relative;
+}
+.nav-options .inner {
+	position: absolute;
+	left: 0;
+	bottom: -40px;
+}
+.nav-options .door {
+	position: relative;
+	width: 80px;
+	height: 142px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/door-backing.png) top left no-repeat;
+	float: left;
+	-moz-perspective: 900px; 
+	-ms-perspective: 900px; 
+	-o-perspective: 900px; 
+	-webkit-perspective: 900px; 
+	-moz-transform-style: preserve-3d; 
+	-ms-transform-style: preserve-3d; 
+	-o-transform-style: preserve-3d; 
+	-webkit-transform-style: preserve-3d;
+}
+.nav-options .door:after { 
+	content: ""; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden; }
+.nav-options .door img {
+	position: absolute;
+	top: 4px;
+	left: 13px;
+	pointer-events: none; 
+	-moz-transition: all 0.5s ease-in-out; 
+	-ms-transition: all 0.5s ease-in-out; 
+	-o-transition: all 0.5s ease-in-out; 
+	-webkit-transition: all 0.5s ease-in-out;
+	-webkit-transform-origin: left; 
+	-ms-transform-origin: left; 
+	transform-origin: left;
+}
+.nav-options .door:hover img {
+	-moz-transform: rotateY(-115deg); 
+	-ms-transform: rotateY(-115deg); 
+	-o-transform: rotateY(-115deg); 
+	-webkit-transform: rotateY(-115deg);
+}
+.nav-options .audio {
+	position: relative;
+}
+.nav-options .audio .player {
+	position: absolute;
+	bottom: -45px;
+	left: 26px;
+	width: 0;	
+	height: 72px;
+	color: #833e18;
+	background-color: #020708;
+	padding: 0;
+	-webkit-transition: 0.3s ease-in-out;
+	-ms-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;	
+}
+.nav-options .audio.active .player {
+	padding: 0 34px;
+	width: 474px;
+}
+.nav-options .audio .player .cut {
+	overflow: hidden;
+	height: 72px;
+}
+.nav-options .audio .player .jp-player {
+	width: 72px !important;
+	height: 72px !important;
+	float: left;
+	margin-right: 13px;
+}
+.nav-options .audio .player .jp-player img {
+	width: 72px !important;
+	height: auto !important;
+	display: block;
+}
+.nav-options .audio .player #jplayer_inspector,
+.nav-options .audio .player .jp-volume-bar,
+.nav-options .audio .player .jp-time,
+.nav-options .audio .player .jp-progress {
+	display: none !important;
+}
+.nav-options .audio .player .jp-container {
+	float: left;
+}
+.nav-options .audio .player .jp-gui {
+	float: left;
+	margin-right: 16px;
+	margin-top: 5px;
+}
+.nav-options .audio .player .jp-gui li {
+	display: block;
+	overflow: hidden;
+	width: 40px;
+}
+.nav-options .audio .player .jp-gui li.set {
+	margin-top: 5px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/player-divider.png) center center no-repeat;
+}
+.nav-options .audio .player .jp-play { 
+
+	width: 40px;
+	height: 40px;
+	display: block;
+	text-indent: -999em;
+	overflow: hidden;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/player-play.png) top left no-repeat;
+}
+.nav-options .audio .player .jp-pause {
+	width: 40px;
+	height: 40px;
+	display: block;
+	text-indent: -999em;
+	overflow: hidden;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/player-pause.png) top left no-repeat;
+}
+
+.nav-options .audio .player .jp-previous,
+.nav-options .audio .player .jp-next {
+	width: 11px;
+	height: 10px;
+	display: block;
+	text-indent: -999em;
+	overflow: hidden;
+}
+.nav-options .audio .player .jp-previous {
+	float: left;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/player-next-prev.png) top left no-repeat;
+}
+.nav-options .audio .player .jp-next {
+	float: right;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/player-next-prev.png) top right no-repeat;
+}
+.nav-options .audio .player .jp-playlist {
+	float: left;
+	margin-top: 24px;
+}
+.nav-options .audio .player .jp-playlist li {
+	display: none;
+}
+.nav-options .audio .player .jp-playlist li.jp-playlist-current {
+	display: block;
+}
+.nav-options .audio .player .buy-options {
+	float: right;
+	font-family: 'caviar_dreamsregular', sans-serif;
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: left;
+	font-style: normal;
+	margin-top: 11px;
+}
+.nav-options .audio .player .buy-options a {
+	color: #cb1828;
+}
+.nav-options .audio .player a.close {
+	width: 70px;
+	height: 71px;
+	position: absolute;
+	top: 0px;
+	right: -36px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/close-tab.png) top left no-repeat;
+	display: none;
+}
+.nav-options .audio.active .player a.close {
+	display: block;
+}
+.nav-options .icons {
+	position: relative;
+	float: left;
+	margin-top: 8px;
+	margin-left: 14px;
+	width: 50px;
+	height: 96px;
+}
+.nav-options .icons:after,
+.nav-options .icons:before {
+	content: '';		
+	width: 10px;
+	height: 10px;
+	background-color: #18646e;
+	position: absolute;
+	top: 50%;
+	margin-top: -5px;
+	/*margin: 21px 0 0 0;*/
+	-webkit-transform: rotate(45deg); 
+	-moz-transform: rotate(45deg); 
+	-ms-transform: rotate(45deg); 
+	-o-transform: rotate(45deg); 
+	transform: rotate(45deg);
+	z-index: 0;
+}
+.nav-options .icons:after {
+	right: 10px;
+}
+.nav-options .icons:before {
+	left: 10px;
+}
+.nav-options .icons li {
+	position: relative;
+	z-index: 5;
+}
+/*.nav-options .icons li.audio {
+	height: 40px;
+}
+.nav-options .icons li.signup {
+	height: 40px;
+}*/
+.nav-options .icons li > a {
+	display: block;
+	/*transition: 0.5s ease-in-out;*/
+}
+.nav-options .icons .audio > a {
+	width: 50px;
+	height: 50px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/player-icon.png) center -60px no-repeat;
+	/*margin-bottom: -80px;*/
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -25px;
+	z-index: 1;
+}
+.nav-options .icons .audio.active > a,
+.nav-options .icons .audio > a:hover {
+	height: 98px;
+    margin-left: -50px;
+    top: -34px;
+    width: 100px;
+	background-position: bottom center;
+}
+.nav-options .icons .signup {
+	margin-top: 42px;
+}
+.nav-options .icons .signup > a {
+	position: relative;
+	z-index: 5;
+	width: 50px;
+	height: 50px;
+	bottom: 0;
+	left: 50%;
+	margin-left: -25px;
+	display: block;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/newsletter-icon-pop.png) center -60px no-repeat;
+}
+.nav-options .icons .signup.active > a,
+.nav-options .icons .signup > a:hover {
+	height: 98px;
+    margin-left: -50px;
+    top: 3px;
+    width: 100px;
+	background-position: bottom center;
+}
+.nav-options .icons .signup .slip {
+	position: absolute;
+	top: 13px;
+	left: 26px;
+	width: 0;
+	font-size: 16px;
+	line-height: 72px;
+	color: #833e18;
+	height: 72px;
+	background-color: #020708;
+	padding: 0;
+	-webkit-transition: 0.3s ease-in-out;
+	-ms-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+}
+.nav-options .icons .signup.active .slip {
+	width: 360px;	
+	padding: 0 32px 0 45px;
+}
+.nav-options .icons .signup .slip .cut {
+	overflow: hidden;
+	white-space: nowrap;
+}
+.nav-options .icons .signup .slip a {
+	text-transform: uppercase;
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-size: 12px;
+	color: #cb1828;
+	font-style: normal;
+	padding-left: 13px;
+}
+.nav-options .icons .signup .slip a.close {
+	width: 70px;
+	height: 71px;
+	position: absolute;
+	top: 0px;
+	right: -36px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/close-tab.png) top left no-repeat;
+	display: none;
+}
+.nav-options .icons .signup.active .slip a.close {
+	display: block;
+}
+.no-dates { color: #10a6a0; text-align: center;}
+/*Form*/
+/*#form {	
+	width: 440px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/newsletter-bg.jpg) top center no-repeat;
+	border-radius: 10px;
+}*/
+#form {	
+	width: 320px;
+	/*background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/newsletter-bg.jpg) top center no-repeat;*/
+	border-radius: 10px;
+}
+#form .wwFormTable {	
+	width: 330px;
+	margin: 0 auto;
+}
+#form .form-title {
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-size: 30px;
+	line-height: 60px;
+	letter-spacing: 0.040em;
+	color: #e94a50;
+	text-transform: uppercase;
+	text-align: center;
+	font-style: normal;
+	position: relative;
+	margin-bottom: 20px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/title-divider-full.png) center center no-repeat;
+}
+#form .wwFormTable .input-fields {
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.75);
+	margin-bottom: 20px;
+}
+#form .wwFormTable .selective-input .input-fields {
+	overflow: hidden;
+	position: relative;
+}
+#form .wwFormTable .selective-input .input-fields:after {
+	content: '';
+	border-left: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    border-top: 7px solid #6c6c6c;
+    font-size: 16px;
+    height: 0;
+    position: absolute;
+    right: 14px;
+    top: 21px;
+    width: 0;
+}
+#form .wwFormTable .selective-input .input-fields select {
+	width: 130%;
+	position: relative;
+	z-index: 5;
+}
+#form .wwFormTable .input-fields input,
+#form .wwFormTable .input-fields select {
+	width: 100%;
+	height: 47px;
+	background: transparent;
+	border: 0;
+	font-family: 'Arial', sans-serif;
+	font-size: 15px;
+	color: #676767;
+	box-sizing: border-box;
+	padding: 0 13px;
+}
+#form .wwFormTable .input-fields select {
+	padding: 13px;	
+}
+#form .wwFormTable .submit-btn {
+	margin-bottom: 20px;
+	text-align: center;
+}
+#form .wwFormTable .submit-btn input {
+	padding: 0 26px;
+	height: 38px;
+	font-size: 20px;
+	border: 0;
+	color: #c8ebea;
+	font-family: 'Georgia', sans-serif;
+	font-style: italic;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/signup-btn-bg.png) top left repeat-x;
+	border-radius: 2px;
+	text-shadow: 0 -1px 2px rgba(0,0,0,0.75);
+	cursor: pointer;
+}
+#form .wwFormTable .submit-btn input:hover {
+	text-decoration: underline;
+}
+#form .wwFormTable .form-legal {
+	font-family: 'Arial', sans-serif;
+	color: #1b5552;
+	font-size: 11px;
+	line-height: 13px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-style: normal;
+	text-align: center;
+	padding-bottom: 20px;
+}
+#form .wwFormTable .form-legal a {
+	color: #1b5552;
+	text-decoration: underline;
+}
+#form .wwFormTable .form-legal a:hover {
+	color: #fff;
+}
+/*.fancybox-close {
+	width: 35px;
+	height: 35px;
+	top: 13px;
+	right: 13px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lb-close.png) top left no-repeat;
+}*/
+.fancybox-close,
+#form .close_lb {
+	width: 35px;
+	height: 35px;
+	top: 5px;
+	right: 5px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lb-close.png) top left no-repeat;
+}
+/*/////////////////////////////////////////////////
+ Animation Keyframes
+////////////////////////////////////////////////*/
+@-webkit-keyframes bounce {
+	0%   
+		{ 
+			bottom: 60px;
+		}
+	64%   
+		{ 
+			bottom: 60px;
+		}
+	68%   
+		{ 
+			bottom: 80px;
+			-webkit-animation-timing-function:ease-out;
+		}
+	72%   
+		{ 
+			bottom: 50px;
+			-webkit-animation-timing-function:ease-in;
+		}
+	76%   
+		{ 
+			bottom: 75px;
+			-webkit-animation-timing-function:ease-out;
+		}
+	80%   
+		{ 
+			bottom: 55px;
+			-webkit-animation-timing-function:ease-in;
+		}
+	84%   
+		{ 
+			bottom: 70px;
+			-webkit-animation-timing-function:ease-in;
+		}
+	88%   
+		{ 
+			bottom: 60px;
+			-webkit-animation-timing-function:ease-in;
+		}
+}
+@-moz-keyframes bounce {
+	0%   
+		{ 
+			bottom: 60px;
+		}
+	64%   
+		{ 
+			bottom: 60px;
+		}
+	68%   
+		{ 
+			bottom: 80px;
+			-moz-animation-timing-function:ease-out;
+		}
+	72%   
+		{ 
+			bottom: 50px;
+			-moz-animation-timing-function:ease-in;
+		}
+	76%   
+		{ 
+			bottom: 75px;
+			-moz-animation-timing-function:ease-out;
+		}
+	80%   
+		{ 
+			bottom: 55px;
+			-moz-animation-timing-function:ease-in;
+		}
+	84%   
+		{ 
+			bottom: 70px;
+			-moz-animation-timing-function:ease-in;
+		}
+	88%   
+		{ 
+			bottom: 60px;
+			-moz-animation-timing-function:ease-in;
+		}
+}
+@-o-keyframes bounce {
+	0%   
+		{ 
+			bottom: 60px;
+		}
+	64%   
+		{ 
+			bottom: 60px;
+		}
+	68%   
+		{ 
+			bottom: 80px;
+			-o-animation-timing-function:ease-out;
+		}
+	72%   
+		{ 
+			bottom: 50px;
+			-o-animation-timing-function:ease-in;
+		}
+	76%   
+		{ 
+			bottom: 75px;
+			-o-animation-timing-function:ease-out;
+		}
+	80%   
+		{ 
+			bottom: 55px;
+			-o-animation-timing-function:ease-in;
+		}
+	84%   
+		{ 
+			bottom: 70px;
+			-o-animation-timing-function:ease-in;
+		}
+	88%   
+		{ 
+			bottom: 60px;
+			-o-animation-timing-function:ease-in;
+		}
+}
+@-webkit-keyframes fade {
+	0%   
+		{ 
+			opacity: 1;
+		}
+	20%   
+		{ 
+			opacity: 1;
+		}
+	50%   
+		{ 
+			opacity: 0;
+			-webkit-animation-timing-function:ease-in;
+		}
+	100   
+		{ 
+			bottom: 1;
+			-webkit-animation-timing-function:ease-out;
+		}
+}
+@-moz-keyframes fade {
+	0%   
+		{ 
+			opacity: 1;
+		}
+	20%   
+		{ 
+			opacity: 1;
+		}
+	50%   
+		{ 
+			opacity: 0;
+			-moz-animation-timing-function:ease-in;
+		}
+	100   
+		{ 
+			bottom: 1;
+			-moz-animation-timing-function:ease-out;
+		}
+}
+@-o-keyframes fade {
+	0%   
+		{ 
+			opacity: 1;
+		}
+	20%   
+		{ 
+			opacity: 1;
+		}
+	50%   
+		{ 
+			opacity: 0;
+			-o-animation-timing-function:ease-in;
+		}
+	100   
+		{ 
+			bottom: 1;
+			-o-animation-timing-function:ease-out;
+		}
+}
+/*/////////////////////////////////////////////////
+ Landing
+////////////////////////////////////////////////*/
+#book #spine.landing .lower {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+/**************************************************/
+/************************************** LANDING PAGE */
+/**************************************************/
+html, body { height: 100%; width: 100%; padding: 0; margin: 0; }
+#videos-container { overflow : hidden; position: relative; height: 100%; width: 100%; padding: 0; margin: 0;  }
+#videos-container .mejs-container { z-index: -1; }
+#videos-container > div {
+	cursor: pointer;
+}
+.vid-section { cursor: pointer; }
+.vid-section-right {
+	position: absolute;
+    height: 200%;
+    width: 200%;
+    overflow: hidden;
+    top: 0%;
+    right: 0%;
+    -webkit-transform-origin: 100% 0%;
+    -moz-transform-origin: 100% 0%;
+    -ms-transform-origin: 100% 0%;
+    -webkit-box-shadow: 0px -13px 64px 16px rgba(0, 0, 0, 0.7);
+	-moz-box-shadow: 0px -13px 64px 16px rgba(0, 0, 0, 0.7);
+	box-shadow: 0px -13px 64px 16px rgba(0, 0, 0, 0.7);
+}
+.vid-section-right .mejs-poster { right: 100px !important; width: 50% !important; height: 50% !important; background-image: none !important; }
+.vid-section-right video { width: 54% !important; height: 50% !important; }
+.vid-section-right video, .vid-section-right .mejs-poster { 
+	display: block;
+	/*-webkit-transform: rotate(28.048218536338904deg);
+	-moz-transform: rotate(28.048218536338904deg);
+	-ms-transform: rotate(28.048218536338904deg);*/
+	top: -24%;
+	position: absolute;
+	right: 0;
+}
+.vid-section-right .shadow {
+	-webkit-box-shadow: inset 14px 6px 47px 22px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: inset 14px 6px 47px 22px rgba(0, 0, 0, 0.6);
+	box-shadow: inset 14px 6px 47px 22px rgba(0, 0, 0, 0.6);
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.door-wrap { margin: 0 auto; width: 512px; background-color: transparent; position: absolute; margin-left: -256px; top: 50%; left: 50%; z-index: 50; margin-top: -155px; }
+.door-wrap .opened { background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/door-opened.png) no-repeat; display: none; width: 512px; height: 628px; position: absolute; top: -128px; left: -21px;  }
+.door-wrap .glow { background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/door-glow.png) no-repeat; width: 423px; height: 495px; display: block; position: absolute; top: -3px; left: 28px; }
+.front-door { margin: 0 auto; width: 162px; position: relative; z-index: 1; }
+.front-door:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.front-door div { height: 322px; -moz-perspective: 900px; -ms-perspective: 900px; -o-perspective: 900px; -webkit-perspective: 900px; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; -o-transform-style: preserve-3d; -webkit-transform-style: preserve-3d; width: 162px; }
+.front-door img { pointer-events: none; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; }
+.front-door div:hover img { -moz-perspective: 300px; -ms-perspective: 300px; -o-perspective: 300px; -webkit-perspective: 300px; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; -o-transform-style: preserve-3d; -webkit-transform-style: preserve-3d; }
+.open { -moz-transform: rotateY(-115deg); -ms-transform: rotateY(-115deg); -o-transform: rotateY(-115deg); -webkit-transform: rotateY(-115deg); }
+.door-rotateY img { -webkit-transform-origin: left; -ms-transform-origin: left; transform-origin: left;}
+.door-wrap .door { position: relative; top: 9px; }
+
+.vid-section .info-box { left: 50%; top: 50%; }
+.vid-section-right .info-box { top: 4%; left: auto; right:15%; -webkit-backface-visibility: hidden; /*-webkit-transform: rotate(28.048218536338904deg); -moz-transform: rotate(28.048218536338904deg); -ms-transform: rotate(28.048218536338904deg);*/}
+.vid-section-right .info-box { margin-right: 0px; margin-left: 0; margin-top: 0px;}
+@media only screen and (max-width: 1280px) {
+	.vid-section-right .info-box { top: 2%; left: auto; right:10%; /*-webkit-transform: rotate(28.048218536338904deg); -moz-transform: rotate(28.048218536338904deg); -ms-transform: rotate(28.048218536338904deg);*/}
+	.vid-section-right .info-box { margin-right: 0px; margin-left: 0; margin-top: 0px;}
+}
+.vid-section .info-box .arrow { background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/arrow-small-right.png) no-repeat; bottom: 47%; right: -12px; }
+.vid-section-right .info-box .arrow { top: 21%; left: 56px; }
+
+.info-box { background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/landing-box.png) no-repeat top center; width: 550px; height: 512px; position: absolute; z-index: 20; display: none; margin-top: -256px; margin-left: -690px; }
+.info-box .arrow { background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/arrow-small.png) no-repeat; display: block; width: 99px; height: 24px; position: absolute; }
+.info-box .content { margin: 29% auto 0; max-width: 330px; text-align: center; }
+.info-box .content h2 { font: 25px 'caviar_dreamsregular', sans-serif; color: #c2aa5a;  text-transform: uppercase; padding: 0 0 20px; cursor: pointer;}
+.info-box .content .text { font: italic 14px/22px 'Georgia', serif; color: #f0989c; border-bottom: 1px solid #e5cb6c; border-top: 1px solid #e5cb6c; padding: 10px 0; }
+.info-box .content .btn { background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/spot-btn.png) repeat-x; max-width: 180px; margin: 25px auto 0; }
+.info-box .content .btn a { font: italic 20px 'Georgia', serif; color: #c8ebea; display: block; padding: 8px 10px; text-shadow: 0 -1px 0 rgba(163,94,5,.4); }
+
+@media only screen and (max-width: 768px) {
+	#videos-container { display: none; }
+	.door-wrap { left: 10%; }
+}
+/*/////////////////////////////////////////////////
+ Lovers
+////////////////////////////////////////////////*/
+.love {
+	min-width: 1420px;
+	overflow: hidden;
+}
+.love .page .inner {
+	position: relative;
+	width: 1440px;
+	margin: 0 auto
+}
+.love .page .inner .sect {
+	position: relative;
+	width: 1215px;
+	margin: 0 auto;
+}
+.love .page {
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+.love .explore {
+	cursor: pointer;
+}
+.love .explore:hover .txt {
+	text-decoration: underline;
+}
+#choice {
+	height: 1100px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/select-bg.jpg);
+}
+#choice ul {
+	margin-top: 250px;
+	text-align: center;
+	font-size: 0;
+	line-height: 0;
+}
+#choice ul li {
+	position: relative;
+	width: 280px;
+	margin: 0 4px;
+	float: none;
+	display: inline-block;
+}
+#choice .vert {
+	font-family: 'Georgia', serif;
+	font-size: 19px;
+	line-height: 22px;
+	color: #eec853;
+	font-style: italic;
+	text-shadow: 0 0 10px #000;
+	text-align: center;
+	width: 280px; /*334*/
+	height: 620px;
+	float: left;	
+	background-repeat: no-repeat;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	opacity: 0.5;
+}
+#choice li.active .vert {
+	opacity: 0;
+}
+#choice .vert h1 {
+	position: relative;
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-size: 30px;
+	line-height: 42px;
+	color: #ffffff;
+	font-style: normal;;
+	text-transform: uppercase;
+	text-shadow: 0 0 10px #000;
+	margin-top: 170px;
+	margin-bottom: 20px;
+}
+#choice .vert .head {
+	top: 55px;
+	position: absolute;
+	width: 100%;
+	height: 225px; /*312*/
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	opacity: 0.9;
+}
+#choice .vert .break,
+#choice .vert .icon {
+	top: 328px;
+	position: absolute;
+	width: 100%;
+	height: 53px;
+	background-position: center center;
+	background-repeat: no-repeat;	
+}
+#choice .vert .txt {
+	position: relative;
+	width: 200px;
+	margin: 0 auto;
+	opacity: 0.9;
+}
+#choice .vert.leader {
+	background-position: center 120px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/sbg-leader.png);
+}
+#choice .vert.lover {
+	background-position: center 120px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/sbg-lover.png);
+}
+#choice .vert.surgeon {
+	background-position: center 185px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/sbg-surgeon.png);
+}
+#choice .vert.boy {
+	background-position: 25px 85px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/sbg-boy.png);
+}
+#choice .vert.chauffeur {
+	background-position: center 120px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/sbg-chauffeur.png);
+}
+#choice .vert.leader .break {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/break-leader.png);	
+}
+#choice .vert.lover .break {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/break-lover.png);	
+}
+#choice .vert.surgeon .break {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/break-surgeon.png);	
+}
+#choice .vert.boy .break {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/break-boy.png);	
+}
+#choice .vert.chauffeur .break {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/break-chauffeur.png);	
+}
+#choice .vert.leader .icon {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/icon-leader.png);	
+}
+#choice .vert.lover .icon {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/icon-lover.png);	
+}
+#choice .vert.surgeon .icon {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/icon-surgeon.png);	
+}
+#choice .vert.boy .icon {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/icon-boy.png);	
+}
+#choice .vert.chauffeur .icon {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/icon-chauffeur.png);	
+}
+#choice .vert.leader .head {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/head-leader.png);	
+}
+#choice .vert.lover .head {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/head-lover.png);	
+}
+#choice .vert.surgeon .head {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/head-surgeon.png);	
+}
+#choice .vert.boy .head {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/head-boy.png);	
+}
+#choice .vert.chauffeur .head {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/head-chauffeur.png);	
+}
+#choice .hover {
+	position: absolute;
+	text-align: center;
+	width: 452px;
+	height: 858px;
+	top: -80px;
+	left: 50%;
+	margin-left: -226px;
+	background-repeat: no-repeat;	
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	cursor: pointer;
+	opacity: 0;
+	z-index: 1;
+}
+#choice li.active .hover {
+	opacity: 1;
+	z-index: 2;
+}
+#choice .hover h1 {
+	position: relative;
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-size: 30px;
+	line-height: 42px;
+	color: #ffffff;
+	font-style: normal;;
+	text-transform: uppercase;
+	text-shadow: 0 0 10px #000;
+	margin-top: 270px;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+}
+#choice .active .hover h1 {
+	margin-top: 290px;
+}
+#choice .hover.leader {
+	background-position: center center;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/zone-leader.png);
+}
+#choice .hover.lover {
+	background-position: center center;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/zone-lover.png);
+}
+#choice .hover.surgeon {
+	background-position: center center;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/zone-surgeon.png);
+}
+#choice .hover.boy {
+	background-position: center center;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/zone-boy.png);
+}
+#choice .hover.chauffeur {
+	background-position: center center;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/zone-chauffeur.png);
+}
+#choice .hover .head {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 312px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+}
+#choice .active .hover .head {
+	top: -30px;
+}
+#choice .hover.leader .head {	
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/head-leader2.png);
+}
+#choice .hover.lover .head {	
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/head-lover2.png);
+}
+#choice .hover.surgeon .head {	
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/head-surgeon2.png);
+}
+#choice .hover.boy .head {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/head-boy2.png);
+}
+#choice .hover.chauffeur .head {	
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/head-chauffeur2.png);
+}
+#choice .hover .break {
+	position: absolute;
+	top: 350px;
+	width: 100%;
+	height: 40px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+}
+#choice .active .hover .break {
+	top: 325px;
+}
+#choice .hover.leader .break {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/break-leader2.png);
+}
+#choice .hover.lover .break {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/break-lover2.png);
+}
+#choice .hover.surgeon .break {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/break-surgeon2.png);
+}
+#choice .hover.boy .break {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/break-boy2.png);
+}
+#choice .hover.chauffeur .break {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/break-chauffeur2.png);
+}
+#choice .hover .icon {
+	position: absolute;
+	top: 120px;
+	width: 100%;
+	height: 125px;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	/*opacity: 0;*/
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+}
+#choice .active .hover .icon {
+	/*opacity: 1;*/
+	top: 170px;
+}
+#choice .hover.leader .icon {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/icon-leader2.png);
+}
+#choice .hover.lover .icon {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/icon-lover2.png);
+}
+#choice .hover.surgeon .icon {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/icon-surgeon2.png);
+}
+#choice .hover.boy .icon {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/icon-boy2.png);
+}
+#choice .hover.chauffeur .icon {
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/icon-chauffeur2.png);
+}
+#choice .hover .move {
+	position: absolute;	
+	left: 50%;
+	margin-left: -222px;
+	width: 444px;
+	opacity: 0;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	-webkit-transition: 1s ease-in-out;
+	-moz-transition: 1s ease-in-out;
+	-ms-transition: 1s ease-in-out;
+}
+#choice .hover.leader .move {
+	top: 395px;
+	height: 401px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/move-leader.png);
+}
+#choice .active .hover.leader .move {
+	top: 355px;
+	height: 501px;
+	opacity: 1;
+}
+#choice .hover.lover .move {
+	top: 535px;
+	height: 204px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/move-lover.png);
+}
+#choice .active .hover.lover .move {
+	top: 515px;
+	height: 284px;
+	opacity: 1;
+}
+#choice .hover.surgeon .move {
+	top: 435px;
+	height: 400px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/move-surgeon.png);
+}
+#choice .active .hover.surgeon .move {
+	top: 415px;
+	height: 440px;
+	opacity: 1;
+}
+#choice .hover.boy .move {
+	top: 395px;
+	height: 401px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/move-boy.png);
+}
+#choice .active .hover.boy .move {
+	top: 385px;
+	height: 461px;
+	opacity: 1;
+}
+#choice .hover.chauffeur .move {
+	top: 390px;
+	height: 498px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/move-chauffeur.png);
+}
+#choice .active .hover.chauffeur .move {
+	top: 370px;
+	height: 458px;
+	opacity: 1;
+}
+.love .vector {
+	-webkit-transition: 0.75s ease-in-out 0s;
+	-moz-transition: 0.75s ease-in-out 0s;
+	-ms-transition: 0.75s ease-in-out 0s;
+	transition: 0.75s ease-in-out 0s;
+}
+.love .active .vector {
+	-webkit-transition: 0.75s ease-in-out 0s;
+	-moz-transition: 0.75s ease-in-out 0s;
+	-ms-transition: 0.75s ease-in-out 0s;
+	transition: 0.75s ease-in-out 0s;	
+}
+#leader {
+	z-index: 10;
+	height: 1071px;
+	background-image: url(images/lovers/leader/leader_bg2.jpg);
+}
+#leader .man {
+	position: absolute;
+	width: 883px;
+	height: 819px;
+	top: 212px;
+	right: -212px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/leader/leader_man.png) top left no-repeat;
+	right: -242px;
+	opacity: 0;
+}
+#leader.active .man {
+	right: -212px;
+	opacity: 1;
+}
+#leader .chair {
+	position: absolute;
+	width: 948px;
+	height: 577px;
+	margin-left: -474px;
+	left: 50%;
+	top: 472px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/leader/leader_throne.png) top center no-repeat;
+	top: 402px;
+	opacity: 0;
+	background-size: auto 100%;
+}
+#leader.active .chair {
+	top: 432px;
+	height: 617px;
+	opacity: 1;
+}
+#leader .spike {
+	position: absolute;
+	width: 358px;
+	height: 382px;
+	margin-left: -195px;
+	left: 50%;
+	top: 82px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/leader/leader_star1.png) center no-repeat;
+	background-size: auto 100%;
+	opacity: 0;
+}
+#leader.active .spike {
+	opacity: 1;
+	top: 42px;
+	height: 452px
+}
+#leader .star {
+	position: absolute;
+	width: 358px;
+	height: 314px;
+	margin-left: -195px;
+	left: 50%;
+	top: 120px;
+	top: 100px;
+	opacity: 0;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/leader/leader_star2.png) top center no-repeat;
+}
+#leader.active .star {
+	top: 120px;
+	opacity: 1;
+}
+#leader .star .spin {
+	position: absolute;
+	width: 152px;
+	height: 139px;
+	margin-left: -76px;
+	left: 50%;
+	top: 79px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/leader/leader_star3.png) top center no-repeat;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-webkit-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+}
+#leader.active .star .spin {
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+}
+#leader .banner {
+	position: absolute;
+	width: 374px;
+	height: 161px;
+	top: 222px;
+	left: -60px;
+	cursor: pointer;
+	opacity: 0;
+	-webkit-transition: 0.75s ease-in-out 0s;
+	-moz-transition: 0.75s ease-in-out 0s;
+	-ms-transition: 0.75s ease-in-out 0s;
+	transition: 0.75s ease-in-out 0s;
+}
+#leader.active .banner {
+	opacity: 1;
+	top: 242px;
+}
+#leader .banner:after {
+	content: '';
+	position: absolute;
+	width: 374px;
+	height: 161px;
+	top: 0;
+	left: 0;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/leader/leader_icon.png) top center no-repeat;	
+}
+#leader .banner .explore {
+	position: absolute;
+	width: 326px;
+	height: 256px; /*256px*/
+	margin-left: -172px; 
+	top: 60px;
+	left: 50%;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/leader/leader_bannerclose.png) top center no-repeat;
+	overflow: hidden;
+	-webkit-transition: 0.5s ease-in-out 0.5s;
+	-moz-transition: 0.5s ease-in-out 0.5s;
+	-ms-transition: 0.5s ease-in-out 0.5s;
+}
+#leader .banner.look .explore {
+	height: 0;
+	-webkit-transition: 0.5s ease-in-out 0s;
+	-moz-transition: 0.5s ease-in-out 0s;
+	-ms-transition: 0.5s ease-in-out 0s;
+}
+#leader .banner .explore .txt {
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-size: 25px;
+	line-height: 30px;
+	color: #444a44;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 90px;
+	font-style: normal;	
+}
+#leader .banner:hover .explore .txt {
+	text-decoration: underline;
+}
+#leader .banner .slide {
+	position: absolute;	
+	width: 320px;
+	height: 0; /*677px*/
+	margin-left: -160px;
+	left: 50%;
+	top: 50px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/leader/leader_banneropen.png) top center no-repeat;
+	overflow: hidden;
+	/*height: 0;*/
+	-webkit-transition: 0.5s ease-in-out 0s;
+	-moz-transition: 0.5s ease-in-out 0s;
+	-ms-transition: 0.5s ease-in-out 0s;
+}
+#leader .banner.look .slide {
+	height: 677px;
+	-webkit-transition: 0.5s ease-in-out 0.5s;
+	-moz-transition: 0.5s ease-in-out 0.5s;
+	-ms-transition: 0.5s ease-in-out 0.5s;
+}
+#leader .banner .slide .txt {
+	text-align: center;
+	margin: 90px 0 0 60px;
+	width: 182px;
+	font-size: 20px;
+	line-height: 32px;
+	color: #8f7858;
+}
+#lover {
+	z-index: 9;
+	height: 1128px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/lover_bg.jpg);	
+}
+#book #lover {
+	overflow: visible;
+}
+#lover .lace {
+	position: absolute;
+	top: -30px;
+	left: -25px;
+	width: 421px;
+	height: 429px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/mirror_lace.png) top left no-repeat;
+	opacity: 0;
+	-webkit-transition: 0.75s ease-in-out;
+	-moz-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+}
+#lover.active .lace {
+	opacity: 1;
+}
+#lover .mirror { opacity: 0; position: absolute; right: 65px; top: 45px; 
+-webkit-transition: 0.75s ease-in-out ;
+	-moz-transition: 0.75s ease-in-out ;
+	-ms-transition: 0.75s ease-in-out ;
+	transition: 0.75s ease-in-out ;}
+#lover.active .mirror {opacity: 1; top: 75px;}
+#lover .mirror-block { width: 368px; height: 367px; position: relative; margin: 0 auto; }
+#lover .mirror-frame { background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/mirror_frame.png) top left no-repeat; display: block; width: 368px; height: 367px; position: absolute; z-index: 1; }
+#lover .mirror-glass { background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/mirror.png) no-repeat; display: block; width: 368px; height: 367px; position: absolute; z-index: 3; top: 0px; left: 0px; }
+#lover .slider {width:294px; height:294px; position:relative; z-index: 2; left: 40px; top: 36px; opacity: 0; -webkit-transition: 0.3s ease-in-out; -moz-transition: 0.3s ease-in-out; -ms-transition: 0.3s ease-in-out;}
+#lover .mirror.look .slider {	
+	opacity: 1;
+}
+.sp, .sp img { display: block; width: 294px; height: 294px; top: 0; left: 0; position: absolute; border-radius: 150px; overflow: hidden; }
+
+#lover .mirror-nav { width:100%; position: absolute; width: 100%; top: 135px; }
+#lover .mirror-nav div { background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/mirror_arrows.png) no-repeat; display: block; width: 92px; height: 53px; cursor: pointer; position: absolute; top: 20px; }
+#lover .mirror-nav span { position: absolute; top: -10px; }
+#lover .mirror-nav .prev { left: -78px; left: 0; background-position: left top; -webkit-transition: 0.75s ease-in-out; -moz-transition: 0.75s ease-in-out; -ms-transition: 0.75s ease-in-out;}
+#lover .mirror.look .prev {left: -78px;}
+#lover .mirror-nav .next { right: -88px; right: 0; background-position: right top; -webkit-transition: 0.75s ease-in-out; -moz-transition: 0.75s ease-in-out; -ms-transition: 0.75s ease-in-out;}
+#lover .mirror.look .next {right: -79px;}
+#lover .mirror-nav .prev:before {
+	content: '';
+	opacity: 0;
+	display: block; width: 92px; height: 53px; cursor: pointer; position: absolute;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/arrow-gold.png) top left no-repeat;
+	-webkit-transition: 0.3s ease-in-out;
+	-moz-transition: 0.3s ease-in-out;
+	-ms-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+}
+#lover .mirror-nav .next:before {
+	content: '';
+	opacity: 0;
+	display: block; width: 92px; height: 53px; cursor: pointer; position: absolute;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/arrow-gold.png) top right no-repeat;
+	-webkit-transition: 0.3s ease-in-out;
+	-moz-transition: 0.3s ease-in-out;
+	-ms-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+}
+#lover .mirror-nav div:hover:before { opacity: 1; }
+
+.prev-leaf { background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/leaf_left.png) no-repeat; display: block; width: 163px; height: 121px; left: -90px; left: 0; -webkit-transition: 0.5s ease-in-out; -moz-transition: 0.5s ease-in-out; -ms-transition: 0.5s ease-in-out;}
+#lover .mirror.look .prev-leaf {left: -90px;}
+.next-leaf { background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/leaf_right.png) no-repeat; display: block; width: 163px; height: 121px; right: -90px; right: 0; -webkit-transition: 0.5s ease-in-out; -moz-transition: 0.5s ease-in-out; -ms-transition: 0.5s ease-in-out;}
+#lover .mirror.look .next-leaf {right: -90px;}
+#lover .frame {
+	position: absolute;
+	width: 1183px;
+	height: 1006px;
+	top: 30px;
+	left: -380px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/lover_frame.png) top left no-repeat;
+	opacity: 0;
+}
+#lover.active .frame {
+	opacity: 1;
+	left: -340px;
+}
+#lover .plant {
+	position: absolute;
+	width: 1022px;
+	height: 772px;
+	top: 130px;
+	left: -290px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/lover_tree2.png) top left no-repeat;
+	opacity: 0;
+	-webkit-transition: 0.75s ease-in-out;
+	-moz-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+}
+#lover.active .plant {
+	opacity: 1;
+	left: -250px;
+}
+#lover .tree {
+	position: absolute;
+	width: 2029px;
+	height: 875px;
+	top: 253px;
+	left: -1290px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/lover_tree1.png) top left no-repeat;
+	opacity: 0.85;
+	opacity: 0;
+	-webkit-transition: 1s ease-in-out;
+	-moz-transition: 1s ease-in-out;
+	-ms-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+}
+#lover.active .tree {
+	opacity: 1;
+	left: -1190px;
+}
+#lover .guy {
+	position: absolute;
+	width: 726px;
+	height: 799px;
+	top: 85px;
+	left: 0px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/lover_man.png) top left no-repeat;
+	opacity: 0;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+}
+#lover.active .guy {
+	-webkit-transition: 0.5s ease-in-out 1s;
+	-moz-transition: 0.5s ease-in-out 1s;
+	-ms-transition: 0.5s ease-in-out 1s;
+	transition: 0.5s ease-in-out 1s;
+	opacity: 1;
+}
+#lover .bed {
+	position: absolute;
+	width: 1245px;
+	height: 669px;
+	top: 515px;
+	left: 100px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/lover_bed.png) top left no-repeat;
+	opacity: 0;
+	-webkit-transition: 1s ease-in-out;
+	-moz-transition: 1s ease-in-out;
+	-ms-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+}
+#lover.active .bed {
+	opacity: 1;
+	left: 200px;
+}
+#lover .fireplace {
+	position: absolute;
+	width: 613px;
+	height: 356px;
+	top: 555px;
+	left: 515px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/fireplace.png) top left no-repeat;
+	opacity: 0;
+	-webkit-transition: 1s ease-in-out;
+	-moz-transition: 1s ease-in-out;
+	-ms-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+}
+#lover.active .fireplace {
+	opacity: 1;
+	left: 715px;
+}
+#lover .fireplace .fire {
+	position: absolute;
+	width: 122px;
+	height: 120px;
+	top: 115px;
+	left: 300px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/fire_lover.gif) top left no-repeat;
+	background-size: cover;
+}
+#lover .explore {
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-size: 25px;
+	line-height: 31px;
+	font-style: normal;
+	text-transform: uppercase;
+	color: #b3ced2;
+	position: absolute;
+	top: 312px;
+	left: 0;
+	width: 100%;
+	height: 106px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/lover_icon.png) top center no-repeat;
+	z-index: 4;
+	opacity: 0;
+}
+#lover.active .explore {
+	opacity: 1;
+}
+#lover .explore .txt {
+	margin: 85px 0 0 60px;
+}
+#surgeon {
+	z-index: 8;
+	height: 1011px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_bg.jpg);	
+}
+#book #surgeon {
+	overflow: visible;
+}
+#surgeon .sliver {
+	position: absolute;
+	bottom: -192px;
+	left: 0;
+	width: 100%;
+	height: 192px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_sliv.png) top center no-repeat;
+}
+#surgeon .drops {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 1133px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_waterdrop.png) top center no-repeat;
+	/*opacity: 0;*/
+}
+#surgeon.active .drops {
+	/*opacity: 1;*/
+}
+#surgeon .spill {
+	position: absolute;
+	top: -2px;
+	left: 0;
+	width: 100%;
+	height: 309px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/lover/lover_sliv.png) top center no-repeat;
+	/*opacity: 0;*/
+}
+#surgeon.active .spill {
+	/*opacity: 1;*/
+}
+#surgeon .tub {
+	position: absolute;
+	top: 563px;
+	left: -133px;
+	width: 1196px;
+	height: 612px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_tub.png) top center no-repeat;
+	opacity: 0;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+}
+#surgeon.active .tub {
+	opacity: 1;
+}
+#surgeon .splash {
+	position: absolute;
+	bottom: 408px;
+	left: 50%;
+	width: 398px;
+	height: 0px;
+	margin-left: -265px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_milk.png) bottom center no-repeat;
+	background-size: auto 100%;
+	opacity: 0;
+}
+#surgeon.active .splash {
+	-webkit-transition: 1s ease-in-out 1s;
+	-moz-transition: 1s ease-in-out 1s;
+	-ms-transition: 1s ease-in-out 1s;
+	transition: 1s ease-in-out 1s;
+	opacity: 1;
+	height: 319px;
+	bottom: 348px;
+}
+#surgeon .head {
+	position: absolute;
+	top: 200px;
+	right: 50px;
+	width: 766px;
+	height: 519px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_man.png) top center no-repeat;
+	opacity: 0;
+	-webkit-transition: 1s ease-in-out;
+	-moz-transition: 1s ease-in-out;
+	-ms-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+	background-size: auto 100%;
+}
+#surgeon.active .head {
+	opacity: 1;
+	top: 100px;
+	height: 719px;
+}
+#surgeon .arrow.one {
+	position: absolute;
+	top: 235px;
+	right: 600px;
+	width: 94px;
+	height: 85px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_graphic1.png) top center no-repeat;
+	opacity: 0;	
+}
+#surgeon.active .arrow.one {
+	-webkit-transition: 0.5s ease-in-out 1s;
+	-moz-transition: 0.5s ease-in-out 1s;
+	-ms-transition: 0.5s ease-in-out 1s;
+	transition: 0.5s ease-in-out 1s;
+	opacity: 1;
+}
+#surgeon .arrow.two {
+	position: absolute;
+	top: 235px;
+	right: 215px;
+	width: 76px;
+	height: 83px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_graphic2.png) top center no-repeat;
+	opacity: 0;
+}
+#surgeon.active .arrow.two {
+	-webkit-transition: 0.5s ease-in-out 1s;
+	-moz-transition: 0.5s ease-in-out 1s;
+	-ms-transition: 0.5s ease-in-out 1s;
+	transition: 0.5s ease-in-out 1s;
+	opacity: 1;
+}
+#surgeon .arrow.three {
+	position: absolute;
+	top: 600px;
+	right: 600px;
+	width: 88px;
+	height: 99px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_graphic3.png) top center no-repeat;
+	opacity: 0;
+}
+#surgeon.active .arrow.three {
+	-webkit-transition: 0.5s ease-in-out 1s;
+	-moz-transition: 0.5s ease-in-out 1s;
+	-ms-transition: 0.5s ease-in-out 1s;
+	transition: 0.5s ease-in-out 1s;
+	opacity: 1;
+}
+#surgeon .arrow.four {
+	position: absolute;
+	top: 600px;
+	right: 215px;
+	width: 88px;
+	height: 99px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_graphic4.png) top center no-repeat;
+	opacity: 0;
+}
+#surgeon.active .arrow.four {
+	-webkit-transition: 0.5s ease-in-out 1s;
+	-moz-transition: 0.5s ease-in-out 1s;
+	-ms-transition: 0.5s ease-in-out 1s;
+	transition: 0.5s ease-in-out 1s;
+	opacity: 1;
+}
+#surgeon .beaker {
+	position: absolute;
+	top: 690px;
+	right: 40px;
+	width: 386px;
+	height: 388px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_bottle.png) top center no-repeat;
+	opacity: 0;
+	-webkit-transition: 0.75s ease-in-out;
+	-moz-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+}
+#surgeon.active .beaker {
+	-webkit-transition: 0.75s ease-in-out 1s;
+	-moz-transition: 0.75s ease-in-out 1s;
+	-ms-transition: 0.75s ease-in-out 1s;
+	transition: 0.75s ease-in-out 1s;
+	opacity: 1;
+}
+#surgeon .explore {
+	position: absolute;
+	top: 170px;
+	left: 280px;
+	width: 129px;	
+	height: 175px;
+	z-index: 1;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_icon.png) top center no-repeat;
+	opacity: 0;
+	-webkit-transition: 0.75s ease-in-out;
+	-moz-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+}
+#surgeon.active .explore {
+	opacity: 1;
+	top: 190px;
+}
+#surgeon .look .explore {
+	z-index: 0;
+}
+#surgeon .explore .txt {
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-size: 25px;
+	line-height: 30px;
+	color: #444a44;
+	text-align: center;
+	margin-top: 130px;
+	text-transform: uppercase;
+	font-style: normal;
+}
+#surgeon .note {
+	position: absolute;
+	top: 270px;
+	left: 50px;
+	width: 598px;
+	height: 417px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_note.png) top left no-repeat;	
+	opacity: 0;
+	top: 250px;
+	z-index: 0;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+}
+#surgeon .look .note {
+	opacity: 1;
+	/*z-index: 1;*/
+	top: 270px;
+}
+#surgeon .note .close {
+	position: absolute;
+	top: 40px;
+	right: 50px;
+	width: 22px;
+	height: 22px;
+	cursor: pointer;
+}
+#surgeon .note .txt {
+	font-family: 'herr_von_muellerhoffregular', serif;
+	font-size: 44px;
+	line-height: 38px;
+	color: #333333;
+	width: 460px;
+	height: 185px;
+	margin: 145px auto 0;
+}
+#boy {
+	z-index: 7;
+	height: 1175px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/boy_bg.jpg);	
+}
+#boy.upper {
+	z-index: 8;
+}
+#book #boy {
+	overflow: visible;
+}
+#boy .sliver {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 192px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/surgeon/surgeon_sliv.png) top center no-repeat;
+}
+#boy .guy {
+	position: absolute;
+	width: 1312px;
+	height: 614px;
+	top: -75px;
+	left: -80px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_man.png) bottom left no-repeat;
+	opacity: 0;
+	-webkit-transition: 0.75s ease-in-out;
+	-moz-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+}
+#boy.active .guy {
+	opacity: 1;	
+}
+#boy .door {
+	position: absolute;
+	width: 439px;
+	height: 634px;
+	top: 275px;
+	left: 725px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_door.png) top left no-repeat;
+	opacity: 0;
+	-webkit-transition: 0.75s ease-in-out;
+	-moz-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+}
+#boy.active .door {	
+	opacity: 1;	
+}
+#boy .whip {
+	position: absolute;
+	width: 431px;
+	height: 440px;
+	top: 545px;
+	left: 1195px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_whip.png) top left no-repeat;
+	opacity: 0;
+	-webkit-transition: 0.75s ease-in-out;
+	-moz-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+}
+#boy.active .whip {
+	opacity: 1;	
+}
+#boy .shoe {
+	position: absolute;
+	width: 392px;
+	height: 422px;
+	top: 600px;
+	left: 800px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_horseshoe.png) top left no-repeat;
+	opacity: 0;
+}
+#boy.active .shoe {
+	-webkit-transition: 0.75s ease-in-out 1.5s;
+	-moz-transition: 0.75s ease-in-out 1.5s;
+	-ms-transition: 0.75s ease-in-out 1.5s;
+	transition: 0.75s ease-in-out 1.5s;
+	opacity: 1;	
+	top: 650px;
+}
+#boy .explore {
+	position: absolute;
+	width: 130px;
+	height: 134px;
+	top: 825px;
+	left: 925px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_icon.png) top left no-repeat;
+	opacity: 0;
+	-webkit-transition: 0.75s ease-in-out;
+	-moz-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+}
+#boy.active .explore {
+	-webkit-transition: 0.75s ease-in-out 3s;
+	-moz-transition: 0.75s ease-in-out 3s;
+	-ms-transition: 0.75s ease-in-out 3s;
+	transition: 0.75s ease-in-out 3s;
+	opacity: 1;	
+	top: 925px
+}
+#boy .explore .txt {
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-size: 25px;
+	line-height: 24px;
+	color: #ce2425;
+	text-align: center;
+	margin-top: -30px;
+	text-transform: uppercase;
+	font-style: normal;
+}
+#boy .downer {
+	position: absolute;
+	width: 973px;
+	height: 0px;
+	top: 525px;
+	left: 0px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_wood1.png) bottom left no-repeat;
+}
+#boy.active .downer {
+	-webkit-transition: 0.5s ease-in-out 3s;
+	-moz-transition: 0.5s ease-in-out 3s;
+	-ms-transition: 0.5s ease-in-out 3s;
+	transition: 0.5s ease-in-out 3s;
+	height: 250px;
+}
+#boy .side {
+	position: absolute;
+	width: 100%;
+	height: 300px;
+	bottom: -44px;
+	right: -151px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_wood2.png) top right no-repeat;
+	opacity: 0;
+}
+#boy.active .side {
+	opacity: 1;
+	right: -51px;
+}
+#boy .horse.one {
+	position: absolute;
+	width: 1126px;
+	height: 1155px;
+	top: 360px;
+	left: -690px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_horse1.png) top left no-repeat;
+	opacity: 0;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+}
+#boy.active .horse.one {
+	opacity: 1;
+	left: -590px;
+}
+#boy .horse.two {
+	position: absolute;
+	width: 748px;
+	height: 933px;
+	top: 355px;
+	left: 40px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_horse2.png) top left no-repeat;
+	opacity: 0;	
+}
+#boy.active .horse.two {
+	-webkit-transition: 0.5s ease-in-out 0.5s;
+	-moz-transition: 0.5s ease-in-out 0.5s;
+	-ms-transition: 0.5s ease-in-out 0.5s;
+	transition: 0.5s ease-in-out 0.5s;
+	opacity: 1;
+	left: 140px;
+}
+#boy .horse.three {
+	position: absolute;
+	width: 994px;
+	height: 650px;
+	top: 20px;
+	left: 355px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_horse3.png) top left no-repeat;
+	opacity: 0;
+}
+#boy.active .horse.three {
+	-webkit-transition: 0.75s ease-in-out 1.5s;
+	-moz-transition: 0.75s ease-in-out 1.5s;
+	-ms-transition: 0.75s ease-in-out 1.5s;
+	transition: 0.75s ease-in-out 1.5s;
+	opacity: 1;	
+	left: 455px;
+}
+#boy .horse.four {
+	position: absolute;
+	width: 512px;
+	height: 485px;
+	top: -200px;
+	left: 1055px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_horse4.png) bottom left no-repeat;
+	opacity: 0;
+}
+#boy.active .horse.four {
+	-webkit-transition: 0.75s ease-in-out 2.5s;
+	-moz-transition: 0.75s ease-in-out 2.5s;
+	-ms-transition: 0.75s ease-in-out 2.5s;
+	transition: 0.75s ease-in-out 2.5s;
+	opacity: 1;	
+	left: 1155px;
+}
+#boy .water.one {
+	position: absolute;
+	width: 907px;
+	height: 1172px;
+	top: 320px;
+	left: -285px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_water1.png) top left no-repeat;
+	opacity: 0;
+}
+#boy.active .water.one {
+	-webkit-transition: 0.5s ease-in-out 0.5s;
+	-moz-transition: 0.5s ease-in-out 0.5s;
+	-ms-transition: 0.5s ease-in-out 0.5s;
+	transition: 0.5s ease-in-out 0.5s;
+	opacity: 1;	
+	left: -265px
+}
+#boy .water.two {
+	position: absolute;
+	width: 694px;
+	height: 873px;
+	top: -395px;
+	left: 1040px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_water2.png) bottom left no-repeat;
+	opacity: 0;
+}
+#boy.active .water.two {
+	-webkit-transition: 0.75s ease-in-out 2s;
+	-moz-transition: 0.75s ease-in-out 2s;
+	-ms-transition: 0.75s ease-in-out 2s;
+	transition: 0.75s ease-in-out 2s;
+	opacity: 1;
+	left: 1140px;
+}
+#boy .water.three {
+	position: absolute;
+	width: 1252px;
+	height: 970px;
+	top: 85px;
+	left: 185px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_water3.png) top left no-repeat;
+	opacity: 0;
+}
+#boy.active .water.three {
+	-webkit-transition: 0.75s ease-in-out 1s;
+	-moz-transition: 0.75s ease-in-out 1s;
+	-ms-transition: 0.75s ease-in-out 1s;
+	transition: 0.75s ease-in-out 1s;
+	opacity: 1;	
+	left: 285px
+}
+#boy .video {
+	display: none;
+}
+#boy .video,
+#boy .video .hold {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #010101;	
+}
+#boy .video .hold iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#boy .video .close {
+	position: absolute;
+	width: 127px;
+	height: 130px;
+	top: 10px;
+	right: 20px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/stableboy/stable_close.png) top left no-repeat;
+	z-index: 2;
+	cursor: pointer;	
+}
+#chauffeur {
+	z-index: 6;
+	height: 1817px;/*1120px*/
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_bg.jpg);	
+}
+#book #chauffeur {
+	overflow: visible;
+}
+#book #chauffeur .inner {
+	z-index: 1;
+}
+#chauffeur .meter {
+	position: absolute;
+	top: 65px;
+	right: 200px;
+	width: 397px;
+	height: 404px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_meter.png) top left no-repeat;
+	z-index: 3;
+	-webkit-transition: 0.75s ease-in-out;
+	-moz-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+	opacity: 0;
+}
+#chauffeur.active .meter {
+	-webkit-transition: 0.75s ease-in-out 3s;
+	-moz-transition: 0.75s ease-in-out 3s;
+	-ms-transition: 0.75s ease-in-out 3s;
+	transition: 0.75s ease-in-out 3s;
+	opacity: 1;
+}
+#chauffeur .meter .txt {
+	font-family: 'josefin_slabregular', serif;	
+	font-size: 28px;
+	line-height: 28px;
+	color: #363636;
+	text-align: center;
+	margin-top: 165px;
+	text-transform: uppercase;
+	font-style: normal;
+}
+#chauffeur .explore {
+	position: absolute;
+	top: 285px;
+	right: 75px;
+	width: 137px;
+	height: 147px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_icon.png) top center no-repeat;
+	z-index: 3;
+	-webkit-transition: 0.75s ease-in-out;
+	-moz-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+	opacity: 0;
+}
+#chauffeur.active .explore {
+	-webkit-transition: 0.75s ease-in-out 3.5s;
+	-moz-transition: 0.75s ease-in-out 3.5s;
+	-ms-transition: 0.75s ease-in-out 3.5s;
+	transition: 0.75s ease-in-out 3.5s;
+	opacity: 1;
+	right: 95px;
+}
+#chauffeur .explore .txt {
+	font-family: 'caviar_dreamsregular', sans-serif;
+	font-size: 25px;
+	line-height: 24px;
+	color: #969696;
+	text-align: center;
+	margin-top: 140px;
+	text-transform: uppercase;
+	font-style: normal;
+}
+#chauffeur .mirror {
+	position: absolute;
+	top: 300px;
+	right: 0px;
+	width: 810px;
+	height: 445px;
+	-webkit-transition: 0.75s ease-in-out;
+	-moz-transition: 0.75s ease-in-out;
+	-ms-transition: 0.75s ease-in-out;
+	transition: 0.75s ease-in-out;
+	opacity: 0;
+}
+#chauffeur.active .mirror {
+	-webkit-transition: 0.75s ease-in-out 3s;
+	-moz-transition: 0.75s ease-in-out 3s;
+	-ms-transition: 0.75s ease-in-out 3s;
+	transition: 0.75s ease-in-out 3s;
+	opacity: 1;
+	top: 330px;
+}
+#chauffeur .mirror .over {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 810px;
+	height: 445px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_mirror.png) top left no-repeat;
+	z-index: 3;
+}
+#chauffeur .mirror .gif {
+	position: absolute;
+	top: 100px;
+	right: 30px;
+	width: 760px;
+	height: 304px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_mirrorimage.gif) top left no-repeat;
+	z-index: 1;
+	display: none;
+	opacity: 0;
+}
+#chauffeur .mirror .pre {
+	position: absolute;
+	top: 100px;
+	right: 30px;
+	width: 760px;
+	height: 304px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_mirrorimage.png) top left no-repeat;
+	z-index: 2;	
+}
+#chauffeur .car {
+	position: absolute;
+	top: 630px;
+	right: 365px;
+	width: 796px;
+	height: 580px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_car.png) top center no-repeat;
+	z-index: 3;
+	opacity: 0;
+}
+#chauffeur.active .car {
+	-webkit-transition: 1.5s ease-in-out .5s;
+	-moz-transition: 1.5s ease-in-out .5s;
+	-ms-transition: 1.5s ease-in-out .5s;
+	transition: 1.5s ease-in-out .5s;
+	opacity: 1;
+	top: 600px;
+}
+#chauffeur .car .light.one {
+	position: absolute;
+	top: 210px;
+	left: 0px;
+	width: 191px;
+	height: 161px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_redlightleft.png) top center no-repeat;	
+}
+#chauffeur.active .light.one {
+	opacity: 1;
+}
+#chauffeur .car .light.two {
+	position: absolute;
+	top: 225px;
+	right: 40px;
+	width: 162px;
+	height: 125px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_redlightright.png) top center no-repeat;	
+}
+#chauffeur.active .light.two {
+	opacity: 1;
+}
+#chauffeur .face.one {
+	position: absolute;
+	top: 190px;
+	left: 240px;	
+	width: 841px;
+	height: 720px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_man1.png) top center no-repeat;
+	opacity: 0;
+}
+#chauffeur.active .face.one {
+	-webkit-transition: 0.75s ease-in-out 1.5s;
+	-moz-transition: 0.75s ease-in-out 1.5s;
+	-ms-transition: 0.75s ease-in-out 1.5s;
+	transition: 0.75s ease-in-out 1.5s;
+	opacity: 1;
+	left: 220px;
+}
+#chauffeur .face.two {
+	position: absolute;
+	top: 275px;
+	left: 20px;
+	width: 907px;
+	height: 774px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_man2.png) top center no-repeat;
+	opacity: 0;
+}
+#chauffeur.active .face.two {
+	-webkit-transition: 0.75s ease-in-out 2.25s;
+	-moz-transition: 0.75s ease-in-out 2.25s;
+	-ms-transition: 0.75s ease-in-out 2.25s;
+	transition: 0.75s ease-in-out 2.25s;
+	opacity: 1;
+	left: 0;
+}
+#chauffeur .smoke.one {
+	position: absolute;
+	top: 730px;
+	left: 0px;
+	width: 1178px;
+	height: 1010px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_smoke1.png) top center no-repeat;
+	opacity: 0;
+	z-index: 3;
+}
+#chauffeur.active .smoke.one {
+	-webkit-transition: 1s ease-in-out .5s;
+	-moz-transition: 1s ease-in-out .5s;
+	-ms-transition: 1s ease-in-out .5s;
+	transition: 1s ease-in-out .5s;
+	opacity: 1;
+	left: 130px;
+}
+#chauffeur .smoke.two {
+	position: absolute;
+	top: 300px;
+	left: -580px;
+	width: 1323px;
+	height: 1120px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_smoke2.png) top center no-repeat;
+	opacity: 0;
+}
+#chauffeur.active .smoke.two {
+	-webkit-transition: 1.5s ease-in-out .5s;
+	-moz-transition: 1.5s ease-in-out .5s;
+	-ms-transition: 1.5s ease-in-out .5s;
+	transition: 1.5s ease-in-out .5s;
+	opacity: 1;
+	left: -480px;
+}
+#chauffeur .smoke.three {
+	position: absolute;
+	top: 400px;
+	right: -390px;
+	width: 1150px;
+	height: 855px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_smoke3.png) top center no-repeat;
+	opacity: 0;
+	z-index: 3;
+}
+#chauffeur.active .smoke.three {
+	-webkit-transition: 1s ease-in-out .5s;
+	-moz-transition: 1s ease-in-out .5s;
+	-ms-transition: 1s ease-in-out .5s;
+	transition: 1s ease-in-out .5s;
+	opacity: 1;
+	right: -290px;
+}
+#chauffeur .smoke.four {
+	position: absolute;
+	top: 65px;
+	right: -1340px;
+	width: 1775px;
+	height: 1062px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/chauffeur/chauffeur_smoke4.png) top center no-repeat;
+	opacity: 0;
+	z-index: 3;
+}
+#chauffeur.active .smoke.four {
+	-webkit-transition: 1.5s ease-in-out .5s;
+	-moz-transition: 1.5s ease-in-out .5s;
+	-ms-transition: 1.5s ease-in-out .5s;
+	transition: 1.5s ease-in-out .5s;
+	opacity: 1;
+	right: -1240px;
+}
+#share {
+	top: 1120px;
+	position: absolute;
+	height: 697px;
+	background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/share/share_bg.jpg);	
+}
+#share .share-block {	
+	width: 580px;
+	margin: 0 auto;
+	margin-top: 173px;
+}
+#share .share-block ul {
+	text-align: center;
+	font-size: 0;
+	line-height: 0;
+}
+#share .share-block ul li {
+	display: inline-block;
+	margin: 0 16px 60px;
+}
+#share .share-block .fb-share a {
+	width: 225px;
+	height: 226px;
+	display: block;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/share/share_fb.png) top left no-repeat;
+}
+#share .tweet a {
+	width: 225px;
+	height: 226px;
+	display: block;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/share/share_tw.png) top left no-repeat;
+}
+#share .txt {
+	width: 100%;
+	height: 128px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lovers/share/share_lines.png) top center no-repeat;
+	font-size: 26px;
+	line-height: 66px;
+	color: #af1223;
+	text-align: center;
+}
+/*/////////////////////////////////////////////////
+ Helpers
+////////////////////////////////////////////////*/
+.hidetext{font-size:5%;text-indent:-9999em;text-align:left;color:transparent;white-space:nowrap;outline:none;}
+.clearfix:before,.clearfix:after{content:"\0020";display:block;height:0;overflow:hidden;}
+.clearfix:after{clear:both;}
+.clearfix{zoom:1;}
+/*/////////////////////////////////////////////////
+ Mobile
+////////////////////////////////////////////////*/
+.mobile-top {
+	background-color: #000000;
+    font-size: 57px;
+    line-height: 67px;
+    text-align: center;
+}
+#book #photos .frame .flower.mobile {
+	position: absolute;
+	width: 569px;
+	height: 70px;
+	background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-flower.png) top center no-repeat;
+	top: 70px;
+	left: 36px;
+}
+/*Presets*/
+.mobile-lang,
+#logo .burger,
+#logo .newsletter,
+#epilogue .nav-options,
+#logo .nav-menu,
+#logo .lovers-menu,
+#form .close_lb,
+.mobile-top,
+.flower.mobile {
+	display: none;
+}
+/*Media Queries*/
+@media only screen and (max-width: 1024px) {
+	#book {
+		zoom: 0.75;
+	}
+	#book #news .more-link {	
+		font-size: 16px;
+	}
+}
+@media only screen and (max-width: 640px) {
+	#book {
+		zoom: 1;
+		-webkit-text-size-adjust: auto;
+	}
+	.legal {
+		-webkit-text-size-adjust: none;	
+	}
+	.scroll,
+	.lights,
+	.drops,
+	.flag,
+	.flower,
+	.tub,
+	.tub2,
+	.chalice,
+	.pins,
+	.passage .title,
+	.fab-star,
+	.fab,
+	.tab,
+	#lang .leaf,
+	#book #social:after,
+	#book #news:after,
+	#book #tour:after,
+	#book #photos:before,
+	#book #photos:after,
+	#book #videos:after,
+	#spine .nav-options,
+	#book #spine .top,
+	.nav-menu li:after,
+	#book #news .date:before,
+	#book #photos .bx-wrapper .bx-controls-direction,
+	#book #videos.active .vid-controls a.prev:after,
+	#book #videos.active .vid-controls a.next:after,
+	#lang {
+		display: none !important;
+	}
+	.mobile-top {
+		display: block;
+	}
+	.flower.mobile {
+		display: block !important;
+	}
+	#book {
+		width: 100%;
+		width: 640px;
+		overflow: hidden;
+		min-width: inherit;
+		padding-bottom: 0;
+	}
+	#book .passage, #book .leaf {
+		width: 100%;
+		max-width: 640px;		
+	}
+	#book #logo .leaf {
+		height: 80px;
+		background: rgba(0,0,0,0.7);
+	}
+	#book #epilogue {
+		height: 1037px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-epi.jpg) top left no-repeat;
+	}
+	#book #social {
+		height: 902px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-soc.jpg) top left no-repeat;
+	}
+	#book #news {
+		height: 2240px;/*947*/
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-news.jpg) top left no-repeat;
+	}
+	#book #tour {
+		position: absolute;
+		top: auto;
+		bottom: 0;
+		width: auto;
+		height: 1293px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-tour.jpg) top left no-repeat;
+	}
+	#book #photos {
+		margin-top: 0;
+		height: 670px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-photos.jpg) top left no-repeat;
+	}
+	#book #videos {
+		height: 799px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-videos.jpg) top left no-repeat;
+	}
+	#book #logo {
+		position: fixed;
+		top: 20px;
+		overflow: visible;
+		opacity: 0;
+		bottom: 0;
+		z-index: 8900;
+		background: none;
+	}
+	#book #logo.active {
+		opacity: 1;
+		background: none;
+	}
+	.overMe #book #logo.active {
+		height: 100%;
+		background: none;
+	}
+	#book #logo .nav-menu,
+	#book #logo .lovers-menu {
+		position: absolute;
+		width: 100%;
+		left: 0;
+		top: 80px;		
+		max-height: 100%;
+		bottom: 0;
+		display: none;
+	}
+	#book #logo.active h1 {
+		position: relative;
+		left: auto;
+		right: auto;
+		top: 18px;
+		margin-right: auto;
+		margin-left: auto;
+		width: 420px;
+		height: 49px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/logo-sml.png) top center no-repeat;
+		background-size: 100% auto;
+	}
+	#book #logo .burger {
+		position: absolute;
+		width: 82px;
+		height: 80px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/burger.png) top left no-repeat;
+		display: block;
+		z-index: 10;
+		top: 0;
+		left: 0;
+		-webkit-transition: 0.5s ease-in-out;
+		-ms-transition: 0.5s ease-in-out;
+		transition: 0.5s ease-in-out;
+	}
+	#book #logo .burger.active {
+		background-position: bottom left;
+		background-color: #18636d;
+	}
+	#book #logo .newsletter-mob {
+		position: absolute;
+		width: 82px;
+		height: 80px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/newsletter-sml.png) top left no-repeat;
+		display: block;
+		z-index: 10;
+		top: 0;
+		right: 0;
+	}
+	.sec {
+		padding-bottom: 100px;
+	}
+	#book #news .date {
+		position: relative;
+		text-align: right;
+		line-height: 9px;
+		color: #b56521;
+	}
+	#book #news .date:before {
+		content: '';
+		width: 83%;
+		height: 3px;
+		border-top: 1px solid #b86621;
+		border-bottom: 1px solid #b86621;
+		position: absolute;	
+		left: 0;
+		top: 12px;
+	}
+	#book .sec .date:before {
+		width: 67%;
+	}	
+	.sec .date:after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 55px;
+		left: 0;
+		bottom: -51px;
+		/* background-position: top center; */
+		background-repeat: no-repeat;	
+	}	
+	.nav-menu,
+	.lovers-menu {
+		padding: 0;
+		overflow: auto;		
+		/*height: 600px;*/
+		/*max-height: 100%;*/
+	}	
+	/*#logo > div {
+		position: absolute;
+		height: 100%;
+	}*/
+	.nav-menu,
+	.lovers-menu {
+		padding: 32px 0;
+		background: rgba(0,0,0,0.9);
+	}
+	.nav-menu li,
+	.lovers-menu a {
+		width: 100%;
+		padding: 10px 82px;/*32*/
+		font-size: 70px;
+		line-height: 70px;
+		display: block;
+		text-align: left;
+		float: left;
+	}
+	#epilogue.active .spot {
+		margin-right: -20px;
+		margin-top: 270px;
+		width: 629px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-spot-bg.png) bottom left no-repeat;
+	}
+	#epilogue .spot .shift {
+		width: 465px;
+		margin-right: 40px;
+		margin-top: -10px;
+		z-index: 0;
+	}
+	#epilogue .spot .slider {
+		padding: 10px;
+	}
+	#epilogue .spot .entry-title {
+		font-size: 38px;
+		line-height: 45px;
+		min-height: 120px;
+		margin-bottom: 0;
+	}
+	#epilogue .spot .entry-thumbnail {
+		width: 245px;
+		height: 247px;
+	}
+	#epilogue .spot .btn {
+		height: 62px;		
+		font-size: 35px;
+		line-height: 62px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-cta-bg.png) top left repeat;
+		box-shadow: 0 3px 3px #000;
+		padding: 0 33px;
+	}
+	#epilogue .spot .bx-wrapper .bx-pager {
+		right: auto;
+		left: 0;
+		top: 215px;
+		bottom: auto;
+	}
+	.bx-wrapper .bx-pager.bx-default-pager a {
+		width: 26px;
+		height: 26px;
+		border-radius: 13px;
+	}
+	#epilogue .nav-options {
+		float: left;
+		width: 100%;
+		margin-top: -20px;
+		display: block;
+	}
+	#epilogue .nav-options .audio .player {
+		position: relative;
+		width: 100%;
+		left: auto;
+		bottom: auto;
+		height: 144px;
+		clear: both;
+	}
+	.nav-options .audio .player .cut {
+		overflow: visible;
+		height: 144px;
+	}
+	.nav-options .audio .player .jp-player {
+		width: 144px !important;
+		height: 144px !important;
+		margin-right: 28px;
+	}
+	.nav-options .audio .player .jp-player img {
+		width: 144px !important;
+	}
+	.nav-options .audio .player .jp-gui {
+		margin-top: 0;
+	}
+	.nav-options .audio .player .jp-gui li {
+		width: auto;
+		overflow: visible;
+		float: left;
+	}
+	.nav-options .audio .player .jp-gui li.set {
+		position: relative;
+		margin: 0;
+		height: 144px;
+		width: 39px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobiel-audio-div.png) center center no-repeat;
+		margin-right: 24px;
+	}
+	.nav-options .audio .player .jp-previous, .nav-options .audio .player .jp-next {
+		position: absolute;
+		width: 39px;
+		height: 30px;
+		top: 25px;
+		left: 0;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/scan-lrg.png) top left no-repeat;
+	}
+	.nav-options .audio .player .jp-previous {
+		background-position: bottom left;
+		top: 85px;
+	}
+	.nav-options .audio .player .jp-play, .nav-options .audio .player .jp-pause {
+		width: 103px;
+		height: 144px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/play-lrg.png) center left no-repeat;
+		margin-right: 20px;
+	}
+	.nav-options .audio .player .jp-pause {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/pause-lrg.png) center left no-repeat;
+	}
+	.nav-options .audio .player .jp-playlist {
+		width: 240px;
+		line-height: normal;
+		font-size: 30px;
+		margin-top: 32px;
+	}
+	#epilogue .nav-options .audio .player .buy-options {
+		position: absolute;
+		top: 144px;
+		height: 100px;
+		width: 100%;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-music-icon.png) -30px 0 no-repeat;
+		font-size: 28px;
+		line-height: 0px;
+		text-align: left;
+		padding-left: 70px;
+	}
+	#epilogue .nav-options .audio .player .buy-options li {
+		display: inline-block;
+		line-height: 100px;		
+	}
+	#epilogue .nav-options .audio .player .buy-options li:after {
+		content: '';
+		display: inline-block;
+		height: 100px;
+		float: right;
+		margin: 0 20px;
+		width: 13px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-buy-div.png) center center no-repeat;
+	}
+	#epilogue .nav-options .audio .player .buy-options li:last-child:after {
+		display: none;
+	}
+	#book #social.active .social-target {
+		margin: 180px auto 0;
+		float: none;
+	}
+	#book #social.active .social-target .tweet-info {
+		position: relative;
+		width: auto;
+	}
+	#book #social .social-block .txt {
+		font-size: 34px;
+		line-height: 45px;
+		text-align: center;
+		padding-top: 100px;
+	}
+	#book #social .social-block .user {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		font-size: 50px;
+		line-height: 100px;
+	}
+	#book #social .bx-controls-direction {
+		top: 420px;social-arrow-lrg.png
+	}
+	#book #social .bx-wrapper .bx-controls-direction a {
+		width: 86px;
+		height: 86px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/social-arrow-lrg.png) top left no-repeat;	
+	}
+	#book #social .bx-wrapper .bx-controls-direction a.bx-next {
+		background-position: bottom left;
+	}
+	#book #news.active .news-target {
+		margin-left: 105px;
+		padding-top: 253px;
+	}
+	#book #news.active .news-target article {
+		position: relative;
+		height: 623px;
+		font-size: 25px;
+		line-height: 31px;
+	}
+	#book #news.active .news-target article .entry-meta {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+	#book .share li a {
+		width: 74px;
+		height: 74px;
+		line-height: 74px;
+		font-size: 50px;
+		border-radius: 37px;
+	}
+	#book .share li.comment a {
+		background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/comments-lrg.png);
+	}
+	#book #news .date {
+		width: 235px;
+		margin-right: 60px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-date.png) center left no-repeat;
+		font-size: 27px;
+		line-height: 27px;
+		float: right;
+		text-align: right;
+	}
+	#book #news .more-link {
+		width: 259px;
+		height: 76px;
+		font-size: 35px;
+		line-height: 76px;
+		text-align: center;
+		padding: 0;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-more.png) top left no-repeat;
+		right: auto;
+		top: auto;
+		left: 0;
+		bottom: -43px;
+		font-size: 28px;
+	}
+	.tour.sec {
+		background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-tour-sec.jpg);
+		background-attachment: scroll;
+		background-repeat: no-repeat;
+		min-height: inherit;
+	}	
+	#book .tour.sec {
+		padding-bottom: 350px;
+	}
+	#book .tour.sec.active .tour-block {
+		width: 100%;
+		padding-top: 0;
+	}	
+	#book #tour .tour-block, .tour.sec .tour-block {
+		width: 640px;
+		padding-top: 130px;
+	}
+	#book #tour .tour-block .event, .tour.sec .tour-block .event {		
+		width: 569px;
+		margin: 0 auto 40px;
+		height: 375px;
+		padding: 0;
+	}
+	#book #tour .tour-block .event:last-child {
+		display: none;
+	}
+	#book #tour .tour-block .event .when, .tour.sec .tour-block .event .when {
+		width: 569px;
+		height: 153px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/tour-mobile.png) top center no-repeat;
+		font-size: 75px;
+		text-align: center;
+	}
+	#book #tour .tour-block .event .when .shift, .tour.sec .tour-block .event .when .shift {
+		padding: 0;
+		text-align: center;
+	}
+	#book #tour .tour-block .event .where, .tour.sec .tour-block .event .where {
+		float: none;
+		width: 100%;
+		text-align: center;
+		font-size: 42px;
+		line-height: 62px;
+		margin: 0;
+	}
+	#book .tour.sec .tour-block .event .where {
+		text-align: center;
+	}
+	#book #tour .tour-block .event .where .venue, .tour.sec .tour-block .event .where .venue {
+		font-size: 28px;
+	}
+	#book #tour .tour-block .event .social, .tour.sec .tour-block .event .social {
+		float: left;
+		margin-left: 85px;
+		margin-top: 30px;
+	}
+	#book #tour .tour-block .event .social a, .tour.sec .tour-block .event .social a {
+		width: 68px;
+		height: 68px;
+		border-radius: 34px;
+		font-size: 42px;
+		line-height: 68px;
+	}
+	#book #tour .tour-block .event .ticket a, .tour.sec .tour-block .event .ticket a {
+		height: 66px;
+		font-size: 35px;
+		line-height: 66px;
+		padding: 0 32px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-tickets-bg.png) top left repeat-x;
+		margin-right: 85px;
+	}
+	#book #tour .more {
+		top: 955px;
+		height: 60px;
+	}
+	#book #tour .more-link {
+		height: 67px;
+		line-height: 67px;
+		padding: 0 30px;
+		width: auto;
+		border-top: 1px solid #989b9f;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-tour-bg.png) top left repeat-x; 
+	}
+	#book #photos .passage {
+		padding-left: 0;
+	}
+	#book #photos .frame {
+		width: 640px;
+		height: 430px;
+		background: none;
+	}
+	#book #photos .frame .picture {
+		width: 490px;
+		height: 300px;
+		top: 105px;
+		margin-left: -245px;
+	}
+	#book #photos .frame .picture .gallery-block {
+		height: 300px;
+	}
+	#book #photos .frame .picture .entry-title{
+		font-size: 19px;
+		line-height: 30px;
+		margin-bottom: 20px;
+		height: 44px;
+	}
+	#book #photos .share {
+		float: left;
+		width: auto;
+		margin-left: -42px;
+	}
+	#book #photos .bx-viewport {
+		overflow: visible !important;
+	}
+	#book #photos .more,
+	#book #photos.active .more {
+		width: 280px;
+		margin-top: 31px;
+	}
+	#book #photos .more a {
+		height: 65px;
+		line-height: 65px;
+		padding-left: 0 24px;
+		font-size: 35px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-video-bg.png) top left repeat-x;
+	}
+	#book .sec img {
+		margin-bottom: 24px;
+	}
+	#book .news.sec img {
+		margin-bottom: 0;
+	}
+	#book #videos .panel {
+		width: 577px;
+		height: 327px;
+		padding: 4px;
+		margin-bottom: 45px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-video.png) top left no-repeat;
+	}
+	#book #videos .panel .entry-thumbnail {
+		width: 569px;
+		height: 320px;	
+	}
+	#book #videos .panel .hold,
+	#book #videos .panel .hold iframe {
+		width: 569px;
+		height: 320px;		
+	}
+	#book #videos .panel .entry-header {
+		margin-bottom: 40px;
+	}
+	#book #videos .panel .entry-title {
+		margin-top: -46px;
+		float: none;
+	}
+	#book #videos .panel .entry-header .play-btn {
+		width: 569px;
+		height: 320px;
+		background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-play.png);
+	}
+	#book #videos .panel .share {
+		width: auto;
+	}
+	#book #videos.active .more {
+		width: auto;
+		margin-right: 30px;
+	}
+	#book #videos .more a {
+		font-size: 35px;
+		height: 65px;
+		line-height: 65px;
+		padding: 0 24px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-video-btn-bg.png) top left repeat-x;	
+	}
+	#book #videos .vid-controls {
+		width: 640px;
+	}
+	#book #videos .vid-controls .prev,
+	#book #videos .vid-controls .next {
+		width: 150px;
+		height: 330px;
+		margin-top: 200px;
+	}
+	#book #videos .vid-controls .prev {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-left-pane.png) top left no-repeat;
+	}
+	#book #videos .vid-controls .next {
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-right-pane.png) top left no-repeat;
+	}
+	#book #videos.active .vid-controls .prev {
+		left: 0;
+	}
+	#book #videos.active .vid-controls .next {
+		right: 0;
+	}
+	#book #videos.active .vid-controls.move-please .prev {
+		left: -20px
+	}
+	#book #videos.active .vid-controls.move-please .next {
+		right: -20px
+	}
+	.single .videos.sec .play-btn,
+	.single .videos.sec .play-btn:after {
+		position: relative;
+		width: 600px;
+		height: 335px;
+	}
+	.videos.sec .featured {
+		position: relative;
+		width: 100%;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	.videos.sec .featured .play-btn {		
+		width: 600px;
+		height: 335px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-play.png) center center no-repeat;
+	}
+	.videos.sec .play-btn:after, .single .videos.sec .play-btn:after {
+		background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-play.png);
+	}
+	.videos.sec .featured .entry-thumbnail {
+		position: relative;
+		width: 600px;
+		height: 335px;
+	}
+	.videos.sec .featured .hold, .videos.sec .featured .hold iframe {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 600px;
+		height: 335px;	
+	}
+	.single .videos.sec .play-btn:after {
+		position: relative;
+		display: none;
+	}
+	#book #spine .lower .legal {
+		font-size: 11px;
+		line-height: 18px;
+		width: 100%;
+		float: none;
+		padding: 20px 0;
+		text-align: center;
+	}
+	.social-nav ul {
+		padding: 0 32px;
+	}
+	.social-nav {
+		float: none;
+		padding: 30px 0 20px;
+		text-align: center;
+	}
+	.social-nav li {
+		padding: 0 10px;
+		font-size: 70px;
+		line-height: normal;
+	}
+	.mobile-lang {
+		display: block;
+	}
+	#book #spine {
+		position: relative;
+		height: auto;
+	}	
+	#book #spine .lower {
+		padding: 0;
+		border: 0;
+	}
+	.mobile-lang {
+		background-color: #101010;
+		text-align: center;		
+		font-size: 57px;
+	}
+
+	.entry-content p {
+		line-height: 35px;
+	}	
+
+	.social.sec .tweet-info .txt,
+	.social.sec .instagram-info .caption {
+		font-family: 'caviar_dreamsregular', sans-serif;
+		font-size: 26px;
+		line-height: 40px;
+		font-style: normal;
+		text-transform: uppercase;
+		position: relative;
+		z-index: 1;
+	}
+
+	.tweet-info { margin-bottom: 40px;}
+
+	#book #lang_sel a.lang_sel_sel {
+		font-size: 57px;
+		line-height: 100px;
+		color: #673b50;
+		padding-right: 75px;
+		background: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/lang-arrow-lrg.png) right center no-repeat;
+		width: 305px;
+		margin: 0 auto;
+	}
+	#book #lang_sel ul ul {
+		position: relative;		
+		right: auto;
+		top: auto;
+		background: none;
+	}
+	#lang_sel li {
+		display: block;
+		float: none;
+	}
+	#book #lang_sel ul ul a, #book #lang_sel ul ul a:visited {
+		font-size: 55px;
+		color: #673b50;
+	}
+	#form .close_lb {
+		/*display: block;*/
+	}	
+	.news.sec {
+		background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-news-sec.jpg);
+	}
+	.photos.sec {
+		background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-photos-sec.jpg);
+	}
+	.social.sec {
+		background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-social-sec.jpg);
+	}
+	.videos.sec {
+		background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-videos-sec.jpg);
+	}
+	.music.sec {
+		background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-music-sec.jpg);
+	}
+	#book .sec {
+		padding-bottom: 100px;	
+	}	
+	#book .sec .para {
+		padding-bottom: 0;
+	}
+	.entry-title .back {
+		padding: 0 10px;
+	}
+	#book .sec .date:before {
+		width: 88%;
+	}
+	.news.sec .entry-content {
+		font-size: 26px;
+	}
+	#book #social.active .mob-fix {
+		position: absolute;
+		top: 545px;
+		width: 100%;
+		left: 0; 
+	}
+	#book #social.active .passage {
+		text-align: center;
+	}
+	#book #social.active .more-link {
+		top: auto;
+		left: auto;
+		margin-top: 0;
+		position: relative;
+		padding: 0 22px;
+		font-size: 35px;
+		height: 65px;
+		line-height: 65px;
+		box-shadow: 0 3px 3px rgba(0,0,0,0.75);
+		background-image: url(http://rgen-custom.s3-website-us-east-1.amazonaws.com/palomafaith/images/mobile-social-btn-bg.png);
+	}
+	#fb-comments {
+		padding: 0 10px;
+	}	
+	body .fancybox-overlay {
+		zoom: 1;
+		-webkit-text-size-adjust: none;	
+	}
+	#fb-comments,
+	#book #fb-comments span,
+	#book #fb-comments iframe {
+		zoom: 1;
+		-webkit-text-size-adjust: none;	
+	}
+	body.overMe {
+		position: absolute;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		bottom: 0;
+	}
+	/*Landing Page*/
+
+}
+@media only screen and (max-width: 568px) {
+	#book {
+		zoom: 0.887;
+	}
+	#book .sec .date:before {
+		width: 86%;
+	}		
+	#fb-comments,
+	#book #fb-comments span,
+	#book #fb-comments iframe {
+		zoom: 1.113;
+		-webkit-text-size-adjust: none;	
+	}
+}
+@media only screen and (max-width: 480px) {
+	#book {
+		zoom: 0.75;
+	}
+	#fb-comments,
+	#book #fb-comments span,
+	#book #fb-comments iframe {
+		zoom: 1.25;
+		-webkit-text-size-adjust: none;	
+	}
+}
+@media only screen and (max-width: 360px) {
+	#book {
+		zoom: 0.563;
+	}
+	#fb-comments,
+	#book #fb-comments span,
+	#book #fb-comments iframe {
+		zoom: 1.462;
+		-webkit-text-size-adjust: none;	
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	#book {
+		zoom: 0.5;
+	}
+	#book .date {
+		font-size: 20px;
+	}
+	#fb-comments,
+	#book #fb-comments span,
+	#book #fb-comments iframe {
+		zoom: 1.5;
+		-webkit-text-size-adjust: none;	
+	}
+	#book #photos {
+		margin-top: -1px;
+	}
+}
