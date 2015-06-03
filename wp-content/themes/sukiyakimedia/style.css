@@ -188,9 +188,9 @@ section h2.section-title {
 	border-top: 3px solid #a0e534;
 }
 #members .avatar {
-	width: 100px;
-	height: 100px;
-	border-radius: 50px;
+	width: 150px;
+	height: 150px;
+	border-radius: 75px;
 	margin: 0 auto 5px;
 	background-size: cover;
 	background-repeat: no-repeat;
