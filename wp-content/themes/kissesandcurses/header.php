@@ -1,14 +1,4 @@
-<?php
-/**
- * The Header for our theme
- *
- * Displays all of the <head> section and everything up till <div id="main">
- *
- * @package WordPress
- * @subpackage Twenty_Fourteen
- * @since Twenty Fourteen 1.0
- */
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
@@ -20,7 +10,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -29,37 +19,32 @@
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<?php if ( get_header_image() ) : ?>
-	<div id="site-header">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-		</a>
-	</div>
-	<?php endif; ?>
-
-	<header id="masthead" class="site-header" role="banner">
-		<div class="header-main">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
-			<div class="search-toggle">
-				<a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'twentyfourteen' ); ?></a>
+<div id="prime">	
+	<header id="header">
+		<div class="plate"></div>
+		<div class="rig clearfix">
+			<h1 class="logo">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hidetext"><img src="<?php bloginfo('template_directory'); ?>/images/small-logo.png" alt="<?php bloginfo( 'name' ); ?>" border="0"/></a>
+				<span>Graphic Novel Romance Apps</span>
+			</h1>
+			<div id="burger">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
 			</div>
-
-			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<h1 class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></h1>
-				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-			</nav>
+			<div class="to-top"></div>
+			<div id="menus">
+				<?php wp_nav_menu( array( 'menu' => 'social', 'menu_class' => 'social-menu' ) ); ?>
+				<?php wp_nav_menu( array( 'menu' => 'main', 'menu_class' => 'main-menu' ) ); ?>
+			</div>						
 		</div>
-
-		<div id="search-container" class="search-box-wrapper hide">
-			<div class="search-box">
-				<?php get_search_form(); ?>
-			</div>
+		<div id="mobile">				
+			<?php wp_nav_menu( array( 'menu' => 'social', 'menu_class' => 'social-menu' ) ); ?>
+			<?php wp_nav_menu( array( 'menu' => 'main', 'menu_class' => 'main-menu' ) ); ?>	
+			<div class="to-top"></div>			
 		</div>
-	</header><!-- #masthead -->
-
-	<div id="main" class="site-main">
+	</header>
+	<div id="mid">
