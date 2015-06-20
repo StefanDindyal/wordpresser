@@ -23,7 +23,7 @@
 			setup_postdata( $post );
 
 			 // Include the featured content template.
-			get_template_part( 'content', 'featured-post' );
+			get_template_part( 'content', get_post_format() );
 		endforeach;
 
 		/**

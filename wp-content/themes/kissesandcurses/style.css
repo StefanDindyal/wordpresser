@@ -737,6 +737,7 @@ body.modal {
 }
 #story-page #story .block {
 	margin: 0 0 10px;
+	text-align: center;
 }
 #story-page #story .block li {
 	display: inline-block;
@@ -873,6 +874,326 @@ body.modal {
 	margin-bottom: 30px;
 }
 
+/* News Page */
+.page-template-news-page #prime,
+.archive #prime,
+.single #prime {
+	padding-top: 90px;
+	background: url(images/spooky.png) top center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.page-template-news-page #mid,
+.archive #mid,
+.single #mid {
+	padding: 20px 10px;
+}
+#news-page {
+	padding: 10px 15px;
+	border-radius: 5px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.6);
+	background-color: rgba(9, 10, 22, 0.6);
+	border: 1px solid rgba(8, 10, 53, 0.49);
+	max-width: 980px;
+	width: 100%;
+	margin: 0 auto;
+}
+#news-page #news h2 {
+	text-shadow:rgba(0, 0, 0, 0.298039) 0px 5px 0px;
+	font-size: 72px;
+	line-height: normal;
+	font-weight: bold;
+	font-style: italic;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 20px;
+	padding-top: 10px;
+}
+#news-page #news .posts {
+	float: left;
+	width: 100%;
+	max-width: 700px;
+}
+#news-page #news .posts .post {
+	padding: 20px 15px;
+	border-radius: 5px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.6);
+	background-color: rgba(9, 10, 22, 0.6);
+	border: 1px solid rgba(8, 10, 53, 0.49);
+	position: relative;
+	margin-bottom: 30px;
+}
+#news-page #news .posts .post .entry-title {
+	font-size: 32px;
+	line-height: normal;
+	margin-bottom: 5px;
+	color: #fff;
+}
+#news-page #news .posts .post .entry-title a {
+	color: #ffffff;
+	text-decoration: none;
+}
+#news-page #news .posts .post .entry-title a:hover {
+	text-decoration: underline;
+}
+#news-page #news .posts .post .entry-meta {
+	font-size: 13px;
+	line-height: normal;
+	color: #b2b2b2;
+	margin-bottom: 20px;
+}
+#news-page #news .posts .post .entry-meta .byline {
+	display: none;
+}
+#news-page #news .posts .post .entry-meta a {
+	color: #b2b2b2;
+	text-decoration: none;
+}
+#news-page #news .posts .post .post-thumbnail {
+	margin-bottom: 10px;
+	float: left;
+	max-width: 300px;
+	width: 100%;
+	margin-right: 20px;
+}
+.single #news-page #news .posts .post .post-thumbnail {
+	margin-bottom: 20px;
+}
+#news-page #news .posts .post .post-thumbnail img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+#news-page #news .posts .post .entry-content,
+#news-page #news .posts .post .entry-summary {
+	overflow: hidden;
+}
+.single #news-page #news .posts .post .entry-content {
+	overflow: visible;
+}
+#news-page #news .posts .post p {
+	font-size: 16px;
+	line-height: 22px;
+	margin-bottom: 24px;
+	color: #b2b2b2;
+}
+#news-page #news .posts .post p a {
+	color: #b2b2b2;
+}
+#news-page #news .pager {
+	text-align: center;
+	margin-bottom: 20px;
+}
+#news-page #news .posts .post p a.more-link,
+#news-page #news .pager a,
+#news-page #news .pager span {
+	position: relative;
+	overflow: hidden;
+	height: 34px;
+	display: inline-block;
+	font-size: 19px;
+	line-height: 30px;
+	border: 2px solid #000;
+	border-radius: 12px;
+	padding: 0 15px;
+	box-shadow: 0 3px 6px 0 rgba(255, 255, 255, 0.3) inset, -2px -3px 6px 0 rgba(0, 0, 0, 0.6) inset, 1px 1px 6px 1px rgba(0, 0, 0, 0.6), 1px 1px 3px 0 rgba(255, 255, 255, 0.3);
+	background-color: #000;
+	text-decoration: none;
+	color: #b2b2b2;
+}
+#news-page #news .posts .post p a.more-link:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-color: rgba(255,255,255,0.1);
+}
+#news-page #news .posts .post p a.more-link span {
+	position: relative;
+	z-index: 2;
+}
+#news-page #news .posts .post p a.more-link:hover,
+#news-page #news .pager a:hover,
+#news-page #news .pager span {
+	color: #ffcc00;
+}
+#news-page #news .side {
+	float: right;
+	width: 100%;
+	max-width: 220px;
+}
+#news-page #news .side .widget {
+	margin-bottom: 30px;
+	color: #b2b2b2;
+}
+#news-page #news .side .widget a {
+	color: #b2b2b2;	
+}
+#news-page #news .side .widget-title {
+	font-size: 19px;
+	line-height: 28px;
+	color: #b2b2b2;
+	border-bottom: 2px solid #000000;
+	margin-bottom: 20px;
+	padding: 2px 0;
+}
+#news-page #news .side p {
+	font-size: 16px;
+	line-height: normal;
+	color: #b2b2b2;
+}
+#news-page #news .side p a {
+	color: #b2b2b2;	
+}
+#news-page #news .side .widget_archive label {
+	display: none;
+}
+#news-page #news .side .widget_archive select {
+	width: 90%;
+	height: 30px;
+	border-radius: 3px;
+	border: 1px solid #b4b4b4;
+}
+
+/* FAQ Page */
+.page-template-faq-page #prime {
+	padding-top: 90px;
+}
+#faq-page {
+
+}
+#faq-page #disc h2 {
+	text-shadow:rgba(0, 0, 0, 0.298039) 0px 5px 0px;
+	font-size: 72px;
+	line-height: normal;
+	font-weight: bold;
+	font-style: italic;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 20px;
+}
+#faq-page #disc .letter {
+	padding: 20px 10px 30px;
+    position: relative;
+    background: url(images/spooky.png) center no-repeat;
+    background-size: cover;
+}
+#faq-page #disc .block {
+	width: 100%;
+	max-width: 820px;
+	margin: 0 auto;
+}
+#faq-page #disc .pic {
+	max-width: 622px;
+	margin: 0 auto 20px;
+	border: 2px solid #000000;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+}
+#faq-page #disc .pic img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+#faq-page #disc p {
+	color: #ffffff;
+	text-shadow:rgba(0, 0, 0, 0.4) 0px 4px 5px;
+	font-size: 21px;
+	line-height: 28px;
+	margin-bottom: 30px;
+}
+#faq-page #disc p img {
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 40px;
+	width: 100%;
+	height: auto;
+}
+#faq-page #faq {
+	z-index: 10;
+	position: relative;
+}
+#faq-page #faq h2 {
+	font-size: 45px;
+	line-height: normal;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	margin-bottom: 20px;
+}
+#faq-page #faq ul li {
+	margin-bottom: 30px;
+}
+#faq-page #faq ul li:last-child {
+	margin-bottom: 20px;
+}
+#faq-page #faq p {
+	font-size: 21px;
+	line-height: 32px;
+}
+#faq-page #faq p a {
+	color: #000000;
+}
+#faq-page #faq .letter {
+	position: relative;
+	padding: 0px 0 40px;
+	background: url(images/long-parchment-cool.png) center no-repeat;
+	background-size: 100% 100%;
+}
+#faq-page #faq .item {
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+	background: url(images/parchment-tan.png) center no-repeat;
+	background-size: 100% 100%;
+	padding: 90px 120px 100px;
+	font-size: 23px;
+	line-height: 32px;
+}
+#faq-page #volt h2 {
+	font-size: 30px;
+	font-weight: bold;
+	line-height: normal;
+	color: #000000;
+	text-align: center;
+	margin-bottom: 30px;
+}
+#faq-page #volt .letter {
+	position: relative;
+	padding: 30px 0 40px;
+	background: url(images/wood.jpg) center no-repeat;
+	background-size: 100% 100%;
+	margin-top: -5px;
+}
+#faq-page #volt .item {
+	position: relative;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	background: url(images/parchment-tan.png) center no-repeat;
+	background-size: 100% 100%;
+	padding: 90px 150px 100px;
+	font-size: 23px;
+	line-height: 32px;
+}
+#faq-page #volt .item p {
+	font-size: 22px;
+	line-height: 38px;
+}
+#faq-page #volt .item .volt {
+	position: absolute;
+	top: 25px;
+	left: 35px;
+	width: 110px;
+	height: 110px;
+	background: url(images/voltage-btn.png) center no-repeat;
+	background-size: 100% auto;
+}
+
 /* Utility */
 .hidetext{font-size:5%;text-indent:-9999em;text-align:left;color:transparent;white-space:nowrap;outline:none;}
 .clearfix:before,.clearfix:after{content:"\0020";display:block;height:0;overflow:hidden;}
@@ -957,8 +1278,38 @@ body.modal {
 		margin: 20px auto;
 	}
 	#download .item {
-		padding-left: 100px;
-		padding-right: 100px;
+		padding-left: 80px;
+		padding-right: 80px;
+	}
+	.page-template-story-page #prime {
+		padding-top: 15%;
+	}
+	.page-template-character-page #prime {
+		padding-top: 18%;
+	}
+	.page-template-faq-page #prime {
+		padding-top: 15%;
+	}
+	#character-page #char .tab .pol {
+		display: none;
+	}
+	#character-page #char .tab {
+		padding: 70px 40px 85px;
+		background-size: 115% 105%;
+	}
+	#faq-page #disc h2 {
+		font-size: 62px;
+	}
+	.page-template-news-page #prime, .archive #prime {
+		padding-top: 20%;
+	}
+	#news-page #news .posts {
+		float: none;
+		max-width: 100%;
+	}
+	#news-page #news .side {
+		float: none;
+		margin: 0 auto;
 	}
 }
 @media only screen and (max-width: 640px) {
@@ -1018,6 +1369,82 @@ body.modal {
 		text-align: center;
 		margin-bottom: 10px;
 	}
+	#story-page #story h2 {
+		font-size: 52px;
+	}
+	#story-page #disc .letter {
+		background-size: auto 100%;
+	}
+	#story-page #disc .item {
+		background-size: 115% 115%;
+  		padding: 60px 25px;
+	}
+	#story-page #story .block li {
+		max-width: 160px;
+	}	
+	#character-page #char-list h2 {
+		font-size: 52px;
+	}  
+	#character-page #char-list .block ul li {
+		max-width: 180px;
+	}
+	#character-page #char .tab {
+		padding: 70px 25px 85px;
+		background-size: 115% 115%;
+	}
+	#character-page #char .tab .full {
+		max-width: 220px;
+		float: none;
+		margin: 0 auto;
+	}
+	#character-page #char .tab .copy {
+		max-width: 100%;
+		padding-top: 20px;
+	}
+	#characters .rig {
+		padding: 0 10px;
+	}
+	#characters ul li {
+		max-width: 195px;
+	}
+	.page-template-faq-page #prime {
+		padding-top: 20%;
+	}
+	#faq-page #disc h2 {
+		font-size: 32px;
+	}
+	#faq-page #faq .letter {
+		background-size: auto 100%;
+	}
+	#faq-page #faq .item {
+		background-size: 115% 115%;
+  		padding: 65px 30px 65px;
+	}
+	#faq-page #volt .letter {
+		background-size: auto 100%;
+		margin-top: -12px;
+	}
+	#faq-page #volt .item {
+		background-size: 115% 110%;
+  		padding: 90px 20px 100px;
+	}
+	#faq-page #volt .item .volt {
+		position: relative;
+		top: auto;
+		left: auto;
+		margin: 0 auto 20px;
+	}
+	#news-page #news h2 {
+		font-size: 42px;
+	}
+	#news-page #news .posts .post .post-thumbnail {
+		float: none;
+		max-width: 100%;
+	}
+	#news-page #news .posts .post .entry-content, #news-page #news .posts .post .entry-summary {
+		overflow: visible;
+		clear: both;
+	}
 }
 @media only screen and (max-width: 380px) {
 	#main-page #title-head {
@@ -1026,6 +1453,19 @@ body.modal {
 	#download .item {
 		padding-left: 35px;
 		padding-right: 35px;
+		background-size: 110% 100%;
+	}
+	#story-page #story .block li {
+		max-width: 100%;
+	}
+	.page-template-character-page #prime {
+		padding-top: 20%;
+	}
+	#character-page #char .tab .full {
+		max-width: 160px;
+	}
+	#characters .rig {
+		padding: 0 10px;
 	}
 }
 @media only screen and (max-width: 320px) {

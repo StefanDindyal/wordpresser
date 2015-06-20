@@ -42,16 +42,16 @@ jQuery(function($){
 			$('.over').fadeIn(300);
 		}
 	});				
-	$('.newsletter').on('click',function(e){
-		e.preventDefault();
-		if($('body').hasClass('modal')){
-			$('body').removeClass('modal signing sharing');
-			$('.over').fadeOut(300);
-		} else {
-			$('body').addClass('modal signing');
-			$('.over').fadeIn(300);
-		}		
-	});
+	// $('.newsletter').on('click',function(e){
+	// 	e.preventDefault();
+	// 	if($('body').hasClass('modal')){
+	// 		$('body').removeClass('modal signing sharing');
+	// 		$('.over').fadeOut(300);
+	// 	} else {
+	// 		$('body').addClass('modal signing');
+	// 		$('.over').fadeIn(300);
+	// 	}		
+	// });
 	$('.over .close').on('click',function(e){
 		e.preventDefault();
 		$('body').removeClass('modal signing sharing');

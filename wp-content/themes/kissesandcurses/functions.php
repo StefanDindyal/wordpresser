@@ -43,6 +43,19 @@ if ( version_compare( $GLOBALS['wp_version'], '3.6', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
+function pre($arr) { 
+	echo "<pre>"; print_r($arr); echo "</pre>";
+}
+
+if ( ! defined( 'KC_LOCALE' ) )
+	define( 'KC_LOCALE', '' );
+	
+if ( ! defined( 'KC_DIR' ) )
+	define( 'KC_DIR', get_template_directory().'/inc/settings-panel' );
+
+if ( ! defined( 'KC_URL' ) )
+	define( 'KC_URL', get_template_directory_uri().'/inc/settings-panel' );
+
 if ( ! function_exists( 'twentyfourteen_setup' ) ) :
 /**
  * Twenty Fourteen setup.
@@ -96,9 +109,9 @@ function twentyfourteen_setup() {
 	 * Enable support for Post Formats.
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
-	) );
+	// add_theme_support( 'post-formats', array(
+	// 	'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
+	// ) );
 
 	// This theme allows users to set a custom background.
 	add_theme_support( 'custom-background', apply_filters( 'twentyfourteen_custom_background_args', array(
@@ -116,6 +129,11 @@ function twentyfourteen_setup() {
 }
 endif; // twentyfourteen_setup
 add_action( 'after_setup_theme', 'twentyfourteen_setup' );
+
+require_once( get_template_directory() . '/inc/settings-panel/admin-options.php' );
+require_once( get_template_directory() . '/inc/metaboxes/meta_box.php' );
+require_once( get_template_directory() . '/inc/kc-post-album.php' );
+require_once( get_template_directory() . '/inc/kc-widget-featured.php' );
 
 /**
  * Adjust content_width value for image attachment template.
@@ -522,3 +540,24 @@ require get_template_directory() . '/inc/customizer.php';
 if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
 	require get_template_directory() . '/inc/featured-content.php';
 }
+
+// Meta Boxes
+	$prefix = 'kc_';
+	$main_page_options = array(
+		array(
+			'label' => 'Start Copy',
+			'desc' => 'ABCD',
+			'id' => $prefix . 'copy',
+			'std' => '',
+			'width' => 'width: 75%;',
+			'type' => 'textarea' // text area
+		),
+		array(
+			'label' => 'Normal Copy',
+			'desc' => '',
+			'id' => $prefix . 'copy-t',
+			'std' => '',
+			'type' => 'text' // text area
+		)
+	);
+	$main_page_box = new custom_add_meta_box( 'main', 'Main Page Options', $main_page_options, 'page', true );
