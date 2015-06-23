@@ -7,13 +7,31 @@
 		<div class="letter">				
 			<h2>Characters</h2>
 			<div class="block clearfix">
-				<ul class="rig">
-					<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/char1.png" alt="" border="0"/></a></li>
-					<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/char2.png" alt="" border="0"/></a></li>
-					<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/char3.png" alt="" border="0"/></a></li>
-					<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/char4.png" alt="" border="0"/></a></li>
-					<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/char5.png" alt="" border="0"/></a></li>
-				</ul>
+				<div class="rig">
+					<ul>
+						<?php 
+							$args_character = array( 'post_type' => 'character', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => -1 );
+							$q_character = new WP_Query( $args_character );
+							if ( $q_character->have_posts() ) :
+								
+								while ( $q_character->have_posts() ) : $q_character->the_post(); 
+									$id = get_the_ID();
+							?>
+
+									<li data-id="post-<?php echo $id; ?>">
+										<?php twentyfourteen_post_thumbnail(); ?>
+									</li>
+
+								<?php endwhile;							
+
+							else :
+								
+								get_template_part( 'content', 'none' );
+
+							endif;
+						?>					
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -21,30 +39,38 @@
 		<div class="letter">
 			<div class="rig">				
 				<ul>
-					<li>
-						<div class="tab">
-							<div class="pol"><img src="<?php bloginfo('template_directory'); ?>/images/char1.png" alt="" border="0"/></div>
-							<div class="inner clearfix">
-								<div class="full">
-									<img src="<?php bloginfo('template_directory'); ?>/images/chara1.png" alt="" border="0"/>
-								</div>
-								<div class="copy">
-									<div class="stat">
-										<p><strong>Name:</strong> Tyrone "Ty" Bryant</p>
-										<p><strong>Job:</strong> Woodworker</p>
-										<p><strong>Age:</strong> 26</p>
-										<p><strong>Skills:</strong> Hand-to-hand combat, marksmanship</p>
-										<p><strong>Hobby:</strong> Woodworking, paintball with friends</p>
-										<p><strong>Loves:</strong> Nature, antique woodwork, working with his hands</p>
-										<p><strong>Pet Peeve:</strong> Being talked down to/being patronized, pretentious people</p>
+					<?php 
+						$args_character = array( 'post_type' => 'character', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => -1 );
+						$q_character = new WP_Query( $args_character );
+						if ( $q_character->have_posts() ) :
+							
+							while ( $q_character->have_posts() ) : $q_character->the_post(); 
+								$id = get_the_ID();
+								$character_full = get_post_meta($post->ID, 'kc_character_full', true);
+						?>
+
+								<li data-id="post-<?php echo $id; ?>">
+									<div class="tab">
+										<div class="pol"><?php twentyfourteen_post_thumbnail(); ?></div>
+										<div class="inner clearfix">
+											<div class="full">
+												<?php echo wp_get_attachment_image( $character_full, 'full' ); ?>
+											</div>
+											<div class="copy">
+												<?php the_content(); ?>
+											</div>
+										</div>
 									</div>
-									<div class="bio">
-										<p>Tyrone "Ty" Bryant is a stand-up, down-home kind of guy—he has a lot of common sense, and a strong sense of right and wrong. He is very down-to-earth, honest, and blunt.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>					
+								</li>
+
+							<?php endwhile;							
+
+						else :
+							
+							get_template_part( 'content', 'none' );
+
+						endif;
+					?>										
 				</ul>
 			</div>
 		</div>

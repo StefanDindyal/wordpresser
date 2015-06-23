@@ -132,8 +132,17 @@ add_action( 'after_setup_theme', 'twentyfourteen_setup' );
 
 require_once( get_template_directory() . '/inc/settings-panel/admin-options.php' );
 require_once( get_template_directory() . '/inc/metaboxes/meta_box.php' );
-require_once( get_template_directory() . '/inc/kc-post-album.php' );
+require_once( get_template_directory() . '/inc/kc-post-story.php' );
+require_once( get_template_directory() . '/inc/kc-post-characters.php' );
+require_once( get_template_directory() . '/inc/kc-post-features.php' );
 require_once( get_template_directory() . '/inc/kc-widget-featured.php' );
+require_once( get_template_directory() . '/inc/kc-widget-recent.php' );
+
+function remove_calendar_widget() {
+	unregister_widget('WP_Widget_Recent_Posts');
+}
+
+add_action( 'widgets_init', 'remove_calendar_widget' );
 
 /**
  * Adjust content_width value for image attachment template.
@@ -198,24 +207,24 @@ function twentyfourteen_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
-	register_sidebar( array(
-		'name'          => __( 'Content Sidebar', 'twentyfourteen' ),
-		'id'            => 'sidebar-2',
-		'description'   => __( 'Additional sidebar that appears on the right.', 'twentyfourteen' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Footer Widget Area', 'twentyfourteen' ),
-		'id'            => 'sidebar-3',
-		'description'   => __( 'Appears in the footer section of the site.', 'twentyfourteen' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
+	// register_sidebar( array(
+	// 	'name'          => __( 'Content Sidebar', 'twentyfourteen' ),
+	// 	'id'            => 'sidebar-2',
+	// 	'description'   => __( 'Additional sidebar that appears on the right.', 'twentyfourteen' ),
+	// 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+	// 	'after_widget'  => '</aside>',
+	// 	'before_title'  => '<h1 class="widget-title">',
+	// 	'after_title'   => '</h1>',
+	// ) );
+	// register_sidebar( array(
+	// 	'name'          => __( 'Footer Widget Area', 'twentyfourteen' ),
+	// 	'id'            => 'sidebar-3',
+	// 	'description'   => __( 'Appears in the footer section of the site.', 'twentyfourteen' ),
+	// 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+	// 	'after_widget'  => '</aside>',
+	// 	'before_title'  => '<h1 class="widget-title">',
+	// 	'after_title'   => '</h1>',
+	// ) );
 }
 add_action( 'widgets_init', 'twentyfourteen_widgets_init' );
 
@@ -541,23 +550,178 @@ if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow
 	require get_template_directory() . '/inc/featured-content.php';
 }
 
+// add_action('init', 'remove_editor_init');
+// function remove_editor_init() {
+//     // if post not set, just return 
+//     // fix when post not set, throws PHP's undefined index warning
+//     if (isset($_GET['post'])) {
+//         $post_id = $_GET['post'];
+//     } else if (isset($_POST['post_ID'])) {
+//         $post_id = $_POST['post_ID'];
+//     } else {
+//         return;
+//     }
+//     $template_file = get_post_meta($post_id, '_wp_page_template', TRUE);
+//     if ($template_file == 'main-page.php') {
+//         remove_post_type_support('page', 'editor');
+//     }
+// }
+function new_excerpt_more( $more ) {
+	return '&hellip;';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_action('init', 'remove_editor_init');
+function remove_editor_init() {
+    remove_post_type_support('page', 'editor');
+}
+
 // Meta Boxes
-	$prefix = 'kc_';
-	$main_page_options = array(
-		array(
-			'label' => 'Start Copy',
-			'desc' => 'ABCD',
-			'id' => $prefix . 'copy',
-			'std' => '',
-			'width' => 'width: 75%;',
-			'type' => 'textarea' // text area
-		),
-		array(
-			'label' => 'Normal Copy',
-			'desc' => '',
-			'id' => $prefix . 'copy-t',
-			'std' => '',
-			'type' => 'text' // text area
-		)
-	);
-	$main_page_box = new custom_add_meta_box( 'main', 'Main Page Options', $main_page_options, 'page', true );
+$prefix = 'kc_';
+$main_page_options = array(
+	array(
+		'label' => 'Title Section',
+		'desc' => '',
+		'id' => $prefix . 'sec_title',
+		'type' => 'section' // text area
+	),
+	array(
+		'label' => 'Title CTA',
+		'desc' => '',
+		'id' => $prefix . 'title_cta',
+		'type' => 'image' // text area
+	),
+	array(
+		'label' => 'Download Section',
+		'desc' => '',
+		'id' => $prefix . 'sec_download',
+		'type' => 'section' // text area
+	),
+	array(
+		'label' => 'Download Quote',
+		'desc' => '',
+		'id' => $prefix . 'download_quote',
+		'type' => 'text' // text area
+	),
+	array(
+		'label' => 'Download CTA',
+		'desc' => '',
+		'id' => $prefix . 'download_cta',
+		'type' => 'textarea' // text area
+	),
+	array(
+		'label' => 'Google Play URL',
+		'desc' => '',
+		'id' => $prefix . 'google_url',
+		'type' => 'text' // text area
+	),
+	array(
+		'label' => 'iTunes App URL',
+		'desc' => '',
+		'id' => $prefix . 'itunes_url',
+		'type' => 'text' // text area
+	),
+	array(
+		'label' => 'Signup URL',
+		'desc' => '',
+		'id' => $prefix . 'signup_url',
+		'type' => 'text' // text area
+	),
+	array(
+		'label' => 'Story Section',
+		'desc' => '',
+		'id' => $prefix . 'sec_story',
+		'type' => 'section' // text area
+	),
+	array(
+		'label' => 'Story Copy',
+		'desc' => '',
+		'id' => $prefix . 'story_copy',
+		'std' => '',
+		'type' => 'textarea' // text area
+	),
+	array(
+		'label' => 'YouTube URL',
+		'desc' => '',
+		'id' => $prefix . 'youtube_url',
+		'std' => '',
+		'type' => 'text' // text area
+	),
+	array(
+		'label' => 'Features Section',
+		'desc' => '',
+		'id' => $prefix . 'sec_features',
+		'type' => 'section' // text area
+	),
+	array(
+		'label' => 'Features Quote',
+		'desc' => '',
+		'id' => $prefix . 'features_quote',
+		'std' => '',
+		'type' => 'text' // text area
+	),
+	array(
+		'label' => 'Characters Section',
+		'desc' => '',
+		'id' => $prefix . 'sec_characters',
+		'type' => 'section' // text area
+	),
+	array(
+		'label' => 'Characters Quote',
+		'desc' => '',
+		'id' => $prefix . 'characters_quote',
+		'std' => '',
+		'type' => 'text' // text area
+	),
+	array(
+		'label' => 'Characters Copy',
+		'desc' => '',
+		'id' => $prefix . 'characters_copy',
+		'std' => '',
+		'type' => 'textarea' // text area
+	)
+);
+$main_page_box = new custom_add_meta_box( 'main', 'Main Page Options', $main_page_options, 'page', true );
+
+$faq_page_options = array(
+	array(
+		'label' => 'Title Section',
+		'desc' => '',
+		'id' => $prefix . 'sec_title',
+		'type' => 'section' // text area
+	),
+	array(
+		'label' => 'FAQ Title Copy',
+		'desc' => '',
+		'id' => $prefix . 'faq_title_copy',
+		'type' => 'textarea' // text area
+	),
+	array(
+		'label' => 'FAQ Section',
+		'desc' => '',
+		'id' => $prefix . 'sec_faq',
+		'type' => 'section' // text area
+	),
+	array(
+		'label' => 'FAQ Q&A',
+		'desc' => '',
+		'id' => $prefix . 'faq_qa',
+		'type' => 'textarea' // text area
+	),
+	array(
+		'label' => 'About Us Section',
+		'desc' => '',
+		'id' => $prefix . 'sec_about',
+		'type' => 'section' // text area
+	),
+	array(
+		'label' => 'About Us Copy',
+		'desc' => '',
+		'id' => $prefix . 'faq_about',
+		'type' => 'textarea' // text area
+	)
+);
+$faq_page_box = new custom_add_meta_box( 'faq', 'FAQ Page Options', $faq_page_options, 'page', true );

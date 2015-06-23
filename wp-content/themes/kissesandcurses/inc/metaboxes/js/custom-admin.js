@@ -17,7 +17,21 @@ jQuery(function($) {
  //   $('#categorychecklist input[type="checkbox"]').live('click', my_check_categories);
  //   my_check_categories();
 
-	
+ 	// Custom
+ 	check_template();
+ 	$('select#page_template').change(check_template).change();
+ 	function check_template(){
+ 		if(!$('body').hasClass('post-type-character')){
+	 		$('#normal-sortables > div').hide();
+		 	if($('select#page_template').val() == 'page-templates/main-page.php'){
+		 		$('#normal-sortables > #main').show();
+		 	}
+		 	if($('select#page_template').val() == 'page-templates/faq-page.php'){
+		 		$('#normal-sortables > #faq').show();
+		 	}
+		}
+	}
+
 	// the upload image button, saves the id and outputs a preview of the image
 	var imageFrame;
 	$('.meta_box_upload_image_button').live('click', function(event) {

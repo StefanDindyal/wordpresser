@@ -460,7 +460,7 @@ function _kcdisplayPage() {
 }
 
 public function _kcsettingsMenu() {
-   add_menu_page( 'Theme Options', 'Theme Options', 'edit_post', 'rg-kc-settings', array( $this, '_kcsettingsOptions' ), KC_URL.'/images/wp_m2_icon.png' );
+   add_menu_page( 'Theme Options', 'Theme Options', 'edit_post', 'rg-kc-settings', array( $this, '_kcsettingsOptions' ), 'dashicons-admin-generic' );
 }
 
 

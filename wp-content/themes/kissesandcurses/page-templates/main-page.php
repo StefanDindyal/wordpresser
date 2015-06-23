@@ -1,22 +1,46 @@
 <?php 
 	/* Template Name: Main */ 
-	get_header(); 
+	get_header();	
+	$title_cta = get_post_meta($post->ID, 'kc_title_cta', true);
+	$download_quote = get_post_meta($post->ID, 'kc_download_quote', true);
+	$download_cta = get_post_meta($post->ID, 'kc_download_cta', true);
+	$google_url = get_post_meta($post->ID, 'kc_google_url', true);
+	$itunes_url = get_post_meta($post->ID, 'kc_itunes_url', true);
+	$signup_url = get_post_meta($post->ID, 'kc_signup_url', true);
+	$story_copy = get_post_meta($post->ID, 'kc_story_copy', true);
+	$youtube_url = get_post_meta($post->ID, 'kc_youtube_url', true);
+	$features_quote = get_post_meta($post->ID, 'kc_features_quote', true);
+	$characters_quote = get_post_meta($post->ID, 'kc_characters_quote', true);
+	$characters_copy = get_post_meta($post->ID, 'kc_characters_copy', true);
 ?>
 <div id="main-page">
 	<div id="title-head">
-		<img src="<?php bloginfo('template_directory'); ?>/images/tagline.png" alt="" border="0"/>
+		<?php echo wp_get_attachment_image( $title_cta, 'full' ); ?>
 	</div>
-	<div id="title-art">
+	<div id="title-art" class="mob">
 		<img src="<?php bloginfo('template_directory'); ?>/images/title-art.jpg" alt="" border="0"/>
-	</div>	
+	</div>
+	<div id="title-art-desk" class="anim">
+		<div class="hold">
+			<img class="base" src="<?php bloginfo('template_directory'); ?>/images/title-img2.jpg" alt="" border="0"/>
+			<img class="blue" src="<?php bloginfo('template_directory'); ?>/images/blue-m.png" alt="" border="0"/>
+			<img class="red" src="<?php bloginfo('template_directory'); ?>/images/red-m.png" alt="" border="0"/>
+			<img class="orange" src="<?php bloginfo('template_directory'); ?>/images/orange-m.png" alt="" border="0"/>
+			<img class="pink" src="<?php bloginfo('template_directory'); ?>/images/pink-m.png" alt="" border="0"/>
+			<img class="left" src="<?php bloginfo('template_directory'); ?>/images/fog-left.png" alt="" border="0"/>
+			<img class="right" src="<?php bloginfo('template_directory'); ?>/images/fog-right.png" alt="" border="0"/>
+			<img class="right-b" src="<?php bloginfo('template_directory'); ?>/images/fog-right-b.png" alt="" border="0"/>
+			<img class="border" src="<?php bloginfo('template_directory'); ?>/images/border.png" alt="" border="0"/>
+		</div>
+	</div>
 	<div class="device">
 		<div class="rig">
-			<p>Play for <strong>FREE</strong> this fall.</p>
+			<?php echo wpautop($download_cta); ?>
 			<ul>
-				<li class="type android hidetext"><a href="#" target="_blank">Google Play</a></li>
-				<li class="type iphone hidetext"><a href="#" target="_blank">iTunes App Store</a></li>
+				<li class="type android hidetext"><a href="<?php echo $google_url; ?>" target="_blank">Google Play</a></li>
+				<li class="type iphone hidetext"><a href="<?php echo $itunes_url; ?>" target="_blank">iTunes App Store</a></li>
 				<li class="share hidetext"><a href="#" target="_blank">Share!</a></li>
-				<li class="newsletter hidetext"><a href="#" target="_blank">Signup</a></li>
+				<li class="newsletter hidetext"><a href="<?php echo $signup_url; ?>" target="_blank">Signup</a></li>
 			</ul>
 		</div>
 	</div>
@@ -27,15 +51,15 @@
 				<h2>The Story</h2>
 				<div class="block clearfix">
 					<div class="cell copy">
-						<p><em><strong>"Who knew the end of the world would be the beginning of my life?"</strong></em></p>
-						<p>An ancient spell, <strong>Starfall</strong>, threatens to destroy the world.</p>
-						<p>Your <strong>birthright</strong> is the only key to stop it.</p>
-						<a href="#" class="more hidetext">Click For More</a>
+						<?php echo wpautop($story_copy); ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>story" class="more hidetext">Click For More</a>
 					</div>
 					<div class="cell video">
 						<div class="frame top"></div>
 						<div class="frame bottom"></div>
-						<iframe width="536" height="390" src="https://www.youtube.com/embed/G9Msi1v14O8?wmode=transparent&amp;autoplay=0&amp;theme=dark&amp;controls=1&amp;autohide=0&amp;loop=0&amp;showinfo=0&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+						<?php $embed_code = wp_oembed_get($youtube_url.'&amp;wmode=transparent&amp;autoplay=0&amp;theme=dark&amp;controls=1&amp;autohide=0&amp;loop=0&amp;showinfo=0&amp;rel=0'); ?>
+						<?php echo $embed_code; ?>
+						
 					</div>
 				</div>
 			</div>
@@ -44,7 +68,7 @@
 	<div id="features" class="section">
 		<div class="banner apothecary">
 			<div class="rig">
-				<span>&quot;You think magic is a game? Magic is not a game.&quot;</span>
+				<span>&quot;<?php echo $features_quote; ?>&quot;</span>
 			</div>
 		</div>
 		<div class="letter">
@@ -53,24 +77,28 @@
 				<div class="seal two"></div>
 				<h2>Key Features</h2>
 				<ul>
-					<li>
-						<p><em><strong>Make Choices</strong></em><br> that affect the outcome of your story.</p>
-						<div class="pic">
-							<img src="<?php bloginfo('template_directory'); ?>/images/pic1.jpg" alt="" border="0"/>
-						</div>
-					</li>
-					<li>
-						<p><em><strong>Create your avatar</strong></em><br> and collect items for your wardrobe.</p>
-						<div class="pic">
-							<img src="<?php bloginfo('template_directory'); ?>/images/pic2.jpg" alt="" border="0"/>
-						</div>
-					</li>
-					<li>
-						<p><em><strong>Brew Potions</strong></em><br> to help you along your journey.</p>
-						<div class="pic">
-							<img src="<?php bloginfo('template_directory'); ?>/images/pic3.jpg" alt="" border="0"/>
-						</div>
-					</li>
+					<?php 
+						$args_features = array( 'post_type' => 'feature', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => 3 );
+						$q_features = new WP_Query( $args_features );
+						if ( $q_features->have_posts() ) :
+							
+							while ( $q_features->have_posts() ) : $q_features->the_post(); ?>
+
+								<li>
+									<?php the_content( __( '<span>Read More</span>', 'twentyfourteen' ) ); ?>
+									<div class="pic">
+										<?php twentyfourteen_post_thumbnail(); ?>
+									</div>
+								</li>
+
+							<?php endwhile;							
+
+						else :
+							
+							get_template_part( 'content', 'none' );
+
+						endif;
+					?>					
 				</ul>
 			</div>
 		</div>
@@ -78,7 +106,7 @@
 	<div id="characters" class="section">
 		<div class="banner safe">
 			<div class="rig">
-				<span>&quot;I feel safe, with you here.&quot;</span>
+				<span>&quot;<?php echo $characters_quote; ?>&quot;</span>
 			</div>
 		</div>
 		<div class="letter">
@@ -87,24 +115,39 @@
 				<div class="seal two"></div>
 				<h2>Choose Your Companions</h2>
 				<div class="copy">
-					<p>The ritual that would seal the ancient magic requires one <strong>Stargazer</strong>, one <strong>Witch</strong> and one <strong>Human</strong>.</p>
-					<p>Who will join your quest to save the world?</p>
+					<?php echo wpautop($characters_copy); ?>
 				</div>
 				<ul>
-					<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/char1.png" alt="" border="0"/></a></li>
-					<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/char2.png" alt="" border="0"/></a></li>
-					<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/char3.png" alt="" border="0"/></a></li>
-					<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/char4.png" alt="" border="0"/></a></li>
-					<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/images/char5.png" alt="" border="0"/></a></li>
+					<?php 
+						$args_character = array( 'post_type' => 'character', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => -1 );
+						$q_character = new WP_Query( $args_character );
+						if ( $q_character->have_posts() ) :
+							
+							while ( $q_character->have_posts() ) : $q_character->the_post(); 
+								$id = get_the_ID();
+						?>
+
+								<li class="post-<?php echo $id; ?>">
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>characters?goto=post-<?php echo $id; ?>"><?php twentyfourteen_post_thumbnail(); ?></a>
+								</li>
+
+							<?php endwhile;							
+
+						else :
+							
+							get_template_part( 'content', 'none' );
+
+						endif;
+					?>
 				</ul>
-				<a href="#" class="more hidetext">Click For More</a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>characters" class="more hidetext">Click For More</a>
 			</div>
 		</div>
 	</div>
 	<div id="download" class="section">
 		<div class="banner salem">
 			<div class="rig">
-				<span>&quot;Come on, the whole world is waiting.&quot;</span>
+				<span>&quot;<?php echo $download_quote; ?>&quot;</span>
 			</div>
 		</div>
 		<div class="letter">
@@ -112,12 +155,12 @@
 				<div class="item">
 					<div class="device">
 						<div class="logo hidetext"><img src="<?php bloginfo('template_directory'); ?>/images/small-logo.png" alt="<?php bloginfo( 'name' ); ?>" border="0"/></div>
-						<p>Download for <strong>FREE</strong> this fall.</p>
+						<?php echo wpautop($download_cta); ?>
 						<ul>
-							<li class="type android hidetext"><a href="#" target="_blank">Google Play</a></li>
-							<li class="type iphone hidetext"><a href="#" target="_blank">iTunes App Store</a></li>
+							<li class="type android hidetext"><a href="<?php echo $google_url; ?>" target="_blank">Google Play</a></li>
+							<li class="type iphone hidetext"><a href="<?php echo $itunes_url; ?>" target="_blank">iTunes App Store</a></li>
 							<li class="share hidetext"><a href="#" target="_blank">Share!</a></li>
-							<li class="newsletter hidetext"><a href="#" target="_blank">Signup</a></li>
+							<li class="newsletter hidetext"><a href="<?php echo $signup_url; ?>" target="_blank">Signup</a></li>
 						</ul>
 					</div>
 				</div>

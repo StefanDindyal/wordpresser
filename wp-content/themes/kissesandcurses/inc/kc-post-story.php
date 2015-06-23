@@ -27,37 +27,27 @@ function kc_story() {
 		  'menu_position' => 4, // search WordPress Codex for menu_position parameters
 		  'supports' => array( 'title', 'editor', 'thumbnail' ),
     );
-    register_post_type( 'story', $args ); // adds your $args array from above    
-	$prefix = 'kc_';
-	$story_options = array(
-		array(
-			'label' => 'Release Copy',
-			'desc' => '',
-			'id' => $prefix . 'released',
-			'std' => '',
-			'type' => 'text' // text area
-		),
-		array(
-			'label' => 'Spotify URI',
-			'desc' => 'URI Copied from Spotify.',
-			'id' => $prefix . 'album_uri',
-			'std' => '',
-			'type' => 'text' // text area
-		),
-		array(
-			'label' => 'iTunes URL',
-			'desc' => 'Full iTunes purchase URL.',
-			'id' => $prefix . 'itunes',
-			'std' => '',
-			'type' => 'text' // text area
-		),
-		array(
-			'label' => 'Bol.com URL',
-			'desc' => 'Full Bol.com purchase URL.',
-			'id' => $prefix . 'bol',
-			'std' => '',
-			'type' => 'text' // text area
-		)
-	);
-	$story_box = new custom_add_meta_box( 'kc-story', 'Story Options', $story_options, 'story', true );
+    register_post_type( 'story', $args ); // adds your $args array from above
+    function kc_story_custom_columns( $columns ) {
+		$columns = array(
+			"cb" => "<input type=\"checkbox\" />",
+			"title" => "Title",
+			"image" => "Image",
+			"date" => "Date"
+		);
+		return $columns;
+	}
+	add_filter( 'manage_edit-story_columns', 'kc_story_custom_columns' );
+    function kc_story_custom_column_content( $column ) {
+		global $post;
+		$image_src = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );		
+		if ( "ID" == $column ){
+			echo $post->ID;
+		} elseif ( "image" == $column ) {
+			if($image_src){
+				echo "<img id='work-img' src='$image_src' style='max-width:100px;' />";
+			}
+		}
+	}
+	add_action( 'manage_posts_custom_column', 'kc_story_custom_column_content' );
 }

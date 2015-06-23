@@ -17,9 +17,27 @@ function _kcAdminOptions(){
 
     $kc_fields = array(
 		array(
-		 	'id'	=> $prefix.'kc_options',
+		 	'id'	=> $prefix.'options',
 		 	'type'	=> 'section',
-		 	'label' => __( 'General Options', KC_LOCALE )
+		 	'label' => __( 'Share Options', KC_LOCALE )
+		),
+		array(
+			'desc'  => 'Short Tweet text that should include the sites url or shortlink if desired.',
+		 	'id'	=> $prefix.'twitter_text',
+		 	'type'	=> 'text',
+		 	'label' => __( 'Twitter Share Text', KC_LOCALE )
+		),
+		array(
+			'desc'  => 'The emails subject line when sharing.',
+		 	'id'	=> $prefix.'email_subject',
+		 	'type'	=> 'text',
+		 	'label' => __( 'Email Subject Text', KC_LOCALE )
+		),
+		array(
+			'desc'  => 'The emails body text when sharing.',
+		 	'id'	=> $prefix.'email_body',
+		 	'type'	=> 'text',
+		 	'label' => __( 'Email Body Text', KC_LOCALE )
 		)
 	);
 }

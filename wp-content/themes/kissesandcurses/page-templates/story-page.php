@@ -8,9 +8,27 @@
 			<div class="rig">				
 				<h2>The Story</h2>
 				<ul class="block clearfix">
-					<li><img src="<?php bloginfo('template_directory'); ?>/images/pol1.png" alt="" border="0"/></li>
-					<li><img src="<?php bloginfo('template_directory'); ?>/images/pol2.png" alt="" border="0"/></li>
-					<li><img src="<?php bloginfo('template_directory'); ?>/images/pol3.png" alt="" border="0"/></li>
+					<?php 
+						$args_story = array( 'post_type' => 'story', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => -1 );
+						$q_story = new WP_Query( $args_story );
+						if ( $q_story->have_posts() ) :
+							
+							while ( $q_story->have_posts() ) : $q_story->the_post(); 
+								$id = get_the_ID();
+						?>
+
+								<li data-id="post-<?php echo $id; ?>">
+									<?php twentyfourteen_post_thumbnail(); ?>
+								</li>
+
+							<?php endwhile;							
+
+						else :
+							
+							get_template_part( 'content', 'none' );
+
+						endif;
+					?>					
 				</ul>
 			</div>
 		</div>
@@ -20,11 +38,27 @@
 			<div class="rig">
 				<div class="item">				
 					<ul>
-						<li>
-							<p><strong>Start</strong> your journey as a young witch in the peaceful but uneventful town of Werbury. As the <strong>Stargazer</strong>, it is your role to absorb infrequent bursts of wild magic known as <strong>Starfall</strong>.</p>
-							<p>Despite your magical heritage your life is remains pretty ordinary... until an increase of Starfalls known as <strong>Starfloods</strong> start to plague the world. You are approached by a mysterious member of the witch council who says that only a <strong>ritual</strong> involves <strong>you</strong>, a <strong>human</strong> and another <strong>witch</strong> can calm the source of Starfalls.</p>
-							<p><strong>Who</strong> will you choose to accompany you on your journey? What <strong>path</strong> of witchcraft will you tread in your quest to save the world? <strong>Join us and find out in Kisses &amp; Curses</strong>.</p>
-						</li>						
+						<?php 
+							$args_story = array( 'post_type' => 'story', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => -1 );
+							$q_story = new WP_Query( $args_story );
+							if ( $q_story->have_posts() ) :
+								
+								while ( $q_story->have_posts() ) : $q_story->the_post(); 
+									$id = get_the_ID();
+							?>
+
+									<li data-id="post-<?php echo $id; ?>">
+										<?php the_content(); ?>
+									</li>
+
+								<?php endwhile;							
+
+							else :
+								
+								get_template_part( 'content', 'none' );
+
+							endif;
+						?>						
 					</ul>
 				</div>
 			</div>

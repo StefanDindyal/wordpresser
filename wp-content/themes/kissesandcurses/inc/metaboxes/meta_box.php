@@ -65,7 +65,7 @@ function custom_meta_box_field( $field, $meta = null, $repeatable = null ) {
 		case 'textarea':
 			wp_editor( $meta, esc_attr( $id ), array(
 			    'wpautop'       => true,
-			    'media_buttons' => false,
+			    'media_buttons' => true,
 			    'textarea_name' => esc_attr( $name ),
 			    'textarea_rows' => 10,
 			    'teeny'         => true
@@ -538,7 +538,8 @@ class Custom_Add_Meta_Box {
 				meta_box_find_repeatable( 'repeatable', $this->fields ),
 				meta_box_find_repeatable( 'input_group', $this->fields ),
 				meta_box_find_field_type( 'image', $this->fields ),
-				meta_box_find_field_type( 'file', $this->fields )
+				meta_box_find_field_type( 'file', $this->fields ),
+				meta_box_find_field_type( 'text', $this->fields )
 			) ) )
 				wp_enqueue_script( 'meta_box', get_template_directory_uri(). '/inc/metaboxes/js/custom-admin.js', $deps );
 			
@@ -662,7 +663,7 @@ class Custom_Add_Meta_Box {
 				echo '<tr id="'.$field['id'].'_row">';
 						// echo '<th style="width:15%"><label for="' . $field['id'] . '">' . $field['label'] . '</label></th>';
 						echo '<td>';
-						echo '<div><label for="' . $field['id'] . '">' . $field['label'] . '</label></div>';
+						echo '<div class="lhold"><label for="' . $field['id'] . '">' . $field['label'] . '</label></div>';
 						
 						$meta = get_post_meta( get_the_ID(), $field['id'], true);
 						echo custom_meta_box_field( $field, $meta );
