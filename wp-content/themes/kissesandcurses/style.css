@@ -1415,24 +1415,24 @@ body.modal {
     top: 0;
 }
 .loaded #title-art-desk .blue {
-	-webkit-animation: glow 2.5s ease-in-out infinite alternate;
-  	-moz-animation: glow 2.5s ease-in-out infinite alternate;
-  	animation: glow 2.5s ease-in-out infinite alternate;
+	-webkit-animation: glow 4s ease-in-out infinite alternate;
+  	-moz-animation: glow 4s ease-in-out infinite alternate;
+  	animation: glow 4s ease-in-out infinite alternate;
 }
 .loaded #title-art-desk .red {
-	-webkit-animation: glow 1s ease-in-out infinite alternate;
-  	-moz-animation: glow 1s ease-in-out infinite alternate;
-  	animation: glow 1s ease-in-out infinite alternate;
-}
-.loaded #title-art-desk .orange {
-	-webkit-animation: glow 1.5s ease-in-out infinite alternate;
-  	-moz-animation: glow 1.5s ease-in-out infinite alternate;
-  	animation: glow 1.5s ease-in-out infinite alternate;
-}
-.loaded #title-art-desk .pink {
 	-webkit-animation: glow 2s ease-in-out infinite alternate;
   	-moz-animation: glow 2s ease-in-out infinite alternate;
   	animation: glow 2s ease-in-out infinite alternate;
+}
+.loaded #title-art-desk .orange {
+	-webkit-animation: glow 2s ease-in-out infinite alternate;
+  	-moz-animation: glow 2s ease-in-out infinite alternate;
+  	animation: glow 2s ease-in-out infinite alternate;
+}
+.loaded #title-art-desk .pink {
+	-webkit-animation: glow 4s ease-in-out infinite alternate;
+  	-moz-animation: glow 4s ease-in-out infinite alternate;
+  	animation: glow 4s ease-in-out infinite alternate;
 }
 @-webkit-keyframes glow {
   from {
