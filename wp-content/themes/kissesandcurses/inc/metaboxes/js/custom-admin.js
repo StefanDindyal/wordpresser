@@ -29,6 +29,9 @@ jQuery(function($) {
 		 	if($('select#page_template').val() == 'page-templates/faq-page.php'){
 		 		$('#normal-sortables > #faq').show();
 		 	}
+		 	if($('select#page_template').val() == 'page-templates/privacy-page.php'){
+		 		$('#normal-sortables > #privacy').show();
+		 	}
 		}
 	}
 

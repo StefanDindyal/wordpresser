@@ -725,3 +725,13 @@ $faq_page_options = array(
 	)
 );
 $faq_page_box = new custom_add_meta_box( 'faq', 'FAQ Page Options', $faq_page_options, 'page', true );
+
+$privacy_page_options = array(
+	array(
+		'label' => 'Privacy Policy Copy',
+		'desc' => '',
+		'id' => $prefix . 'privacy_copy',
+		'type' => 'textarea' // text area
+	)
+);
+$privacy_page_box = new custom_add_meta_box( 'privacy', 'Privacy Policy Page Options', $privacy_page_options, 'page', true );

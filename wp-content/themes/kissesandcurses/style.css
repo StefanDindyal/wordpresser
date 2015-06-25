@@ -782,7 +782,7 @@ body.modal {
 	height: 80%;
 	top: 50%;
 	left: 50%;
-	margin-top: -40%;
+	margin-top: -45%;
 	margin-left: -40%;
 	box-shadow: 0 0 50px rgba(175,193,211,0.75);
 	opacity: 0;
@@ -1318,6 +1318,20 @@ body.modal {
 	height: 110px;
 	background: url(images/voltage-btn.png) center no-repeat;
 	background-size: 100% auto;
+}
+#privacy-page {
+	color: #ffffff;
+	font-size: 16px;
+	line-height: 24px;
+}
+#privacy-page h2 {
+	font-size: 32px;
+	line-height: 42px;
+	margin-bottom: 20px;
+}
+#privacy-page #story p,
+#privacy-page #story ul {
+	margin-bottom: 20px;
 }
 
 /* Animation */
