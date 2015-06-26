@@ -644,6 +644,13 @@ $main_page_options = array(
 		'type' => 'textarea' // text area
 	),
 	array(
+		'label' => 'Story Page Link',
+		'desc' => '',
+		'id' => $prefix . 'story_link',
+		'std' => '',
+		'type' => 'text' // text area
+	),
+	array(
 		'label' => 'YouTube URL',
 		'desc' => '',
 		'id' => $prefix . 'youtube_url',
@@ -682,6 +689,13 @@ $main_page_options = array(
 		'id' => $prefix . 'characters_copy',
 		'std' => '',
 		'type' => 'textarea' // text area
+	),
+	array(
+		'label' => 'Characters Page Link',
+		'desc' => '',
+		'id' => $prefix . 'characters_link',
+		'std' => '',
+		'type' => 'text' // text area
 	)
 );
 $main_page_box = new custom_add_meta_box( 'main', 'Main Page Options', $main_page_options, 'page', true );

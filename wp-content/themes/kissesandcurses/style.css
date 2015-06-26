@@ -266,10 +266,11 @@ body.modal {
 }
 #footer {
 	color: #4a4a4a;
-	padding: 15px 10px 60px;
+	padding: 40px 10px 60px;
 	background-color: #000000;
 }
 #footer .to-top {
+	display: none;
 	width: 70px;
 	height: 24px;
 	margin: 10px auto 30px;
@@ -776,6 +777,7 @@ body.modal {
 	position: relative;
 }
 #story-page #story .block li .post-thumbnail:before {
+	display: none;
 	position: absolute;
 	content: '';
 	width: 80%;
@@ -882,6 +884,7 @@ body.modal {
 	position: relative;
 }
 #character-page #char-list .block ul li:before {
+	display: none;
 	position: absolute;
 	content: '';
 	width: 80%;
@@ -1335,6 +1338,9 @@ body.modal {
 }
 
 /* Animation */
+#prime {
+	overflow: hidden;
+}
 #main-page #title-head {
 	z-index: 10;
 }
@@ -1346,7 +1352,7 @@ body.modal {
 }
 #title-art-desk .hold {
 	position: relative;
-	max-width: 1280px;
+	max-width: 980px;
 	margin: 0 auto;
 	overflow: hidden;
 }
@@ -1364,6 +1370,8 @@ body.modal {
 	left: auto;
 }
 #title-art-desk .border {
+	width: 100%;
+	height: 100%;
 	-webkit-transition: all 1s ease-in-out;
 	   -moz-transition: all 1s ease-in-out;
 	    -ms-transition: all 1s ease-in-out;
@@ -1374,6 +1382,8 @@ body.modal {
 	opacity: 1;
 }
 #title-art-desk .left {
+	width: 100%;
+	height: 100%;
 	left: -25%;
 	opacity: 0.7;
 	-webkit-transition: all 5s ease-in-out;
@@ -1387,6 +1397,8 @@ body.modal {
 	opacity: 1;
 }
 #title-art-desk .right {
+	width: 100%;
+	height: 100%;
 	right: -25%;
 	opacity: 0.7;
 	-webkit-transition: all 5s ease-in-out;
@@ -1400,6 +1412,8 @@ body.modal {
 	opacity: 1;
 }
 #title-art-desk .right-b {
+	width: 100%;
+	height: 100%;
 	right: -25%;
 	opacity: 0.7;
 	-webkit-transition: all 6s ease-in-out;
@@ -1413,20 +1427,20 @@ body.modal {
 	opacity: 1;
 }
 #title-art-desk .hold .blue {
-	right: 177px;
-    top: 140px;
+	right: 120px;
+    top: 100px;
 }
 #title-art-desk .hold .red {
-	left: 369px;
-    top: 319px;
+	left: 270px;
+	top: 230px;
 }
 #title-art-desk .hold .orange {
-	right: 449px;
-    top: 166px;
+	right: 335px;
+	top: 110px;
 }
 #title-art-desk .hold .pink {
-	right: 540px;
-    top: 0;
+	right: 405px;
+	top: -35px;
 }
 .loaded #title-art-desk .blue {
 	-webkit-animation: glow 4s ease-in-out infinite alternate;
@@ -1498,7 +1512,7 @@ body.modal {
 .clearfix{zoom:1;}
 
 /* Mobile CSS */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1023px) {
 	#title-art-desk {
 		display: none;
 	}
@@ -1563,7 +1577,7 @@ body.modal {
 		right: 20px;
 	}
 	#main-page .section .banner {
-		background-size: auto 100%;
+		background-size: cover;
 	}
 	#story h2 {
 		margin-bottom: 20px;
@@ -1618,7 +1632,7 @@ body.modal {
 		padding-bottom: 20px;
 	}
 	#features ul li {
-		margin: 0;
+		margin: 10px;
 	}
 	#download .item {
 		padding: 40px 25px 10px !important;
@@ -1626,7 +1640,7 @@ body.modal {
 	/* Cancel BG */
 	#main-page .section .letter,
 	#faq-page #faq .letter {
-		background: #f7d3a4 !important;
+		background: #e7d9c4 !important;
 	}
 	#story .cell.copy,
 	#features ul li,
@@ -1646,7 +1660,7 @@ body.modal {
 	}
 	#story-page #disc .item,
 	#faq-page #volt .item {
-		background: #f7d3a4;
+		background: #e7d9c4;
 	}
 	#character-page #char .tab {
 		background: #e9d9ca;
@@ -1661,6 +1675,12 @@ body.modal {
 		margin: 0 auto 30px;
 		left: auto;
 		top: auto;
+	}
+	#main-page .device ul li a {
+		height: 75px;
+	}
+	#main-page .device ul li {
+		margin: 0;
 	}
 }
 @media only screen and (max-width: 740px) {
@@ -1705,6 +1725,9 @@ body.modal {
 	}
 	#character-page #char-list .block ul li img {
 		margin: 0 auto;
+	}
+	#features ul li {
+		margin: 0px;
 	}
 }
 @media only screen and (max-width: 640px) {

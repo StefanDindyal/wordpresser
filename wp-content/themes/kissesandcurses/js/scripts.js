@@ -81,10 +81,18 @@ jQuery(function($){
 	}
 	if($('#character-page').length){
 		var goTo = getUrlParameter('goto');
+		if($(window).width() > 740 && $('#char-list li').length > 5){
+			var slider = $('#char-list .block ul').bxSlider({
+				controls:false,
+				infiniteLoop:false,
+				maxSlides:5,
+				slideWidth:200
+			});
+		}
 		if($(window).width() <= 740){
 			var slider = $('#char-list .block ul').bxSlider({
 				controls:false,
-				infiniteLoop:false			
+				infiniteLoop:false
 			});
 			if(goTo){
 				var index = $('#char-list li[data-id="'+goTo+'"]').index();
@@ -111,6 +119,14 @@ jQuery(function($){
 		});
 	}
 	if($('#main-page').length){
+		if($(window).width() > 740 && $('#characters ul li').length > 5){
+			var slider = $('#characters ul').bxSlider({
+				controls:false,
+				infiniteLoop:false,
+				maxSlides:5,
+				slideWidth:200
+			});
+		}
 		if($(window).width() <= 740){
 			var slider = $('#characters ul').bxSlider({
 				controls:false,

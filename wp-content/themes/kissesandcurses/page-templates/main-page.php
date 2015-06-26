@@ -8,10 +8,12 @@
 	$itunes_url = get_post_meta($post->ID, 'kc_itunes_url', true);
 	$signup_url = get_post_meta($post->ID, 'kc_signup_url', true);
 	$story_copy = get_post_meta($post->ID, 'kc_story_copy', true);
+	$story_link = get_post_meta($post->ID, 'kc_story_link', true);
 	$youtube_url = get_post_meta($post->ID, 'kc_youtube_url', true);
 	$features_quote = get_post_meta($post->ID, 'kc_features_quote', true);
 	$characters_quote = get_post_meta($post->ID, 'kc_characters_quote', true);
 	$characters_copy = get_post_meta($post->ID, 'kc_characters_copy', true);
+	$characters_link = get_post_meta($post->ID, 'kc_characters_link', true);
 ?>
 <div id="main-page">
 	<div id="title-head">
@@ -52,7 +54,7 @@
 				<div class="block clearfix">
 					<div class="cell copy">
 						<?php echo wpautop($story_copy); ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>story" class="more hidetext">Click For More</a>
+						<a href="<?php echo $story_link; ?>" class="more hidetext">Click For More</a>
 					</div>
 					<div class="cell video">
 						<div class="frame top"></div>
@@ -140,7 +142,7 @@
 						endif;
 					?>
 				</ul>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>characters" class="more hidetext">Click For More</a>
+				<a href="<?php echo $characters_link; ?>" class="more hidetext">Click For More</a>
 			</div>
 		</div>
 	</div>
