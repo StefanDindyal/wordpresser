@@ -1336,6 +1336,78 @@ body.modal {
 #privacy-page #story ul {
 	margin-bottom: 20px;
 }
+#contact-page {
+	color: #ffffff;
+	padding-bottom: 40px;
+}
+#contact-page h2 {
+	font-size: 50px;
+	line-height: normal;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+#contact-page .left {
+	float: left;
+	max-width: 460px;
+	width: 100%;
+}
+#contact-page .right {
+	float: right;
+	width: 100%;
+	max-width: 365px;
+}
+#contact-page .left img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	-webkit-transform: rotate(-5deg);
+	   -moz-transform: rotate(-5deg);
+	    -ms-transform: rotate(-5deg);
+	     -o-transform: rotate(-5deg);
+	        transform: rotate(-5deg);
+}
+#contact-page .right p {
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 20px;
+}
+#contact-page .right p a {
+	color: #fff;
+}
+#contact-page .right form input[type="text"],
+#contact-page .right form textarea {
+	width: 100%;
+	padding: 5px;
+	font-size: 16px;
+	border-radius: 5px;
+	background-color: #d1c7bc;
+	color: #000;
+	border: 0;
+	margin-bottom: 5px;
+	font-family: 'Georgia', serif;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.6), inset 0 1px 4px 0 rgba(0, 0, 0, 0.6);
+}
+#contact-page .right form input[type="submit"] {
+	background-color: #4a4a4a;
+	color: #fff;
+	width: 100%;
+	max-width: 25%;
+	padding: 5px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 0;
+	float: right;
+	margin-bottom: 5px;
+	font-family: 'Georgia', serif;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.6);
+	cursor: pointer;
+}
+#contact-page .right .code {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: normal;
+	margin-bottom: 10px;
+}
 
 /* Animation */
 #prime {
@@ -1682,6 +1754,19 @@ body.modal {
 	#main-page .device ul li {
 		margin: 0;
 	}
+	#contact-page .left {
+		float: none;
+		max-width: 100%;
+		padding: 0 20px;
+		max-width: 640px;
+		margin: 0 auto 40px;
+	}
+	#contact-page .right {
+		float: none;
+		padding: 0 20px;
+		max-width: 640px;
+		margin: 0 auto;
+	}
 }
 @media only screen and (max-width: 740px) {
 	#features ul li .pic {
@@ -1900,6 +1985,9 @@ body.modal {
 	}
 	#characters .rig {
 		padding: 0 10px;
+	}
+	#contact-page h2 {
+		font-size: 42px;
 	}
 }
 @media only screen and (max-width: 320px) {

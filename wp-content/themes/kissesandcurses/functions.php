@@ -749,3 +749,13 @@ $privacy_page_options = array(
 	)
 );
 $privacy_page_box = new custom_add_meta_box( 'privacy', 'Privacy Policy Page Options', $privacy_page_options, 'page', true );
+
+$contact_page_options = array(
+	array(
+		'label' => 'Contact Us Copy',
+		'desc' => '',
+		'id' => $prefix . 'contact_copy',
+		'type' => 'textarea' // text area
+	)
+);
+$contact_page_box = new custom_add_meta_box( 'contact', 'Contact Us Page Options', $contact_page_options, 'page', true );

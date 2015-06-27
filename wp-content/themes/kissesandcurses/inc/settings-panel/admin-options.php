@@ -38,6 +38,17 @@ function _kcAdminOptions(){
 		 	'id'	=> $prefix.'email_body',
 		 	'type'	=> 'text',
 		 	'label' => __( 'Email Body Text', KC_LOCALE )
+		),
+		array(
+		 	'id'	=> $prefix.'contact_options',
+		 	'type'	=> 'section',
+		 	'label' => __( 'Contact Us Options', KC_LOCALE )
+		),
+		array(
+			'desc'  => 'Email to send contact form information to.',
+		 	'id'	=> $prefix.'email_url',
+		 	'type'	=> 'text',
+		 	'label' => __( 'Contact Us Email', KC_LOCALE )
 		)
 	);
 }

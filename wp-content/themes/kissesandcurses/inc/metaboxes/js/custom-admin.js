@@ -32,6 +32,9 @@ jQuery(function($) {
 		 	if($('select#page_template').val() == 'page-templates/privacy-page.php'){
 		 		$('#normal-sortables > #privacy').show();
 		 	}
+		 	if($('select#page_template').val() == 'page-templates/contact-page.php'){
+		 		$('#normal-sortables > #contact').show();
+		 	}
 		}
 	}
 
