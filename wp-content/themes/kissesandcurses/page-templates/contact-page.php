@@ -1,57 +1,60 @@
 <?php 
 
-	// $headers[] = "From: {$name} <{$email}>";
-    // wp_mail( $emails, $subject, $message, $headers );
 	$response = "";
+
 	function my_contact_form_generate_response($type, $message){
-		global $response;			 
+
+		global $response; 
+
 		if($type == "success"){ 
 			$response = "<div class='success code'>{$message}</div>";
-		}
-		else 
-		{	
+		} else {	
 			$response = "<div class='error code'>{$message}</div>";			 
 		}
+
 	}
+
 	//response messages
 	$message_unsent  = "Message was not sent. Try Again.";
 	$message_sent    = "Thanks! Your message has been sent.";
+
 	//user posted variables
 	$name = $_POST['message_name'];
 	$email = $_POST['message_email'];
 	$subject = $_POST['message_subject'];
-	$message = $_POST['message_text'];
-	$message = strip_tags($message);
+	$message = strip_tags($_POST['message_text']);
+	$submitted = $_POST['submitted'];	
+
 	//php mailer variables
 	$kc_options = get_option('kc_options');
-	$to = $kc_options['kc_email_url'];	
+	$to = $kc_options['kc_email_url'];
+	$headers = 'From: '. $email . "\r\n" . 
+	'Reply-To: ' . $email . "\r\n";	
+
 	if($to){		
 		$to = $to;
 	} else {
 		// marketing@voltage-ent.com
 		$to = 'marketing@voltage-ent.com';
 	}
+	
 	if($subject){
 		$subject = $subject;
 	} else {
-		$subject = '';
+		$subject = "Someone sent a message from ".get_bloginfo('name');
 	}
-	if($message){
-		$message = 'From: '.$email.', '.$message;
-	} else {
-		$message = 'No message.';
-	}
-	$headers[] = '';
-	$sent = wp_mail($to, $subject, $message, $headers);
-    if($_POST['submitted']){
+	
+	if($submitted){
+
+		$sent = wp_mail($to, $subject, $message, $headers);
+		
 		if($sent){
 			my_contact_form_generate_response("success", $message_sent); //message sent!
-		}
-		else
-		{
+		} else {
 			my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
 		}
-	}	
+
+	}
 
 	/* Template Name: Contact Us */ 
 	get_header(); 
@@ -68,10 +71,7 @@
 				<div class="right">
 					<?php echo wpautop($contact_copy); ?>
 					<div id="respond">
-						<div class="resp"><?php 
-							global $response;
-							echo $response;			  	
-						?></div>
+						<div class="resp"><?php echo $response; ?></div>
 						<form action="<?php bloginfo('url'); ?>/contact-us" method="post">
 							<input type="text" name="message_name" value="" placeholder="Name">
 							<input type="text" name="message_email" value="" placeholder="Email">

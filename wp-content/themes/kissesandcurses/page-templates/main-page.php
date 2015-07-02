@@ -121,7 +121,7 @@
 				</div>
 				<ul>
 					<?php 
-						$args_character = array( 'post_type' => 'character', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => -1 );
+						$args_character = array( 'post_type' => 'character', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => 5 );
 						$q_character = new WP_Query( $args_character );
 						if ( $q_character->have_posts() ) :
 							
@@ -130,7 +130,7 @@
 						?>
 
 								<li class="post-<?php echo $id; ?>">
-									<a href="<?php echo esc_url( home_url( '/' ) ); ?>characters?goto=post-<?php echo $id; ?>"><?php twentyfourteen_post_thumbnail(); ?></a>
+									<a href="<?php bloginfo('url'); ?>/characters/?goto=post-<?php echo $id; ?>"><?php twentyfourteen_post_thumbnail(); ?></a>
 								</li>
 
 							<?php endwhile;							

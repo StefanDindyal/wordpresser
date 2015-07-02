@@ -22,22 +22,16 @@ function _kcAdminOptions(){
 		 	'label' => __( 'Share Options', KC_LOCALE )
 		),
 		array(
-			'desc'  => 'Short Tweet text that should include the sites url or shortlink if desired.',
+			'desc'  => 'Short Tweet text. (Required: The sites url or shortlink if desired)',
 		 	'id'	=> $prefix.'twitter_text',
 		 	'type'	=> 'text',
 		 	'label' => __( 'Twitter Share Text', KC_LOCALE )
 		),
 		array(
-			'desc'  => 'The emails subject line when sharing.',
-		 	'id'	=> $prefix.'email_subject',
+			'desc'  => 'Tumblr share text.',
+		 	'id'	=> $prefix.'tumblr_text',
 		 	'type'	=> 'text',
-		 	'label' => __( 'Email Subject Text', KC_LOCALE )
-		),
-		array(
-			'desc'  => 'The emails body text when sharing.',
-		 	'id'	=> $prefix.'email_body',
-		 	'type'	=> 'text',
-		 	'label' => __( 'Email Body Text', KC_LOCALE )
+		 	'label' => __( 'Tumblr Share Text', KC_LOCALE )
 		),
 		array(
 		 	'id'	=> $prefix.'contact_options',
@@ -49,6 +43,18 @@ function _kcAdminOptions(){
 		 	'id'	=> $prefix.'email_url',
 		 	'type'	=> 'text',
 		 	'label' => __( 'Contact Us Email', KC_LOCALE )
+		),
+		array(
+		 	'id'	=> $prefix.'ga_options',
+		 	'type'	=> 'section',
+		 	'label' => __( 'Google Analytics Options', KC_LOCALE )
+		),
+		array(
+			'desc'  => 'Paste Google Analytics script here.',
+		 	'id'	=> $prefix.'ga_tag',
+		 	'type'	=> 'textarea',
+		 	'placeholder' => '<script>GA CODE</script>',
+		 	'label' => __( 'Google Analytics Script', KC_LOCALE )
 		)
 	);
 }

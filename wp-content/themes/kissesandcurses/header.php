@@ -26,15 +26,14 @@
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/js/slider/jquery.bxslider.css">
 	<link rel="shortcut icon" href="<?php bloginfo( 'template_directory' ); ?>/images/favicon.png" type="image/x-icon" />
 	<?php wp_head(); ?>
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-51128775-3', 'auto');
-		ga('send', 'pageview');
-	</script>
+	<?php
+	$kc_options = get_option('kc_options');
+	$ga_tag = $kc_options['kc_ga_tag'];
+	if($ga_tag){ ?>
+	<!-- Google Analytics -->
+	<?php echo $ga_tag; 
+	} 
+	?>				
 </head>
 <body <?php body_class(); ?>>
 <div id="prime">	
@@ -61,7 +60,7 @@
 		<div id="mobile">				
 			<?php wp_nav_menu( array( 'menu' => 'social', 'menu_class' => 'social-menu' ) ); ?>
 			<?php wp_nav_menu( array( 'menu' => 'main', 'menu_class' => 'main-menu' ) ); ?>	
-			<div class="to-top"></div>			
+			<div class="to-top"><span>Top</span></div>			
 		</div>
 	</header>
 	<div id="mid">

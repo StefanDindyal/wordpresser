@@ -167,6 +167,7 @@ body.modal {
 	height: 45px;
 	background-image: url(images/menu-bg.png);
 	background-repeat: no-repeat;
+	-webkit-background-size: auto 100%;
 	background-size: auto 100%;
 }
 #header .main-menu:before {
@@ -210,6 +211,7 @@ body.modal {
 	height: 30px;
 	background-repeat: no-repeat;
 	background-position: center;
+	-webkit-background-size: 100%;
 	background-size: 100%;
 	display: block;
 	overflow: hidden;
@@ -246,6 +248,7 @@ body.modal {
 	width: 36px;
 	height: 20px;
 	background: url(images/to-top.png) top left no-repeat;
+	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 	margin-left: 25px;
 	margin-top: 40px;
@@ -275,6 +278,7 @@ body.modal {
 	height: 24px;
 	margin: 10px auto 30px;
 	background: url(images/to-top-footer.png) top center no-repeat;
+	-webkit-background-size: 100% auto;
 	background-size: 100% auto;
 	cursor: pointer;
 	-webkit-transition: all .25s ease-in-out;
@@ -319,6 +323,7 @@ body.modal {
 	width: 130px;
 	height: 32px;
 	background: url(images/voltage-logo.png) top left no-repeat;
+	-webkit-background-size: 100% auto;
 	background-size: 100% auto;
 }
 .over {
@@ -373,6 +378,7 @@ body.modal {
 	background-position: center;
 	background-repeat: no-repeat;
 	border-radius: 5px;
+	-webkit-background-size: 90%;
 	background-size: 90%;
 }
 .over ul li a.facebook {
@@ -381,8 +387,8 @@ body.modal {
 .over ul li a.twitter {
 	background-image: url(images/twitter-icon.png);
 }
-.over ul li a.email {
-	background-image: url(images/newsletter-icon.png);
+.over ul li a.tumblr {
+	background-image: url(images/tumblr-icon.png);
 }
 
 /* Main Page Styles */
@@ -410,6 +416,7 @@ body.modal {
 #main-page .section .seal {
 	position: absolute;
 	background: url(images/spell-seal.png) top center no-repeat;
+	-webkit-background-size: cover;
 	background-size: cover;
 }
 #story .seal {
@@ -459,6 +466,7 @@ body.modal {
 	padding: 60px 0;
 	margin-top: -5px;
 	background-repeat: no-repeat;
+	-webkit-background-size: 99% auto;
 	background-size: 99% auto;
 	background-position: center;
 }
@@ -484,13 +492,13 @@ body.modal {
 	opacity: 1;
 }
 #main-page .section .banner.apothecary {
-	background-image: url(images/apothecary-banner.png);
+	background-image: url(images/apothecary-banner.jpg);
 }
 #main-page .section .banner.safe {
-	background-image: url(images/safe-banner.png);
+	background-image: url(images/safe-banner.jpg);
 }
 #main-page .section .banner.salem {
-	background-image: url(images/salem-banner.png);
+	background-image: url(images/salem-banner.jpg);
 }
 #main-page .section .letter {
 	position: relative;
@@ -498,6 +506,7 @@ body.modal {
 	padding: 30px 0;
 	margin-top: -5px;
 	background: url(images/long-parchment-warm.png) top center no-repeat;
+	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 }
 #main-page .section .letter h2 {
@@ -531,6 +540,7 @@ body.modal {
 }
 #main-page .device ul li a {
 	display: block;
+	-webkit-background-size: auto 100%;
 	background-size: auto 100%;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -578,6 +588,7 @@ body.modal {
 	height: auto;
 	background: url(images/story-card-med.png) top center no-repeat;
 	float: left;
+	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 	padding: 110px 30px;
 	font-size: 20px;
@@ -593,6 +604,7 @@ body.modal {
 	height: 62px;
 	background: url(images/more-btn.png) top left no-repeat;
 	margin: 0 auto;
+	-webkit-background-size: 100% auto;
 	background-size: 100% auto;
 }
 #story .cell.video {
@@ -643,6 +655,7 @@ body.modal {
 	width: 320px;
 	padding: 30px 20px 60px;
 	background: url(images/parchment-white.png) top left no-repeat;
+	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 }
 #features ul li p {
@@ -711,6 +724,7 @@ body.modal {
 	height: 62px;
 	background: url(images/more-btn.png) top left no-repeat;
 	margin: 0 auto;
+	-webkit-background-size: 100% auto;
 	background-size: 100% auto;
 }
 #main-page #download .letter {
@@ -722,6 +736,7 @@ body.modal {
 	margin: 0 auto;
 	padding: 115px 10px 70px;
 	background: url(images/parchment-tan.png) top center no-repeat;
+	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 }
 #main-page #download .device p {
@@ -752,7 +767,8 @@ body.modal {
 #story-page #story {
 	padding: 30px 10px;
 	position: relative;
-	background: url(images/attunement.png) center no-repeat;
+	background: url(images/attunement.jpg) center no-repeat;
+	-webkit-background-size: cover;
 	background-size: cover;
 }
 #story-page #story h2 {
@@ -775,6 +791,9 @@ body.modal {
 	max-width: 300px;
 	cursor: pointer;
 	position: relative;
+}
+#story-page.past #story .block li {
+	margin: 0;
 }
 #story-page #story .block li .post-thumbnail:before {
 	display: none;
@@ -808,6 +827,15 @@ body.modal {
 	     -o-transform: rotate(5deg);
 	        transform: rotate(5deg);
 }
+#story-page.past #story .block li:first-child .post-thumbnail,
+#story-page.past #story .block li:last-child .post-thumbnail {
+	-webkit-transform: rotate(0deg);
+	   -moz-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
+	     -o-transform: rotate(0deg);
+	        transform: rotate(0deg);
+}
+
 #story-page #story .block li img {
 	display: block;
 	max-width: 100%;
@@ -822,6 +850,7 @@ body.modal {
 	position: relative;
 	padding: 20px 0 30px;
 	background: url(images/wood.jpg) center no-repeat;
+	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 }
 #story-page #disc .item {
@@ -831,6 +860,7 @@ body.modal {
 	min-height: 600px;
 	margin: 0 auto;
 	background: url(images/parchment-warm.png) center no-repeat;
+	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 	padding: 100px 120px;
 	font-size: 23px;
@@ -849,7 +879,8 @@ body.modal {
 /* Character Page */
 .page-template-character-page #prime {
 	padding-top: 90px;
-	background: url(images/spooky.png) top center no-repeat;
+	background: url(images/spooky.jpg) top center no-repeat;
+	-webkit-background-size: cover;
 	background-size: cover;
 	background-attachment: fixed;
 }
@@ -921,6 +952,7 @@ body.modal {
 	margin: 0 auto;
 	margin-top: -10px;
 	background: url(images/parchment-tan.png) center no-repeat;
+	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 	padding: 70px 140px 85px;
 	font-size: 23px;
@@ -963,18 +995,35 @@ body.modal {
 }
 
 /* News Page */
+#news .notice {
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	line-height: normal;
+	padding: 10px 0 30px;
+}
+
+.error404 #prime,
+.page-template-default #prime,
 .page-template-news-page #prime,
 .archive #prime,
 .single #prime {
 	padding-top: 90px;
-	background: url(images/spooky.png) top center no-repeat;
+	background: url(images/spooky.jpg) top center no-repeat;
+	-webkit-background-size: cover;
 	background-size: cover;
 	background-attachment: fixed;
 }
+.error404 #mid,
+.page-template-default #mid,
 .page-template-news-page #mid,
 .archive #mid,
 .single #mid {
 	padding: 20px 10px;
+}
+.error404 #mid,
+.page-template-default #mid {
+	min-height: 600px;
 }
 #news-page {
 	padding: 10px 15px;
@@ -1206,7 +1255,8 @@ body.modal {
 #faq-page #disc .letter {
 	padding: 20px 10px 30px;
     position: relative;
-    background: url(images/spooky.png) center no-repeat;
+    background: url(images/spooky.jpg) center no-repeat;
+    -webkit-background-size: cover;
     background-size: cover;
 }
 #faq-page #disc .block {
@@ -1243,6 +1293,7 @@ body.modal {
 #faq-page #faq {
 	z-index: 10;
 	position: relative;
+	margin-top: -5px;
 }
 #faq-page #faq h2 {
 	font-size: 45px;
@@ -1270,6 +1321,7 @@ body.modal {
 	position: relative;
 	padding: 0px 0 40px;
 	background: url(images/long-parchment-cool.png) center no-repeat;
+	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 }
 #faq-page #faq .item {
@@ -1278,6 +1330,7 @@ body.modal {
 	max-width: 100%;
 	margin: 0 auto;
 	background: url(images/parchment-tan.png) center no-repeat;
+	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 	padding: 90px 120px 100px;
 	font-size: 23px;
@@ -1295,6 +1348,7 @@ body.modal {
 	position: relative;
 	padding: 30px 0 40px;
 	background: url(images/wood.jpg) center no-repeat;
+	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 	margin-top: -5px;
 }
@@ -1304,6 +1358,7 @@ body.modal {
 	max-width: 960px;
 	margin: 0 auto;
 	background: url(images/parchment-tan.png) center no-repeat;
+	-webkit-background-size: 100% 100%;
 	background-size: 100% 100%;
 	padding: 90px 150px 100px;
 	font-size: 23px;
@@ -1320,6 +1375,7 @@ body.modal {
 	width: 110px;
 	height: 110px;
 	background: url(images/voltage-btn.png) center no-repeat;
+	-webkit-background-size: 100% auto;
 	background-size: 100% auto;
 }
 #privacy-page {
@@ -1348,7 +1404,7 @@ body.modal {
 }
 #contact-page .left {
 	float: left;
-	max-width: 460px;
+	max-width: 380px;
 	width: 100%;
 }
 #contact-page .right {
@@ -1590,6 +1646,7 @@ body.modal {
 	}
 	#title-art.mob {
 		display: block;
+		margin-bottom: 20px;
 	}
 	#prime {
 		padding-top: 20%;
@@ -1602,6 +1659,24 @@ body.modal {
 	}
 	#header .to-top {
 		display: none;
+	}
+	#header #mobile .to-top {
+		display: block;
+		margin: 10px auto;
+		float: none;
+		position: relative;
+	}
+	#header #mobile .to-top span {
+		-webkit-transform: rotate(-180deg);
+		-moz-transform: rotate(-180deg);
+		-ms-transform: rotate(-180deg);
+		-o-transform: rotate(-180deg);
+		transform: rotate(-180deg);
+		display: block;
+		text-align: center;
+		position: absolute;
+		top: -20px;
+		width: 100%;
 	}
 	#header .logo {
 		margin: 0;
@@ -1649,6 +1724,7 @@ body.modal {
 		right: 20px;
 	}
 	#main-page .section .banner {
+		-webkit-background-size: cover;
 		background-size: cover;
 	}
 	#story h2 {
@@ -1684,6 +1760,7 @@ body.modal {
 	}
 	#character-page #char .tab {
 		padding: 70px 40px 85px;
+		-webkit-background-size: 115% 105%;
 		background-size: 115% 105%;
 	}
 	#faq-page #disc h2 {
@@ -1820,6 +1897,7 @@ body.modal {
 		padding-top: 25%;
 	}
 	#main-page .section .letter {
+		-webkit-background-size: auto 100%;
 		background-size: auto 100%;
 		margin-top: -12px;
 	}
@@ -1876,9 +1954,11 @@ body.modal {
 		font-size: 52px;
 	}
 	#story-page #disc .letter {
+		-webkit-background-size: auto 100%;
 		background-size: auto 100%;
 	}
 	#story-page #disc .item {
+		-webkit-background-size: 115% 115%;
 		background-size: 115% 115%;
   		padding: 60px 25px;
 	}
@@ -1899,6 +1979,7 @@ body.modal {
 	}
 	#character-page #char .tab {
 		padding: 70px 25px 85px;
+		-webkit-background-size: 115% 115%;
 		background-size: 115% 115%;
 	}
 	#character-page #char .tab .full {
@@ -1923,17 +2004,21 @@ body.modal {
 		font-size: 32px;
 	}
 	#faq-page #faq .letter {
+		-webkit-background-size: auto 100%;
 		background-size: auto 100%;
 	}
 	#faq-page #faq .item {
+		-webkit-background-size: 115% 115%;
 		background-size: 115% 115%;
   		padding: 65px 20px 65px;
 	}
 	#faq-page #volt .letter {
+		-webkit-background-size: auto 100%;
 		background-size: auto 100%;
 		margin-top: -12px;
 	}
 	#faq-page #volt .item {
+		-webkit-background-size: 115% 110%;
 		background-size: 115% 110%;
   		padding: 90px 20px 100px;
 	}
@@ -1972,10 +2057,14 @@ body.modal {
 	#download .item {
 		padding-left: 35px;
 		padding-right: 35px;
+		-webkit-background-size: 110% 100%;
 		background-size: 110% 100%;
 	}
 	#story-page #story .block li {
 		max-width: 100%;
+	}
+	#story .cell.copy {
+		padding: 30px;
 	}
 	.page-template-character-page #prime {
 		padding-top: 20%;

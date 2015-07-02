@@ -15,11 +15,27 @@
 	<?php 
 		$kc_options = get_option('kc_options');
 		$tweet = $kc_options['kc_twitter_text'];
-		$subject = $kc_options['kc_email_subject'];
-		$body = $kc_options['kc_email_body'];
+		$tumblr = $kc_options['kc_tumblr_text'];
+		$b_name = get_bloginfo('name');
+		$b_disc = get_bloginfo('description');
+		$b_title = $b_name.' | '.$b_disc;
+		$b_title = htmlspecialchars_decode($b_title);
+		$url = esc_url( home_url( '/' ) );
+
+		if($tweet){
+			$tweet = $tweet;
+		} else {
+			$tweet = $b_title.' '.$url;
+		}
+
+		if($tumblr){
+			$tumblr = $tumblr;
+		} else {
+			$tumblr = $b_title;
+		}
+
 		$tweet = rawurlencode($tweet);
-		$subject = rawurlencode($subject);
-		$body = rawurlencode($body);
+		$tumblr = rawurlencode($tumblr);		
 		// pre($kc_options);
 	?>
 	<div class="over">
@@ -27,13 +43,13 @@
 			<div class="close">close X</div>
 			<ul>
 				<li>
-					<a href="javascript: void(0)" class="facebook hidetext" onclick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[url]=<?php echo esc_url( home_url( '/' ) ); ?>','sharer','toolbar=0,status=0,width=580,height=325');">Facebook Share</a>
+					<a href="javascript: void(0)" class="facebook hidetext" onclick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[url]=<?php echo $url; ?>','sharer','toolbar=0,status=0,width=580,height=325');">Facebook Share</a>
 				</li>
 				<li>
 					<a href="javascript: void(0)" class="twitter hidetext" onclick="window.open('https://twitter.com/intent/tweet?text=<?php echo $tweet; ?>','sharer','toolbar=0,status=0,width=580,height=500');">Twitter Share</a>
 				</li>
 				<li>
-					<a href="mailto:example@example.com?subject=<?php echo $subject; ?>&amp;body=<?php echo $body; ?>" class="email hidetext">Email Share</a>
+					<a href="javascript: void(0)" class="tumblr hidetext" onclick="window.open('https://www.tumblr.com/widgets/share/tool?shareSource=legacy&amp;canonicalUrl=&amp;url=<?php echo $url; ?>&amp;posttype=link&amp;title=<?php echo $tumblr; ?>','sharer','toolbar=0,status=0,width=580,height=500');">Tumblr Share</a>
 				</li>
 			</ul>
 		</div>
