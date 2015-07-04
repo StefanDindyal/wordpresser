@@ -66,7 +66,7 @@
 			<div class="rig">
 				<div class="left">			
 					<h2>Contact Us</h2>
-					<img src="<?php bloginfo('template_directory'); ?>/images/letter.png" alt="" border="0">
+					<img src="<?php bloginfo('template_directory'); ?>/images/letter.jpg" alt="" border="0">
 				</div>
 				<div class="right">
 					<?php echo wpautop($contact_copy); ?>
