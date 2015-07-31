@@ -32,11 +32,11 @@ get_header(); ?>
 				</a>
 			</li>
 			<li>
-				<a href="http://www.palomafaith.com/en-us/" target="_blank">
+				<a href="http://www.milesdavis.com/" target="_blank">
 					<span class="hi">
-						<img src="<?php bloginfo('template_directory'); ?>/images/port/paloma.png" alt="" border="0">
+						<img src="<?php bloginfo('template_directory'); ?>/images/port/miles.png" alt="" border="0">
 					</span>
-					<span class="title">Paloma Faith</span>
+					<span class="title">Miles Davis</span>
 				</a>
 			</li>
 			<li>
