@@ -3,7 +3,7 @@
 Plugin Name: Links Shortcode
 Plugin URI: http://www.apprique.com/wordpress-plugins
 Description: Displays all links of a certain category in a post using a shortcode, according to a definable template. Includes optional Facebook Like button.
-Version: 1.6.2
+Version: 1.8.1
 Author: Maarten Swemmer
 Author URI: http://blog.bigcircle.nl
 */
@@ -130,7 +130,10 @@ function linkssc_shortcode($atts, $content = null)
 			'get_categories' => 0, // TODO if 1, a separate query will be ran below to retrieve category names and the field [category_name] will become available for use in a template
 			'links_per_page' => 0, // if > 0 links will be split in pages and 
 			'links_list_id'  => '',
-			'class' => ''
+			'class'          => '',
+			'alttext'		 => '',
+			'emptystarsimg'  => plugins_url( 'emptystars.png', __FILE__ ),
+			'fullstarsimg'   => plugins_url( 'fullstars.png', __FILE__ )
 			), $atts)
 	);
 	
@@ -224,8 +227,7 @@ function linkssc_shortcode($atts, $content = null)
 		$pagenav = '<div class="links-page-nav">'.join(' - ', $page_links).'</div>'; // TODO: do this better, in UL/LI format
 		
 	}
-	
-	
+		
 	$text = $template_before;
 	$link_no = 0;
 	foreach ($bms as $bm)
@@ -246,14 +248,14 @@ function linkssc_shortcode($atts, $content = null)
 			$linkinfo['link_visible'] = $bm->link_visible;
 			$linkinfo['link_owner'] = get_the_author_meta('display_name', $bm->link_owner); // display the display name of a user instead of the user id.
 			$linkinfo['link_rating'] = $bm->link_rating;
-			$linkinfo['link_rating_stars'] = '<div class="links_sc_rating "><img class="links_sc_rating_full" src="'. WP_PLUGIN_URL . '/links-shortcode/fullstars.png" style="width:'.round(78*$linkinfo['link_rating']/10).'px;"/><img class="links_sc_rating_empty" src="'. WP_PLUGIN_URL . '/links-shortcode/emptystars.png" /></div>';
+			$linkinfo['link_rating_stars'] = '<div class="links_sc_rating "><img class="links_sc_rating_full" src="'. $fullstarsimg . '" style="width:'.round(78*$linkinfo['link_rating']/10).'px;"/><img class="links_sc_rating_empty" src="'. $emptystarsimg . '" /></div>';
 			if (preg_match('#^[\-0 :]*$#', $bm->link_updated)) { $linkinfo['link_updated'] = ''; $linkinfo['date'] = ''; } 
 			else {
 				$linkinfo['link_updated'] = $bm->link_updated;
-				$a = split(' ', $bm->link_updated); $linkinfo['date'] = $a[0];
+				$a = explode(' ', $bm->link_updated); $linkinfo['date'] = $a[0];
 			}
 			if ($title->date != '') { $linkinfo['date'] = $title->date; }
-			list($linkinfo['date_year'],$linkinfo['date_month'],$linkinfo['date_day']) = split('-', $linkinfo['date']);
+			list($linkinfo['date_year'],$linkinfo['date_month'],$linkinfo['date_day']) = explode('-', $linkinfo['date']);
 			$linkinfo['link_rel'] = $bm->link_rel;
 			$linkinfo['link_notes'] = $bm->link_notes;
 			$linkinfo['link_rss'] = $bm->link_rss;
@@ -293,6 +295,11 @@ function linkssc_shortcode($atts, $content = null)
 		$link_no++;
     }
 	$text .= $template_after;
+	
+	if ($countlinks == 0 && $alttext != '') {
+		$text = $alttext;
+	}
+	
 	return '<!-- Links -->'.do_shortcode($text)."\n".$pagenav.'<!-- /Links -->'; // add html comment for easier debugging
 }
 

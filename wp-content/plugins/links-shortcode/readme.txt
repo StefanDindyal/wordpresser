@@ -1,11 +1,11 @@
 === Links shortcode ===
 Plugin URI: http://www.apprique.com/wordpress-plugins
-Contributors: maartenjs, Apprique
+Contributors: Apprique, maartenjs
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donateviapaypal%40bigcircle%2enl&lc=HK&item_name=Wordpress%20plugin&item_number=linksshortcode%2dapp&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted
 Tags: links, link, shortcode, category, Facebook, Like, Recommend, list of links, template, customizable, link manager
-Requires at least: 3.0
-Tested up to: 3.8
-Stable tag: 1.6.2
+Requires at least: 3.8
+Tested up to: 4.0
+Stable tag: 1.8.1
 
 The plugin provides the shortcode 'links'. This shortcode shows all links having specified characteristics, following a specified template.
 
@@ -34,6 +34,7 @@ The following options are available:
 *   **links_per_page**: To paginate lists of links. How many links to show per page. Below the links a pagination will be shown.
 *   **links_list_id**: A unique identifyer on a page for the shortcode at hand. Mandatory in case 'links_per_page' is used to paginate. Optional to define custom styles for this id using css. 
 *   **class**: A class that can be inserted using the links template. You could for example use &lt;div class="[class]"> in the template to attache different style to different instances of the short code.
+*   **alttext**: An alternative text that will be displayed if the shortcode does not return any links.
 
 Dafault options can be changed on a 'Links Shortcode' page in the Settings menu.
 
@@ -65,8 +66,16 @@ No special actions required before upgrading.
 2. Resulting list of links
 
 == Changelog ==
+= 1.8 (08-09-2014) =
+* Compatible up to Wordpress 4.0
+* If no links match the shortcode, an alternative text is displayed if provided, via [links alttext="This text will be displayed when no links have been found matching the shortcode."]
+
+= 1.7 (16-06-2014) =
+* Compatible up to Wordpress 3.9.1
+* Star rating of links can now be displayed on other backgrounds than white by providing your own background image. Use [links emptystarsimg="absolutepathto/filename" fullstarsimg="absolutepathto/filename"] to indicate your own replacements of the emptystars.png and fullstars.png images.  
+
 = 1.6.2 (28-12-2013) =
-* Compatible with WordPress 3.8
+* Compatible up to WordPress 3.8
 
 = 1.6.1 (29-09-2013) =
 * Fixed issue with initializing Links shortcode template on first activation.
