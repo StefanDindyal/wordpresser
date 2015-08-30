@@ -82,13 +82,26 @@ get_header(); ?>
 		<ul class="list">
 			<li>
 				<div class="track">
-					<a href="#" class="link"><img src="" alt="Track 01" border="0"/></a>
+					<div class="ui360">
+						<a href="http://localhost/wordpresser/bobbarnyc/wp-content/uploads/sites/8/2015/08/test1.mp3" class="link"><!-- <img src="" alt="Track 01" border="0"/> -->Licks 2</a>
+					</div>					
 				</div>
 				<p class="day">saturday - mar &bull; 13</p>
 				<p class="time">(6pm - 12pm)</p>
 				<p class="title">word is bond</p>
 				<p class="description">Something here</p>
 			</li>
+			<li>
+				<div class="track">
+					<div class="ui360">
+						<a href="https://api.soundcloud.com/tracks/208833722/stream?consumer_key=7d60b57f78e0968a839f9c896b79517a" type="audio/mp3" class="link"><!-- <img src="" alt="Track 01" border="0"/> -->Licks 1</a>
+					</div>					
+				</div>
+				<p class="day">saturday - mar &bull; 13</p>
+				<p class="time">(6pm - 12pm)</p>
+				<p class="title">word is bond</p>
+				<p class="description">Something here</p>
+			</li>			
 		</ul>
 		<div class="nav">
 			<a href="#" class="earlier">earlier</a>
@@ -134,7 +147,7 @@ get_header(); ?>
 	<div class="footer">
 		<div class="left">
 			<div class="form">
-				<form name="contact" action="/" method="POST">
+				<form name="contact" action="<?php bloginfo('url'); ?>/" method="POST">
 					<div class="head">
 						<h3 class="sub-title">(event?)</h3>
 					</div>

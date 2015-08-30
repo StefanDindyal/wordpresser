@@ -73,6 +73,14 @@ body {
 
 }
 
+/*Audio*/
+.ui360,
+.sm2-360ui {
+  /* size of the container for the circle, etc. */
+  width:50px;
+  height:50px;
+}
+
 /*Map*/
 #map {
 	height: 400px;
