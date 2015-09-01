@@ -62,9 +62,9 @@ function ThreeSixtyPlayer() {
     playNext: false,   // stop after one sound, or play through list until end
     autoPlay: false,   // start playing the first sound right away
     allowMultiple: false,  // let many sounds play at once (false = only one sound playing at a time)
-    loadRingColor: '#ccc', // how much has loaded
+    loadRingColor: '#fff', // how much has loaded
     playRingColor: '#000', // how much has played
-    backgroundRingColor: '#eee', // color shown underneath load + play ("not yet loaded" color)
+    backgroundRingColor: '#fff', // color shown underneath load + play ("not yet loaded" color)
 
     // optional segment/annotation (metadata) stuff..
     segmentRingColor: 'rgba(255,255,255,0.33)', // metadata/annotation (segment) colors
@@ -315,12 +315,16 @@ function ThreeSixtyPlayer() {
       pl.removeClass(this._360data.oUIBox,this._360data.className);
       this._360data.className = pl.css.sPlaying;
       pl.addClass(this._360data.oUIBox,this._360data.className);
+      $('.track').removeClass('playing');
+      $(this._360data.oUIBox).parents('.track').addClass('playing');
       self.fanOut(this);
     },
 
     stop: function() {
       pl.removeClass(this._360data.oUIBox,this._360data.className);
       this._360data.className = '';
+      // $('.track').removeClass('playing');
+      // $(this._360data.oUIBox).parents('.track').addClass('playing');
       self.fanIn(this);
     },
 
@@ -343,6 +347,7 @@ function ThreeSixtyPlayer() {
       // self.clearCanvas(this._360data.oCanvas);
       this._360data.didFinish = true; // so fan draws full circle
       self.fanIn(this);
+      $('.track').removeClass('playing');
       if (pl.config.playNext) {
         nextLink = (pl.indexByURL[this._360data.oLink.href]+1);
         if (nextLink<pl.links.length) {
@@ -490,9 +495,9 @@ function ThreeSixtyPlayer() {
         scaleFont: (has_vis && self.config.scaleFont),
         showHMSTime: has_vis,
         amplifier: (has_vis && self.config.usePeakData?0.9:1), // TODO: x1 if not being used, else use dynamic "how much to amplify by" value
-        radiusMax: diameter*0.175, // circle radius
+        radiusMax: diameter*0.18, // circle radius
         width:0,
-        widthMax: diameter*0.4, // width of the outer ring
+        widthMax: diameter*0.5, // width of the outer ring
         lastValues: {
           bytesLoaded: 0,
           bytesTotal: 0,
@@ -1124,6 +1129,8 @@ function ThreeSixtyPlayer() {
       this.vuMeter = new this.VUMeter(this);
     }
 
+    // self.fanOut(this);
+
   };
 
 }
@@ -1272,7 +1279,7 @@ ThreeSixtyPlayer.prototype.VUMeter = function(oParent) {
       }
     }
 
-  };
+  };  
 
   this.init();
 

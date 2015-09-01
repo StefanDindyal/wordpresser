@@ -96,9 +96,9 @@ function twentyfourteen_setup() {
 	 * Enable support for Post Formats.
 	 * See https://codex.wordpress.org/Post_Formats
 	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
-	) );
+	// add_theme_support( 'post-formats', array(
+	// 	'aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',
+	// ) );
 
 	// This theme allows users to set a custom background.
 	add_theme_support( 'custom-background', apply_filters( 'twentyfourteen_custom_background_args', array(
@@ -252,15 +252,15 @@ function twentyfourteen_scripts() {
 		wp_enqueue_script( 'jquery-masonry' );
 	}
 
-	if ( is_front_page() && 'slider' == get_theme_mod( 'featured_content_layout' ) ) {
-		wp_enqueue_script( 'twentyfourteen-slider', get_template_directory_uri() . '/js/slider.js', array( 'jquery' ), '20131205', true );
-		wp_localize_script( 'twentyfourteen-slider', 'featuredSliderDefaults', array(
-			'prevText' => __( 'Previous', 'twentyfourteen' ),
-			'nextText' => __( 'Next', 'twentyfourteen' )
-		) );
-	}
+	// if ( is_front_page() && 'slider' == get_theme_mod( 'featured_content_layout' ) ) {
+	// 	wp_enqueue_script( 'twentyfourteen-slider', get_template_directory_uri() . '/js/slider.js', array( 'jquery' ), '20131205', true );
+	// 	wp_localize_script( 'twentyfourteen-slider', 'featuredSliderDefaults', array(
+	// 		'prevText' => __( 'Previous', 'twentyfourteen' ),
+	// 		'nextText' => __( 'Next', 'twentyfourteen' )
+	// 	) );
+	// }
 
-	wp_enqueue_script( 'twentyfourteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150315', true );
+	// wp_enqueue_script( 'twentyfourteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150315', true );
 }
 add_action( 'wp_enqueue_scripts', 'twentyfourteen_scripts' );
 
