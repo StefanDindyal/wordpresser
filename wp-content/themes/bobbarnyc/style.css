@@ -76,6 +76,11 @@ a {
 	-ms-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
+pre {
+	font-size: 20px;
+	line-height: 27px;
+	text-align: left;
+}
 body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 0px;
@@ -117,8 +122,11 @@ body {
 	padding: 20px 30px;
 	color: #fff;
 }
+.btn:hover {
+	opacity: 0.8;
+}
 .head .title {
-	font-weight: 600px;
+	font-weight: 600;
 	font-size: 20px;
 	line-height: 29px;
 	letter-spacing: 0.69em;
@@ -190,13 +198,26 @@ body {
 .about {
 	background-color: #fff;
 }
+.about .gal {
+	display: none;
+}
+.about img {
+	opacity: 0.8;
+	-webkit-transition: all 0.3s ease-in-out; 
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.about img:hover {
+	opacity: 1;
+}
 .about .top .left {
 	text-align: center;
 }
 .about .top .description {
 	display: inline-table;
-	width: 600px;
+	width: auto;
 	height: 670px;
+	padding: 0 14%;
 }
 .about .top .description .contents {
 	display: table-cell;
@@ -210,7 +231,7 @@ body {
 	margin-bottom: 22px;
 }
 .about .top .description .contents p {
-	font-weight: 300px;
+	font-weight: 300;
 	font-size: 19px;
 	line-height: 29px;
 	letter-spacing: 0.03em;
@@ -219,6 +240,10 @@ body {
 .about .top .right {
 	height: 670px;
 	background-color: #f1f1f1;
+}
+.about .top .right > div {
+	cursor: pointer;
+	overflow: hidden;
 }
 .about .top .right .img-1 {
 	height: 430px;
@@ -229,6 +254,7 @@ body {
 .about .bottom {	
 	clear: both; 
 	background-color: #f1f1f1;
+	overflow: hidden;
 }
 .about .bottom .img-list {
 	text-align: center;
@@ -238,6 +264,8 @@ body {
 	display: inline-block;
 	width: 25%;
 	height: 100%;
+	cursor: pointer;
+	overflow: hidden;
 }
 .about .bottom .img-list li a {
 	width: 100%;
@@ -280,7 +308,8 @@ body {
 	height: 242px;
 	text-align: center;
 	display: inline-block;
-	padding: 55px 25px 0;
+	padding: 55px 0px 0;
+	vertical-align: top;
 	border-right: 3px solid #252525;
 }
 .resident-events .list li:last-child {
@@ -338,6 +367,7 @@ body {
 	display: inline-block;
 	width: 313px;
 	margin-right: 49px;
+	vertical-align: top;
 }
 .upcoming-events .list li:last-child {
 	margin-right: 0;
@@ -347,16 +377,33 @@ body {
 	width: 313px;
 	height: 313px;
 	background-color: #f1f1f1;
-	margin-bottom: 25px;	
+	margin-bottom: 25px;
+	overflow: hidden;
+	border-radius: 3px;
 }
-.upcoming-events .list li .track .ui360 {
+.upcoming-events .list li .track img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	-webkit-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.upcoming-events .list li .track:hover img,
+.upcoming-events .list li .track.playing img {
+	-webkit-filter: grayscale(1);
+	-ms-filter: grayscale(1);
+	filter: grayscale(1);	
+}
+.upcoming-events .list li .track .ui360 .sm2-360ui {
 	-webkit-transition: all 0.3s ease-in-out;
 	-ms-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 	opacity: 0;
+	z-index: 10;
 }
-.upcoming-events .list li .track:hover .ui360,
-.upcoming-events .list li .track.playing .ui360  {
+.upcoming-events .list li .track:hover .ui360 .sm2-360ui,
+.upcoming-events .list li .track.playing .ui360 .sm2-360ui  {
 	opacity: 1;
 }
 .upcoming-events .list p {
@@ -424,9 +471,19 @@ body {
 .artist {
 	background-color: #fff;
 }
+.artist .post {
+	overflow: hidden;
+}
+.artist .post .gal {
+	display: none;
+}
 .artist .left {
 	text-align: center;
 	background-color: #f1f1f1;
+}
+.artist .left > div {
+	overflow: hidden;
+	cursor: pointer;
 }
 .artist .left .img-1 {
 	height: 190px;
@@ -449,8 +506,9 @@ body {
 }
 .artist .description {
 	display: inline-table;
-	width: 600px;
+	width: auto;
 	height: 670px;
+	padding: 0 14%;
 }
 .artist .description .contents {
 	display: table-cell;
@@ -464,7 +522,7 @@ body {
 	margin-bottom: 35px;
 }
 .artist .description .contents p {
-	font-weight: 300px;
+	font-weight: 300;
 	font-size: 19px;
 	line-height: 29px;
 	letter-spacing: 0.03em;
@@ -475,13 +533,13 @@ body {
 }
 .artist .description .contents a.past-artists {
 	position: relative;
-	font-weight: 600px;
+	font-weight: 600;
 	font-size: 18px;
 	line-height: 27px;
 	letter-spacing: 0.35em;
 	color: #000;
 	display: inline-block;
-	padding: 0 0 15px;
+	padding: 0 0 10px;
 }
 .artist .description .contents a.past-artists:after {
 	content: '';
@@ -490,8 +548,85 @@ body {
 	left: 50%;
 	width: 80%;
 	margin-left: -40%;
-	height: 1px;
+	height: 2px;
 	background-color: #000;
+	-webkit-transition: all 0.3s ease-in-out; 
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.artist .description .contents a.past-artists:hover:after {
+	width: 100%;
+	left: 0;
+	margin-left: 0;
+}
+.artist .post.even .right {
+	float: left;
+}
+.artist .post.even .left {
+	float: right;
+}
+
+/*Gallery*/
+.galleryG {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 100%;
+	top: 0;
+	background-color: #fff;
+	z-index: 100;
+	padding: 0 0 90px;
+	-webkit-transition: all 0.3s ease-in-out; 
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.galleryG.open {
+	left: 0;
+}
+.galleryG .cell,
+.galleryG .cell ul {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.galleryG .cell ul li {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.galleryG .cell li img {
+	display: block;
+	height: 100%;
+	width: auto;
+	margin: 0 auto;
+}
+.galleryG .nav {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 27px;
+	letter-spacing: 0.35em;
+	text-align: right;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 20px 20px;
+}
+.galleryG .nav > div {
+	display: inline-block;
+	vertical-align: top;
+}
+.galleryG .nav a {
+	color: #1a1a1a;
+	display: inline-block;
+	padding: 10px 40px;
+	background-repeat: no-repeat;
+	background-position: center left;
+	background-image: url(images/nav-arrows.png);
+	text-align: center;
+}
+.galleryG .nav .later a {
+	background-position: center right;
 }
 
 /*Map*/
@@ -696,6 +831,22 @@ body {
 }
 .footer .right .info p.last {
 	font-weight: 200;
+}
+
+/*404*/
+.block {
+	padding: 20px;
+	font-size: 20px;
+	line-height: 27px;
+	letter-spacing: 0.07em;
+	color: #000;
+	background-color: #fff;
+	text-align: center;
+}
+
+/*Single*/
+.single .upcoming-events .list {
+	width: 100% !important;
 }
 
 /*Utility*/

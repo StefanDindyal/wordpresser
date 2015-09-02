@@ -315,8 +315,8 @@ function ThreeSixtyPlayer() {
       pl.removeClass(this._360data.oUIBox,this._360data.className);
       this._360data.className = pl.css.sPlaying;
       pl.addClass(this._360data.oUIBox,this._360data.className);
-      $('.track').removeClass('playing');
-      $(this._360data.oUIBox).parents('.track').addClass('playing');
+      jQuery('.track').removeClass('playing');
+      jQuery(this._360data.oUIBox).parents('.track').addClass('playing');
       self.fanOut(this);
     },
 
@@ -347,7 +347,7 @@ function ThreeSixtyPlayer() {
       // self.clearCanvas(this._360data.oCanvas);
       this._360data.didFinish = true; // so fan draws full circle
       self.fanIn(this);
-      $('.track').removeClass('playing');
+      jQuery('.track').removeClass('playing');
       if (pl.config.playNext) {
         nextLink = (pl.indexByURL[this._360data.oLink.href]+1);
         if (nextLink<pl.links.length) {

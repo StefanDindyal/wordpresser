@@ -43,6 +43,19 @@ if ( version_compare( $GLOBALS['wp_version'], '3.6', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
+function pre($arr) { 
+	echo "<pre>"; print_r($arr); echo "</pre>";
+}
+
+if ( ! defined( 'BB_LOCALE' ) )
+	define( 'BB_LOCALE', '' );
+	
+if ( ! defined( 'BB_DIR' ) )
+	define( 'BB_DIR', get_template_directory().'/inc/settings-panel' );
+
+if ( ! defined( 'BB_URL' ) )
+	define( 'BB_URL', get_template_directory_uri().'/inc/settings-panel' );
+
 if ( ! function_exists( 'twentyfourteen_setup' ) ) :
 /**
  * Twenty Fourteen setup.
@@ -77,6 +90,8 @@ function twentyfourteen_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'twentyfourteen-full-width', 1038, 576, true );
+	add_image_size( 'event-thumb', 320, 320, true );
+	add_image_size( 'artist-thumb', 800, 670, true );	
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
@@ -116,6 +131,19 @@ function twentyfourteen_setup() {
 }
 endif; // twentyfourteen_setup
 add_action( 'after_setup_theme', 'twentyfourteen_setup' );
+
+require_once( get_template_directory() . '/inc/settings-panel/admin-options.php' );
+require_once( get_template_directory() . '/inc/metaboxes/meta_box.php' );
+require_once( get_template_directory() . '/inc/bb-post-events.php' );
+require_once( get_template_directory() . '/inc/bb-post-artists.php' );
+
+add_action( 'init', 'my_script_enqueuer' );
+
+function my_script_enqueuer() {
+	wp_enqueue_script('script', get_template_directory_uri() . '/js/scripts.js', array(), '1.0', true);
+	wp_localize_script( 'script', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));        
+	wp_enqueue_script( 'jquery' );
+}
 
 /**
  * Adjust content_width value for image attachment template.
@@ -516,4 +544,104 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if ( ! class_exists( 'Featured_Content' ) && 'plugins.php' !== $GLOBALS['pagenow'] ) {
 	require get_template_directory() . '/inc/featured-content.php';
+}
+
+function  strip_shortcode_gallery( $content ) {
+    preg_match_all( '/'. get_shortcode_regex() .'/s', $content, $matches, PREG_SET_ORDER );
+    if ( ! empty( $matches ) ) {
+        foreach ( $matches as $shortcode ) {
+            if ( 'gallery' === $shortcode[2] ) {
+                $pos = strpos( $content, $shortcode[0] );
+                if ($pos !== false)
+                    return substr_replace( $content, '', $pos, strlen($shortcode[0]) );
+            }
+        }
+    }
+    return $content;
+}
+
+// if both logged in and not logged in users can send this AJAX request,
+// add both of these actions, otherwise add only the appropriate one
+add_action('wp_ajax_nopriv_bb_submit', '_bbAjaxSubmit');
+add_action('wp_ajax_bb_submit', '_bbAjaxSubmit');
+function _bbAjaxSubmit(){
+	$nonce = $_REQUEST['nonce'];	
+	if(!wp_verify_nonce($nonce, 'bb_post_submit')){
+		exit('You cannot make this request. Please go back and try again.');
+	}
+
+	// generate the response
+	$reason = $_REQUEST['reason'];
+	$name = $_REQUEST['name'];
+	$email = $_REQUEST['email'];
+	$size = $_REQUEST['size'];
+	$date = $_REQUEST['date'];
+	$msg = $_REQUEST['msg'];
+	$updates = $_REQUEST['updates'];	
+
+	ob_start();			    	
+	?>
+		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+		<HTML>
+		<HEAD><TITLE>One Sony DADC</TITLE></HEAD>
+		<BODY style="margin: 0; background-color: #000;">
+		<table style="WIDTH: 100%" cellSpacing=0 cellPadding=0>
+		  <tbody>
+		    <tr>
+		      <td align=center valign=top style="background-color: #000; padding: 20px 0;"><!-- Main content wrapper 800px wide-->
+		        <table width="600" cellSpacing=0 cellPadding=0>
+		          <tr>
+		            <td align="center" valign=top style="background-color: #fff;">
+		              <table cellspacing=0 cellpadding=0 width=540>
+		                <tr>
+		                  <td align="left" valign="top" style="font-family: 18px; line-height: 24px; color: #212121; padding: 20px 0;">
+		                  	<?php
+							echo '<p>Email: '.$email.'</p>';
+							if($size){
+								echo '<p>Party of: '.$size.'</p>';
+							}
+							if($date){
+								echo '<p>Date of: '.$date.'</p>';
+							}
+							if($msg){
+								echo '<p>Message: '.$msg.'</p>';
+							}
+							if($updates === 'true'){
+								echo '<p>They would like to get updates!</p>';
+							} ?>
+		                  </td>
+		                </tr>
+		              </table>
+		            </td>
+		          </tr>
+		        </table>          
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+		</BODY></HTML>	
+	<?php					
+	$message = ob_get_contents();
+	ob_end_clean();
+	$bb_settings = get_option('bb_options');
+	$form_email = $bb_settings['bb_form_email'];
+	if($form_email){
+		$form_email = $form_email;
+	} else {
+		$form_email = 'paradox880@gmail.com';
+	}
+	$to = $form_email;
+	$subject = $name.' wants to inquire about ( '.$reason.' )';
+	$headers[] = '';											
+	add_filter('wp_mail_content_type',create_function('', 'return "text/html";'));		
+
+	$sent = wp_mail( $to, $subject, $message, $headers );;
+
+	if($sent){
+		echo $sent;
+	} else {
+		echo '0';
+	}
+
+	die();
 }

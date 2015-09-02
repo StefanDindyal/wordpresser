@@ -1,61 +1,61 @@
 <?php
 /* Template Name: Home Page */
-get_header(); ?>
-
-	<!-- Header -->
-	<div class="header">
-		<div class="rig">
-			<ul class="scheduel">
-				<li>
-					<p class="days">sun - mon</p>
-					<p class="status">Closed</p>
-				</li>
-				<li>
-					<p class="days">tues - wed</p>
-					<p class="status">6pm-1am</p>
-				</li>
-				<li>
-					<p class="days">thur - sat</p>
-					<p class="status">6pm-4am</p>
-				</li>
-			</ul>
-			<div class="where">
-				<h1 class="logo hidetext" title="bob">bob bar nyc</h1>
-				<p class="description">lower east side</p>
-				<p class="address">235 eldridge</p>
-			</div>
-		</div>
-	</div>
+get_header(); 
+$bb_settings = get_option('bb_options');
+$about_title = $bb_settings['bb_about_title'];
+$about_body = $bb_settings['bb_about_body'];
+$about_images = $bb_settings['bb_about_images'];
+$instagram_url = $bb_settings['bb_instagram_url'];
+$twitter_url = $bb_settings['bb_twitter_url'];
+$facebook_url = $bb_settings['bb_facebook_url'];
+?>	
 
 	<!-- About -->
-	<div class="about">
+	<div class="about sec">
+		<ul class="gal">
+			<?php foreach ($about_images as $item) { ?>
+				<li><img src="<?php echo wp_get_attachment_image_src( $item[0], 'full' )[0]; ?>" alt="" border="0"/></li>
+			<?php } ?>
+		</ul>
 		<div class="top">
 			<div class="left">
 				<div class="description">
 					<div class="contents">
-						<h2 class="title">est. 1993</h2>
-						<p>A L.E.S. staple bOb has been But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complaete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself.</p>
+						<?php if($about_title){ ?>
+							<h2 class="title"><?php echo $about_title; ?></h2>
+						<?php } ?>
+						<?php if($about_body){ ?>
+							<p><?php echo $about_body; ?></p>							
+						<?php } ?>				
 						<a href="#" title="host your event" class="host-event btn">host your event</a>
 					</div>
 				</div>
 			</div>
 			<div class="right">
-				<div class="img-1">
-
-				</div>
-				<div class="img-2">
-
-				</div>
+				<?php if(count($about_images) > 0){ if(count($about_images) > 1){ ?>
+					<div class="img-1">
+						<img src="<?php echo wp_get_attachment_image_src( $about_images[0][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/>
+					</div>
+					<div class="img-2">
+						<img src="<?php echo wp_get_attachment_image_src( $about_images[1][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/>
+					</div>
+				<?php } else { ?>
+					<div class="img-1 single">
+						<img src="<?php echo wp_get_attachment_image_src( $about_images[0][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/>
+					</div>
+				<?php } } ?>
 			</div>
 		</div>
 		<div class="bottom">
-			<ul class="img-list">
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-		</div>
+			<?php if(count($about_images) > 2){ ?>				
+				<ul class="img-list">
+					<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[2][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
+					<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[3][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
+					<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[4][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
+					<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[5][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
+				</ul>				
+			<?php } ?>	
+		</div>	
 	</div>
 
 	<!-- Resident Events -->
@@ -74,25 +74,25 @@ get_header(); ?>
 							<p class="name">dj Mika</p>				
 						</li>
 						<li>
-							<p class="day">daily</p>
-							<p class="time">6pm - closing</p>
-							<p class="name">dj Mika</p>				
+							<p class="day">thurs</p>
+							<p class="time">9pm - 4am</p>
+							<p class="name">dj June</p>				
 						</li>
 						<li>
-							<p class="day">daily</p>
-							<p class="time">6pm - closing</p>
-							<p class="name">dj Mika</p>				
+							<p class="day">fri</p>
+							<p class="time">9pm - 4am</p>
+							<p class="name">dj Raw Beats</p>				
 						</li>
 						<li>
-							<p class="day">daily</p>
-							<p class="time">6pm - closing</p>
-							<p class="name">dj Mika</p>				
+							<p class="day">sat</p>
+							<p class="time">9pm - 4am</p>
+							<p class="name">dj max carnage</p>				
 						</li>
 					</ul>
 				</div>
 			</div>
 			<div class="note">				
-				<p>thur -sat : happy hour by dj Mika</p>	
+				<p>thur - sat : happy hour by dj Mika</p>	
 			</div>
 		</div>
 	</div>
@@ -106,50 +106,59 @@ get_header(); ?>
 			<div class="hide">
 				<div class="scroll">
 					<ul class="list">
-						<li>
-							<div class="track">
-								<div class="ui360">
-									<a href="http://localhost/wordpresser/bobbarnyc/wp-content/uploads/sites/8/2015/08/test1.mp3" class="link"><!-- <img src="" alt="Track 01" border="0"/> -->Licks 2</a>
-								</div>					
-							</div>
-							<p class="day">saturday - mar &bull; 13</p>
-							<p class="time">(6pm - 12pm)</p>
-							<p class="title">word is bond</p>
-							<p class="description">Something here</p>
-						</li>
-						<li>
-							<div class="track">
-								<div class="ui360">
-									<a href="https://api.soundcloud.com/tracks/208833722/stream?consumer_key=7d60b57f78e0968a839f9c896b79517a" type="audio/mp3" class="link"><!-- <img src="" alt="Track 01" border="0"/> -->Licks 1</a>
-								</div>					
-							</div>
-							<p class="day">saturday - mar &bull; 13</p>
-							<p class="time">(6pm - 12pm)</p>
-							<p class="title">word is bond</p>
-							<p class="description">Something here</p>
-						</li>
-						<li>
-							<div class="track">
-								<div class="ui360">
-									<a href="https://api.soundcloud.com/tracks/109294672/stream?consumer_key=7d60b57f78e0968a839f9c896b79517a" type="audio/mp3" class="link"><!-- <img src="" alt="Track 01" border="0"/> -->Licks 3</a>
-								</div>					
-							</div>
-							<p class="day">saturday - mar &bull; 13</p>
-							<p class="time">(6pm - 12pm)</p>
-							<p class="title">word is bond</p>
-							<p class="description">Something here</p>
-						</li>
-						<li>
-							<div class="track">
-								<div class="ui360">
-									<a href="https://api.soundcloud.com/tracks/208833722/stream?consumer_key=7d60b57f78e0968a839f9c896b79517a" type="audio/mp3" class="link"><!-- <img src="" alt="Track 01" border="0"/> -->Licks 1</a>
-								</div>					
-							</div>
-							<p class="day">saturday - mar &bull; 13</p>
-							<p class="time">(6pm - 12pm)</p>
-							<p class="title">word is bond</p>
-							<p class="description">Something here</p>
-						</li>								
+						<?php 
+							$args_events = array( 'post_type' => 'events', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => -1 );
+							$q_events = new WP_Query( $args_events );
+							if ( $q_events->have_posts() ) :
+								
+								while ( $q_events->have_posts() ) : $q_events->the_post(); 
+									$id = get_the_ID();
+									$stream_url = get_post_meta($id, 'bb_stream_url', true);
+									$event_date = get_post_meta($id, 'bb_event_date', true);
+									$event_start = get_post_meta($id, 'bb_event_time_start', true);
+									$event_end = get_post_meta($id, 'bb_event_time_end', true);
+									$music_by = get_post_meta($id, 'bb_music_by', true);
+									$hosted_by = get_post_meta($id, 'bb_hosted_by', true);
+							?>
+
+									<li>
+										<div class="track">
+											<div class="ui360">
+												<?php if($stream_url){ ?>
+													<a href="<?php echo $stream_url; ?>" class="link" type="audio/mp3">Track</a>
+												<?php } ?>
+											</div>
+											<?php
+												if(has_post_thumbnail()){ 
+													the_post_thumbnail('event-thumb'); 
+												}
+											?>				
+										</div>
+										<?php if($event_date){ ?>
+											<p class="day"><?php echo strtolower($event_date); ?></p>
+										<?php } ?>
+										<?php if($event_start && $event_end){ ?>
+											<p class="time">(<?php echo $event_start; ?> - <?php echo $event_end; ?>)</p>
+										<?php } ?>
+										<p class="title"><?php the_title(); ?></p>
+										<?php if($music_by){ ?>
+											<p class="description">music by <?php echo $music_by; ?></p>
+										<?php } ?>
+										<?php if($music_by){ ?>
+											<p class="description">hosted by <?php echo $hosted_by; ?></p>
+										<?php } ?>										
+									</li>									
+
+								<?php endwhile;
+
+								wp_reset_postdata();							
+
+							else :
+								
+								get_template_part( 'content', 'none' );
+
+							endif;
+						?>																								
 					</ul>
 				</div>
 			</div>
@@ -161,30 +170,68 @@ get_header(); ?>
 	</div>
 
 	<!-- Artist -->
-	<div class="artist clearfix">
-		<div class="left">
-			<div class="img-1">
+	<div class="artist sec clearfix">
+		<?php 
+			$args_artists = array( 'post_type' => 'artists', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 1 );
+			$q_artists = new WP_Query( $args_artists );
+			if ( $q_artists->have_posts() ) :
+				
+				while ( $q_artists->have_posts() ) : $q_artists->the_post(); 
+					$id = get_the_ID();
+					$gallery = get_post_gallery($id, false);
+					$gallerySingle = split(',', $gallery['ids']);
+        			$content = strip_shortcode_gallery( get_the_content() );                                        
+        			$content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) );
+			?>					
+					<div class="post clearfix" data-gal="<?php echo $imagesFull; ?>">
+						<ul class="gal">
+						<?php foreach ($gallerySingle as $item) { ?>
+							<li><img src="<?php echo wp_get_attachment_image_src( $item, 'full' )[0]; ?>" alt="" border="0"/></li>
+						<?php } ?>
+						</ul>
+						<div class="left">
+							<?php if($gallery){ 
+									if(count($gallerySingle) > 1){ ?>
+										<div class="img-1">											
+											<img src="<?php echo wp_get_attachment_image_src( $gallerySingle[0], 'artist-thumb' )[0]; ?>" alt="" border="0"/>
+										</div>
+										<div class="img-2">
+											<img src="<?php echo wp_get_attachment_image_src( $gallerySingle[1], 'artist-thumb' )[0]; ?>" alt="" border="0"/>
+										</div>
+									<?php } else { ?>
+										<div class="img-1 single">
+											<img src="<?php echo wp_get_attachment_image_src( $gallerySingle[0], 'artist-thumb' )[0]; ?>" alt="" border="0"/>
+										</div>
+									<?php } ?>
+							<?php } ?>							
+						</div>
+						<div class="right">
+							<div class="head">
+								<h2 class="title">see</h2>
+								<h3 class="sub-title">(exhibitions)</h3>
+							</div>
+							<div class="description">
+								<div class="contents">
+									<h2 class="title"><?php the_title(); ?></h2>
+									<?php echo $content; ?>
+									<a href="#" class="preview btn">preview the artwork</a>
+									<br>
+									<a href="<?php bloginfo('url');?>/past-artists/" class="past-artists">past artists</a>
+								</div>
+							</div>
+						</div>
+					</div>													
 
-			</div>
-			<div class="img-2">
+				<?php endwhile;
 
-			</div>
-		</div>
-		<div class="right">
-			<div class="head">
-				<h2 class="title">see</h2>
-				<h3 class="sub-title">(exhibitions)</h3>
-			</div>
-			<div class="description">
-				<div class="contents">
-					<h2 class="title">crash one</h2>
-					<p>Some stuff here.</p>
-					<a href="#" class="preview btn">preview the artwork</a>
-					<br>
-					<a href="#" class="past-artists">past artists</a>
-				</div>
-			</div>
-		</div>
+				wp_reset_postdata();							
+
+			else :
+				
+				get_template_part( 'content', 'none' );
+
+			endif;
+		?>		
 	</div>
 
 	<!-- Map -->
@@ -198,11 +245,14 @@ get_header(); ?>
 	</div>
 
 	<!-- Footer -->
+	<?php 
+		$nonce = wp_create_nonce("bb_post_submit");
+	?>
 	<div class="footer clearfix">
 		<div class="rig">
 			<div class="left">
 				<div class="form">
-					<form name="contact" action="<?php bloginfo('url'); ?>/" method="POST">
+					<form name="contact" data-nonce="<?php echo $nonce; ?>">
 						<div class="head">
 							<h3 class="sub-title">(event?)</h3>
 						</div>
@@ -266,7 +316,7 @@ get_header(); ?>
 						</ul>
 						<ul class="fields clearfix">
 							<li class="msg">
-								<label>(party size)</label>
+								<label>(message)</label>
 								<textarea name="message" wrap="physical"></textarea>
 							</li>
 						</ul>
@@ -290,9 +340,15 @@ get_header(); ?>
 						<div class="head">
 							<h3 class="sub-title">(friends?)</h3>
 						</div>
-						<a href="#" target="_blank" class="instagram">instagram</a>
-						<a href="#" target="_blank" class="twitter">twitter</a>
-						<a href="#" target="_blank" class="facebook">facebook</a>
+						<?php if($instagram_url){ ?>
+							<a href="<?php echo $instagram_url; ?>" target="_blank" class="instagram">instagram</a>
+						<?php } ?>
+						<?php if($twitter_url){ ?>
+							<a href="<?php echo $twitter_url; ?>" target="_blank" class="twitter">twitter</a>
+						<?php } ?>
+						<?php if($facebook_url){ ?>
+							<a href="<?php echo $facebook_url; ?>" target="_blank" class="facebook">facebook</a>
+						<?php } ?>
 					</div>
 					<p><a href="mailto:bobbarnyc@gmail.com">bobbarnyc@gmail.com</a> - (212) 529 - 1807</p><br>
 					<p class="dark">235 eldridge street</p><br>
