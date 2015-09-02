@@ -3,6 +3,7 @@
 		<div class="cell"></div>
 		<div class="nav">
 			<div class="earlier"></div>
+			<div class="close"><a href="#">close</a></div>
 			<div class="later"></div>
 		</div>
 	</div>

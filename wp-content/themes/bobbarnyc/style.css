@@ -256,13 +256,23 @@ body {
 	background-color: #f1f1f1;
 	overflow: hidden;
 }
+.about .hide {
+	overflow: hidden;
+	width: 100%;
+	height: 332px;
+}
+.about .scroll {
+	width: 100%;
+	height: 352px;	
+	overflow-y: auto;
+}
 .about .bottom .img-list {
 	text-align: center;
-	height: 333px;
+	height: 332px;
 }
 .about .bottom .img-list li {
 	display: inline-block;
-	width: 25%;
+	width: 400px;
 	height: 100%;
 	cursor: pointer;
 	overflow: hidden;
@@ -594,6 +604,7 @@ body {
 	width: 100%;
 	height: 100%;
 	text-align: center;
+	overflow: hidden;
 }
 .galleryG .cell li img {
 	display: block;
@@ -611,6 +622,8 @@ body {
 	bottom: 0;
 	right: 0;
 	padding: 20px 20px;
+	width: 100%;
+	background-color: rgba(255,255,255,0.5);
 }
 .galleryG .nav > div {
 	display: inline-block;
@@ -624,9 +637,13 @@ body {
 	background-position: center left;
 	background-image: url(images/nav-arrows.png);
 	text-align: center;
+	vertical-align: top;
 }
 .galleryG .nav .later a {
 	background-position: center right;
+}
+.galleryG .nav .close a {
+	background: none;
 }
 
 /*Map*/
@@ -736,6 +753,22 @@ body {
 	vertical-align: top;
 	border: 0;
 }
+.footer .left .form .over {
+	display: inline-block;
+	width: 100%;
+	height: 60px;
+	vertical-align: top;
+	border: 0;
+	overflow: hidden;
+}
+.footer .left .form .over input[type="text"] {
+	display: block;
+	width: 115%;
+	height: 60px;
+	padding: 0 32px;
+	vertical-align: top;
+	border: 0;
+}
 .footer .left .form .date input[type="text"] {
 	width: 30%;
 	margin-right: 5%;
@@ -776,6 +809,16 @@ body {
 	letter-spacing: 0.07em;
 	padding: 22px 44px;
 	cursor: pointer;
+}
+.footer .form .resp .code {
+	font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.09em;
+    line-height: 27px;
+    padding: 12px 50px;
+    background-color: #fff;
+    color: #000;
+    margin-bottom: 28px;
 }
 .footer .rig > .right {
 	position: relative;
@@ -847,6 +890,227 @@ body {
 /*Single*/
 .single .upcoming-events .list {
 	width: 100% !important;
+}
+
+/*Mobile Pre*/
+.mobile {
+	display: none;
+}
+
+/*Mobile Post*/
+@media only screen and (max-width: 1024px) {
+	.header {
+		background-size: 100% auto;
+	}
+	.about img {
+		opacity: 1;
+	}
+	.about .top .description {
+		padding: 0 8%;
+	}
+	.resident-events .note {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.upcoming-events .nav {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.upcoming-events .list li .track:hover img,
+	.upcoming-events .list li .track.playing img {
+		-webkit-filter: grayscale(0);
+		-ms-filter: grayscale(0);
+		filter: grayscale(0);	
+	}
+	.artist .description {
+		padding: 0 8%;
+	}
+	.footer .rig > .left {
+		float: none;
+		width: 100%;
+		max-width: 720px;
+		margin: 0 auto;
+		padding: 0 10px;
+	}
+	.footer .rig > .right {
+		float: none;
+		height: auto;
+		width: 100%;
+		padding-top: 320px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.header {
+		min-height: 670px;
+	}
+	.about .top .right {
+		display: none;
+	}
+	.about .top .right.mobile {
+		display: block;
+		float: none;
+		height: auto;
+		width: 100%;
+	}
+	.about .top > .left {
+		float: none;
+		width: 100%;
+	}
+	.about .top .description {
+		height: auto;
+		padding: 8%;
+	}
+	.upcoming-events .hide {
+		height: 820px;
+	}
+	.upcoming-events .scroll {
+		height: 840px;
+	}
+	.track .ui360 {
+		display: none;
+		opacity: 1;
+	}
+	.track.mobile,
+	.track.mobile .ui360 {
+		display: block;
+	}
+	.upcoming-events .list li .track.mobile {
+		background-color: transparent;
+		margin-bottom: 0;
+	}
+	.upcoming-events .list li .track.mobile .ui360 .sm2-360ui {
+		display: block;
+		opacity: 1;
+	}
+	.upcoming-events .nav {
+		display: none;
+	}
+	.artist .post > .left {
+		float: none;
+		height: auto;
+		width: 100%;
+	}
+	.artist .left .img-1 {
+		display: none;
+	}
+	.artist .post > .right {
+		float: none;
+		width: 100%;
+	}
+	.artist .description {
+		height: auto;
+		padding: 14% 8%;
+	}
+	.galleryG .cell li {
+		display: inline-table;
+	}
+	.galleryG .cell li div {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.galleryG .cell li img {
+		max-height: none;
+		height: auto;
+		max-width: 100%;
+		display: inline-block;
+	}
+}
+@media only screen and (max-width: 414px) {
+	.header {
+		background-image: url(images/mob-header-bg.jpg);
+		background-position: top center;
+		min-height: 440px;
+	}
+	.header .scheduel {
+		padding: 20px 0 140px;
+	}
+	.header .scheduel li {
+		margin: 0 15px;
+	}
+	.about .top .right .img-1 {
+		height: 300px;
+	}
+	.about .top .description {
+		padding: 14% 8%;
+	}
+	.about .bottom .img-list li {
+		width: 300px;
+	}
+	.about .hide {
+		height: 300px;
+	}
+	.about .scroll {
+		height: 320px;
+	}
+	.about .bottom .img-list {
+		height: 100%;
+	}
+	.upcoming-events {
+		padding-bottom: 50px;
+	}
+	.upcoming-events .hide {
+		height: 700px;
+	}
+	.upcoming-events .scroll {
+		height: 720px;
+	}
+	.upcoming-events .list li .track.mobile {
+		height: 220px;
+	}
+	.artist .description {
+		padding: 25% 8%;
+	}
+	.footer .left .form .left,
+	.footer .left .form .right {
+		width: 100%;
+		float: none;
+		padding: 0;
+		margin-bottom: 22px;
+	}
+	.footer .left .form .fields {
+		margin-bottom: 0;
+	}
+	.galleryG .nav {
+		text-align: center;
+		width: 100%;
+	}
+	.galleryG .nav .earlier a,
+	.galleryG .nav .later a {
+		overflow: hidden;
+		text-indent: -999em;
+	}
+}
+@media only screen and (max-width: 360px) {
+	.header {
+		min-height: 360px;
+	}
+	.header .scheduel li {
+		margin: 0 10px;
+	}
+	.header .scheduel {
+		padding: 15px 0 90px;
+	}
+	.header .scheduel li .days {
+		font-size: 16px;
+	}
+	.header .scheduel li .status {
+		font-size: 18px;
+	}
+	.about .top .description {
+		padding: 28% 8%;
+	}
+	.about .bottom .img-list li {
+		width: 260px;
+	}
+	.galleryG .nav a {
+		padding: 10px 20px;
+	}
+	.artist .left .img-2 {
+		height: 280px;
+	}
+	.artist .description {
+		padding: 45% 8% 25%;
+	}
 }
 
 /*Utility*/

@@ -14,10 +14,17 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 	<div class="about sec">
 		<ul class="gal">
 			<?php foreach ($about_images as $item) { ?>
-				<li><img src="<?php echo wp_get_attachment_image_src( $item[0], 'full' )[0]; ?>" alt="" border="0"/></li>
+				<li><div><img src="<?php echo wp_get_attachment_image_src( $item[0], 'full' )[0]; ?>" alt="" border="0"/></div></li>
 			<?php } ?>
 		</ul>
 		<div class="top">
+			<div class="right mobile">
+				<?php if(count($about_images) > 0){ ?>
+					<div class="img-1">
+						<img src="<?php echo wp_get_attachment_image_src( $about_images[0][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/>
+					</div>					
+				<?php } ?>
+			</div>
 			<div class="left">
 				<div class="description">
 					<div class="contents">
@@ -47,14 +54,18 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 			</div>
 		</div>
 		<div class="bottom">
-			<?php if(count($about_images) > 2){ ?>				
-				<ul class="img-list">
-					<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[2][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
-					<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[3][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
-					<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[4][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
-					<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[5][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
-				</ul>				
-			<?php } ?>	
+			<div class="hide">
+				<div class="scroll">
+					<?php if(count($about_images) > 2){ ?>				
+						<ul class="img-list">
+							<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[2][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
+							<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[3][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
+							<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[4][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
+							<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[5][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
+						</ul>				
+					<?php } ?>	
+				</div>
+			</div>
 		</div>	
 	</div>
 
@@ -146,7 +157,14 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 										<?php } ?>
 										<?php if($music_by){ ?>
 											<p class="description">hosted by <?php echo $hosted_by; ?></p>
-										<?php } ?>										
+										<?php } ?>
+										<div class="track mobile">
+											<div class="ui360">
+												<?php if($stream_url){ ?>
+													<a href="<?php echo $stream_url; ?>" class="link" type="audio/mp3">Track</a>
+												<?php } ?>
+											</div>
+										</div>										
 									</li>									
 
 								<?php endwhile;
@@ -186,7 +204,7 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 					<div class="post clearfix" data-gal="<?php echo $imagesFull; ?>">
 						<ul class="gal">
 						<?php foreach ($gallerySingle as $item) { ?>
-							<li><img src="<?php echo wp_get_attachment_image_src( $item, 'full' )[0]; ?>" alt="" border="0"/></li>
+							<li><div><img src="<?php echo wp_get_attachment_image_src( $item, 'full' )[0]; ?>" alt="" border="0"/></div></li>
 						<?php } ?>
 						</ul>
 						<div class="left">
@@ -252,85 +270,90 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 		<div class="rig">
 			<div class="left">
 				<div class="form">
-					<form name="contact" data-nonce="<?php echo $nonce; ?>">
+					<form name="contact" data-nonce="<?php echo $nonce; ?>">						
 						<div class="head">
 							<h3 class="sub-title">(event?)</h3>
 						</div>
-						<ul class="reason clearfix">
-							<li class="left">
-								<div>
+						<div class="resp"></div>
+						<div class="inner">
+							<ul class="reason clearfix">
+								<li class="left">
+									<div>
+										<label>
+											<input type="radio" name="reason" value="general reservation" checked="checked">
+											<span class="cursor"></span> general reservation <span class="note">(5 or more)</span>
+										</label>		
+									</div>							
+									<div>
+										<label>
+											<input type="radio" name="reason" value="art exhibition">
+											<span class="cursor"></span> art exhibition
+										</label>
+									</div>							
+									<div>
+										<label>
+											<input type="radio" name="reason" value="general inquiry">
+											<span class="cursor"></span> general inquiry
+										</label>
+									</div>
+								</li>
+								<li class="right">
+									<div>
+										<label>
+											<input type="radio" name="reason" value="private party">
+											<span class="cursor"></span> private party
+										</label>
+									</div>
+									<div>
+										<label>
+											<input type="radio" name="reason" value="i'd like to dj">
+											<span class="cursor"></span> i'd like to dj
+										</label>
+									</div>
+								</li>
+							</ul>
+							<ul class="fields clearfix">
+								<li class="left">
+									<label>(your name)*</label>
+									<input type="text" name="your_name" maxlength="50" size="20" value=""/>
+								</li>
+								<li class="right">
+									<label>(your email)*</label>
+									<input type="text" name="your_email" maxlength="50" size="20" value=""/>
+								</li>
+							</ul>
+							<ul class="fields clearfix">
+								<li class="left">
+									<label>(party size)</label>
+									<div class="over">
+										<input type="text" name="party_size" maxlength="50" size="20" value="(0)" onfocus="if (this.value == '(0)') {this.value = '';}" onblur="if (this.value == '') {this.value = '(0)';}"/>
+									</div>
+								</li>
+								<li class="right date">
+									<label>(your event date)</label>
+									<input type="text" name="month" maxlength="50" size="20" value="(mm)" onfocus="if (this.value == '(mm)') {this.value = '';}" onblur="if (this.value == '') {this.value = '(mm)';}"/>
+									<input type="text" name="day" maxlength="50" size="20" value="(dd)" onfocus="if (this.value == '(dd)') {this.value = '';}" onblur="if (this.value == '') {this.value = '(dd)';}"/>
+									<input type="text" name="time" maxlength="50" size="20" value="(time)" onfocus="if (this.value == '(time)') {this.value = '';}" onblur="if (this.value == '') {this.value = '(time)';}"/>
+								</li>
+							</ul>
+							<ul class="fields clearfix">
+								<li class="msg">
+									<label>(message)</label>
+									<textarea name="message" wrap="physical"></textarea>
+								</li>
+							</ul>
+							<ul class="fields clearfix">
+								<li class="left updates">
 									<label>
-										<input type="radio" name="reason" value="general reservation" checked="checked">
-										<span class="cursor"></span> general reservation <span class="note">(5 or more)</span>
-									</label>		
-								</div>							
-								<div>
-									<label>
-										<input type="radio" name="reason" value="art exhibition">
-										<span class="cursor"></span> art exhibition
+										<input type="checkbox" name="updates" value="get updates">
+										<span class="cursor"></span> get updates?
 									</label>
-								</div>							
-								<div>
-									<label>
-										<input type="radio" name="reason" value="general inquiry">
-										<span class="cursor"></span> general inquiry
-									</label>
-								</div>
-							</li>
-							<li class="right">
-								<div>
-									<label>
-										<input type="radio" name="reason" value="private party">
-										<span class="cursor"></span> private party
-									</label>
-								</div>
-								<div>
-									<label>
-										<input type="radio" name="reason" value="i'd like to dj">
-										<span class="cursor"></span> i'd like to dj
-									</label>
-								</div>
-							</li>
-						</ul>
-						<ul class="fields clearfix">
-							<li class="left">
-								<label>(your name)*</label>
-								<input type="text" name="your_name" maxlength="50" size="20" value=""/>
-							</li>
-							<li class="right">
-								<label>(your email)*</label>
-								<input type="text" name="your_email" maxlength="50" size="20" value=""/>
-							</li>
-						</ul>
-						<ul class="fields clearfix">
-							<li class="left">
-								<label>(party size)</label>
-								<input type="text" name="party_size" maxlength="50" size="20" value="(0)" onfocus="if (this.value == '(0)') {this.value = '';}" onblur="if (this.value == '') {this.value = '(0)';}"/>
-							</li>
-							<li class="right date">
-								<label>(your event date)</label>
-								<input type="text" name="month" maxlength="50" size="20" value="(mm)" onfocus="if (this.value == '(mm)') {this.value = '';}" onblur="if (this.value == '') {this.value = '(mm)';}"/>
-								<input type="text" name="day" maxlength="50" size="20" value="(dd)" onfocus="if (this.value == '(dd)') {this.value = '';}" onblur="if (this.value == '') {this.value = '(dd)';}"/>
-								<input type="text" name="time" maxlength="50" size="20" value="(time)" onfocus="if (this.value == '(time)') {this.value = '';}" onblur="if (this.value == '') {this.value = '(time)';}"/>
-							</li>
-						</ul>
-						<ul class="fields clearfix">
-							<li class="msg">
-								<label>(message)</label>
-								<textarea name="message" wrap="physical"></textarea>
-							</li>
-						</ul>
-						<ul class="fields clearfix">
-							<li class="left updates">
-								<label>
-									<input type="checkbox" name="updates" value="get updates">
-									<span class="cursor"></span> get updates?
-								</label>
-							</li>
-							<li class="right submit">
-								<input type="submit" value="submit"/>
-							</li>
-						</ul>
+								</li>
+								<li class="right submit">
+									<input type="submit" value="submit"/>
+								</li>
+							</ul>
+						</div>
 					</form>
 				</div>
 			</div>

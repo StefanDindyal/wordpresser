@@ -137,13 +137,46 @@ require_once( get_template_directory() . '/inc/metaboxes/meta_box.php' );
 require_once( get_template_directory() . '/inc/bb-post-events.php' );
 require_once( get_template_directory() . '/inc/bb-post-artists.php' );
 
-add_action( 'init', 'my_script_enqueuer' );
+function twentyfourteen_scripts() {
+	// Add Lato font, used in the main stylesheet.
+	wp_enqueue_style( 'twentyfourteen-lato', twentyfourteen_font_url(), array(), null );
 
-function my_script_enqueuer() {
+	// Add Genericons font, used in the main stylesheet.
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );
+
+	// Load our main stylesheet.
+	wp_enqueue_style( 'twentyfourteen-style', get_stylesheet_uri() );
+
+	// Load the Internet Explorer specific stylesheet.
+	wp_enqueue_style( 'twentyfourteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentyfourteen-style' ), '20131205' );
+	wp_style_add_data( 'twentyfourteen-ie', 'conditional', 'lt IE 9' );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
+	if ( is_singular() && wp_attachment_is_image() ) {
+		wp_enqueue_script( 'twentyfourteen-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20130402' );
+	}
+
+	if ( is_active_sidebar( 'sidebar-3' ) ) {
+		wp_enqueue_script( 'jquery-masonry' );
+	}
+
+	if ( is_front_page() && 'slider' == get_theme_mod( 'featured_content_layout' ) ) {
+		wp_enqueue_script( 'twentyfourteen-slider', get_template_directory_uri() . '/js/slider.js', array( 'jquery' ), '20131205', true );
+		wp_localize_script( 'twentyfourteen-slider', 'featuredSliderDefaults', array(
+			'prevText' => __( 'Previous', 'twentyfourteen' ),
+			'nextText' => __( 'Next', 'twentyfourteen' )
+		) );
+	}
+
 	wp_enqueue_script('script', get_template_directory_uri() . '/js/scripts.js', array(), '1.0', true);
-	wp_localize_script( 'script', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));        
-	wp_enqueue_script( 'jquery' );
+	wp_localize_script( 'script', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
+
+	wp_enqueue_script( 'twentyfourteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150315', true );
 }
+add_action( 'wp_enqueue_scripts', 'twentyfourteen_scripts' );
 
 /**
  * Adjust content_width value for image attachment template.
@@ -248,49 +281,6 @@ function twentyfourteen_font_url() {
 
 	return $font_url;
 }
-
-/**
- * Enqueue scripts and styles for the front end.
- *
- * @since Twenty Fourteen 1.0
- */
-function twentyfourteen_scripts() {
-	// Add Lato font, used in the main stylesheet.
-	wp_enqueue_style( 'twentyfourteen-lato', twentyfourteen_font_url(), array(), null );
-
-	// Add Genericons font, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );
-
-	// Load our main stylesheet.
-	wp_enqueue_style( 'twentyfourteen-style', get_stylesheet_uri() );
-
-	// Load the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'twentyfourteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentyfourteen-style' ), '20131205' );
-	wp_style_add_data( 'twentyfourteen-ie', 'conditional', 'lt IE 9' );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'twentyfourteen-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20130402' );
-	}
-
-	if ( is_active_sidebar( 'sidebar-3' ) ) {
-		wp_enqueue_script( 'jquery-masonry' );
-	}
-
-	// if ( is_front_page() && 'slider' == get_theme_mod( 'featured_content_layout' ) ) {
-	// 	wp_enqueue_script( 'twentyfourteen-slider', get_template_directory_uri() . '/js/slider.js', array( 'jquery' ), '20131205', true );
-	// 	wp_localize_script( 'twentyfourteen-slider', 'featuredSliderDefaults', array(
-	// 		'prevText' => __( 'Previous', 'twentyfourteen' ),
-	// 		'nextText' => __( 'Next', 'twentyfourteen' )
-	// 	) );
-	// }
-
-	// wp_enqueue_script( 'twentyfourteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150315', true );
-}
-add_action( 'wp_enqueue_scripts', 'twentyfourteen_scripts' );
 
 /**
  * Enqueue Google fonts style to admin screen for custom header display.

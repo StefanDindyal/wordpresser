@@ -1,9 +1,12 @@
 "use strict";
 (function($){
 
+	var mobile = ($(window).width() <= 1024)? true:false;
+
 	if($('.scroll').length){
 		setScroller($('.upcoming-events .list'), 49);
 		setScroller($('.resident-events .list'));
+		setScroller($('.about .img-list'));
 	}
 
 	// $('.list li .day').on('click',function(){
@@ -40,6 +43,14 @@
 		});
 	} else {
 		$('.upcoming-events .nav').hide();
+	}	
+	if(mobile === true){
+		wrapper.scroll(function(){
+			if ( timer ) clearTimeout(timer);
+		    timer = setTimeout(function(){
+		    	soundManager.stopAll();	        
+		    }, 200);
+		});
 	}
 
 	// Artists Gallery
@@ -88,6 +99,19 @@
   			}
 		});
 		slider.goToSlide(marker);
+
+		$('.close').on('click', function(e){
+			gallery.removeClass('open');
+			gallery.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e){
+				if(!gallery.hasClass('open')){
+					slider.destroySlider();
+					gallery.find('.cell').empty();
+					console.log('close');
+				}
+			});			
+			e.preventDefault();
+		});
+
 		e.preventDefault();
 	});
 
@@ -161,6 +185,7 @@
 	// Submit Form
 	$('form').submit(function(e){
 		var self = $(this),
+			resp = self.find('.resp'),
 			nonce = self.attr("data-nonce"),
 			reason = self.find('input[type="radio"]:checked').val(),
 			name = self.find('input[name="your_name"]').val(),
@@ -171,30 +196,41 @@
 			time = self.find('input[name="time"]').val(),
 			date = month + ' / ' + day + ' at ' + time,
 			msg = self.find('textarea[name="message"]').val(),
-			updates = self.find('input[name="updates"]').is(':checked');			
+			updates = self.find('input[name="updates"]').is(':checked');
 
-		$.ajax({ 
-			type: 'POST',
-			url: myAjax.ajaxurl, 
-			data: {
-				action: 'bb_submit',
-	        	nonce: nonce,
-	        	reason: reason,
-	        	name: name,
-	        	email: email,
-	        	size: size,
-	        	date: date,
-	        	msg: msg,
-	        	updates: updates
-			},
-			success: function(response){
-				if(response === '1'){
-					alert('Thankyou for signing up!');
-				}
-			}	        
-	    });
+		if(name == '' || email == ''){
+			resp.html('<div class="code">Missing content. Please fill out the form.</div>');
+			return false;
+		} else {
+			if(!isValidEmailAddress(email)){
+				resp.html('<div class="code">Please enter a proper email.</div>');
+				return false;
+			} else {
 
-		console.log('skip');
+				$.ajax({ 
+					type: 'POST',
+					url: myAjax.ajaxurl, 
+					data: {
+						action: 'bb_submit',
+			        	nonce: nonce,
+			        	reason: reason,
+			        	name: name,
+			        	email: email,
+			        	size: size,
+			        	date: date,
+			        	msg: msg,
+			        	updates: updates
+					},
+					success: function(response){
+						if(response === '1'){
+							self.find('.inner').hide();
+							resp.html('<div class="code">Thank you for your inquery.</div>');
+						}
+					}	        
+			    });
+				
+			}
+		}		
 
 	    e.preventDefault();
 	});
@@ -210,6 +246,11 @@
 		var liLength = element.find('li').length;
 		var listWidth = (liWidth * liLength) - margin;
 		element.width(listWidth);
+	}
+
+	function isValidEmailAddress(emailAddress){
+	    var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+	    return pattern.test(emailAddress);
 	}
 
 })(jQuery);
