@@ -14,7 +14,7 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 	<div class="about sec">
 		<ul class="gal">
 			<?php foreach ($about_images as $item) { ?>
-				<li><div><img src="<?php echo wp_get_attachment_image_src( $item[0], 'full' )[0]; ?>" alt="" border="0"/></div></li>
+				<li><div><span class="helper"></span><img src="<?php echo wp_get_attachment_image_src( $item[0], 'full' )[0]; ?>" alt="" border="0"/></div></li>
 			<?php } ?>
 		</ul>
 		<div class="top">
@@ -181,8 +181,8 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 				</div>
 			</div>
 			<div class="nav">
-				<a href="#" class="earlier">(earlier)</a>
-				<a href="#" class="later">(later)</a>
+				<div class="earlier"></div>
+				<div class="later"></div>
 			</div>
 		</div>
 	</div>
@@ -204,7 +204,7 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 					<div class="post clearfix" data-gal="<?php echo $imagesFull; ?>">
 						<ul class="gal">
 						<?php foreach ($gallerySingle as $item) { ?>
-							<li><div><img src="<?php echo wp_get_attachment_image_src( $item, 'full' )[0]; ?>" alt="" border="0"/></div></li>
+							<li><div><span class="helper"></span><img src="<?php echo wp_get_attachment_image_src( $item, 'full' )[0]; ?>" alt="" border="0"/></div></li>
 						<?php } ?>
 						</ul>
 						<div class="left">

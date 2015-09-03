@@ -24,7 +24,7 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 					<div class="post sec clearfix <?php echo (++$count%2 ? "odd" : "even")?>" data-gal="<?php echo $imagesFull; ?>">
 						<ul class="gal">
 						<?php foreach ($gallerySingle as $item) { ?>
-							<li><img src="<?php echo wp_get_attachment_image_src( $item, 'full' )[0]; ?>" alt="" border="0"/></li>
+							<li><div><span class="helper"></span><img src="<?php echo wp_get_attachment_image_src( $item, 'full' )[0]; ?>" alt="" border="0"/></div></li>
 						<?php } ?>
 						</ul>
 						<div class="left">

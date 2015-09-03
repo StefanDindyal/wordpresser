@@ -88,6 +88,12 @@ body {
 	font-weight: 400;
 	background-color: #000;	
 }
+body.noScroll {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
 
 #page,
 .rig {
@@ -239,7 +245,6 @@ body {
 }
 .about .top .right {
 	height: 670px;
-	background-color: #f1f1f1;
 }
 .about .top .right > div {
 	cursor: pointer;
@@ -253,7 +258,6 @@ body {
 }
 .about .bottom {	
 	clear: both; 
-	background-color: #f1f1f1;
 	overflow: hidden;
 }
 .about .hide {
@@ -375,8 +379,8 @@ body {
 }
 .upcoming-events .list li {
 	display: inline-block;
-	width: 313px;
-	margin-right: 49px;
+	width: 300px;
+	/*margin-right: 50px;*/
 	vertical-align: top;
 }
 .upcoming-events .list li:last-child {
@@ -384,12 +388,11 @@ body {
 }
 .upcoming-events .list li .track {
 	position: relative;
-	width: 313px;
-	height: 313px;
+	width: 300px;
+	height: 300px;
 	background-color: #f1f1f1;
 	margin-bottom: 25px;
 	overflow: hidden;
-	border-radius: 3px;
 }
 .upcoming-events .list li .track img {
 	display: block;
@@ -449,7 +452,11 @@ body {
 	letter-spacing: 0.35em;
 	text-align: right;
 }
-.upcoming-events .nav a {
+.upcoming-events .nav div {
+	display: inline-block;
+	vertical-align: top;
+}
+.upcoming-events .nav div a {
 	color: #1a1a1a;
 	display: inline-block;
 	padding: 10px 40px;
@@ -457,8 +464,9 @@ body {
 	background-position: center left;
 	background-image: url(images/nav-arrows.png);
 	text-align: center;
+	vertical-align: top;
 }
-.upcoming-events .nav a.later {
+.upcoming-events .nav div.later a {
 	background-position: center right;
 }
 
@@ -604,13 +612,10 @@ body {
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	overflow: hidden;
 }
-.galleryG .cell li img {
-	display: block;
+.galleryG .cell ul li div {
 	height: 100%;
-	width: auto;
-	margin: 0 auto;
+	background-color: #020202;
 }
 .galleryG .nav {
 	font-weight: 600;
@@ -644,6 +649,21 @@ body {
 }
 .galleryG .nav .close a {
 	background: none;
+}
+.galleryG .cell li {
+	display: block;
+}
+.galleryG .cell li div .helper {
+	height: 100%;
+	vertical-align: middle;
+	display: inline-block;
+}
+.galleryG .cell li img {
+	max-height: none;
+	height: auto;
+	max-width: 100%;
+	display: inline;
+	vertical-align: middle;
 }
 
 /*Map*/
@@ -925,6 +945,9 @@ body {
 	.artist .description {
 		padding: 0 8%;
 	}
+	.galleryG .bx-wrapper .bx-viewport {
+		height: 100% !important;
+	}	
 	.footer .rig > .left {
 		float: none;
 		width: 100%;
@@ -1000,19 +1023,9 @@ body {
 	.artist .description {
 		height: auto;
 		padding: 14% 8%;
-	}
-	.galleryG .cell li {
-		display: inline-table;
-	}
-	.galleryG .cell li div {
-		display: table-cell;
-		vertical-align: middle;
-	}
-	.galleryG .cell li img {
-		max-height: none;
-		height: auto;
-		max-width: 100%;
-		display: inline-block;
+	}	
+	.galleryG .nav {
+		text-align: center;
 	}
 }
 @media only screen and (max-width: 414px) {
@@ -1059,6 +1072,9 @@ body {
 	}
 	.artist .description {
 		padding: 25% 8%;
+	}
+	.artist .left .img-2 {
+		height: 320px;
 	}
 	.footer .left .form .left,
 	.footer .left .form .right {
@@ -1110,6 +1126,16 @@ body {
 	}
 	.artist .description {
 		padding: 45% 8% 25%;
+	}
+}
+@media only screen and (orientation: landscape){	
+	.galleryG .cell li {
+		height: 100%;
+	}
+	.galleryG .cell li img {
+		height: auto;
+		width: auto;
+		max-height: 100%;
 	}
 }
 
