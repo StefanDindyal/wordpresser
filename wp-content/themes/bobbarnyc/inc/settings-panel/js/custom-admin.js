@@ -3,31 +3,13 @@ jQuery(function($) {
 ///////////////////////////////////////////////////////////////////
 ///// META BOXES JS
 ///////////////////////////////////////////////////////////////////
-
-
-	// function my_check_categories(){
- //       $('.post-php #normal-sortables .postbox, .post-new-php #normal-sortables .postbox').hide();
- //       $('#videosmetadata, #featuredvideos').show();
- //       $('#contacts').show();
- //       $('#categorychecklist input[type="checkbox"]').each(function(i,e){
- //           var id = $(this).attr('id').match(/-([0-9]*)$/i);
- //           id = (id && id[1]) ? parseInt(id[1]) : null ;
- //           if ($.inArray(id, [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]) > -1 && $(this).is(':checked')){
- //           		var cat = $(this).parent('label').text();
- //           		var editcat = cat.replace(/ /g,'').toLowerCase();
- //               $('#'+editcat).show();
- //           }
- //       });
- //   }		
- //   $('#categorychecklist input[type="checkbox"]').live('click', my_check_categories);
- //   my_check_categories();
  
  	jQuery('.repeatable-add').live('click', function() {
 	    var field = jQuery(this).closest('td').find('.custom_repeatable li:last').clone(true);
 	    var fieldLocation = jQuery(this).closest('td').find('.custom_repeatable li:last');
 	    field.find('input.regular-text, textarea, select').val('');
 	    
-	    field.find('input, textarea, select').val('').attr('name', function(index, name) {
+	    field.find('input, textarea, select').attr('name', function(index, name) {
 		    return name.replace(/(\d+)/, function(fullMatch, n) {
 		    	return Number(n) + 1;
 		    });
@@ -140,7 +122,7 @@ jQuery(function($) {
 		var clone = row.clone();
 		var defaultImage = clone.find('.meta_box_default_image').text();
 		clone.find('select.chosen').removeAttr('style', '').removeAttr('id', '').removeClass('chzn-done').data('chosen', null).next().remove();
-		clone.find('input.regular-text, textarea, select').val('');
+		// clone.find('input.regular-text, textarea, select').val('');
 		clone.find('.meta_box_preview_image').attr('src', defaultImage).removeClass('loaded');
 		clone.find('input[type=checkbox], input[type=radio]').attr('checked', false);
 		row.after(clone);

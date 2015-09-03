@@ -625,7 +625,7 @@ class Custom_Add_Meta_Box {
 					break;
 					// timepicker
 					case 'timepicker' :
-						echo '$("input#'.$field['id'].'").timepicker({"timeFormat": "ga"});';
+						echo '$("input#'.$field['id'].'").timepicker({timeFormat: "ga", step: 60});';
 					break;
 				}
 			}

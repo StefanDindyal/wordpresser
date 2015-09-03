@@ -79,7 +79,7 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 /* Multisite */
 define( 'WP_ALLOW_MULTISITE', true );

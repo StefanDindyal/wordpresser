@@ -383,7 +383,10 @@ body.noScroll {
 	/*margin-right: 50px;*/
 	vertical-align: top;
 }
-.upcoming-events .list li:last-child {
+.upcoming-events.shift .list li {
+	margin-right: 50px;
+}
+.upcoming-events.shift .list li:last-child {
 	margin-right: 0;
 }
 .upcoming-events .list li .track {

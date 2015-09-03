@@ -64,6 +64,7 @@
 		// });
 	} else {
 		$('.upcoming-events .nav').hide();
+		$('.upcoming-events').addClass('shift');
 	}	
 	if(mobile === true){
 		wrapper.scroll(function(){

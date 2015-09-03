@@ -6,14 +6,13 @@
 
 global $bb_fields;
 
-$tax = ($_GET['taxonomy'])? $_GET['taxonomy'] : 'category';
-define('bbTAXONOMY', $tax, true);
-
+	$tax = (isset($_GET['taxonomy']))? $_GET['taxonomy'] : 'category';
+	define('bbTAXONOMY', $tax, true);
 
 class bb_Admin_Options {
 
 public function __construct() {
-    add_action( 'admin_menu', array( $this, '_bbsettingsMenu' ) );
+    add_action( 'admin_menu', array( $this, '_bbsettingsMenu' ), 100 );
     add_action( 'admin_init', array( $this, '_bbregisterSettings' ) );
     //add_action( 'admin_init', array( $this, '_bbprocesbbormActions' ) );
     
@@ -49,8 +48,12 @@ public function _bbdisplaySettings( $field, $meta = null, $repeatable = null ) {
   	
   	$id = $name = isset( $field['id'] ) ? 'bb_options['.$field['id'].']' : null;
 
-  	if ( $repeatable ) {		
-		$name = $repeatable[0].'['.$repeatable[1].']['.$repeatable[2].']';
+  	if ( $repeatable ) {
+  		if(isset($repeatable[2])){
+  			$name = $repeatable[0].'['.$repeatable[1].']['.$repeatable[2].']';	
+  		} else {
+  			$name = $repeatable[0].'['.$repeatable[1].'][0]';
+  		}		
 		$id = $repeatable[0] . '_' . $repeatable[1] . '_' . $field['id'];
   	}
 
@@ -116,7 +119,7 @@ public function _bbdisplaySettings( $field, $meta = null, $repeatable = null ) {
       // tax_select
       case 'tax_select':
          echo '<select name="bb_options['.$field['id'].']" id="'.$id.'">
-         		<option value="">-- '.__('Select', bb_LOCALE).' --</option>'; // Select One
+         		<option value="">-- '.__('Select', BB_LOCALE).' --</option>'; // Select One
          $terms = get_terms($field['id'], 'get=all');
          $selected = wp_get_object_terms('', 'bb_options['.$field['id'].']');
          foreach ($terms as $term) {
@@ -404,7 +407,7 @@ function _bbdisplayPage() {
 
    echo '<div class="wrap" id="rg-bb">';
       	echo '<div class="icon"></div>';
-      	echo '<h2>' . __( 'Theme Options', bb_LOCALE ) . '</h2>';
+      	echo '<h2>' . __( 'Theme Options', BB_LOCALE ) . '</h2>';
       	
       	if ( ! isset( $_REQUEST['settings-updated'] ) )
    			$_REQUEST['settings-updated'] = false;
@@ -420,7 +423,7 @@ function _bbdisplayPage() {
       		echo '#poststuff { width: 25% !important; overflow: hidden !important; float: right !important; min-width: 25% !important; }';
       	echo '</style>';
       	echo '<div id="poststuff">';
-      		echo $this->_bbsidebarMenu();
+      		// echo $this->_bbsidebarMenu();
       	echo '</div>';
       
       	echo '<div style="float: left; width: 75%;" >';
@@ -451,7 +454,7 @@ function _bbdisplayPage() {
 						} // end foreach
 						echo '</table>'; // end table
 					echo '</div>';      			
-      			echo '<p class="submit"><input name="Submit" type="submit" class="button-primary" value="'. __( 'Save Options', bb_LOCALE ). '" /></p>';
+      			echo '<p class="submit"><input name="Submit" type="submit" class="button-primary" value="'. __( 'Save Options', BB_LOCALE ). '" /></p>';
       		echo '</form>';
       	echo '</div>';
       	echo $this->_categoryOrderDisplayPage();
@@ -461,7 +464,7 @@ function _bbdisplayPage() {
 }
 
 public function _bbsettingsMenu() {
-   add_menu_page( 'Theme Options', 'Theme Options', 'edit_post', 'bb-settings', array( $this, '_bbsettingsOptions' ), 'dashicons-admin-generic' );
+   add_menu_page( 'Theme Options', 'Theme Options', 'edit_posts', 'bb-settings', array( $this, '_bbsettingsOptions' ), 'dashicons-admin-generic' );
 }
 
 
@@ -570,114 +573,7 @@ public function _categoryOrderDisplayPage() {
 
   $subCatStr = $this->_categoryOrderGetSubCats($parentID);
   
-  // echo '<div class="wrap" id="rg-cat" style="float: left; width: 75%; margin-top: 50px; border-top: 1px solid #CFCFCF; padding: 20px 0 0;">';
-  //     	echo '<div class="icon"></div>';
-  //     	echo '<h2>' . __( 'Category Options', bb_LOCALE ) . '</h2>';
-      	
-  //     	if ( ! isset( $_REQUEST['settings-updated'] ) )
-  //  			$_REQUEST['settings-updated'] = false;
-  //  		echo '<div id="section_container">';
-   		
-  //  			echo '<form name="categoryOrderTax" method="get" action="">';      			
-      			
-  //  				echo '<input type="hidden" name="page" value="'.$_GET['page'].'" />';
-  //  				echo '<p>Choose a taxonomy from the drop down to order its terms</p>';
-  //  				$taxes = get_taxonomies(); $taxlist = array();
-  // 			echo '<select name="taxonomy">';
-  // 			foreach($taxes as $tax):
-  // 			    if(is_taxonomy_hierarchical($tax)):
-  // 			    	$tax = get_taxonomy($tax);
-  // 			    	$s = (bbTAXONOMY == $tax->name)? 'selected="selected"' : '';
-  // 			    	echo '<option '.$s.' value="'.$tax->name.'">'.$tax->label.'</option>';
-  // 			    endif;
-  // 			endforeach;
-  // 			echo '</select>';
-  // 			echo '<input type="submit" class="button" value="Change Taxonomy" />';
-  //  			echo '</form>';
-   			
-  //  			echo '<form name="categoryOrder" method="post" action="">';
-  //  				echo $success;
-  //  				echo '<p>Choose a category from the drop down to order subcategories in that category or order the categories on this level by dragging and dropping them into the desired order.</p>';
-  //  				if($subCatStr != ""){
-  //    				echo '<h3>Order Subcategories</h3>';
-  // 				echo '<select id="cats" name="cats">';
-  // 					echo $subCatStr;
-  // 				echo '</select>';
-  // 				echo '<input type="submit" name="subCategory_btn" class="button" id="subCategory_btn" value="Order Subcategories" />';
-  //  				}
-   				
-  //  				echo '<h3>Re-Order Categories</h3>';
-  // 			echo '<ul id="categoryOrderList">';
-  // 			$results = $this->_categoryOrderCatQuery($parentID);
-  // 			foreach($results as $row):
-  // 				echo '<li id="id_'.$row->term_id.'" class="lineitem">'.__($row->name).'</li>';
-  // 			endforeach;
-  // 			echo '</ul>';
-  			
-  // 			echo '<input type="submit" name="orderCategory_btn" id="orderCategory_btn" class="button-primary" value="Click to Order Categories" onclick="javascript:orderCategory(); return true;" /><br/><br/>';
-  // 			echo $this->_categoryOrderGetParentLink($parentID);
-  // 			echo '<strong id="updateText"></strong>';
-  			
-  // 			echo '<input type="hidden" id="handleCategoryOrder" name="handleCategoryOrder" />';
-  // 			echo '<input type="hidden" id="parentID" name="parentID" value="'.$parentID.'" />';		
-  //  			echo '</form>';
-  //  			echo '<style type="text/css">
-  //  			#categoryOrderList {
-  //  			    width: 30%; 
-  //  			    border:1px solid #B2B2B2; 
-  //  			    margin:10px 10px 10px 0px;
-  //  			    padding:5px 10px 5px 10px;
-  //  			    list-style:none;
-  //  			    background-color:#fff;
-  //  			    -moz-border-radius:3px;
-  //  			    -webkit-border-radius:3px;
-  //  			}
-   			
-  //  			li.lineitem {
-  //  			    border:1px solid #B2B2B2;
-  //  			    -moz-border-radius:3px;
-  //  			    -webkit-border-radius:3px;
-  //  			    background-color:#F1F1F1;
-  //  			    color:#000;
-  //  			    cursor:move;
-  //  			    font-size:13px;
-  //  			    margin-top:5px;
-  //  			    margin-bottom:5px;
-  //  			    padding: 2px 5px 2px 5px;
-  //  			    height:1.5em;
-  //  			    line-height:1.5em;
-  //  			}
-   			
-  //  			.sortable-placeholder{ 
-  //  			    border:1px dashed #B2B2B2;
-  //  			    margin-top:5px;
-  //  			    margin-bottom:5px; 
-  //  			    padding: 2px 5px 2px 5px;
-  //  			    height:1.5em;
-  //  			    line-height:1.5em;	
-  //  			}
-  //  			</style>';
-  //  			echo '<script type="text/javascript">
-  // 		    function _categoryLoadEvent(){
-  // 		    	jQuery("#categoryOrderList").sortable({ 
-  // 		    		placeholder: "sortable-placeholder", 
-  // 		    		revert: false,
-  // 		    		tolerance: "pointer" 
-  // 		    	});
-  // 		    };
-  		
-  // 		    addLoadEvent(_categoryLoadEvent);
-  		    
-  // 		    function orderCategory() {
-  // 		    	jQuery("#updateText").html("Updating Category Order...");
-  // 		    	jQuery("#handleCategoryOrder").val(jQuery("#categoryOrderList").sortable("toArray"));
-  // 		    }
-  // 		</script>';
-  //  		echo '</div>';
-  //  echo '</div>';
 }
-
-
 
 /* ----------------------------------------
 * register scripts & styles
@@ -744,54 +640,6 @@ public function _bbaddCustomScripts() {
 
    echo $output;
 }
-
-
-   public function _bbsidebarMenu() {
-  //     echo '<div id="side-info-column">';
-  //     /* Instructions
-  //     ========================================================*/
-  //     echo '<div class="postbox">
-  //     		<h3 class="hndle">' . __( 'How to Use', bb_LOCALE ) . '</h3>';   
-  //  		echo '<div class="inside">';
-  //  			echo '<h4>' . __( 'Shortcode', bb_LOCALE ) . '</h4>';
-		// echo '<p>' . __( 'To use the spotlight paste this shortcode anywhere:', bb_LOCALE ) . '</p>';
-		// echo '<pre><code>echo do_shortcode("[rg-spotlight]");</code></pre>';
-  //  		echo '<div id="hiddencode" style="display:none"> 
-  //  		<div>
-  //  		<h1>Paste this wherever you want to show the nav.</h1>
-  //  		<pre><code>
-  //  		$spotlight_args = array( 
-		// 	"posts_per_page" => -1, 
-		// 	"post_type" => "spotlight", 
-		// 	"paged" => ( get_query_var("paged") ? get_query_var("paged") : 1 )
-		// );
-		// $spotlight_query = new WP_Query( $spotlight_args );
-		// $hash = 0;	
-		// while ( $spotlight_query->have_posts() ) : $spotlight_query->the_post();
-		// 	echo <a href="#POST TITLE">POST TITLE</a><br/>;
-		// endwhile;
-		// wp_reset_postdata();
-  //  		</code></pre></div>
-  //  		<p style="text-align:center"><input type="submit" id="close" value="&nbsp;&nbsp;Close&nbsp;&nbsp;" onclick="tb_remove()"></p>
-   		
-  //  		</div>';
-  //  		echo '</div>';
-  //     echo	'</div>';
-      
-  //     /* Credits
-  //     ========================================================*/
-  //     echo '<div class="postbox credits">
-  //     		<h3 class="hndle">' . __( 'Credits', bb_LOCALE ) . '</h3>
-  //     		<div class="inside">';
-      
-  //     echo '<ul>
-  //     	<li>' . __( 'Author: ', bb_LOCALE ) . '<img src="'.BB_URL.'/images/wp_m2_icon.png" /> <a href="http://www.rgenerator.com/" target="_blank">GENERATOR</a></li>
-  //     </ul>';
-  //     echo '</div>
-  //     	</div>';
-  //     echo '</div>';
-      
-   }
 
 }
 
