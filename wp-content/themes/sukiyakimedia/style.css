@@ -174,15 +174,15 @@ section h2.section-title {
 #members {
 }
 #members > li {
-	width: 30%;
-	float: left;
-	margin: 0 5%;
+	width: 100%;
+	float: none;
+	margin: 0 0 40px;
 	padding: 20px 20px 10px;
 	box-shadow: 0 3px 3px rgba(0,0,0,0.10);
 }
 #members > li:first-child,
 #members > li:last-child {
-	margin: 0;
+	/*margin: 0;*/
 }
 #members > li.caleb {
 	border-top: 3px solid #3020ff;
@@ -235,7 +235,6 @@ section h2.section-title {
 	padding-right: 0;
 }
 #works .large-img {
-	max-width: 1400px;
 	width: 100%;
 	height: 560px;
 	margin: 0 auto;
