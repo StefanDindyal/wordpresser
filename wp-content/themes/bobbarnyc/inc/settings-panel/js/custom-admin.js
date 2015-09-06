@@ -3,7 +3,7 @@ jQuery(function($) {
 ///////////////////////////////////////////////////////////////////
 ///// META BOXES JS
 ///////////////////////////////////////////////////////////////////
- 
+
  	jQuery('.repeatable-add').live('click', function() {
 	    var field = jQuery(this).closest('td').find('.custom_repeatable li:last').clone(true);
 	    var fieldLocation = jQuery(this).closest('td').find('.custom_repeatable li:last');

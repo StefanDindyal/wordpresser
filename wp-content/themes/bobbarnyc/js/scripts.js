@@ -2,6 +2,7 @@
 (function($){
 
 	var mobile = ($(window).width() <= 1024)? true:false;
+	var mobileLow = ($(window).width() <= 800)? true:false;
 
 	if($('.scroll').length){
 		// setScroller($('.upcoming-events .list'), 49);
@@ -12,6 +13,15 @@
 	// $('.list li .day').on('click',function(){
 	// 	soundManager.stopAll();
 	// });
+
+	// Nav
+	$('.nav a').on('click', function(e){
+		var elem = $(this).attr('href');		
+		var destination = $(elem).offset().top;
+		var timer = 500;
+		$('html, body').animate({ scrollTop: destination }, timer);
+		e.preventDefault();
+	});
 
 	// Host event
 	$('.host-event').on('click', function(e){
@@ -26,7 +36,13 @@
 	var wrapper = $('.upcoming-events .scroll');
 	var scrollFactor = wrapper.find('li').outerWidth(true);
 	var timer = 300;
+	var mr;
 	if(wrapper.find('li').length > 4){
+		if(mobileLow){
+			mr = 25;
+		} else {
+			mr = 50;
+		}
 		wrapper.find('.list').bxSlider({
   			nextSelector: '.upcoming-events .nav .later',
   			prevSelector: '.upcoming-events .nav .earlier',
@@ -36,7 +52,7 @@
   			minSlides: 1,
   			maxSlides: 4,
   			slideWidth: 300,
-  			slideMargin: 50,
+  			slideMargin: mr,
   			infiniteLoop: false,
   			adaptiveHeight: true,
   			onSliderLoad: function(){  				
@@ -141,43 +157,43 @@
 	});
 
 	// Map	
-	function initialize() {
-		var mapCanvas = document.getElementById('map');
-		var myLatLng = new google.maps.LatLng(40.7224403, -73.9899095);
-		var mapOptions = {
-			backgroundColor: '#212121',
-			center: myLatLng,
-			zoom: 18,
-			scrollwheel: false,
-			disableDoubleClickZoom: true,
-			disableDefaultUI: true,			
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		}
-		var map = new google.maps.Map(mapCanvas, mapOptions)
-		map.set('styles', [{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"stylers":[{"hue":"#00aaff"},{"saturation":-100},{"gamma":2.15},{"lightness":12}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"lightness":24}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":57}]}]
-		);
-		var pin = {
-			url: blogDir + '/images/pin.png',
-			size: new google.maps.Size(60, 60),
-			origin: new google.maps.Point(0, 0)
-		};		
-		var marker = new google.maps.Marker({
-		  position: myLatLng,
-		  map: map,
-		  icon: pin,
-		  animation: google.maps.Animation.DROP,
-		});
-		map.addListener('center_changed', function() {
-			// 0.3 seconds after the center of the map has changed, pan back to the
-			// marker.
-			window.setTimeout(function() {
-				map.panTo(marker.getPosition());
-			}, 300);
-		});
-	}
-	if($('#map').length){
-		google.maps.event.addDomListener(window, 'load', initialize);
-	}
+	// function initialize() {
+	// 	var mapCanvas = document.getElementById('map');
+	// 	var myLatLng = new google.maps.LatLng(40.7224403, -73.9899095);
+	// 	var mapOptions = {
+	// 		backgroundColor: '#212121',
+	// 		center: myLatLng,
+	// 		zoom: 18,
+	// 		scrollwheel: false,
+	// 		disableDoubleClickZoom: true,
+	// 		disableDefaultUI: true,			
+	// 		mapTypeId: google.maps.MapTypeId.ROADMAP
+	// 	}
+	// 	var map = new google.maps.Map(mapCanvas, mapOptions)
+	// 	map.set('styles', [{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"stylers":[{"hue":"#00aaff"},{"saturation":-100},{"gamma":2.15},{"lightness":12}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"lightness":24}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":57}]}]
+	// 	);
+	// 	var pin = {
+	// 		url: blogDir + '/images/pin.png',
+	// 		size: new google.maps.Size(60, 60),
+	// 		origin: new google.maps.Point(0, 0)
+	// 	};		
+	// 	var marker = new google.maps.Marker({
+	// 	  position: myLatLng,
+	// 	  map: map,
+	// 	  icon: pin,
+	// 	  animation: google.maps.Animation.DROP,
+	// 	});
+	// 	map.addListener('center_changed', function() {
+	// 		// 0.3 seconds after the center of the map has changed, pan back to the
+	// 		// marker.
+	// 		window.setTimeout(function() {
+	// 			map.panTo(marker.getPosition());
+	// 		}, 300);
+	// 	});
+	// }
+	// if($('#map').length){
+	// 	google.maps.event.addDomListener(window, 'load', initialize);
+	// }
 
 	// Form
 	if($('input[name="reason"]').length){
@@ -224,7 +240,7 @@
 			month = self.find('input[name="month"]').val(),
 			day = self.find('input[name="day"]').val(),
 			time = self.find('input[name="time"]').val(),
-			date = month + ' / ' + day + ' at ' + time,
+			date = (month && day && time)?month + ' / ' + day + ' at ' + time:'',
 			msg = self.find('textarea[name="message"]').val(),
 			updates = self.find('input[name="updates"]').is(':checked');
 

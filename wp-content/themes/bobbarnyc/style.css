@@ -149,17 +149,43 @@ body.noScroll {
 }
 
 /*Header*/
+html, body {
+	height: 100%;
+}
 .header {
-	min-height: 860px;
+	position: relative;
+	width: 100%;
+	height: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	background-image: url(images/header-bg.jpg);
 }
+.header .nav {
+	text-align: center;
+	width: 100%;
+	padding-top: 20px;
+}
+.header .nav li {
+	margin: 0 10px;
+	display: inline-block;
+	font-size: 20px;
+	line-height: 27px;
+	font-weight: 200;
+	letter-spacing: 0.09em;
+}
+.header .nav a {
+	color: #9c9c9c;
+}
+.header .nav a:hover {
+	color: #fff;
+}
 .header .scheduel {
+	position: absolute;
+	width: 100%;
 	text-align: center;
 	color: #fff;
-	padding: 50px 0 250px;
+	padding: 50px 0 0;
 }
 .header .scheduel li {
 	display: inline-block;
@@ -177,7 +203,14 @@ body.noScroll {
 	line-height: 27px;
 	letter-spacing: 0.16em;
 }
-.header .where {	
+.header .helper {
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+.header .where {
+	vertical-align: middle;
+	display: inline-block;
 	text-align: center;
 	color: #fff;
 	width: 100%;
@@ -256,6 +289,14 @@ body.noScroll {
 .about .top .right .img-2 {
 	height: 240px;
 }
+.about .top .right .img-1 img {
+	-webkit-transform: translate(0, -15%);
+	transform: translate(0, -15%);
+}
+.about .top .right .img-2 img {
+	-webkit-transform: translate(0, -35%);
+	transform: translate(0, -35%);	
+}
 .about .bottom {	
 	clear: both; 
 	overflow: hidden;
@@ -280,11 +321,16 @@ body.noScroll {
 	height: 100%;
 	cursor: pointer;
 	overflow: hidden;
+	position: relative;
 }
 .about .bottom .img-list li a {
 	width: 100%;
 	height: 100%;
 	display: block;
+}
+.about .bottom .img-list li img {
+	-webkit-transform: translate(0, -10%);
+	transform: translate(0, -10%);
 }
 
 /*Resident Events*/
@@ -367,12 +413,13 @@ body.noScroll {
 .upcoming-events .hide {
 	overflow: hidden;
 	width: 100%;
-	height: 540px;
+	margin-bottom: 60px;
+	/*height: 540px;*/
 }
 .upcoming-events .scroll {
 	width: 100%;
-	height: 560px;	
-	overflow-y: auto;
+	/*height: 560px;*/
+	/*overflow-y: auto;*/
 }
 .upcoming-events .list {
 	text-align: center;	
@@ -512,6 +559,14 @@ body.noScroll {
 .artist .left .img-2 {
 	height: 480px;
 }
+.artist .left .img-1 img {
+	-webkit-transform: translate(0, -35%);
+	transform: translate(0, -35%);
+}
+.artist .left .img-2 img {
+	-webkit-transform: translate(0, -15%);
+	transform: translate(0, -15%);
+}
 .artist .right {
 	position: relative;
 	text-align: center;
@@ -592,17 +647,22 @@ body.noScroll {
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	left: 100%;
+	/*left: 100%;*/
+	/*display: none;*/
+	left: 0;
 	top: 0;
 	background-color: #fff;
-	z-index: 100;
+	opacity: 0;
+	z-index: -1;
 	padding: 0 0 90px;
 	-webkit-transition: all 0.3s ease-in-out; 
 	-ms-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 }
 .galleryG.open {
-	left: 0;
+	/*left: 0;*/
+	opacity: 1;
+	z-index: 100;
 }
 .galleryG .cell,
 .galleryG .cell ul {
@@ -686,8 +746,19 @@ body.noScroll {
 	color: #fff;
 }
 #map {
+	position: relative;
 	width: 100%;
-	height: 400px;
+	height: 480px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-image: url(images/map.jpg);
+}
+#map > a {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
 }
 
 /*Footer*/
@@ -723,6 +794,9 @@ body.noScroll {
 	line-height: 29px;
 	letter-spacing: 0.07em;
 	cursor: pointer;
+}
+.footer .left .form .reason label {
+	font-weight: 600;
 }
 .footer .left .form label .note {
 	font-weight: 400;
@@ -768,13 +842,22 @@ body.noScroll {
 	display: block;
 	margin-bottom: 14px;
 }
-.footer .left .form input[type="text"] {
+.footer .left .form input[type="text"],
+.footer .left .form select {
 	display: inline-block;
 	width: 100%;
 	height: 60px;
 	padding: 0 32px;
 	vertical-align: top;
 	border: 0;
+	font-size: 17px;
+	color: #8c8c8c;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+}
+.footer .left .form input[name="your_name"],
+.footer .left .form input[name="your_email"] {
+	font-weight: 600;
 }
 .footer .left .form .over {
 	display: inline-block;
@@ -792,11 +875,20 @@ body.noScroll {
 	vertical-align: top;
 	border: 0;
 }
-.footer .left .form .date input[type="text"] {
+.footer .left .form .date select {
 	width: 30%;
 	margin-right: 5%;
+	padding: 0 10px;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-ms-appearance:none;
+	appearance:none;
+	background-image: url(images/dropdown-arrow.png);
+	background-repeat: no-repeat;
+	background-position: 75px 25px;
+	background-size: 17%;
 }
-.footer .left .form .date input[name="time"] {
+.footer .left .form .date select[name="time"] {
 	margin-right: 0;
 }
 .footer .left .form textarea {
@@ -809,6 +901,10 @@ body.noScroll {
 	vertical-align: top;
 	border: 0;
 	margin-bottom: 34px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+	font-size: 17px;
+	color: #8c8c8c;
 }
 .footer .left .form input[type="checkbox"] {
 	display: none;
@@ -832,6 +928,14 @@ body.noScroll {
 	letter-spacing: 0.07em;
 	padding: 22px 44px;
 	cursor: pointer;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 600;
+	-webkit-transition: all 0.3s ease-in-out; 
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.footer .left .form input[type="submit"]:hover {
+	opacity: 0.8;
 }
 .footer .form .resp .code {
 	font-size: 20px;
@@ -845,12 +949,12 @@ body.noScroll {
 }
 .footer .rig > .right {
 	position: relative;
-	height: 800px;
+	/*height: 800px;*/
 }
 .footer .right .info {
-	position: absolute;
+	/*position: absolute;
 	bottom: 0;
-	right: 0;
+	right: 0;*/
 	text-align: right;
 }
 .footer .right .info .social {
@@ -859,26 +963,33 @@ body.noScroll {
 }
 .footer .right .info .social .head {
 	display: inline-block;
+	vertical-align: middle;
 }
 .footer .right .info .social a {
 	display: inline-block;
 	margin: 0 16px;
 	background-repeat: no-repeat;
 	background-position: center left;
-	background-image: url(images/social-icons.png);
 	width: 32px;
 	height: 32px;
 	vertical-align: top;
 	opacity: 1;
+	vertical-align: middle;
 }
 .footer .right .info .social a:hover {
 	opacity: 0.75;
 }
+.footer .right .info .social a.instagram {
+	background-image: url(images/instagram.svg);
+	background-position: center;
+}
 .footer .right .info .social a.twitter {
+	background-image: url(images/twitter.svg);
 	background-position: center;
 }
 .footer .right .info .social a.facebook {
-	background-position: center right;
+	background-image: url(images/facebook.svg);
+	background-position: center;
 	margin-right: 0;
 }
 .footer .right .info p {
@@ -962,10 +1073,27 @@ body.noScroll {
 		float: none;
 		height: auto;
 		width: 100%;
-		padding-top: 320px;
+		padding-top: 60px;
+	}
+	.upcoming-events .hide {
+		/*height: 820px;*/
+	}
+	.upcoming-events .scroll {
+		/*height: 840px;*/
+	}
+	.track .ui360 {
+		/*display: none;*/
+		opacity: 1;
+	}
+	.upcoming-events .list li .track .ui360 .sm2-360ui {
+		opacity: 1;
+	}
+	.track.mobile,
+	.track.mobile .ui360 {
+		display: block;
 	}
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
 	.header {
 		min-height: 670px;
 	}
@@ -985,17 +1113,7 @@ body.noScroll {
 	.about .top .description {
 		height: auto;
 		padding: 8%;
-	}
-	.upcoming-events .hide {
-		height: 820px;
-	}
-	.upcoming-events .scroll {
-		height: 840px;
-	}
-	.track .ui360 {
-		display: none;
-		opacity: 1;
-	}
+	}	
 	.track.mobile,
 	.track.mobile .ui360 {
 		display: block;
@@ -1011,6 +1129,9 @@ body.noScroll {
 	.upcoming-events .nav {
 		display: none;
 	}
+	.artist .head {
+		position: relative;
+	}
 	.artist .post > .left {
 		float: none;
 		height: auto;
@@ -1025,10 +1146,26 @@ body.noScroll {
 	}
 	.artist .description {
 		height: auto;
-		padding: 14% 8%;
+		padding: 8% 8% 14%;
 	}	
 	.galleryG .nav {
 		text-align: center;
+	}
+	/*Audio*/
+	.ui360,
+	.sm2-360ui {
+		width: 100px;
+		height: 100px;
+	}
+	.ui360 {
+		position: absolute;	
+		left: auto;
+		top: auto;
+		margin: 0;
+		margin-top: auto;
+		margin-left: auto;
+		bottom: 15px;
+		right: 15px;
 	}
 }
 @media only screen and (max-width: 414px) {
@@ -1047,7 +1184,7 @@ body.noScroll {
 		height: 300px;
 	}
 	.about .top .description {
-		padding: 25% 8% 14%;
+		padding: 14% 8%;
 	}
 	.about .bottom .img-list li {
 		width: 300px;
@@ -1061,20 +1198,38 @@ body.noScroll {
 	.about .bottom .img-list {
 		height: 100%;
 	}
+	.head .title {
+		padding: 18px 40px;
+	}
+	.head .sub-title {
+		display: block;
+		padding: 18px 40px;
+	}
+	.resident-events .head {
+		margin-bottom: 60px;
+	}
+	.resident-events .note {
+		padding: 0 40px 90px;
+		text-align: left;
+	}
 	.upcoming-events {
 		padding-bottom: 50px;
 	}
+	.upcoming-events .head {
+		padding: 60px 0 50px;
+		text-align: left;
+	}
 	.upcoming-events .hide {
-		height: 700px;
+		/*height: 700px;*/
 	}
 	.upcoming-events .scroll {
-		height: 720px;
+		/*height: 720px;*/
 	}
 	.upcoming-events .list li .track.mobile {
 		height: 220px;
 	}
 	.artist .description {
-		padding: 25% 8%;
+		padding: 5% 8% 15%;
 	}
 	.artist .left .img-2 {
 		height: 320px;
@@ -1088,6 +1243,33 @@ body.noScroll {
 	}
 	.footer .left .form .fields {
 		margin-bottom: 0;
+	}
+	.footer .left .form .sub .left {
+		float: left;
+		width: 50%;
+	} 
+	.footer .left .form .sub .right {
+		float: right;
+		width: 50%;
+	}
+	.footer .right .info .social {
+		padding: 0 40px;
+	}
+	.footer .right .info p {
+		padding: 15px 40px;
+	}
+	.footer .right .info p > span {
+		display: none;
+	}
+	.footer .right .info p > a {
+		display: block;
+	}
+	.footer .right .info p > a:first-child {
+		margin-bottom: 15px;
+	}
+	.footer .head .sub-title {
+		padding: 18px 0;
+		padding-right: 16px;
 	}
 	.galleryG .nav {
 		text-align: center;

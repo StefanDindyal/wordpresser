@@ -91,11 +91,11 @@ display:block;
 top:50%;
 left:50%;
 /* by default, cover whole space. make smaller when playing. */
-width:104px;
-height:104px;
-margin-left:-52px;
-margin-top:-52px;
-border-radius: 52px;
+width:68%;
+height:68%;
+margin-left:-34%;
+margin-top:-34%;
+border-radius: 100%;
 cursor:pointer;
 z-index:3;
 }
@@ -107,10 +107,10 @@ font-family:helvetica;
 .ui360 .sm2-360ui.sm2_playing .sm2-360btn,
 .ui360 .sm2-360ui.sm2_paused .sm2-360btn {
 /* smaller clickable button, in center */
-width:104px;
-height:104px;
-margin-left:-52px;
-margin-top:-52px;
+width:68%;
+height:68%;
+margin-left:-34%;
+margin-top:-34%;
 }
 .ui360 .sm2-360ui.sm2_playing .sm2-cover,
 .ui360 .sm2-360ui.sm2_paused .sm2-cover {
@@ -124,12 +124,18 @@ display:block;
 transition: all 0.3s ease-in-out;
 background-image: url(images/play-icons.png);
 background-repeat: no-repeat;
-background-position: -330px center;
+background-position: 104% center;
 background-color: #2d2d2d;
+background-size: 500%;
 }
 .ui360 .sm2-360ui.sm2_playing .sm2-360btn {
-background-position: 30px center;
+background-position: -6% center;
 }
+/*@media only screen and (max-width: 800px) {
+	.ui360 .sm2-360ui.sm2_playing .sm2-360btn {
+		background-position: -6% center;
+	}
+}*/
 .ui360 .sm2-360btn-default {
 cursor:pointer;
 }

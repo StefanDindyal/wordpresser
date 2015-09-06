@@ -91,7 +91,8 @@ function twentyfourteen_setup() {
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'twentyfourteen-full-width', 1038, 576, true );
 	add_image_size( 'event-thumb', 320, 320, true );
-	add_image_size( 'artist-thumb', 800, 670, true );	
+	add_image_size( 'artist-thumb', 800, 670, true );
+	add_image_size( 'artist-smaller', 400, 400, true );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(

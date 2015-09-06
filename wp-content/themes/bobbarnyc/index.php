@@ -11,7 +11,7 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 ?>	
 
 	<!-- About -->
-	<div class="about sec">
+	<div class="about sec" id="est1993">
 		<ul class="gal">
 			<?php foreach ($about_images as $item) { ?>
 				<li><div><span class="helper"></span><img src="<?php echo wp_get_attachment_image_src( $item[0], 'full' )[0]; ?>" alt="" border="0"/></div></li>
@@ -58,10 +58,10 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 				<div class="scroll">
 					<?php if(count($about_images) > 2){ ?>				
 						<ul class="img-list">
-							<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[2][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
-							<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[3][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
-							<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[4][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
-							<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[5][0], 'artist-thumb' )[0]; ?>" alt="" border="0"/></li>
+							<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[2][0], 'artist-smaller' )[0]; ?>" alt="" border="0"/></li>
+							<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[3][0], 'artist-smaller' )[0]; ?>" alt="" border="0"/></li>
+							<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[4][0], 'artist-smaller' )[0]; ?>" alt="" border="0"/></li>
+							<li class="thumb"><img src="<?php echo wp_get_attachment_image_src( $about_images[5][0], 'artist-smaller' )[0]; ?>" alt="" border="0"/></li>
 						</ul>				
 					<?php } ?>	
 				</div>
@@ -70,7 +70,7 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 	</div>
 
 	<!-- Resident Events -->
-	<div class="resident-events">
+	<div class="resident-events" id="hear">
 		<div class="rig">
 			<div class="head">			
 				<h2 class="title">hear</h2>
@@ -157,14 +157,7 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 										<?php } ?>
 										<?php if($music_by){ ?>
 											<p class="description">hosted by <?php echo $hosted_by; ?></p>
-										<?php } ?>
-										<div class="track mobile">
-											<div class="ui360">
-												<?php if($stream_url){ ?>
-													<a href="<?php echo $stream_url; ?>" class="link" type="audio/mp3">Track</a>
-												<?php } ?>
-											</div>
-										</div>										
+										<?php } ?>																				
 									</li>									
 
 								<?php endwhile;
@@ -188,7 +181,7 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 	</div>
 
 	<!-- Artist -->
-	<div class="artist sec clearfix">
+	<div class="artist sec clearfix" id="see">
 		<?php 
 			$args_artists = array( 'post_type' => 'artists', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 1 );
 			$q_artists = new WP_Query( $args_artists );
@@ -253,13 +246,13 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 	</div>
 
 	<!-- Map -->
-	<div class="location">
+	<div class="location" id="touch">
 		<div class="head">
 			<div class="rig">
 				<h2 class="title">touch</h2>				
 			</div>
 		</div>
-		<div id="map"></div>
+		<div id="map"><a href="https://www.google.com/maps/place/Bob/@40.7224403,-73.9899095,17z/data=!3m1!4b1!4m2!3m1!1s0x89c259841161043b:0xac01a80038bd82ba" target="_blank">&nbsp;</a></div>
 	</div>
 
 	<!-- Footer -->
@@ -326,14 +319,87 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 								<li class="left">
 									<label>(party size)</label>
 									<div class="over">
-										<input type="text" name="party_size" maxlength="50" size="20" value="(0)" onfocus="if (this.value == '(0)') {this.value = '';}" onblur="if (this.value == '') {this.value = '(0)';}"/>
+										<input type="text" name="party_size" maxlength="50" size="20" value="( 0 )" onfocus="if (this.value == '( 0 )') {this.value = '';}" onblur="if (this.value == '') {this.value = '( 0 )';}"/>
 									</div>
 								</li>
 								<li class="right date">
 									<label>(your event date)</label>
-									<input type="text" name="month" maxlength="50" size="20" value="(mm)" onfocus="if (this.value == '(mm)') {this.value = '';}" onblur="if (this.value == '') {this.value = '(mm)';}"/>
-									<input type="text" name="day" maxlength="50" size="20" value="(dd)" onfocus="if (this.value == '(dd)') {this.value = '';}" onblur="if (this.value == '') {this.value = '(dd)';}"/>
-									<input type="text" name="time" maxlength="50" size="20" value="(time)" onfocus="if (this.value == '(time)') {this.value = '';}" onblur="if (this.value == '') {this.value = '(time)';}"/>
+									<select name="month">
+										<option value="">( mm )</option>
+										<option value="01">( 01 )</option>
+										<option value="02">( 02 )</option>
+										<option value="03">( 03 )</option>
+										<option value="04">( 04 )</option>
+										<option value="05">( 05 )</option>
+										<option value="06">( 06 )</option>
+										<option value="07">( 07 )</option>
+										<option value="08">( 08 )</option>
+										<option value="09">( 09 )</option>
+										<option value="10">( 10 )</option>
+										<option value="11">( 11 )</option>
+										<option value="12">( 12 )</option>										
+									</select>
+									<select name="day">
+										<option value="">( dd )</option>
+										<option value="01">( 01 )</option>
+										<option value="02">( 02 )</option>
+										<option value="03">( 03 )</option>
+										<option value="04">( 04 )</option>
+										<option value="05">( 05 )</option>
+										<option value="06">( 06 )</option>
+										<option value="07">( 07 )</option>
+										<option value="08">( 08 )</option>
+										<option value="09">( 09 )</option>
+										<option value="10">( 10 )</option>
+										<option value="11">( 11 )</option>
+										<option value="12">( 12 )</option>
+										<option value="13">( 13 )</option>
+										<option value="14">( 14 )</option>
+										<option value="15">( 15 )</option>
+										<option value="16">( 16 )</option>
+										<option value="17">( 17 )</option>
+										<option value="18">( 18 )</option>
+										<option value="19">( 19 )</option>
+										<option value="20">( 20 )</option>
+										<option value="21">( 21 )</option>
+										<option value="22">( 22 )</option>
+										<option value="23">( 23 )</option>
+										<option value="24">( 24 )</option>
+										<option value="25">( 25 )</option>
+										<option value="26">( 26 )</option>
+										<option value="27">( 27 )</option>
+										<option value="28">( 28 )</option>
+										<option value="29">( 29 )</option>
+										<option value="30">( 30 )</option>
+										<option value="31">( 31 )</option>
+									</select>
+									<select name="time">
+										<option value="">( time )</option>
+										<option value="12am">( 12am )</option>
+										<option value="1am">( 1am )</option>
+										<option value="2am">( 2am )</option>
+										<option value="3am">( 3am )</option>
+										<option value="4am">( 4am )</option>
+										<option value="5am">( 5am )</option>
+										<option value="6am">( 6am )</option>
+										<option value="7am">( 7am )</option>
+										<option value="8am">( 8am )</option>
+										<option value="9am">( 9am )</option>
+										<option value="10am">( 10am )</option>
+										<option value="11am">( 11am )</option>
+										<option value="12pm">( 12pm )</option>
+										<option value="1pm">( 1pm )</option>
+										<option value="2pm">( 2pm )</option>
+										<option value="3pm">( 3pm )</option>
+										<option value="4pm">( 4pm )</option>
+										<option value="5pm">( 5pm )</option>
+										<option value="6pm">( 6pm )</option>
+										<option value="7pm">( 7pm )</option>
+										<option value="8pm">( 8pm )</option>
+										<option value="9pm">( 9pm )</option>
+										<option value="10pm">( 10pm )</option>
+										<option value="11pm">( 11pm )</option>
+									</select>
 								</li>
 							</ul>
 							<ul class="fields clearfix">
@@ -342,7 +408,7 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 									<textarea name="message" wrap="physical"></textarea>
 								</li>
 							</ul>
-							<ul class="fields clearfix">
+							<ul class="fields sub clearfix">
 								<li class="left updates">
 									<label>
 										<input type="checkbox" name="updates" value="get updates">
@@ -373,7 +439,7 @@ $facebook_url = $bb_settings['bb_facebook_url'];
 							<a href="<?php echo $facebook_url; ?>" target="_blank" class="facebook">facebook</a>
 						<?php } ?>
 					</div>
-					<p><a href="mailto:bobbarnyc@gmail.com">bobbarnyc@gmail.com</a> - (212) 529 - 1807</p><br>
+					<p><a href="mailto:bobbarnyc@gmail.com">bobbarnyc@gmail.com</a><span> - </span><a href="tel:2125291807">(212) 529 - 1807</a></p><br>
 					<p class="dark">235 eldridge street</p><br>
 					<p class="dark last">Ny, Ny 10002</p>
 				</div>
