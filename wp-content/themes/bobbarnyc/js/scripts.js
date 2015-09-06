@@ -15,7 +15,7 @@
 	// });
 
 	// Nav
-	$('.nav a').on('click', function(e){
+	$('.header .nav a').on('click', function(e){
 		var elem = $(this).attr('href');		
 		var destination = $(elem).offset().top;
 		var timer = 500;
