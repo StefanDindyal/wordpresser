@@ -1183,6 +1183,12 @@ html, body {
 	.header .scheduel li {
 		margin: 0 15px;
 	}
+	.header .scheduel li .days {
+		font-size: 17px;
+	}
+	.header .scheduel li .status {
+		font-size: 18px;
+	}
 	.about .top .right .img-1 {
 		height: 300px;
 	}
@@ -1296,6 +1302,9 @@ html, body {
 	}
 	.header .scheduel li .days {
 		font-size: 16px;
+	}
+	.header .scheduel li .status {
+		font-size: 17px;
 	}
 	.header .scheduel li .status {
 		font-size: 18px;
