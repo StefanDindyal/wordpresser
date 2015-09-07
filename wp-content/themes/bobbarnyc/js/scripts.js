@@ -270,8 +270,14 @@
 					success: function(response){
 						if(response === '1'){
 							self.find('.inner').hide();
-							resp.html('<div class="code">Thank you for your inquery.</div>');
+							resp.html('<div class="code">Thank you for your inquery. <a href="#" class="btn again">Make another inquery &raquo;</a></div>');
 						}
+						$('.btn.again').on('click', function(e){
+							resp.empty();
+							self.find('input[type="text"], textarea, select').val('');
+							self.find('.inner').show();
+							e.preventDefault();
+						});
 					}	        
 			    });
 				

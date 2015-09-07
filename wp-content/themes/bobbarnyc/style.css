@@ -950,6 +950,9 @@ html, body {
     color: #000;
     margin-bottom: 28px;
 }
+.footer .form .resp .code .btn.again {
+	margin-top: 20px;
+}
 .footer .rig > .right {
 	position: relative;
 	/*height: 800px;*/
