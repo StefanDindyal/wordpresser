@@ -6,6 +6,7 @@ Version: 0.1
 Tags: sukiyaki, media, concepts
 Text Domain: skm 
 */
+/*CSS Reset*/
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
 body{line-height:1}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
@@ -46,6 +47,8 @@ body {
 body a {
 	color: #666;
 }
+
+/*General Styles*/
 #page {
 	position: relative;
 	width: 100%;
@@ -158,6 +161,8 @@ section h2.section-title {
 	border-top: 3px solid;
 	box-shadow: 0 3px 3px rgba(0,0,0,0.10);
 }
+
+/*Header Image*/
 #header {}
 #image-header {
 	height: 480px;
@@ -171,133 +176,8 @@ section h2.section-title {
 	height: 100%;
 	margin: 0 auto;
 }
-#about {
-	max-width: 960px;
-}
-#about .ico {
-	width: 100px;
-	height: 100px;
-	border-radius: 50px;
-	font-size: 64px;
-	line-height: 108px;
-	margin: 0 auto 20px;
-	border: 1px solid #eee;
-	box-shadow: 0 3px 3px rgba(0,0,0,0.10);
-}
-#about #us {
-	text-align: left;
-	margin-bottom: 60px;
-	width: 100%;
-	padding: 20px 20px 10px;
-	box-shadow: 0 3px 3px rgba(0,0,0,0.10);	
-	background-color: #fff;
-}
-.pre #about #us {
-	text-align: center;
-}
-.pre #about #us a {
-	color: #3b5998;
-}
-.pre #about #us a:hover {
-	text-decoration: underline;
-}
-#about #us p,
-#about #us > div {
-	text-align: center;
-}
-#about #us p {
-	margin-bottom: 10px;
-}
-#about #us > div {
-	margin-bottom: 40px;
-}
-#about #us p a {
-	font-weight: bold;
-	color: #3b5998;
-}
-#about #us p a:hover {
-	text-decoration: underline;
-}
-#members {
-	font-size: 0;
-	line-height: 0;
-	text-align: left;
-}
-#members > li {
-	width: 100%;
-	display: inline-block;
-	margin: 0 0 60px;
-	margin-right: 0%;
-	padding: 20px 20px 10px;
-	box-shadow: 0 3px 3px rgba(0,0,0,0.10);
-	font-size: 16px;
-	line-height: normal;
-	vertical-align: top;
-	background-color: #fff;
-}
-#members > li:last-child {
-	margin-right: 0;
-	margin-bottom: 0;
-}
-#members > li.caleb {
-	border-top: 3px solid #3020ff;
-}
-#members > li.mark {
-	border-top: 3px solid #ff4747;
-}
-#members > li.stefan {
-	border-top: 3px solid #a0e534;
-}
-#members .avatar {
-	width: 300px;
-	height: 300px;
-	border-radius: 100%;
-	margin: 0 auto 20px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	box-shadow: 0 3px 3px rgba(0,0,0,0.10);
-}
-#members .caleb .avatar {
-	background-image: url(images/geck.jpg);
-}
-#members .mark .avatar {
-	background-image: url(images/wolf.jpg);
-}
-#members .stefan .avatar {
-	background-image: url(images/bird.jpg);
-}
-#members li > span {
-	font-weight: 600;
-	font-size: 22px;
-	color: #2c2356;
-	display: block;
-	text-align: center;
-}
-#members p {
-	text-align: left;
-	margin-bottom: 30px;
-	padding-top: 10px;
-}
-#members strong {
-	display: block;
-	text-align: center;
-}
-#members li ul {
-	margin-bottom: 40px;
-	text-align: center;
-}
-#members li ul li {
-	display: inline-block;
-	list-style: none;
-	margin: 0 5px;
-	color: #634288;
-	vertical-align: top;
-}
-#members li ul li span {
-	font-weight: bold;
-	display: inline-block;
-}
+
+/*Our Works*/
 #works {
 	/*max-width: 100%;*/
 	/*padding-left: 0;*/
@@ -407,6 +287,137 @@ section h2.section-title {
 	display: table-cell;
 	vertical-align: middle;
 	height: 100%;
+}
+
+/*About Us*/
+#about {
+	max-width: 960px;
+}
+#about .ico {
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	font-size: 64px;
+	line-height: 108px;
+	margin: 0 auto 20px;
+	border: 1px solid #eee;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.10);
+}
+#about #us {
+	text-align: left;
+	margin-bottom: 60px;
+	width: 100%;
+	padding: 20px 20px 10px;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.10);	
+	background-color: #fff;
+}
+.pre #about #us {
+	text-align: center;
+}
+.pre #about #us a {
+	color: #3b5998;
+}
+.pre #about #us a:hover {
+	text-decoration: underline;
+}
+#about #us p,
+#about #us > div {
+	text-align: center;
+}
+#about #us p {
+	margin-bottom: 10px;
+}
+#about #us > div {
+	margin-bottom: 40px;
+}
+#about #us p a {
+	font-weight: bold;
+	color: #3b5998;
+}
+#about #us p a:hover {
+	text-decoration: underline;
+}
+
+/*Memebers*/
+#members {
+	font-size: 0;
+	line-height: 0;
+	text-align: left;
+}
+#members > li {
+	width: 100%;
+	display: inline-block;
+	margin: 0 0 60px;
+	margin-right: 0%;
+	padding: 20px 20px 10px;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.10);
+	font-size: 16px;
+	line-height: normal;
+	vertical-align: top;
+	background-color: #fff;
+}
+#members > li:last-child {
+	margin-right: 0;
+	margin-bottom: 0;
+}
+#members > li.caleb {
+	border-top: 3px solid #3020ff;
+}
+#members > li.mark {
+	border-top: 3px solid #ff4747;
+}
+#members > li.stefan {
+	border-top: 3px solid #a0e534;
+}
+#members .avatar {
+	width: 300px;
+	height: 300px;
+	border-radius: 100%;
+	margin: 0 auto 20px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.10);
+}
+#members .caleb .avatar {
+	background-image: url(images/geck.jpg);
+}
+#members .mark .avatar {
+	background-image: url(images/wolf.jpg);
+}
+#members .stefan .avatar {
+	background-image: url(images/bird.jpg);
+}
+#members li > span {
+	font-weight: 600;
+	font-size: 22px;
+	color: #2c2356;
+	display: block;
+	text-align: center;
+}
+#members p {
+	text-align: left;
+	margin-bottom: 30px;
+	padding-top: 10px;
+}
+#members strong {
+	display: block;
+	text-align: center;
+}
+#members li ul {
+	margin-bottom: 40px;
+	text-align: center;
+}
+#members li ul li {
+	display: inline-block;
+	list-style: none;
+	margin: 0 5px;
+	color: #634288;
+	vertical-align: top;
+}
+#members li ul li span {
+	font-weight: bold;
+	display: inline-block;
 }
 
 /*Portfolio*/
