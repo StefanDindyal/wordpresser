@@ -49,10 +49,14 @@ body a {
 #page {
 	position: relative;
 	width: 100%;
-	padding-top: 115px;	
+	padding-top: 115px;
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: fixed;
+	background-size: cover;
 }
 .header-image #page {
-	padding-top: 55px;
+	padding-top: 280px;
 }
 #header {
 	position: fixed;
@@ -76,6 +80,8 @@ body a {
 	font-size: 12px;
 	padding: 20px 10px;
 	text-align: center;
+	box-shadow: 0 -3px 3px rgba(0,0,0,0.10);
+	background-color: #fff;
 }
 #logo {
 	font-family: 'Titillium Web', sans-serif;
@@ -125,7 +131,7 @@ body a {
 	transform: translateX(-50%);
 }
 #main-content {
-	padding: 10px;
+	padding: 0 10px;
 }
 section {
 	position: relative;
@@ -133,7 +139,7 @@ section {
 	width: 100%;
 	/*max-width: 960px;*/
 	margin: 0 auto;
-	margin-bottom: 40px;
+	margin-bottom: 100px;
 	text-align: center;
 }
 section.b,
@@ -154,17 +160,19 @@ section h2.section-title {
 }
 #header {}
 #image-header {
+	height: 480px;
 	margin-bottom: 60px;
+	background-color: #010101;
 	box-shadow: 0 3px 10px rgba(0,0,0,0.35);
 }
 #image-header img {
 	display: block;
-	max-width: 100%;
-	width: 100%;
-	height: auto;
+	width: auto;
+	height: 100%;
+	margin: 0 auto;
 }
 #about {
-
+	max-width: 960px;
 }
 #about .ico {
 	width: 100px;
@@ -178,7 +186,11 @@ section h2.section-title {
 }
 #about #us {
 	text-align: left;
-	margin-bottom: 40px;
+	margin-bottom: 60px;
+	width: 100%;
+	padding: 20px 20px 10px;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.10);	
+	background-color: #fff;
 }
 .pre #about #us {
 	text-align: center;
@@ -189,18 +201,40 @@ section h2.section-title {
 .pre #about #us a:hover {
 	text-decoration: underline;
 }
+#about #us p,
+#about #us > div {
+	text-align: center;
+}
+#about #us p {
+	margin-bottom: 10px;
+}
+#about #us > div {
+	margin-bottom: 40px;
+}
+#about #us p a {
+	font-weight: bold;
+	color: #3b5998;
+}
 #members {
+	font-size: 0;
+	line-height: 0;
+	text-align: left;
 }
 #members > li {
-	width: 32%;
-	float: left;
-	margin: 0 0 40px;
-	margin-right: 2%;
+	width: 100%;
+	display: inline-block;
+	margin: 0 0 60px;
+	margin-right: 0%;
 	padding: 20px 20px 10px;
 	box-shadow: 0 3px 3px rgba(0,0,0,0.10);
+	font-size: 16px;
+	line-height: normal;
+	vertical-align: top;
+	background-color: #fff;
 }
 #members > li:last-child {
 	margin-right: 0;
+	margin-bottom: 0;
 }
 #members > li.caleb {
 	border-top: 3px solid #3020ff;
@@ -212,9 +246,9 @@ section h2.section-title {
 	border-top: 3px solid #a0e534;
 }
 #members .avatar {
-	width: 150px;
-	height: 150px;
-	border-radius: 75px;
+	width: 300px;
+	height: 300px;
+	border-radius: 100%;
 	margin: 0 auto 20px;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -230,27 +264,36 @@ section h2.section-title {
 #members .stefan .avatar {
 	background-image: url(images/bird.jpg);
 }
-#members li span {
+#members li > span {
 	font-weight: 600;
 	font-size: 22px;
 	color: #2c2356;
+	display: block;
+	text-align: center;
 }
 #members p {
 	text-align: left;
 	margin-bottom: 30px;
 	padding-top: 10px;
 }
+#members strong {
+	display: block;
+	text-align: center;
+}
 #members li ul {
 	margin-bottom: 40px;
+	text-align: center;
 }
 #members li ul li {
 	display: inline-block;
-	list-style: disc;
+	list-style: none;
 	margin: 0 5px;
 	color: #634288;
+	vertical-align: top;
 }
 #members li ul li span {
 	font-weight: bold;
+	display: inline-block;
 }
 #works {
 	/*max-width: 100%;*/
@@ -258,18 +301,27 @@ section h2.section-title {
 	/*padding-right: 0;*/
 }
 #works .large-img {
-	width: 110%;
+	float: left;
+	max-width: 480px;
+	width: 50%;
 	height: 480px;
 	margin: 0 auto;
-	margin-left: -5%;
-	background-size: auto 100%;
+	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
-	margin-bottom: 10px;
-	box-shadow: inset 0 -5px 10px rgba(0,0,0,0.1);
-	background-color: #f1f1f1;
+	box-shadow: 3px 0px 9px rgba(0,0,0,0.1);
+	background-color: #202020;
 	/*border-top: 3px solid #ff4747;*/
 	/*border-bottom: 3px solid #3020ff;*/
+}
+#works .wod {
+	border-top: 3px solid #3020ff;
+}
+#works .ew {
+	border-top: 3px solid #ff4747;
+}
+#works .el {
+	border-top: 3px solid #a0e534;
 }
 #works .wod .large-img {
 	background-image: url(images/test.jpg);
@@ -280,24 +332,29 @@ section h2.section-title {
 #works .el .large-img {
 	background-image: url(images/break.jpg);
 }
-#works span {
+#works .contents span {
 	display: block;
 	margin-bottom: 10px;
 	font-size: 20px;
 	font-weight: 600;
 	color: #2c2356;
-	padding: 20px 0;
+	padding: 0px 0;
 }
 #works p {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	max-width: 960px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
-	padding: 0 20px;
 }
 #works em {
 	color: #634288;
+}
+#works em.note {
+	font-size: 12px;
+	color: #999;
+	display: block;
+	padding: 10px 0 0;
 }
 #works .gallery {
 	margin-bottom: 0px;
@@ -306,23 +363,47 @@ section h2.section-title {
 .story {
 	font-size: 0;
 	line-height: 0;
+	position: relative;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
 }
 .story > li {
-	width: 32%;
-	margin-right: 2%; 
+	width: 100%;
+	margin-right: 0; 
 	display: inline-block;
 	vertical-align: top;
 	font-size: 16px;
 	line-height: normal;
 	box-shadow: 0 3px 3px rgba(0,0,0,0.10);
 	overflow: hidden;
-	padding-bottom: 40px;
+	margin-bottom: 60px;
+	background-color: #fff;
 }
 .story > li:last-child {
 	margin-right: 0;
+	margin-bottom: 0;
 }
 .story ul li {
 	padding: 0 0 40px;
+}
+.story > li .disc {
+	width: 50%;
+	float: right;
+	padding: 20px 40px;
+	position: relative;
+	height: 480px;
+	display: inline-table;
+}
+.story > li .disc .helper {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.story > li .disc .contents {
+	display: table-cell;
+	vertical-align: middle;
+	height: 100%;
 }
 
 /*Portfolio*/
@@ -343,14 +424,16 @@ section h2.section-title {
 	border-bottom: 3px solid #fff;
 	display: inline-block;
 	transition: 0.3s ease-in-out;
+	padding: 5px;
 }
 .port #works ul li:hover span.title {
 	border-bottom: 3px solid #2c2356;
 }
-.port ul li .hi {
+.port #works ul li .hi {
 	display: block;
 	height: 225px;
 	overflow: hidden;
+	padding: 0;
 	box-shadow: 0 3px 5px rgba(0,0,0,0.25);
 }
 .port ul li:hover {

@@ -26,14 +26,22 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href='//fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
 	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,600,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="icon" type="image/png" href="<?php bloginfo('template_directory'); ?>/images/favicon.png">
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=148373841901814";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div id="page" class="hfeed site" style="background-image: url(<?php header_image(); ?>);">
 	<div id="header">
 		<span id="logo" class="titillium_web">
 			Sukiyaki
@@ -46,10 +54,6 @@
 		</span>
 	</div>
 	<?php if ( get_header_image() ) : ?>
-	<div id="image-header">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
-		</a>
-	</div>
+	
 	<?php endif; ?>
 	<div id="main" class="site-main">
