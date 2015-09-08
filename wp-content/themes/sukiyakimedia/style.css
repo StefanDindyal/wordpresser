@@ -215,6 +215,9 @@ section h2.section-title {
 	font-weight: bold;
 	color: #3b5998;
 }
+#about #us p a:hover {
+	text-decoration: underline;
+}
 #members {
 	font-size: 0;
 	line-height: 0;

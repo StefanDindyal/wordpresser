@@ -23,7 +23,7 @@ get_header(); ?>
 		?>
 	</section> */ ?>
 	<section id="works" class="b">
-		<h2 class="section-title">Works</h2>
+		<h2 class="section-title">Our Works</h2>
 		<ul class="story">
 			<li class="wod">
 				<div class="large-img"></div>
